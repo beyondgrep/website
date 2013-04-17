@@ -1,0 +1,31 @@
+[% WRAPPER wrapper/page.ttml title='ack documentation' %]
+<div class="content">
+    <h1>Documentation</h1>
+
+    <strong>Please read</strong> the <a href="/documentation/man.html">ack manual</a>,
+    which also includes the <a href="/documentation/man.html#faq">ack FAQ</a>.
+
+    <h1>ack's command-line switches (<tt>ack --help</tt>)</h1>
+<pre>
+[% PROCESS 'ack-help.txt' %]
+</pre>
+
+    <h1>ack's file types (<tt>ack --help-types</tt>)</h1>
+<pre>
+[% PROCESS 'ack-help-types.txt' %]
+</pre>
+
+    <h1>Articles about ack</h1>
+
+    <p>
+    Articles from around the web about ack and searching.  Let me know if there are any that should be on here.
+    </p>
+
+    <dl>
+
+    <dt>Use ack instead of grep to parse text files</dt>
+    <dd>2012-04-10, [% WRAPPER selflink.tt %]http://stevengharms.com/blog/2012/04/10/use-ack-instead-of-grep-to-parse-text-files/[% END %]
+
+    </dl>
+</div>
+[% END %]

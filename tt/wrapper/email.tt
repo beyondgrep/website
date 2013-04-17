@@ -1,0 +1,1 @@
+<a href="mailto:[% content %]">[% content %]</a>

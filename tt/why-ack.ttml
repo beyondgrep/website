@@ -1,0 +1,137 @@
+[% WRAPPER wrapper/page.ttml title="ack's features" %]
+
+<div class="content">
+
+    <h1>Top 10 reasons to use ack for source code</h1>
+
+    <h2>1. It's fast</h2>
+
+    <p>
+    Ack only searches the stuff that makes sense to search.  Perl's
+    regular expressions are highly optimized.
+    </p>
+
+    <h2>2. It's portable</h2>
+
+    <p>
+    ack is pure Perl, so it runs on Windows just fine. It has no
+    dependencies other than Perl 5.  [% WRAPPER link.tt page='install' %]Installation is a snap[% END %].
+    </p>
+
+    <h2>3. It ignores VCS directories</h2>
+
+    <p>
+    ack searches recursively by default, while ignoring <code>.git</code>,
+    <code>.svn</code>, <code>CVS</code> and other VCS directories.
+    </p>
+
+    <blockquote><code>
+            # Which would you rather type?<br />
+            $ grep pattern $(find . -type f | grep -v '\.svn')<br />
+            <br>
+            $ ack pattern</code></blockquote>
+
+    <h2>4. Better search results</h2>
+
+    <p>
+    Since ack defaults to only searching source code, you get fewer false positives.
+    <ul>
+        <li>VCS directories
+        <li><i>blib</i>, the Perl build directory
+        <li>backup files like <i>foo~</i> and <i>#foo#</i>
+        <li>binary files, core dumps, etc
+    </ul>
+    </p>
+
+    <h2>5. Easy filetype specifications</h2>
+
+    <p>
+    If you have a big project with many different languages combined, it's easy to add
+    <tt>--perl</tt> to search only Perl files, or use <tt>--nohtml</tt> to search everything except HTML.
+    </p>
+
+    <p>
+    ack's filetype detection means more than just specifying a single file extension.
+    </p>
+
+    <blockquote><code>
+            # Which would you rather type?
+            $ grep pattern $(find . -name '*.pl' -or -name '*.pm' -or  -name '*.pod' | grep -v .svn)<br />
+            <br />
+            $ ack --perl pattern
+    </code></blockquote>
+
+    <p>
+    Plus, ack does filetype detection that <code>find</code> can't.
+    ack checks the shebang lines of scripts without extensions.
+    </p>
+
+    <h2>6. Creates lists of files without searching</h2>
+
+    <p>
+    Since ack can know to search only, say, Ruby files with the
+    <code>--ruby</code> switch, you can also generate a list of
+    files in a tree with the <code>-f</code> switch.
+    </p>
+
+    <blockquote><code>
+            # List all Ruby files in the tree<br />
+            $ ack -f --ruby &gt; all-ruby-files
+    </code></blockquote>
+
+    <h2>7. Match highlighting</h2>
+
+    <p>
+    ack has flexible match highlighting, where you can specify the
+    colors to use in its output.
+    </p>
+
+    <h2>8. Perl regular expressions</h2>
+
+    <p>
+    Perl leads the programming world with its regular expressions.
+    ack uses Perl's regular expressions, not a "Perl-compatible"
+    subset.
+    </p>
+
+    <p>
+    You can also take advantage of Perl's match variables.  For
+    example, to generate a list of all files <code>#include</code>d
+    in your C code, use this:
+    </p>
+
+    <blockquote><code>
+            ack --cc '#include\s+&lt;(.*)&gt;' --output '$1' -h
+    </code></blockquote>
+
+
+    <h2>9. Command switches much like GNU grep</h2>
+
+    <p>
+    If you know GNU grep, you know most of ack's switches, too.
+    Word-only searching with <code>-w</code>, case-insensitive
+    searching with <code>-i</code>, etc
+    </p>
+
+    <h2>10. "ack" is shorter than "grep" to type</h2>
+
+    <p>
+    This one is sort of a joke, but sort of not.  You spend hours
+    every day searching through source code.  ack makes it as quick
+    and easy as possible to do that searching and to remove as much
+    drudgerous typing as possible.
+    </p>
+
+    <p>
+    Defaults matter.  The less typing you have to do, the better.
+    </p>
+
+    <h2>What are you waiting for?</h2>
+    <p>
+    [% WRAPPER link.tt page='install' %]Installation[% END %] is a snap.
+    Try ack for yourself.
+    </p>
+
+</div>
+
+[% END %]

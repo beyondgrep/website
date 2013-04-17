@@ -1,0 +1,210 @@
+[% WRAPPER wrapper/page.ttml title='More tools for searching source code' %]
+
+<div class="content">
+
+    <h1>Tools that work with ack</h1>
+
+    <h2>AckMate</h2>
+
+    <p>
+    Users of <a href="http://macromates.com/">TextMate</a>, the
+    programmer's editor for the Mac, can use the AckMate plugin by
+    Trevor Squires:
+    </p>
+
+    <blockquote>
+        TextMate users know just how slow its "Find in Project"
+        can be with large source trees. That's why you need
+        "ack-in-project" &mdash; a TextMate bundle that uses
+        the super-speedy "ack" tool to search your code
+        FAST. It gives you beautiful, clickable results just
+        as fast as "ack" can find them. Check it out at:
+        [% WRAPPER selflink.tt %]https://github.com/protocool/ackmate[% END %]
+    </blockquote>
+
+    <h2>vim integration</h2>
+
+    <p>
+    ack.vim provides an interface between ack and the
+    <a href="http://www.vim.org/">vim text editor</a>.  For example,
+    you can call <code>:Ack foo</code>, which will run ack and load
+    ack's results into a vim buffer for manipulation and navigation.
+    <p>
+
+    <p>
+    ack.vim is available at the official vim website at
+    [% WRAPPER selflink.tt %]http://www.vim.org/scripts/script.php?script_id=2572[% END %]
+    </p>
+
+    <h2>Emacs integration</h2>
+    <p>
+    There are at least four different Emacs modes for supporting ack here at the Emacs Wiki: 
+    [% WRAPPER selflink.tt %]http://www.emacswiki.org/emacs/Ack[% END %]
+    </p>
+
+    <p>
+    Note: Be careful of any solution that defaults you to using <tt>--all</tt>.
+    </p>
+
+    <h1>Other grep-like tools</h1>
+
+    <p>
+    There are many ways to search source code that are more flexible
+    and tuned to programmers than straight <code>grep</code>.  I
+    suggest you take a look at some of these alternatives, for they
+    may suit your needs better than ack.  If you have any suggestions
+    to add to this list, please let me know at
+    [% WRAPPER email.tt %]andy@petdance.com[% END %].
+    <p>
+
+    <h2>Ag, the Silver Searcher</h2>
+    <p>
+    Geoff Greer says "Ag is like ack, but better. It’s fast. It’s
+    damn fast. The only thing faster is stuff that builds indices
+    beforehand, like <a href="http://ctags.sourceforge.net/">Exuberant Ctags</a>."
+    Geoff has also created a fork of AckMate that uses Ag instead
+    of ack.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/ggreer/the_silver_searcher[% END %]
+    </p>
+
+    <h2>grin</h2>
+
+    <p>
+    "A grep program configured the way I like it", written in Python
+    by Robert Kern.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]http://pypi.python.org/pypi/grin[% END %]
+    </p>
+
+    <h2>rak</h2>
+
+    <p>
+    A straight clone of ack, with some visual tweaks, written in Ruby
+    by Daniel Lucraft.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]http://rak.rubyforge.org/[% END %]
+    </p>
+
+    <h2>glark</h2>
+
+    <p>
+    The biggest departure from ack, glark adds many more features like
+    the ability to AND and OR your patterns.  It's written in Ruby by
+    Jeff Page.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]http://www.incava.org/projects/glark[% END %]
+    </p>
+
+    <h2>nak</h2>
+
+    <p>
+    An implementation of ack, written in
+    <a href="http://nodejs.org/">Node.js</a>. It has inspiration from
+    Ag, and is optimized for speed, not features. It's completely
+    asynchronous. Written by Garen J. Torikian.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/gjtorikian/nak[% END %]
+    </p>
+
+    <h2>pss</h2>
+
+    <p>
+    pss is an ack clone written in Python by Eli Bendersky.  It's
+    written in pure Python with no additional modules necessary.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]https://bitbucket.org/eliben/pss[% END %]
+    </p>
+
+    <h1>Indexing tools</h1>
+    <p>
+    Sometimes when you're looking at a large codebase, it makes
+    sense to see everything as a whole.  An indexing tool may help
+    you out.
+    </p>
+
+    <h2>ctags</h2>
+    <p>
+    ctags is a program almost as old as time itself.  When run
+    against a codebase, ctags indexes various elements of the code,
+    such as variables and functions.  This lets your editor or other
+    tools use the tags index to jump quickly to that element.
+    </p>
+
+    <p>
+    The most common ctags implementation is Exuberant ctags:
+    [% WRAPPER selflink.tt %]http://ctags.sourceforge.net/[% END %]
+    </p>
+
+    <h2>cscope</h2>
+    <p>
+    Cscope is a developer's tool for browsing source code.  Cscope
+    was part of the official AT&amp;T Unix distribution for many
+    years, and has been used to manage projects involving 20 million
+    lines of code.  It also can integrate with vim and Emacs.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]http://cscope.sourceforge.net/[% END %]
+    </p>
+
+    <h2>CodeQuery</h2>
+
+    CodeQuery indexes and queries C, C++, Java and Python source
+    code. It builds upon the databases of cscope and ctags, mentioned
+    above, and provides a nice GUI tool.
+
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/ruben2020/codequery[% END %]
+    </p>
+
+    <h2>Code Search</h2>
+    <p>
+    Russ Cox, the guy that wrote Google's CodeSearch engine, wrote
+    <a href="http://swtch.com/~rsc/regexp/regexp4.html">an article about how it worked</a>
+    and released an implementation in Go.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]https://code.google.com/p/codesearch/[% END %]
+    </p>
+
+    <h2>OpenGrok</h2>
+    <p>
+    OpenGrok is a fast and usable source code search and cross
+    reference engine. It helps you search, cross-reference and
+    navigate your source tree.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]http://hub.opensolaris.org/bin/view/Project+opengrok/[% END %]
+    </p>
+
+    <h2>GNU GLOBAL</h2>
+    <p>
+    GNU GLOBAL is a source code tagging system that works the same
+    way across diverse environments (emacs, vi, less, bash, web
+    browser, etc). You can locate objects in source files and move
+    there easily.  It is similar to ctags or etags but is different
+    from them at the point of independence of any editor.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]http://www.gnu.org/software/global/[% END %]
+    </p>
+
+</div>
+
+[% END %]

@@ -1,0 +1,81 @@
+#!/usr/bin/perl -w
+
+use strict;
+use warnings;
+
+eval 'use Carp::Always'; # Not everyone has it
+
+use Getopt::Long;
+use List::MoreUtils qw( apply );
+use Template ();
+use Template::Constants qw( :debug :chomp );
+use URI::file;
+
+exit main();
+
+sub main {
+    my $sourcepath = 's';
+    my $buildpath  = 'build';
+    my $local;
+
+    GetOptions(
+        'sourcepath:s' => \$sourcepath,
+        'buildpath:s'  => \$buildpath,
+        'local'        => \$local,
+    ) or exit;
+
+    -d $buildpath && -w $buildpath or die;
+
+    # XXX This should not be hardcoded
+    my @pages = get_page_names( $sourcepath );
+
+    my %tt_settings = (
+        INCLUDE_PATH => [ qw( tt tt/wrapper ) ],
+        OUTPUT_PATH  => $buildpath,
+        DEBUG        => DEBUG_UNDEF,
+        TRIM         => CHOMP_ALL,
+        PRE_CHOMP    => CHOMP_COLLAPSE,
+        POST_CHOMP   => CHOMP_ALL,
+        ENCODING     => 'utf8',
+    );
+
+    my $tt = Template->new( \%tt_settings );
+
+    for my $page ( @pages ) {
+        my $source = "$page.ttml";
+        my $target;
+
+        if ( $page eq 'index' ) {
+            $target = 'index.html';
+        }
+        else {
+            mkdir( "$buildpath/$page" );
+            $target = "$page/index.html";
+        }
+
+        my $vars = {
+            base  => $local ? local_url( $buildpath ) : 'http://betterthangrep.com/',
+            index => $local ? 'index.html' : '',
+        };
+        $tt->process( $source, $vars, $target, { binmode => ':encoding(UTF-8)' } )
+            or die sprintf( "file: %s\nerror: %s\n", $target, $tt->error );
+    }
+
+    return 0;
+}
+
+sub get_page_names {
+    my $sourcepath = shift;
+
+    my @files = glob( "$sourcepath/*.ttml" );
+
+    my @pages = apply { s{^\Q$sourcepath\E/(.+)\.ttml$}{$1} or die } @files;
+
+    return @pages;
+}
+
+sub local_url {
+    my $path = shift;
+
+    return URI::file->new_abs( $path )->as_string . '/';
+}
