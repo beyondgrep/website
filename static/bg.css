@@ -65,7 +65,6 @@ body {
 .nav li a {
     float:left;
     text-align:center;
-    vertical-align:center;
     display:block;
     width:8em;
     border-left:1px solid #cf3500;
