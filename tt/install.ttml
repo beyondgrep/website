@@ -42,7 +42,7 @@
     </p>
 
     <blockquote><code>
-    curl http://betterthangrep.com/ack-standalone &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
+    curl http://beyondgrep.com/ack-standalone &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
     </code></blockquote>
 
     <h2>Install a package for your specific OS</h2>
