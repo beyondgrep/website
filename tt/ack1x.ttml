@@ -1,0 +1,43 @@
+[% WRAPPER wrapper/page.ttml title='ack 1.x' %]
+<div class="content">
+    <h1>ack 1.x</h1>
+
+    Ack has been around for years, but on April 17th, 2013 ack 2.0
+    was released.  If you're still running ack 1.x, we urge you to
+    upgrade to 2.0.
+
+    <p>
+    You can still download the ack 1.96 single-file distribution.
+    </p>
+    <blockquote><code>
+    curl http://beyondgrep.com/ack-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
+    </code></blockquote>
+
+    We still have the <a href="/ack1x/ack-1.96-man.html">ack 1.96 manual</a>.
+
+
+
+    <h1>ack's command-line switches (<tt>ack --help</tt>)</h1>
+<pre>
+[% PROCESS 'ack-help.txt' %]
+</pre>
+
+    <h1>ack's file types (<tt>ack --help-types</tt>)</h1>
+<pre>
+[% PROCESS 'ack-help-types.txt' %]
+</pre>
+
+    <h1>Articles about ack</h1>
+
+    <p>
+    Articles from around the web about ack and searching.  Let me know if there are any that should be on here.
+    </p>
+
+    <dl>
+
+    <dt>Use ack instead of grep to parse text files</dt>
+    <dd>2012-04-10, [% WRAPPER selflink.tt %]http://stevengharms.com/blog/2012/04/10/use-ack-instead-of-grep-to-parse-text-files/[% END %]
+
+    </dl>
+</div>
+[% END %]

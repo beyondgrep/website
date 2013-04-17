@@ -33,12 +33,13 @@
 
     <p>
     The
-    <a href="ack-standalone">standalone version of ack</a>
-    is a single Perl program, around 2,800 lines
-    of plain text.  It combines the ack program and all its modules
-    into a single text file you can download and install anywhere
-    you can put a shell script.  If you don't have sysadmin rights
-    on your machine, this is the way to go.
+    <a href="ack-single-file">single-file version of ack</a>
+    is a single Perl program, around 2,800 lines of plain text.  It
+    combines the ack program and all its Perl modules into a single
+    text file you can download and install anywhere you can put a
+    shell script.  If you don't have sysadmin rights on your machine,
+    or don't want to mess with setting up the CPAN system, this is
+    the way to go.
     </p>
 
     <blockquote><code>
