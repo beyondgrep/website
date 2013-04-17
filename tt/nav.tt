@@ -6,6 +6,7 @@
         <li>[% WRAPPER link.tt page='install' %]Install[% END %]</li>
         <li>[% WRAPPER link.tt page='documentation' %]Documentation[% END %]</li>
         <li>[% WRAPPER link.tt page='community' %]Community[% END %]</li>
+        <li>[% WRAPPER link.tt page='ack1x' %]Old ack 1.x[% END %]</li>
         <li>[% WRAPPER link.tt page='more-tools' %]More Tools[% END %]</li>
     </ul>
 </div>
