@@ -1,0 +1,6 @@
+[% WRAPPER wrapper/page.ttml title="What's new in ack 2?" %]
+<div class="content">
+    <h1>What's new in ack 2?</h1>
+
+</div>
+[% END %]
