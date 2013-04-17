@@ -22,7 +22,7 @@ crank: clean
 	mkdir -p $(BUILD)/ || true > /dev/null 2>&1
 	cp -R static/* $(BUILD)/
 	perl crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)
-	find $(BUILD) -name "*~" -exec rm -v -f {} \; # Remove any backup leftovers
+	find $(BUILD) -name "*~" -exec rm -f {} \; # Remove any backup leftovers
 
 test:
 	prove t/html.t
