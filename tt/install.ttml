@@ -4,7 +4,7 @@
     <h1>How to install ack</h1>
 
     <p>
-    The current version of ack is version 1.96, released September 18, 2011.
+    The current version of ack is version 2.00, released April 17, 2013.
     </p>
 
     <p>
@@ -34,7 +34,7 @@
     <p>
     The
     <a href="ack-2.00-single-file">single-file version of ack</a>
-    is a single Perl program, around 2,800 lines of plain text.  It
+    is a single Perl program, around 4,400 lines of plain text.  It
     combines the ack program and all its Perl modules into a single
     text file you can download and install anywhere you can put a
     shell script.  If you don't have sysadmin rights on your machine,
