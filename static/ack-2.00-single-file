@@ -22,8 +22,8 @@ use Getopt::Long 2.36 ();
 
 use Carp 1.04 ();
 
-our $VERSION = '2.00b07';
-# Check http://betterthangrep.com/ for updates
+our $VERSION = '2.00';
+# Check http://beyondgrep.com/ for updates
 
 # These are all our globals.
 
@@ -1517,7 +1517,7 @@ Support for and information about F<ack> can be found at:
 
 =item * The ack homepage
 
-L<http://betterthangrep.com/>
+L<http://beyondgrep.com/>
 
 =item * The ack-users mailing list
 
@@ -1550,6 +1550,7 @@ L<https://github.com/petdance/ack2>
 How appropriate to have I<ack>nowledgements!
 
 Thanks to everyone who has contributed to ack in any way, including
+Michael McClimon,
 Andrew Black,
 Ralph Bodenner,
 Shaun Patterson,
@@ -1640,7 +1641,7 @@ use strict;
 use warnings;
 
 
-our $VERSION = '1.12';
+our $VERSION = '1.10';
 
 
 
@@ -1675,7 +1676,7 @@ sub files {
     return sub {
         while (@queue) {
             my ($dirname,$file,$fullpath) = splice( @queue, 0, 3 );
-            if ( -f $fullpath || -p $fullpath || $fullpath =~ m{^/dev/fd} ) {
+            if ( -f $fullpath || -p $fullpath ) {
                 if ( $filter ) {
                     local $_ = $file;
                     local $File::Next::dir = $dirname;
@@ -1873,9 +1874,9 @@ our $VERSION;
 our $GIT_REVISION;
 our $COPYRIGHT;
 BEGIN {
-    $VERSION = '2.00b07';
+    $VERSION = '2.00';
     $COPYRIGHT = 'Copyright 2005-2013 Andy Lester.';
-    $GIT_REVISION = q{a614990};
+    $GIT_REVISION = q{7c744d6};
 }
 
 our $fh;
@@ -2314,7 +2315,7 @@ END_OF_HELP
         my $ext_list = $mappings{$type};
 
         if ( ref $ext_list ) {
-            $ext_list = join( ' ', map { $_->to_string } @{$ext_list} );
+            $ext_list = join( '; ', map { $_->to_string } @{$ext_list} );
         }
         App::Ack::print( sprintf( "    --[no]%-*.*s %s\n", $maxlen, $maxlen, $type, $ext_list ) );
     }
@@ -3277,9 +3278,9 @@ sub inspect {
 sub to_string {
     my ( $self ) = @_;
 
-    my $re = $self->{'regex'};
+    (my $re = $self->{regex}) =~ s{\([^:]*:(.*)\)$}{$1};
 
-    return "first line matches $re";
+    return "first line matches /$re/";
 }
 
 BEGIN {
@@ -4162,7 +4163,7 @@ sub _options_block {
 # is:  Match the filename exactly
 # ext: Match the extension of the filename exactly
 # match: Match the filename against a Perl regular expression
-# firstlinematch: Match the first 80 characters of the first line
+# firstlinematch: Match the first 100 characters of the first line
 #   of text against a Perl regular expression.  This is only for
 #   the --type-add option.
 
@@ -4244,7 +4245,7 @@ sub _options_block {
 
 # Perl http://perl.org/
 --type-add=perl:ext:pl,pm,pod,t
---type-add=perl:firstlinematch:/#!.*\bperl/
+--type-add=perl:firstlinematch:/^#!.*\bperl/
 
 # Makefiles http://www.gnu.org/s/make/
 --type-add=make:ext:mk
@@ -4353,14 +4354,14 @@ sub _options_block {
 
 # PHP http://www.php.net/
 --type-add=php:ext:php,phpt,php3,php4,php5,phtml
---type-add=php:firstlinematch:/#!.*\bphp/
+--type-add=php:firstlinematch:/^#!.*\bphp/
 
 # Plone http://plone.org/
 --type-add=plone:ext:pt,cpt,metadata,cpy,py
 
 # Python http://www.python.org/
 --type-add=python:ext:py
---type-add=python:firstlinematch:/#!.*\bpython/
+--type-add=python:firstlinematch:/^#!.*\bpython/
 
 # R http://www.r-project.org/
 --type-add=rr:ext:R
@@ -4368,7 +4369,10 @@ sub _options_block {
 # Ruby http://www.ruby-lang.org/
 --type-add=ruby:ext:rb,rhtml,rjs,rxml,erb,rake,spec
 --type-add=ruby:is:Rakefile
---type-add=ruby:firstlinematch:/#!.*\bruby/
+--type-add=ruby:firstlinematch:/^#!.*\bruby/
+
+# Rust http://www.rust-lang.org/
+--type-add=rust:ext:rs
 
 # Scala http://www.scala-lang.org/
 --type-add=scala:ext:scala
@@ -4378,7 +4382,7 @@ sub _options_block {
 
 # Shell
 --type-add=shell:ext:sh,bash,csh,tcsh,ksh,zsh
---type-add=shell:firstlinematch:/(?:ba|t?c|k|z)?sh\b/
+--type-add=shell:firstlinematch:/^#!.*\b(?:ba|t?c|k|z)?sh\b/
 
 # Smalltalk http://www.smalltalk.org/
 --type-add=smalltalk:ext:st
