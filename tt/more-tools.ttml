@@ -205,6 +205,18 @@
     [% WRAPPER selflink.tt %]http://www.gnu.org/software/global/[% END %]
     </p>
 
+    <h2>beagrep</h2>
+    <p>
+    Beagrep is a combination of a desktop search engine named beagle
+    and grep. Use the search engine first, then use grep on the small
+    subset of possibly matching files, thus it is very fast and useful
+    for code reading in huge source trees.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]http://baohaojun.github.io/beagrep.html[% END %]
+    </p>
+
 </div>
 
 [% END %]
