@@ -128,6 +128,16 @@
     [% WRAPPER selflink.tt %]https://bitbucket.org/eliben/pss[% END %]
     </p>
 
+    <h2>vack</h2>
+
+    <p>
+    vack is visual ack for the Mac.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]http://blog.kowalczyk.info/software/vack/[% END %]
+    </p>
+
     <h1>Indexing tools</h1>
     <p>
     Sometimes when you're looking at a large codebase, it makes
