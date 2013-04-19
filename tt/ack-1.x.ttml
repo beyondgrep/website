@@ -13,7 +13,7 @@
     curl http://beyondgrep.com/ack-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
     </code></blockquote>
 
-    We still have the <a href="/ack1x/ack-1.96-man.html">ack 1.96 manual</a>.
+    We still have the <a href="/ack-1.x/ack-1.96-man.html">ack 1.96 manual</a>.
 
 
 
