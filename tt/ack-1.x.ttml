@@ -10,7 +10,7 @@
     You can still download the ack 1.96 single-file distribution.
     </p>
     <blockquote><code>
-    curl http://beyondgrep.com/ack-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
+    curl http://beyondgrep.com/ack-1.96-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
     </code></blockquote>
 
     <p>
