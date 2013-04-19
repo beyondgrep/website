@@ -83,6 +83,9 @@
 
         <dt>Arch</dt>
         <dd>Package "community/ack"</dd>
+
+        <dt>Chocolatey for Windows</dt>
+        <dd>[% WRAPPER selflink.tt %]http://chocolatey.org/packages/ack[% END %]</dd>
     </dl>
 
     <p>
