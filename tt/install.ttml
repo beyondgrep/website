@@ -4,7 +4,7 @@
     <h1>How to install ack</h1>
 
     <p>
-    The current version of ack is version 2.00, released April 17, 2013.
+    The current version of ack is version 2.02, released April 18, 2013.
     </p>
 
     <p>
@@ -33,7 +33,7 @@
 
     <p>
     The
-    <a href="ack-2.00-single-file">single-file version of ack</a>
+    <a href="ack-2.02-single-file">single-file version of ack</a>
     is a single Perl program, around 4,400 lines of plain text.  It
     combines the ack program and all its Perl modules into a single
     text file you can download and install anywhere you can put a
@@ -43,7 +43,7 @@
     </p>
 
     <blockquote><code>
-    curl http://beyondgrep.com/ack-2.00-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
+    curl http://beyondgrep.com/ack-2.02-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
     </code></blockquote>
 
     <h2>Install a package for your specific OS</h2>

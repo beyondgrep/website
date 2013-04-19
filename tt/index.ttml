@@ -1,4 +1,4 @@
-[% WRAPPER wrapper/page.ttml title='ack 2.00 -- beyond grep, a source code search tool for programmers' %]
+[% WRAPPER wrapper/page.ttml title='ack 2.02 -- beyond grep, a source code search tool for programmers' %]
 <div class="billbox">
     <div class="billhead">
 <pre>
