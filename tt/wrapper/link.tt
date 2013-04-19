@@ -1,1 +1,2 @@
-<a href="[% page %]/[% index %]">[% content %]</a>
+[% DEFAULT anchor = '' %]
+<a href="[% page %]/[% index %][% IF anchor %]#[% anchor %][% END %]">[% content %]</a>

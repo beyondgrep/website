@@ -63,7 +63,7 @@ _   /|
         </p>
 
         <p>
-        Read [% WRAPPER link.tt page='testimonials' %]what else people are saying[% END %].
+        Read [% WRAPPER link.tt page='why-ack' anchor='testimonials' %]what else people are saying[% END %].
         </p>
     </div>
 
