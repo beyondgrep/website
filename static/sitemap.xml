@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+    <loc>http://beyondgrep.com/</loc>
+    <lastmod>2013-04-20T04:28:13+00:00</lastmod>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://beyondgrep.com/ack-2.0/</loc>
+    <lastmod>2013-04-20T04:28:12+00:00</lastmod>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://beyondgrep.com/why-ack/</loc>
+    <lastmod>2013-04-20T04:28:13+00:00</lastmod>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://beyondgrep.com/install/</loc>
+    <lastmod>2013-04-20T04:28:13+00:00</lastmod>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://beyondgrep.com/documentation/</loc>
+    <lastmod>2013-04-20T04:28:13+00:00</lastmod>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://beyondgrep.com/community/</loc>
+    <lastmod>2013-04-20T04:28:12+00:00</lastmod>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://beyondgrep.com/ack-1.x/</loc>
+    <lastmod>2013-04-20T04:28:12+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>http://beyondgrep.com/more-tools/</loc>
+    <lastmod>2013-04-20T04:28:13+00:00</lastmod>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://beyondgrep.com/documentation/ack-2.02-man.html</loc>
+    <lastmod>2013-04-20T04:28:12+00:00</lastmod>
+    <changefreq>never</changefreq>
+</url>
+<url>
+    <loc>http://beyondgrep.com/ack-1.x/ack-1.96-man.html</loc>
+    <lastmod>2013-04-20T04:28:12+00:00</lastmod>
+    <changefreq>never</changefreq>
+</url>
+</urlset>
