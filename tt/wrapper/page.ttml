@@ -4,7 +4,7 @@
     <head>
         <title>[% title | html %]</title>
         <meta name="Author" content="Andy Lester" />
-        <meta name="google-site-verification" content="bly0zLq6r6MJn3DvFyal36MLTstCJLj-77Lh-iVWp9Q" />
+        <meta name="google-site-verification" content="qm9jhn-etECEUlDgRf7gRtnJoSD1hmHOQm_iue_ng3A" />
         <base href="[% base %]" />
         <link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
