@@ -101,7 +101,7 @@
     </p>
 
     <p>
-    [% WRAPPER selflink.tt %]http://www.incava.org/projects/glark[% END %]
+    [% WRAPPER selflink.tt %]http://glark.sourceforge.net[% END %]
     </p>
 
     <h2>nak</h2>
