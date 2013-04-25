@@ -37,10 +37,14 @@
         the default search behavior of ack 1.x.</p>
         </li>
         <li>
-        <p>The <strong>-G</strong> option has been removed.  Two regular expressions on the
-        command line was considered too confusing; to simulate <strong>-G</strong>'s functionality,
-        you may use the new <strong>-x</strong> option to pipe filenames from one invocation of
-        ack into another.</p>
+        <p>
+        The <strong>-G</strong> option has been removed.  Two patterns on the command line was ambiguous.  In this command
+        line:
+        <blockquote><code>ack1 -G filepattern -i -w searchpattern</code></blockquote>
+        which pattern does <strong>-i</strong> and <strong>-w</strong> modify?  Now,
+        with ack 2.0, you can use the new <strong>-x</strong> to
+        pipe filenames from one invocation of ack into another.</p>
+        <blockquote><code>ack2 -G -i filepattern -x | ack -w searchpattern</code></blockquote>
         </li>
         <li>
         <p>The <strong>--binary</strong> option has been removed.</p>
