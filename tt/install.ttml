@@ -64,6 +64,9 @@
         <dt>FreeBSD port</dt>
         <dd>Port "textproc/p5-ack"</dd>
 
+        <dt>OpenBSD port</dt>
+        <dd>Package "p5-ack"</dd>
+
         <dt>Debian<dt>
         <dd>Package "ack-grep"</dd>
         <dd>To install ack-grep as "ack" instead of "ack-grep", use this command:</dd>
