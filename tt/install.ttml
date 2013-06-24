@@ -50,8 +50,14 @@
 
     <p>
     ack has been repackaged for most Linux distributions and OS X.
-    It is usually called "ack-grep" because "ack" was already a
-    package on Debian for Kanji translation.
+    On Debian-derived distributions, it is called "ack-grep" because
+    "ack" was already a package for Kanji translation.
+    </p>
+
+    <p>
+    Please note that the maintainers of ack have nothing to do with
+    these packages.  If a given package is out of date or doesn't
+    work, you'll need to work with the packagers, not the ack team.
     </p>
 
     <dl>
