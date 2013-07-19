@@ -75,8 +75,7 @@
 
         <dt>Debian<dt>
         <dd>Package "ack-grep"</dd>
-        <dd>To install ack-grep as "ack" instead of "ack-grep", use this command:</dd>
-        <dd><code>sudo dpkg-divert  --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep</code></dd>
+        <dd>(To rename the "ack-grep" program to its proper name "ack", see the section below on renaming ack-grep)</dd>
 
         <dt>Ubuntu</dt>
         <dd>Package "ack-grep"</dd>
@@ -99,6 +98,31 @@
 
     <p>
     Is there another distro we should list?  Let me know at [% WRAPPER email.tt %]andy@petdance.com[% END %].
+    </p>
+
+    <h3>Renaming ack-grep on Debian-derived distros</h3>
+    <p>
+    On Debian-derived distros, ack is packaged as "ack-grep" because
+    "ack" already existed.  If you simply install via:
+    </p>
+
+    <blockquote><code>
+    $ sudo apt-get install ack-grep
+    </code></blockquote>
+
+    <p>
+    your ack will be called "ack-grep", which is 167% more characters
+    to type per invocation.  This is tragic for your poor fingers.
+    </p>
+
+    <p>
+    To create a local diversion, renaming ack-grep to ack, first
+    install the ack-grep package as shown above.  Then, run:
+    </p>
+
+    <blockquote><code>
+    $ sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
+    </code></blockquote>
 </div>
 
 [% END %]
