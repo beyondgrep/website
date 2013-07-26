@@ -44,7 +44,7 @@
         which pattern does <strong>-i</strong> and <strong>-w</strong> modify?  Now,
         with ack 2.0, you can use the new <strong>-x</strong> to
         pipe filenames from one invocation of ack into another.</p>
-        <blockquote><code>ack2 -i filepattern | ack2 -x -w searchpattern</code></blockquote>
+        <blockquote><code>ack2 -g -i filepattern | ack2 -x -w searchpattern</code></blockquote>
         </li>
         <li>
         <p>The <strong>--binary</strong> option has been removed.</p>
