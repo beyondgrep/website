@@ -67,5 +67,15 @@ _   /|
         </p>
     </div>
 
+    <div class="feature-twitter">
+        <h2>Follow us on Twitter</h2>
+
+        <p>
+        We're all about knowing when to move beyond the stock Unix tools.
+        <a href="http://twitter.com/beyondgrep">Follow us on Twitter at @beyondgrep</a>
+        for tips, hints and software news.
+        </p>
+    </div>
+
 </div>
 [% END %]
