@@ -1,0 +1,165 @@
+History file for ack.  http://beyondgrep.com/
+
+
+2.08    Thu Aug 22 23:11:45 CDT 2013
+====================================
+[ENHANCEMENTS]
+ack now ignores CMake's build/cache directories by default.  Thanks,
+Volodymyr Medvid.
+
+Add shebang matching for --lua files.
+
+Add documentation for --ackrc.
+
+Add Elixir filetype.
+
+Add --cathy option.  Thanks to Joe McMahon.
+
+Add some helpful debugging tips when an invalid option is found.
+Thanks to Charles Lee.
+
+Ignore PDF files by default, because Perl will detect them as text.
+
+Ignore .gif, .jpg, .jpeg and .png files.  They won't normally be
+selected, but this is an optimization so that ack doesn't have to
+open them to know.
+
+[FIXES]
+Ack's colorizing of output would get confused with multiple sets
+of parentheses.  This has been fixed.  (Issue #276)
+
+Ack would get confused when trying to colorize the output in
+DOS-format files.  This has been fixed.  (Issue #145)
+
+
+2.05_01 Tue May 28 10:12:04 CDT 2013
+====================================
+[ENHANCEMENTS]
+We now ignore the node_modules directories created by npm.  Thanks,
+Konrad Borowski.
+
+--pager without an argument implies --pager=$PAGER.
+
+--perl now recognizes Plack-style .psgi files.  Thanks, Ron Savage.
+
+Added filetypes for Coffescript, JSON, LESS, and Sass.
+
+[FIXES]
+Command-line options now override options set in ackrc files.
+
+ACK_PAGER and ACK_PAGER_COLOR now work as advertised.
+
+Fix a bug resulting in uninitialized variable warnings when more
+than one capture group was specified in the search pattern.
+
+Make sure ack is happy to build and test under cron and other
+console-less environments.
+
+Colored output is now supported and on by default on Windows.
+
+2.04    Fri Apr 26 22:47:55 CDT 2013
+====================================
+ack now runs on a standard Perl 5.8.8 install with no module updates.
+The minimum Perl requirement for ack is now explicitly 5.8.8.  Anything
+before 5.8.8 will not work, and we've added checks.  Thanks, Michael
+McClimon.
+
+[FIXES]
+ack was colorizing captured groups even if --nocolor was given.
+Thanks, Dale Sedivic.
+
+[ENHANCEMENTS]
+The --shell file type now recognizes the fish shell.
+
+We now ignore minified CSS or Javascript, in the form of either *.css.min
+or *.min.css, or *.js.min or *.min.js.
+
+Added support for the Dart language.
+
+ack 2.02 was much slower than ack 1.96, up to 8x slower in some cases.
+These slowdowns have been mostly eliminated, and in some cases ack 2.04
+is now faster than 1.96.
+
+
+2.02    Thu Apr 18 23:51:52 CDT 2013
+====================================
+[ENHANCEMENTS]
+The firstlinematch file type detection option now only searches the
+first 250 characters of the first line of the file.  Otherwise, ack
+would read entire text files that were only one line long, such as
+minified JavaScript, and that would be slow.  Thanks, Michael
+McClimon.
+
+[DOCUMENTATION]
+Many clarifications and cleanups.  Thanks, Michael McClimon.
+
+
+2.00    Wed Apr 17 22:49:41 CDT 2013
+====================================
+
+The first version of ack 2.0.
+
+
+# Incompatibilities with ack 1.x
+
+ack 2 makes some big changes in its behaviors that could trip up
+users who are used to the idiosyncracies of ack 1.x.  These changes
+could affect your searching happiness, so please read them.
+
+* ack's default behavior is now to search all files that it identifies
+as being text.  ack 1.x would only search files that were of a file
+type that it recognized.
+
+* Removed the `-a` and `-u` options since the default is to search
+all text files.
+
+* Removed the `--binary` option.  ack 2.0 will not find and search
+through binary files.
+
+* Removed the `--skipped` option.
+
+* Removed the `--invert-file-match` option.  `-v` now works with
+`-g`.  To list files that do not match `/foo/`
+
+    ack -g foo -v
+
+* `-g` now obeys all regex options: `-i`, `-w`, `-Q`, `-v`
+
+* Removed the `-G` switch, because it was too confusing to have two
+regexes specified on the command line.  Now you use the `-x` switch
+to pipe filenames from one `ack` invocation into another.
+
+To search files with filename matching "sales" for the string "foo":
+
+    ack -g sales | ack -x foo
+
+# New features in ack 2.0
+
+ack 2.0 will:
+
+* By default searches all text files, as identified by Perl's `-T` operator
+    * We will no longer have a `-a` switch.
+
+* improved flexibility in defining filetype selectors
+    * name equality ($filename eq 'Makefile')
+    * glob-style matching (`*.pl` identifies a Perl file)
+    * regex-style matching (`/\.pl$/i` identifies a Perl file)
+    * shebang-line matching (shebang line matching `/usr/bin/perl/`
+    identifies a Perl file)
+
+* support for multiple ackrc files
+    * global ackrc (/etc/ackrc)
+        * https://github.com/petdance/ack/issues/#issue/79
+    * user-specific ackrc (~/.ackrc)
+    * per-project ackrc files (~/myproject/.ackrc)
+
+* you can use --dump to figure which options are set where
+
+* all inclusion/exclusion rules will be in the ackrc files
+    * ack 2.0 has a set of definitions for filetypes, directories to
+      include or exclude, etc, *but* these are only included so you don't
+      need to ship an ackrc file to a new machine.  You may tell ack to
+      disregard these defaults if you like.
+
+* In addition to the classic `--thpppt` option to draw Bill the
+Cat, `ack --bar` will draw (of course) Admiral Ackbar.
