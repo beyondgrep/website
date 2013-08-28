@@ -61,6 +61,39 @@ sub main {
             or die sprintf( "file: %s\nerror: %s\n", $target, $tt->error );
     }
 
+    my $in_body;
+    my $output = <<'END_PREAMBLE';
+[% WRAPPER wrapper/page.ttml title='Man Page' base='' %]
+
+<div class='content'>
+END_PREAMBLE
+
+    open my $pipe, '-|', 'pod2html', 'static/ack-2.08-single-file' or die "Unable to open pipe to pod2html: $!";
+    while ( <$pipe> ) {
+        # I know, I know, I know... HTML + regexes = bad.
+        if ( !$in_body && /<body/ ) {
+            $in_body = 1;
+        }
+        elsif ( $in_body ) {
+            if ( m{</body} ) {
+                $in_body = 0;
+            }
+            else {
+                $output .= $_;
+            }
+        }
+    }
+    close $pipe;
+
+    $output .= <<'END_POSTAMBLE';
+</div>
+
+[% END %]
+END_POSTAMBLE
+
+    $tt->process( \$output, { index => 'index.html' }, 'documentation/ack-2.08-man.html', { binmode => ':encoding(UTF-8)' })
+        or die "Failed to something something: " . $tt->error;
+
     return 0;
 }
 
