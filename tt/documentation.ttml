@@ -15,7 +15,6 @@
 [% PROCESS 'ack-help-types.txt' %]
 </pre>
 
-<!--
     <h1>Articles about ack</h1>
 
     <p>
@@ -24,10 +23,9 @@
 
     <dl>
 
-    <dt>Use ack instead of grep to parse text files</dt>
-    <dd>2012-04-10, [% WRAPPER selflink.tt %]http://stevengharms.com/blog/2012/04/10/use-ack-instead-of-grep-to-parse-text-files/[% END %]
+    <dt>Better than grep, by Ryan Kulla</dt>
+    <dd>2011-09-03, [% WRAPPER selflink.tt %]http://rkulla.blogspot.co.at/2011/09/better-than-grep.html[% END %]</dd>
 
     </dl>
--->
 </div>
 [% END %]
