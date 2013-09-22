@@ -1,2 +1,2 @@
 [% DEFAULT anchor = '' %]
-<a href="[% page %]/[% index %][% IF anchor %]#[% anchor %][% END %]">[% content %]</a>
+<a href="http://beyondgrep.com/[% page %]/[% index %][% IF anchor %]#[% anchor %][% END %]">[% content %]</a>
