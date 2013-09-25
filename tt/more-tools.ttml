@@ -46,6 +46,18 @@
     Note: Be careful of any solution that defaults you to using <tt>--all</tt>.
     </p>
 
+    <h2>hhighlighter</h2>
+    <p>
+    hhlighter is a wrapper around ack to make it easy to highlight words in a file.  Invoke it like
+
+    <blockquote><tt>
+    cat file | h foo bar bat
+    </tt></blockquote>
+
+    and each of the three words "foo", "bar" and "bat" will be highlighted as a different color.
+    See [% WRAPPER selflink.tt %]https://github.com/paoloantinori/hhighlighter[% END %]
+    <p>
+
     <h1>Other grep-like tools</h1>
 
     <p>
