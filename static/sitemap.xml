@@ -36,11 +36,6 @@
     <changefreq>daily</changefreq>
 </url>
 <url>
-    <loc>http://beyondgrep.com/ack-1.x/</loc>
-    <lastmod>2013-04-20T04:28:12+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-</url>
-<url>
     <loc>http://beyondgrep.com/more-tools/</loc>
     <lastmod>2013-04-20T04:28:13+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -51,8 +46,8 @@
     <changefreq>never</changefreq>
 </url>
 <url>
-    <loc>http://beyondgrep.com/ack-1.x/ack-1.96-man.html</loc>
-    <lastmod>2013-04-20T04:28:12+00:00</lastmod>
+    <loc>http://beyondgrep.com/documentation/ack-1.96-man.html</loc>
+    <lastmod>2013-12-11T04:28:12+00:00</lastmod>
     <changefreq>never</changefreq>
 </url>
 </urlset>

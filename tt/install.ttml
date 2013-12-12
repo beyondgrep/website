@@ -127,6 +127,27 @@
     <blockquote><code>
     $ sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
     </code></blockquote>
+
+    <hr />
+
+    <h1>ack 1.x</h1>
+
+    Ack has been around for years, but on April 17th, 2013 ack 2.0
+    was released.  If you're still running ack 1.x, we urge you to
+    upgrade to 2.0.
+
+    <p>
+    Although ack 1.x is no longer being maintained, and there will
+    be no new releases, you can still download the ack 1.96 single-file
+    distribution.
+    </p>
+    <blockquote><code>
+    curl http://beyondgrep.com/ack-1.96-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
+    </code></blockquote>
+
+    <p>
+    We still have the <a href="/documentation/ack-1.96-man.html">ack 1.96 manual</a>.
+    </p>
 </div>
 
 [% END %]
