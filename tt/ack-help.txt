@@ -134,4 +134,4 @@ Miscellaneous:
 
 Exit status is 0 if match, 1 if no match.
 
-This is version 2.10 of ack.
+This is version 2.12 of ack.

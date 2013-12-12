@@ -1,5 +1,39 @@
 History file for ack.  http://beyondgrep.com/
 
+2.12    Tue Dec  3 07:05:02 CST 2013
+====================================
+[SECURITY FIXES]
+This verison of ack prevents the --pager, --regex and --output
+options from being used from project-level ackrc files.  It is
+possible to execute malicious code with these options, and we want
+to prevent the security risk of acking through a potentially malicious
+codebase, such as one downloaded from an Internet site or checked
+out from a code repository.
+
+The --pager, --regex and --output options may still be used from
+the global /etc/ackrc, your own private ~/.ackrc, the ACK_OPTIONS
+environment variable, and of course from the command line.
+
+[ENHANCEMENTS]
+Now ignores Eclipse .metadata directory.  Thanks, Steffen Jaeckel.
+
+[INTERNALS]
+Removed the Git revision tracking in the --version.
+
+
+2.11_02 Sun Oct  6 12:39:21 CDT 2013
+====================================
+[FIXES]
+2.11_01 was mispackaged.  This fixes that.
+
+
+2.11_01 Sun Sep 29 13:15:41 CDT 2013
+====================================
+[FIXES]
+Fixed a race condition in t/file-permission.t that was causing
+failures if tests were run in parallel.
+
+
 2.10    Tue Sep 24 16:24:11 CDT 2013
 ====================================
 [ENHANCEMENTS]
