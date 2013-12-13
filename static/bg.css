@@ -178,7 +178,7 @@ a:hover {
     background: #fbfbfb url('./bg_tile_white.jpg');
 }
 
-.feature-install, .feature-testimonials, .feature-twitter {
+.feature-security, .feature-install, .feature-testimonials, .feature-twitter {
     background: #fbfbfb url('./bg_tile_white.jpg');
     -moz-border-radius:10px;
     -webkit-border-radius: 10px;
@@ -187,6 +187,10 @@ a:hover {
     width:30%;
     padding:10px;
     margin-bottom:10px;
+}
+
+.feature-security h2 {
+    color:#ff0000;
 }
 
 .feature-bullets dt {

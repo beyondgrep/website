@@ -46,6 +46,17 @@ _   /|
         </dl>
     </div>
 
+    <div class="feature-security">
+        <h2>Security alert</h2>
+        <p>
+        ack versions 2.00 to 2.10 are susceptible to a code execution
+        exploit.  <strong>Please upgrade to 2.12 or higher ASAP.</strong>
+        See the
+        [% WRAPPER link.tt page='security' %]security alert[% END %]
+        for more information.
+        </p>
+    </div>
+
     <div class="feature-install">
         <h2>How to install</h2>
         <p>

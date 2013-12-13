@@ -1,6 +1,7 @@
 <div class="nav">
 <h1 class="logo">[% WRAPPER link.tt page='' %]ack![% END %]</h1>
     <ul>
+        <li>[% WRAPPER link.tt page='security' %]Security alert[% END %]</li>
         <li>[% WRAPPER link.tt page='ack-2.0' %]New in ack 2[% END %]</li>
         <li>[% WRAPPER link.tt page='why-ack' %]Why ack?[% END %]</li>
         <li>[% WRAPPER link.tt page='install' %]Install[% END %]</li>

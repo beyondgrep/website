@@ -1,0 +1,51 @@
+[% WRAPPER wrapper/page.ttml title='ack: Security Alert' %]
+
+<div class="content">
+    <h1>Security hole in ack versions 2.00 to 2.10.</h1>
+
+    <h2>Please upgrade to ack 2.12 ASAP.</h2>
+
+    <p>
+    ack is a grep-like tool that is specifically created to make
+    searching source code easier.  One of the features in ack 2.00
+    was the ability to have command line options in per-project
+    .ackrc files.  This has led to a serious security hole.
+    </p>
+
+    <p>
+    The <tt>--pager</tt>, <tt>--regex</tt> and <tt>--output</tt>
+    options are powerful tools for users to manage the output of
+    ack, but with carefully crafted parameters, they can be use to
+    execute arbitrary code.
+    </p>
+
+    <p>
+    An attacker could create a .ackrc file with malicious
+    <tt>--pager</tt>, <tt>--regex</tt> or <tt>--output</tt> options
+    that would get used by ack.  The malicious .ackrc could be put
+    into a source code tarball, or a checkout of a project such as
+    from GitHub or SourceForge, and an unsuspecting user would then
+    execute these options without realizing it.
+    </p>
+
+    <p>
+    <strong>ack 2.12 has solved this problem</strong> by disallowing the
+    <tt>--pager</tt>, <tt>--regex</tt> or <tt>--output</tt> options
+    in a per-project .ackrc file.  They are still allowed in a
+    global ackrc file, your own personal .ackrc file, the ACK_OPTIONS
+    environment variable, and on the command line.
+    </p>
+
+    <p>
+    ack versions before 2.00 are not affected by this security hole.
+    </p>
+
+    <p>
+    Please see
+    [% WRAPPER link.tt page='install' %]the ack installation page[% END %]
+    for information on how to install ack for your system.
+    </p>
+
+</div>
+
+[% END %]
