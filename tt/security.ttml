@@ -7,8 +7,8 @@
 
     <p>
     ack is a grep-like tool that is specifically created to make
-    searching source code easier.  One of the features in ack 2.00
-    was the ability to have command line options in per-project
+    searching source code easier.  One of the features added in ack
+    2.00 was the ability to have command line options in per-project
     .ackrc files.  This has led to a serious security hole.
     </p>
 
