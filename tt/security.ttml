@@ -15,17 +15,19 @@
     <p>
     The <tt>--pager</tt>, <tt>--regex</tt> and <tt>--output</tt>
     options are powerful tools for users to manage the output of
-    ack, but with carefully crafted parameters, they can be used
-    by an attacker to execute arbitrary code.
+    ack, but with carefully crafted parameters, they
+    <strong>can be used to execute arbitrary code</strong>.
     </p>
 
     <p>
     An attacker could create a .ackrc file with malicious
     <tt>--pager</tt>, <tt>--regex</tt> or <tt>--output</tt> options
     that would get used by ack.  The malicious .ackrc could be put
-    into a source code tarball, or a checkout of a project such as
-    from GitHub or SourceForge, and an unsuspecting user would then
-    execute these options without realizing it.
+    into code that a user would download and search with ack, and
+    an unsuspecting user would then execute these options without
+    realizing it.  This malicious .ackrc could be, for example, in
+    a source code tarball, or a checkout of a project from a code
+    hosting site like GitHub or SourceForge.
     </p>
 
     <p>
