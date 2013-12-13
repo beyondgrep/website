@@ -49,7 +49,7 @@ _   /|
     <div class="feature-security">
         <h2>Security alert</h2>
         <p>
-        ack versions 2.00 to 2.10 are susceptible to a code execution
+        ack versions 2.00 to 2.11_02 are susceptible to a code execution
         exploit.  <strong>Please upgrade to 2.12 or higher ASAP.</strong>
         See the
         [% WRAPPER link.tt page='security' %]security alert[% END %]

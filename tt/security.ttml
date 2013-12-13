@@ -1,7 +1,7 @@
 [% WRAPPER wrapper/page.ttml title='ack: Security Alert' %]
 
 <div class="content">
-    <h1>Security hole in ack versions 2.00 to 2.10.</h1>
+    <h1>Security hole in ack versions 2.00 to 2.11_02.</h1>
 
     <h2>Please upgrade to ack 2.12 ASAP.</h2>
 

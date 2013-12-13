@@ -80,6 +80,16 @@ body {
     text-decoration:none;
 }
 
+.nav li:first-child a {
+    background-color:#FFB43B;
+    color:#CF3500;
+    font-weight:bold;
+}
+
+.nav li:first-child a:hover {
+    background-color:#FFAB24;
+}
+
 
 /*footer */
 .footer {
@@ -190,7 +200,8 @@ a:hover {
 }
 
 .feature-security h2 {
-    color:#ff0000;
+    background-color:#FFB43B;
+    color:#CF3500;
 }
 
 .feature-bullets dt {
