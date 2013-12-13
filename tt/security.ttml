@@ -15,8 +15,8 @@
     <p>
     The <tt>--pager</tt>, <tt>--regex</tt> and <tt>--output</tt>
     options are powerful tools for users to manage the output of
-    ack, but with carefully crafted parameters, they can be use to
-    execute arbitrary code.
+    ack, but with carefully crafted parameters, they can be used
+    by an attacker to execute arbitrary code.
     </p>
 
     <p>
