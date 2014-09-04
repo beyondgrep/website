@@ -68,7 +68,7 @@ sub main {
 <div class='content'>
 END_PREAMBLE
 
-    open my $pipe, '-|', 'pod2html', 'static/ack-2.12-single-file' or die "Unable to open pipe to pod2html: $!";
+    open my $pipe, '-|', 'pod2html', 'static/ack-2.14-single-file' or die "Unable to open pipe to pod2html: $!";
     while ( <$pipe> ) {
         # I know, I know, I know... HTML + regexes = bad.
         if ( !$in_body && /<body/ ) {
@@ -91,7 +91,7 @@ END_PREAMBLE
 [% END %]
 END_POSTAMBLE
 
-    $tt->process( \$output, { index => 'index.html' }, 'documentation/ack-2.12-man.html', { binmode => ':encoding(UTF-8)' })
+    $tt->process( \$output, { index => 'index.html' }, 'documentation/ack-2.14-man.html', { binmode => ':encoding(UTF-8)' })
         or die "Failed to something something: " . $tt->error;
 
     return 0;
