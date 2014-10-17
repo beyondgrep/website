@@ -67,6 +67,9 @@
     <dl>
         <dt>Macports</dt>
         <dd>Port "perl/p5-app-ack"</dd>
+        
+        <dt><a href="http://www.finkproject.org">Fink</a></dt>
+        <dd>Package "ack"</dd>
 
         <dt><a href="http://mxcl.github.com/homebrew/">Homebrew</a> on Mac</dt>
         <dd>Formula "ack"</dd>
