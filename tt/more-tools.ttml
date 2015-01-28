@@ -69,9 +69,9 @@
     [% WRAPPER email.tt %]andy@petdance.com[% END %].
     <p>
 
-    <h2>Ag, the Silver Searcher</h2>
+    <h2>ag, the Silver Searcher</h2>
     <p>
-    Geoff Greer says "Ag is like ack, but better. It's fast. It's
+    Geoff Greer says "ag is like ack, but better. It's fast. It's
     damn fast. The only thing faster is stuff that builds indices
     beforehand, like <a href="http://ctags.sourceforge.net/">Exuberant Ctags</a>."
     Geoff has also created a fork of AckMate that uses Ag instead
@@ -82,6 +82,7 @@
     [% WRAPPER selflink.tt %]https://github.com/ggreer/the_silver_searcher[% END %]
     </p>
 
+
     <h2>pt, the Platinum Searcher</h2>
     <p>
     The Platinum Searcher is another code search tool similar to ack
@@ -90,6 +91,32 @@
 
     <p>
     [% WRAPPER selflink.tt %]https://github.com/monochromegane/the_platinum_searcher[% END %]
+    </p>
+
+
+    <h2>grab</h2>
+    <p>
+    grab is another faster grep alternative that tries to use multiple
+    cores. It also uses parallel processing, mmap and other speedy tricks
+    behind the scenes.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/stealth/grab[% END %]
+    </p>
+
+
+    <h2>cgrep</h2>
+    <p>
+    Cgrep is a grep tool suitable for searching in large code
+    repositories. It supports 30 programming languages and searches
+    that go beyond the simple pattern matching. It enables context-aware
+    filtering and semantic searches through wildcard and combinators.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]http://awgn.github.io/cgrep/[% END %]
+    </p>
+
 
     <h2>grin</h2>
 
