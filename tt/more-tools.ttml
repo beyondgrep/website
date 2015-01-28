@@ -71,7 +71,7 @@
 
     <h2>Ag, the Silver Searcher</h2>
     <p>
-    Geoff Greer says "Ag is like ack, but better. It’s fast. It’s
+    Geoff Greer says "Ag is like ack, but better. It's fast. It's
     damn fast. The only thing faster is stuff that builds indices
     beforehand, like <a href="http://ctags.sourceforge.net/">Exuberant Ctags</a>."
     Geoff has also created a fork of AckMate that uses Ag instead
@@ -81,6 +81,15 @@
     <p>
     [% WRAPPER selflink.tt %]https://github.com/ggreer/the_silver_searcher[% END %]
     </p>
+
+    <h2>pt, the Platinum Searcher</h2>
+    <p>
+    The Platinum Searcher is another code search tool similar to ack
+    and ag. It supports multi platforms and multi encodings.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/monochromegane/the_platinum_searcher[% END %]
 
     <h2>grin</h2>
 
@@ -237,6 +246,18 @@
 
     <p>
     [% WRAPPER selflink.tt %]http://baohaojun.github.io/beagrep.html[% END %]
+    </p>
+
+    <h2>Hound</h2>
+    <p>
+    Hound provides a centralized web front-end to a regex-searchable
+    text index of multiple Git repositories. It was created by engineers
+    at <a href="https://www.etsy.com/">Etsy</a> to handle searching
+    across codebases.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/etsy/Hound[% END %]
     </p>
 
 </div>
