@@ -68,7 +68,7 @@
         <dt>Macports</dt>
         <dd>Port "perl/p5-app-ack"</dd>
 
-        <dt><a href="http://mxcl.github.com/homebrew/">Homebrew</a> on Mac</dt>
+        <dt><a href="http://brew.sh/">Homebrew</a> on Mac</dt>
         <dd>Formula "ack"</dd>
 
         <dt>FreeBSD port</dt>
@@ -98,6 +98,9 @@
 
         <dt>Chocolatey for Windows</dt>
         <dd>[% WRAPPER selflink.tt %]http://chocolatey.org/packages/ack[% END %]</dd>
+
+        <dt>NixOS</dt>
+        <dd>Package "perl-ack"</dd>
     </dl>
 
     <p>
