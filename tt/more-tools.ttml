@@ -105,6 +105,15 @@
     [% WRAPPER selflink.tt %]https://github.com/stealth/grab[% END %]
     </p>
 
+    <h2>UniversalCodeGrep (ucg)</h2>
+    <p>
+    A fast ack-like search tool that is written in C++ using PCRE and makes
+    use of concurrency.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]https://gvansickle.github.io/ucg/[% END %]
+    </p>
 
     <h2>cgrep</h2>
     <p>
