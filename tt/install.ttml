@@ -110,7 +110,8 @@
     </dl>
 
     <p>
-    Is there another distro we should list?  Let me know at [% WRAPPER email.tt %]andy@petdance.com[% END %].
+    Is there another distro we should list? Let me know by opening an issue
+    <a href="https://github.com/petdance/beyondgrep">on our Github repository.</a>
     </p>
 
     <h3>Renaming ack-grep on Debian-derived distros</h3>
