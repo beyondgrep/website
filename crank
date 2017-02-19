@@ -54,7 +54,7 @@ sub main {
         }
 
         my $vars = {
-            base  => $local ? local_url( $buildpath ) : 'http://beyondgrep.com/',
+            base  => $local ? local_url( $buildpath ) : 'https://beyondgrep.com/',
             index => $local ? 'index.html' : '',
         };
         $tt->process( $source, $vars, $target, { binmode => ':encoding(UTF-8)' } )
