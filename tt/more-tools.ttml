@@ -173,7 +173,7 @@
     </p>
 
     <p>
-    [% WRAPPER selflink.tt %]https://bitbucket.org/eliben/pss[% END %]
+    [% WRAPPER selflink.tt %]https://github.com/eliben/pss/[% END %]
     </p>
 
     <h2>vack</h2>
@@ -184,6 +184,16 @@
 
     <p>
     [% WRAPPER selflink.tt %]http://blog.kowalczyk.info/software/vack/[% END %]
+    </p>
+
+    <h2>UniversalCodeGrep (ucg)</h2>
+    <p>
+    A fast ack-like search tool that is written in C++ using PCRE and makes
+    use of concurrency.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]https://gvansickle.github.io/ucg/[% END %]
     </p>
 
     <h1>Indexing tools</h1>
