@@ -102,12 +102,16 @@
         <dt>Sabayon</dt>
         <dd>Package "sys-apps/ack"</dd>
 
+        <dt><a href="http://scoop.sh">Scoop for Windows</a></dt>
+        <dd>App "ack"</dt>
+
         <dt>Ubuntu</dt>
         <dd>Package "ack-grep"</dd>
     </dl>
 
     <p>
-    Is there another distro we should list?  Let me know at [% WRAPPER email.tt %]andy@petdance.com[% END %].
+    Is there another distro we should list? Let me know by opening an issue
+    <a href="https://github.com/petdance/beyondgrep">on our Github repository.</a>
     </p>
 
     <h3>Renaming ack-grep on Debian-derived distros</h3>
