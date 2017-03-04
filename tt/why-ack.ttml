@@ -55,7 +55,7 @@
     </p>
 
     <blockquote><code>
-            # Which would you rather type?
+            # Which would you rather type?<br />
             $ grep pattern $(find . -name '*.pl' -or -name '*.pm' -or  -name '*.pod' | grep -v .svn)<br />
             <br />
             $ ack --perl pattern
