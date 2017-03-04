@@ -25,10 +25,13 @@
     <code>.svn</code>, <code>CVS</code> and other VCS directories.
     </p>
 
+    <p>
+    Which would you rather type?
+    </p>
+
     <blockquote><code>
-            # Which would you rather type?<br />
-            $ grep pattern $(find . -type f | grep -v '\.svn')<br />
-            <br>
+            $ grep pattern $(find . -type f | grep -v '\.git')<br />
+            <br />
             $ ack pattern</code></blockquote>
 
     <h2>4. Better search results</h2>
@@ -36,10 +39,10 @@
     <p>
     Since ack defaults to only searching source code, you get fewer false positives.
     <ul>
-        <li>VCS directories
-        <li><i>blib</i>, the Perl build directory
-        <li>backup files like <i>foo~</i> and <i>#foo#</i>
-        <li>binary files, core dumps, etc
+        <li>VCS directories, like <i>.git</i> and <i>.svn</i></li>
+        <li><i>blib</i>, the Perl build directory</li>
+        <li>backup files like <i>foo~</i> and <i>#foo#</i></li>
+        <li>binary files, core dumps, etc</li>
     </ul>
     </p>
 
@@ -54,9 +57,12 @@
     ack's filetype detection means more than just specifying a single file extension.
     </p>
 
+    <p>
+    Which would you rather type?
+    </p>
+
     <blockquote><code>
-            # Which would you rather type?
-            $ grep pattern $(find . -name '*.pl' -or -name '*.pm' -or  -name '*.pod' | grep -v .svn)<br />
+            $ grep pattern $(find . -name '*.pl' -or -name '*.pm' -or  -name '*.pod' | grep -v .git)<br />
             <br />
             $ ack --perl pattern
     </code></blockquote>

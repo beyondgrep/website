@@ -64,15 +64,41 @@
     work, you'll need to work with the packagers, not the ack team.
     </p>
 
+    <h3>macOS</h3>
+    <dl>
+        <dt><a href="http://www.finkproject.org">Fink</a></dt>
+        <dd>Package "ack"</dd>
+
+        <dt><a href="http://brew.sh/">Homebrew</a></dt>
+        <dd>Formula "ack"</dd>
+
+        <dt><a href="http://macports.org/">Macports</a></dt>
+        <dd>Port "perl/p5-app-ack"</dd>
+    </dl>
+
+
+    <h3>Windows</h3>
+    <dl>
+        <dt>Chocolatey for Windows</dt>
+        <dd>[% WRAPPER selflink.tt %]http://chocolatey.org/packages/ack[% END %]</dd>
+    </dl>
+
+    <h3>*BSD</h3>
+    <dl>
+        <dt>FreeBSD port</dt>
+        <dd>Port "textproc/p5-ack"</dd>
+
+        <dt>OpenBSD port</dt>
+        <dd>Package "p5-ack"</dd>
+    </dl>
+
+    <h3>Linux</h3>
     <dl>
         <dt>Arch</dt>
         <dd>Package "community/ack"</dd>
 
         <dt>Centos</dt>
         <dd>Package "ack" in EPEL repository</dd>
-
-        <dt>Chocolatey for Windows</dt>
-        <dd>[% WRAPPER selflink.tt %]http://chocolatey.org/packages/ack[% END %]</dd>
 
         <dt>Debian<dt>
         <dd>Package "ack-grep"</dd>
@@ -81,23 +107,11 @@
         <dt>Fedora</dt>
         <dd>Package "ack"</dd>
 
-        <dt>FreeBSD port</dt>
-        <dd>Port "textproc/p5-ack"</dd>
-
         <dt>Gentoo</dt>
         <dd>Package "sys-apps/ack"</dd>
 
-        <dt><a href="http://brew.sh/">Homebrew</a> on Mac</dt>
-        <dd>Formula "ack"</dd>
-
-        <dt><a href="http://macports.org/">Macports</a></dt>
-        <dd>Port "perl/p5-app-ack"</dd>
-
         <dt>NixOS</dt>
         <dd>Package "perl-ack"</dd>
-
-        <dt>OpenBSD port</dt>
-        <dd>Package "p5-ack"</dd>
 
         <dt>Sabayon</dt>
         <dd>Package "sys-apps/ack"</dd>
@@ -106,9 +120,6 @@
         <dd>Package "ack-grep"</dd>
     </dl>
 
-    <p>
-    Is there another distro we should list?  Let me know at [% WRAPPER email.tt %]andy@petdance.com[% END %].
-    </p>
 
     <h3>Renaming ack-grep on Debian-derived distros</h3>
     <p>
@@ -133,6 +144,12 @@
     <blockquote><code>
     $ sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
     </code></blockquote>
+
+    <hr />
+
+    <p>
+    Is there another distro we should list?  Let me know at [% WRAPPER email.tt %]andy@petdance.com[% END %].
+    </p>
 
     <hr />
 
