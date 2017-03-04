@@ -79,8 +79,11 @@
 
     <h3>Windows</h3>
     <dl>
-        <dt>Chocolatey for Windows</dt>
+        <dt>Chocolatey</dt>
         <dd>[% WRAPPER selflink.tt %]http://chocolatey.org/packages/ack[% END %]</dd>
+
+        <dt><a href="http://scoop.sh">Scoop</a></dt>
+        <dd>App "ack"</dt>
     </dl>
 
     <h3>*BSD</h3>
