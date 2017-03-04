@@ -4,7 +4,7 @@
     <h1>ack community</h1>
 
     <p>
-    There are two mailing lists for keeping up on the world of ack.
+    There are three mailing lists for keeping up on the world of ack.
     </p>
 
     <h2>ack-users</h2>
@@ -26,6 +26,17 @@
 
     <p>
     [% WRAPPER selflink.tt %]https://groups.google.com/d/forum/ack-announce[% END %]
+    </p>
+
+    <h2>ack-dev</h2>
+
+    <p>
+    List for discussion of Ack's development - intended primarily for its
+    developers. This is in addition to the ack2 GitHub project.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]https://groups.google.com/d/forum/ack-dev[% END %]
     </p>
 
 </div>
