@@ -126,6 +126,13 @@
 
     <h3>Renaming ack-grep on Debian-derived distros</h3>
     <p>
+    This section probably won't be necessary as latest releases of
+    "ack-grep" package provide both "ack" and "ack-grep" commands.
+    If for some reason the package you're using installs ack as ack-grep,
+    here's what to do.
+    </p>
+
+    <p>
     On Debian-derived distros, ack is packaged as "ack-grep" because
     "ack" already existed.  If you simply install via:
     </p>
@@ -137,8 +144,6 @@
     <p>
     your ack will be called "ack-grep", which is 167% more characters
     to type per invocation.  This is tragic for your poor fingers.
-    Luckily, latest releases of "ack-grep" package provide both "ack"
-    and "ack-grep" commands.
     </p>
 
     <p>
