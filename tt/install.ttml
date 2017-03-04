@@ -137,6 +137,8 @@
     <p>
     your ack will be called "ack-grep", which is 167% more characters
     to type per invocation.  This is tragic for your poor fingers.
+    Luckily, latest releases of "ack-grep" package provide both "ack"
+    and "ack-grep" commands.
     </p>
 
     <p>
