@@ -135,6 +135,15 @@
     </p>
 
 
+    <h2>kaki</h2>
+    <p>
+    kaki is inspired by ack, and built on top of nodejs.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/FelipeBB/kaki[% END %]
+    </p>
+
+
     <h2>nak</h2>
     <p>
     An implementation of ack, written in
@@ -144,6 +153,24 @@
     </p>
     <p>
     [% WRAPPER selflink.tt %]https://github.com/gjtorikian/nak[% END %]
+    </p>
+
+
+    <h2>paragrep</h2>
+    <p>
+    paragrep is a text search tool that operates at the paragraph level.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]http://software.clapper.org/paragrep/[% END %]
+    </p>
+
+
+    <h2>pcregrep</h2>
+    <p>
+    pcregrep looks like it's just a regular grep, but with a PCRE regex engine.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]http://www.rexegg.com/pcregrep-pcretest.html[% END %]
     </p>
 
 
@@ -183,6 +210,25 @@
     </p>
     <p>
     [% WRAPPER selflink.tt %]https://github.com/BurntSushi/ripgrep[% END %]
+    </p>
+
+
+    <h2>sift</h2>
+    <p>
+    sift is a search tool written in Go.  It claims to be very faster, faster than ag.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]https://sift-tool.org[% END %]
+    </p>
+
+
+    <h2>spot</h2>
+    <p>
+    spot is a tiny search utility that adapts some of ack's features.
+    It's simple and uses find+grep+awk.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/rauchg/spot[% END %]
     </p>
 
 
