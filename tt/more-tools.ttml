@@ -22,17 +22,23 @@
         [% WRAPPER selflink.tt %]https://github.com/protocool/ackmate[% END %]
     </blockquote>
 
-    <h2>vim integration</h2>
-
+    <h2>ack.vim</h2>
     <p>
     ack.vim provides an interface between ack and vim. For example,
     you can call <code>:Ack foo</code>, which will run ack and load
     ack's results into a vim buffer for manipulation and navigation.
     <p>
-
     <p>
     ack.vim is available at the official vim website at
     [% WRAPPER selflink.tt %]http://www.vim.org/scripts/script.php?script_id=2572[% END %]
+    </p>
+
+    <h2>ack2vim</h2>
+    <p>
+    ack2vim eases the interface beween ack and vim, so that ack's findings can be found with vim as well.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/jalanb/ack2vim[% END %]
     </p>
 
     <h2>Emacs integration</h2>
