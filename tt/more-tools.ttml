@@ -78,32 +78,8 @@
     Geoff has also created a fork of AckMate that uses Ag instead
     of ack.
     </p>
-
     <p>
     [% WRAPPER selflink.tt %]https://github.com/ggreer/the_silver_searcher[% END %]
-    </p>
-
-
-    <h2>pt, the Platinum Searcher</h2>
-    <p>
-    The Platinum Searcher is another code search tool similar to ack
-    and ag. It supports multi platforms and multi encodings.
-    </p>
-
-    <p>
-    [% WRAPPER selflink.tt %]https://github.com/monochromegane/the_platinum_searcher[% END %]
-    </p>
-
-
-    <h2>grab</h2>
-    <p>
-    grab is another faster grep alternative that tries to use multiple
-    cores. It also uses parallel processing, mmap and other speedy tricks
-    behind the scenes.
-    </p>
-
-    <p>
-    [% WRAPPER selflink.tt %]https://github.com/stealth/grab[% END %]
     </p>
 
 
@@ -119,83 +95,115 @@
     </p>
 
 
-    <h2>grin</h2>
-
+    <h2>grab</h2>
     <p>
-    "A grep program configured the way I like it", written in Python
-    by Robert Kern.
+    grab is another faster grep alternative that tries to use multiple
+    cores. It also uses parallel processing, mmap and other speedy tricks
+    behind the scenes.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/stealth/grab[% END %]
     </p>
 
-    <p>
-    [% WRAPPER selflink.tt %]http://pypi.python.org/pypi/grin[% END %]
-    </p>
-
-    <h2>rak</h2>
-
-    <p>
-    A straight clone of ack, with some visual tweaks, written in Ruby
-    by Daniel Lucraft.
-    </p>
-
-    <p>
-    [% WRAPPER selflink.tt %]http://rak.rubyforge.org/[% END %]
-    </p>
 
     <h2>glark</h2>
-
     <p>
     The biggest departure from ack, glark adds many more features like
-    the ability to AND and OR your patterns.  It's written in Ruby by
-    Jeff Page.
+    the ability to AND and OR your patterns.  It's written in Ruby.
     </p>
-
     <p>
     [% WRAPPER selflink.tt %]https://github.com/jpace/glark[% END %]
     </p>
 
-    <h2>nak</h2>
 
+    <h2>greple</h2>
+    <p>
+    greple is a search tools that lets you search for multiple keywords at a time.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/kaz-utashiro/greple[% END %]
+    </p>
+
+
+    <h2>grin</h2>
+    <p>
+    "A grep program configured the way I like it", written in Python
+    by Robert Kern.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]http://pypi.python.org/pypi/grin[% END %]
+    </p>
+
+
+    <h2>nak</h2>
     <p>
     An implementation of ack, written in
     <a href="http://nodejs.org/">Node.js</a>. It has inspiration from
     Ag, and is optimized for speed, not features. It's completely
     asynchronous. Written by Garen J. Torikian.
     </p>
-
     <p>
     [% WRAPPER selflink.tt %]https://github.com/gjtorikian/nak[% END %]
     </p>
 
-    <h2>pss</h2>
 
+    <h2>pss</h2>
     <p>
     pss is an ack clone written in Python by Eli Bendersky.  It's
     written in pure Python with no additional modules necessary.
     </p>
-
     <p>
     [% WRAPPER selflink.tt %]https://github.com/eliben/pss/[% END %]
     </p>
 
-    <h2>vack</h2>
 
+    <h2>pt, the Platinum Searcher</h2>
     <p>
-    vack is visual ack for the Mac.
+    The Platinum Searcher is another code search tool similar to ack
+    and ag. It supports multi platforms and multi encodings.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/monochromegane/the_platinum_searcher[% END %]
     </p>
 
+
+    <h2>rak</h2>
     <p>
-    [% WRAPPER selflink.tt %]http://blog.kowalczyk.info/software/vack/[% END %]
+    A straight clone of ack, with some visual tweaks, written in Ruby
+    by Daniel Lucraft.
     </p>
+    <p>
+    [% WRAPPER selflink.tt %]http://rak.rubyforge.org/[% END %]
+    </p>
+
+
+    <h2>ripgrep</h2>
+    <p>
+    ripgrep is written in Rust and claims to be "faster than everything else".
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/BurntSushi/ripgrep[% END %]
+    </p>
+
 
     <h2>UniversalCodeGrep (ucg)</h2>
     <p>
     A fast ack-like search tool that is written in C++ using PCRE and makes
     use of concurrency.
     </p>
-
     <p>
     [% WRAPPER selflink.tt %]https://gvansickle.github.io/ucg/[% END %]
     </p>
+
+
+    <h2>vack</h2>
+    <p>
+    vack is visual ack for the Mac.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]http://blog.kowalczyk.info/software/vack/[% END %]
+    </p>
+
 
     <h1>Indexing tools</h1>
     <p>
