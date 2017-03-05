@@ -25,8 +25,7 @@
     <h2>vim integration</h2>
 
     <p>
-    ack.vim provides an interface between ack and the
-    <a href="http://www.vim.org/">vim text editor</a>.  For example,
+    ack.vim provides an interface between ack and vim. For example,
     you can call <code>:Ack foo</code>, which will run ack and load
     ack's results into a vim buffer for manipulation and navigation.
     <p>
@@ -43,7 +42,8 @@
     </p>
 
     <p>
-    Note: Be careful of any solution that defaults you to using <tt>--all</tt>.
+    Note: Be careful of any solution that defaults you to using
+    <tt>--all</tt>, since that option no longer exists in ack 2.
     </p>
 
     <h2>hhighlighter</h2>
@@ -66,7 +66,8 @@
     suggest you take a look at some of these alternatives, for they
     may suit your needs better than ack.  If you have any suggestions
     to add to this list, please let me know at
-    [% WRAPPER email.tt %]andy@petdance.com[% END %].
+    [% WRAPPER email.tt %]andy@petdance.com[% END %] or submit an issue at
+    [% WRAPPER selflink.tt %]https://github.com/petdance/beyondgrep/issues[% END %].
     <p>
 
     <h2>ag, the Silver Searcher</h2>
@@ -149,7 +150,7 @@
     </p>
 
     <p>
-    [% WRAPPER selflink.tt %]http://glark.sourceforge.net[% END %]
+    [% WRAPPER selflink.tt %]https://github.com/jpace/glark[% END %]
     </p>
 
     <h2>nak</h2>
