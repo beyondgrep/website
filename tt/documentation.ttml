@@ -2,7 +2,7 @@
 <div class="content">
     <h1>Documentation</h1>
 
-    <strong>Please read</strong> the <a href="/documentation/ack-2.14-man.html">ack manual</a>,
+    <strong>Please read</strong> the <a href="/documentation/ack-2.16-man.html">ack manual</a>,
     which also includes the <a href="/documentation/ack-2.14-man.html#faq">ack FAQ</a>.
 
     <h1>ack's command-line switches (<tt>ack --help</tt>)</h1>
@@ -15,17 +15,5 @@
 [% PROCESS 'ack-help-types.txt' %]
 </pre>
 
-    <h1>Articles about ack</h1>
-
-    <p>
-    Articles from around the web about ack and searching.  Let me know if there are any that should be on here.
-    </p>
-
-    <dl>
-
-    <dt>Better than grep, by Ryan Kulla</dt>
-    <dd>2011-09-03, [% WRAPPER selflink.tt %]http://rkulla.blogspot.co.at/2011/09/better-than-grep.html[% END %]</dd>
-
-    </dl>
 </div>
 [% END %]
