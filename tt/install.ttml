@@ -47,7 +47,7 @@
     </p>
 
     <blockquote><code>
-    curl [% WRAPPER selflink.tt %]http://beyondgrep.com/ack-2.16-single-file[% END %] &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
+    curl [% WRAPPER selflink.tt %]https://beyondgrep.com/ack-2.16-single-file[% END %] &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
     </code></blockquote>
 
     <h2>Install a package for your specific OS</h2>

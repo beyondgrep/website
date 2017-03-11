@@ -1,6 +1,6 @@
 # beyondgrep.com
 
-This is the source code for the website http://beyondgrep.com, the
+This is the source code for the website https://beyondgrep.com, the
 home of the ack project.  If you are looking for ack, see
 https://github.com/petdance/ack2
 
