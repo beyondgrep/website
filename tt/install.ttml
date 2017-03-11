@@ -15,10 +15,6 @@
     Ack is highly portable, and will run on any machine running Perl 5.8.8 or higher.
     </p>
 
-    <p>
-    You may install ack with any of these methods.
-    </p>
-
     <h2>Install ack via Perl CPAN module</h2>
 
     <p>
@@ -38,7 +34,7 @@
     <p>
     The
     <a href="ack-2.16-single-file">single-file version of ack</a>
-    is a single Perl program, around 4,400 lines of plain text.  It
+    is a single Perl program, around 5,400 lines of plain text.  It
     combines the ack program and all its Perl modules into a single
     text file you can download and install anywhere you can put a
     shell script.  If you don't have sysadmin rights on your machine,
@@ -47,8 +43,19 @@
     </p>
 
     <blockquote><code>
+    # NOTE: <strong>This URL is https</strong>, not http as it was pre-2017.
+    <br>
     curl [% WRAPPER selflink.tt %]https://beyondgrep.com/ack-2.16-single-file[% END %] &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
     </code></blockquote>
+
+    <p>
+    <strong>Is your <tt>curl</tt> install not working?</strong>
+    Please check that your are using the https scheme, not http.
+    This site switched to HTTPS in early 2017.  Also, make sure you
+    are not fetching an out-of-date version.  ack versions 2.00 -
+    2.10 have been removed from this site because they have a
+    <a href="/security/">security vulnerability</a>.
+    </p>
 
     <h2>Install a package for your specific OS</h2>
 
