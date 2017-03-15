@@ -28,6 +28,6 @@ test:
 	prove t/html.t
 
 # This is only useful for Andy
-rsync: crank
+install: crank
 	rsync -azu -e ssh --delete --verbose \
 		$(BUILD)/ andy@alex.petdance.com:/srv/beyondgrep/
