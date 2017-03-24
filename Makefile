@@ -2,7 +2,7 @@
 	crank \
 	clean \
 	local \
-	rsync
+	install
 
 PWD=$(shell pwd)
 BUILD=$(PWD)/build

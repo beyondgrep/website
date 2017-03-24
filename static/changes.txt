@@ -1,4 +1,57 @@
-History file for ack.  http://beyondgrep.com/
+History file for ack.  https://beyondgrep.com/
+
+
+2.18    Fri Mar 24 14:53:19 CDT 2017
+====================================
+ack 2.18 will probably be the final release in the ack 2.x series.
+I'm going to be starting work on ack 3.000 in earnest.  Still,
+if you discover problems with ack 2, please report them to
+https://github.com/petdance/ack2/issues
+
+If you're interested in ack 3 development, please sign up
+for the ack-dev mailing list and/or join the ack Slack.  See
+https://beyondgrep.com/community/ for details.
+
+[INTERNALS]
+Removed the abstraction of App::Ack::Resource and its subclass
+App::Ack::Resource::Basic.  We are abandoning the idea that we'll have
+plugins.
+
+
+2.17_02 Thu Mar 23 22:25:13 CDT 2017
+====================================
+[FIXES]
+ack no longer throws an undefined variable warning if it's called
+from a directory that doesn't exist. (GH #634)
+
+[DOCUMENTATION]
+Explain that filetypes must be two characters or longer. (GH #389)
+
+[INTERNALS]
+Removed dependency on File::Glob which isn't used.
+
+
+2.17_01 Wed Mar 15 23:25:28 CDT 2017
+====================================
+[FIXES]
+--context=0 (and its short counterpart -C 0) did not set to context
+of 0.  This means that a command-line --context=0 couldn't override
+a --context=5 in your ackrc.  Thanks, Ed Avis.  (GH #595)
+
+t/ack-s.t would fail in non-English locales.  Thanks, Olivier Mengué.
+(GH #485, GH #515)
+
+[ENHANCEMENTS]
+--after-context and --before-context (and their short counterparts
+-A and -B) no longer require a value to be passed.  If no value is
+set, they default to 2. (GH #351)
+
+Added .xhtml to the --html filetype.  Added .wsdl to the --xml filetype.
+Thanks, H.Merijn Brand.  (GH #456)
+
+[DOCUMENTATION]
+Updated incorrect docs about how ack works.  Thanks, Gerhard Poul.
+(GH #543)
 
 
 2.16    Fri Mar 10 13:32:39 CST 2017
