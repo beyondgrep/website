@@ -96,7 +96,7 @@
     <h3>*BSD</h3>
     <dl>
         <dt>FreeBSD port</dt>
-        <dd>Port "textproc/p5-ack"</dd>
+        <dd>Port <a href="http://www.freshports.org/textproc/ack/">"textproc/ack"</a></dd>
 
         <dt>OpenBSD port</dt>
         <dd>Package "p5-ack"</dd>
