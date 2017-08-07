@@ -1,4 +1,7 @@
-[% WRAPPER wrapper/page.ttml title='Beyond grep: ack 2.18, a source code search tool for programmers' %]
+[% WRAPPER wrapper/page.ttml
+    title         => 'Beyond grep: ack 2.18, a source code search tool for programmers',
+    is_front_page => 1,
+%]
 
 <div class="page-wrapper">
 
