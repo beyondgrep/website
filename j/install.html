@@ -1,0 +1,292 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Beyond grep: ack, a source code search tool for programmers</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="style.css">
+
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|PT+Serif:400,400i,700,700i" rel="stylesheet">
+
+    </head>
+    <body>
+
+
+<div class="header inside">
+    <div class="page-wrapper">
+
+    <div class="billhead">
+<pre>
+_   /|
+\'o.O'
+=(___)=
+   U  ack!
+</pre>
+    </div>
+
+    <div class="billtext">
+        <h1>ack 2.18 is a tool like grep, optimized for programmers</h1>
+
+        <p>Designed for programmers with large heterogeneous trees of source code, ack is written purely in portable Perl 5 and takes advantage of the power of Perl's regular expressions.</p>
+    </div>
+</div>
+
+</div>
+
+
+<div class="top-nav">
+<div class="page-wrapper">
+<div class="nav">
+<div class="nav-item" style="margin:0"><a href="index.html">
+<pre>
+_   /|
+\'o.O'
+ =(___)=
+ U
+</pre></a></div>
+<div class="nav-item"><a href="index.html"><pre>ack!</pre></a></div>
+<div class="nav-item"><a href="install.html">Install</a></div>
+<div class="nav-item"><a href="documentation.html">Documentation</a></div>
+<div class="nav-item"><a href="vim.html">Vim Integration</a></div>
+<div class="nav-item"><a href="contribute.html">Contribute</a></div>
+<div class="nav-item"><a href="tools.html">Grep & Ack Tools</a></div>
+<div class="nav-item"><a href="about.html">About</a></div>
+</div> <!--closes nav -->
+</div> <!-- closes page-wrapper -->
+</div> <!-- closes top-nav -->
+
+<div class="page-wrapper">
+
+<h1>How to install ack</h1>
+
+    <p>
+    The current stable version of ack is version 2.18, released March 24, 2017.
+    </p>
+
+    <p>
+    What's changed in ack?  See <a href="/changes.txt">the ack changelog</a>.
+    </p>
+
+    <p>
+    Ack is highly portable, and will run on any machine running Perl 5.8.8 or higher.
+    </p>
+
+    <h2>Install ack via Perl CPAN module</h2>
+
+    <p>
+    If you use Perl regularly, you can install ack's module,
+    <a href="http://search.cpan.org/dist/ack">App::Ack</a>.
+    </p>
+
+    <p>
+    Installing via CPAN shell means that the shell can automatically
+    tell you when ack has updates.  The CPAN is also the primary
+    distribution channel for ack.  All packages below derive from
+    here.
+    </p>
+
+    <h2>Install the ack executable</h2>
+
+    <p>
+    The
+    <a href="ack-2.18-single-file">single-file version of ack</a>
+    is a single Perl program, around 5,400 lines of plain text.  It
+    combines the ack program and all its Perl modules into a single
+    text file you can download and install anywhere you can put a
+    shell script.  If you don't have sysadmin rights on your machine,
+    or don't want to mess with setting up the CPAN system, this is
+    the way to go.
+    </p>
+
+    <blockquote><code>
+    # NOTE: <strong>This URL is https</strong>, not http as it was pre-2017.
+    <br>
+    curl <a href="https://beyondgrep.com/ack-2.18-single-file">https://beyondgrep.com/ack-2.18-single-file</a> &gt; ~/bin/ack &amp;&amp; chmod 0755 ~/bin/ack
+    </code></blockquote>
+
+    <p>
+    <strong>Is your <tt>curl</tt> install not working?</strong>
+    Please check that your are using the https scheme, not http.
+    This site switched to HTTPS in early 2017.  Also, make sure you
+    are not fetching an out-of-date version.  ack versions 2.00 -
+    2.10 have been removed from this site because they have a
+    <a href="/security/">security vulnerability</a>.
+    </p>
+
+    <h2>Install a package for your specific OS</h2>
+
+    <p>
+    ack has been repackaged for most Linux distributions and OS X.
+    On Debian-derived distributions, it is called "ack-grep" because
+    "ack" was already a package for Kanji translation.
+    </p>
+
+    <p>
+    Please note that the maintainers of ack have nothing to do with
+    these packages.  If a given package is out of date or doesn't
+    work, you'll need to work with the packagers, not the ack team.
+    </p>
+
+    <h3>macOS</h3>
+    <dl>
+        <dt><a href="http://www.finkproject.org">Fink</a></dt>
+        <dd>Package "ack"</dd>
+
+        <dt><a href="http://brew.sh/">Homebrew</a></dt>
+        <dd>Formula "ack"</dd>
+
+        <dt><a href="http://macports.org/">Macports</a></dt>
+        <dd>Port "perl/p5-app-ack"</dd>
+    </dl>
+
+
+    <h3>Windows</h3>
+    <dl>
+        <dt>Chocolatey</dt>
+        <dd><a href="http://chocolatey.org/packages/ack">http://chocolatey.org/packages/ack</a></dd>
+
+        <dt><a href="http://scoop.sh">Scoop</a></dt>
+        <dd>App "ack"</dt>
+    </dl>
+
+    <h3>*BSD</h3>
+    <dl>
+        <dt>FreeBSD port</dt>
+        <dd>Port "textproc/p5-ack"</dd>
+
+        <dt>OpenBSD port</dt>
+        <dd>Package "p5-ack"</dd>
+    </dl>
+
+    <h3>Linux</h3>
+    <dl>
+        <dt>Arch</dt>
+        <dd>Package "community/ack"</dd>
+
+        <dt>Centos</dt>
+        <dd>Package "ack" in EPEL repository</dd>
+
+        <dt>Debian<dt>
+        <dd>Package "ack-grep"</dd>
+        <dd>(To rename the "ack-grep" program to its proper name "ack", see the section below on renaming ack-grep)</dd>
+
+        <dt>Fedora</dt>
+        <dd>Package "ack"</dd>
+
+        <dt>Gentoo</dt>
+        <dd>Package "sys-apps/ack"</dd>
+
+        <dt>NixOS</dt>
+        <dd>Package "perl-ack"</dd>
+
+        <dt>Sabayon</dt>
+        <dd>Package "sys-apps/ack"</dd>
+
+        <dt>Ubuntu</dt>
+        <dd>Package "ack-grep"</dd>
+    </dl>
+
+
+    <h3>Renaming ack-grep on Debian-derived distros</h3>
+    <p>
+    This section probably won't be necessary as latest releases of
+    "ack-grep" package provide both "ack" and "ack-grep" commands.
+    If for some reason the package you're using installs ack as ack-grep,
+    here's what to do.
+    </p>
+
+    <p>
+    On Debian-derived distros, ack is packaged as "ack-grep" because
+    "ack" already existed.  If you simply install via:
+    </p>
+
+    <blockquote><code>
+    $ sudo apt-get install ack-grep
+    </code></blockquote>
+
+    <p>
+    your ack will be called "ack-grep", which is 167% more characters
+    to type per invocation.  This is tragic for your poor fingers.
+    </p>
+
+    <p>
+    To create a local diversion, renaming ack-grep to ack, first
+    install the ack-grep package as shown above.  Then, run:
+    </p>
+
+    <blockquote><code>
+    $ sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
+    </code></blockquote>
+
+    <hr />
+
+    <p>
+    Is there another distro we should list?  Let me know at <a href="mailto:andy@petdance.com">andy@petdance.com</a>.
+    </p>
+
+    <hr />
+
+    <h1>ack 1.x</h1>
+
+    Ack has been around for years, but on April 17th, 2013 ack 2.0
+    was released.  If you're still running ack 1.x, we urge you to
+    upgrade to 2.0.
+
+    <p>
+    Although ack 1.x is no longer being maintained, and there will
+    be no new releases, you can still download the ack 1.96 single-file
+    distribution.
+    </p>
+    <blockquote><code>
+    curl http://beyondgrep.com/ack-1.96-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
+    </code></blockquote>
+
+    <p>
+    We still have the <a href="/documentation/ack-1.96-man.html">ack 1.96 manual</a>.
+    </p>
+</div>
+
+<div class="footer">
+    <div class="page-wrapper">
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="book.html">Book</a></li>
+            <li><a href="install.html">Install</a></li>
+            <li><a href="documentation.html">Docs</a></li>
+            <li><a href="http://www.twitter.com/beyondgrep">Twitter</a></li>
+            <li><a href="contribute.html">Contribute </a></li>
+            <li><a href="tools.html">Tools</a></li>
+        </ul>
+
+        <div class="do">
+            <a href="https://www.digitalocean.com/">
+                <img src="img/do-logo-white.png"/>
+            </a>
+        </div>
+    <div> <!-- close page-wrapper -->
+</div> <!-- close footer -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+<script>
+
+        document.addEventListener("scroll", function() {
+
+if (window.pageYOffset > 500)
+document.getElementById('display-ack').style.display = "block";
+});
+</script>
+    </body>
+</html>

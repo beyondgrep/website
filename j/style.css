@@ -1,16 +1,7 @@
-/* BG3 */
 /* fonts */
-body, p, dd, dt, .footer, .page-wrapper, .nav {
-    font-family:"PT Serif", Georgia, serif;
-    box-sizing:border-box;
-}
-h1, h2, h3, h4, h5, h6, .nav, .footer {
-    font-family:"PT Sans", Tahoma, sans-serif;
-}
-
-pre {
-    font-family:courier;
-}
+body, p, dd, dt, .footer, .page-wrapper, .nav { font-family:"PT Serif", Georgia, serif;box-sizing:border-box;}
+h1, h2, h3, h4, h5, h6, .nav, .footer {font-family:"PT Sans", Tahoma, sans-serif;}
+pre {font-family:courier;}
 
 a {
     color:#e63a00;
@@ -19,21 +10,21 @@ a {
 }
 
 body {
-    margin:0;
-    padding:0;
-    background: #f3f2f2 url('https://beyondgrep.com/bg_tile.jpg');
+   margin:0;
+   padding:0;
+   background: #f3f2f2 url('https://beyondgrep.com/bg_tile.jpg');
 }
 
 .nav {
-    display:flex;
-    /* grid-gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(120px,1fr)); */
-    color:#000;
-    margin:0 auto;
-}
+  display:flex;
+  /* grid-gap: 10px;
+   grid-template-columns: repeat(auto-fill, minmax(120px,1fr)); */
+   color:#000;
+   margin:0 auto;
 
+}
 .nav-item {
-    text-align:center;padding:10px;margin:auto;
+   text-align:center;padding:10px;margin:auto;
 }
 
 .nav-item:nth-child(2) pre {font-size:22px;}
@@ -41,13 +32,9 @@ body {
 .nav-item pre {margin:0;font-weight:bold;font-size:8px;line-height:initial;}
 .nav-item a pre:hover {color:#ffcd54}
 
-.top-nav {
-    background-color:#e63a00;
-    position: -webkit-sticky;
-    position: sticky;
-    vertical-align:middle;
-    top:-1px;
-}
+.top-nav {background-color:#e63a00;position: -webkit-sticky;
+    position: sticky;vertical-align:middle;
+    top:-1px;}
 .sub-nav {background-color:#dcdcdc;position:-webkit-sticky;position:sticky;vertical-align:middle;top:35px;}
 
 .nav-item a:hover {border-bottom:1px solid #ffcd54;color:#ffcd54;}
@@ -87,10 +74,10 @@ body {
 }
 
 .footer {
-    width:100%;
-    background-color:#333;
-    height:300px;
-    padding:10px;
+   width:100%;
+   background-color:#333;
+   height:300px;
+   padding:10px;
 }
 
 
@@ -123,9 +110,9 @@ body {
 .footer a:hover, .footer .do a:hover   {color:#fff;border-bottom:1px solid rgba(255,255,255,.6);}
 .footer .do img {max-width:120px;}
 .footer .do {margin-top:1rem;float:right;opacity: 0.8;
-filter: alpha(opacity=80);}
+    filter: alpha(opacity=80);}
 .footer .do:hover {opacity: 1;
-filter: alpha(opacity=100);}
+    filter: alpha(opacity=100);}
 
 .billtext {width:65%;float:left;}
 .billtext h1 {margin-top:0;font-size:45px;}
@@ -144,11 +131,11 @@ filter: alpha(opacity=100);}
 
 
 .features {
-    display:grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
-    color:#000;
-    margin:10px auto;
+   display:grid;
+   grid-gap: 10px;
+   grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+   color:#000;
+   margin:10px auto;
 }
 
 .features a {border-bottom:none;}
@@ -156,9 +143,9 @@ filter: alpha(opacity=100);}
 .features h3 {margin-top:0;}
 
 .feature-box {
-    display:block;
-    overflow:hidden;
-    background-color:#ffffff;
+   display:block;
+   overflow:hidden;
+   background-color:#ffffff;
 }
 
 .feature-content {text-align:center;padding:20px;}
@@ -170,91 +157,91 @@ filter: alpha(opacity=100);}
 
 
 .flexbox-container{
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .sidebar{
-    order: 1;
-    flex: 1;
-    border-right:1px solid #dcdcdc;
-    flex-basis: auto;
+  order: 1;
+  flex: 1;
+  border-right:1px solid #dcdcdc;
+  flex-basis: auto;
 }
 
 .main{
-    order: 1;
-    flex: 10;
+  order: 1;
+  flex: 10;
 }
 
 .box1, .box2 {
-    min-height: 100%;
-    padding: 1em;
+  min-height: 100%;
+  padding: 1em;
 }
 
 @media (min-width:1024px) {
-    .page-wrapper {max-width: 960px;}
+   .page-wrapper {max-width: 960px;}
 }
 
 @media (max-width:900px) {
-    .billtext h1 {font-size:28px;}
-    .billtext p {font-size:18px;}
-    .billhead {font-size:2em;width:30%;}
+  .billtext h1 {font-size:28px;}
+  .billtext p {font-size:18px;}
+  .billhead {font-size:2em;width:30%;}
 }
 
 @media (max-width:780px) {
-    .inside .billhead {font-size:.75em;}
+  .inside .billhead {font-size:.75em;}
 }
 
 /* mobile layout */
 @media (max-width: 640px){
 
-    .page-wrapper {max-width: 480px;}
-    .flexbox-container{
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        width: 100%;
-        -webkit-box-orient: vertical;
-        -moz-box-orient: vertical;
-        -ms-flex-orient: vertical;
-        -webkit-orient: vertical;
-        orient: vertical;
-    }
+  .page-wrapper {max-width: 480px;}
+  .flexbox-container{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-flex-orient: vertical;
+    -webkit-orient: vertical;
+    orient: vertical;
+  }
 
-    .box2{
-        -webkit-box-ordinal-group: 2;
-        -moz-box-ordinal-group: 2;
-        -ms-flex-order: 2;
-        -webkit-order: 2;
-        order: 2;
+  .box2{
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
     flex:1;}
-    .box1{
-        -webkit-box-ordinal-group: 1;
-        -moz-box-ordinal-group: 1;
-        -ms-flex-order: 1;
-        -webkit-order: 1;
-        order: 1;
-        flex:1;
-    }
-    .nav {
-        display:grid;
-        grid-gap: 2px;
-        grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
-    }
-    .header.inside {display:none;}
-    .nav-item {margin:0;padding:0;}
+  .box1{
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    flex:1;
+  }
+  .nav {
+   display:grid;
+   grid-gap: 2px;
+   grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+  }
+  .header.inside {display:none;}
+  .nav-item {margin:0;padding:0;}
 
-    .billhead {font-size:1.5em;width:35%;}
-    .do {width:100%;display:block;text-align:center;margin-bottom:1rem;}
+  .billhead {font-size:1.5em;width:35%;}
+  .do {width:100%;display:block;text-align:center;margin-bottom:1rem;}
 
-    .footer ul {
-        width:100%;
+  .footer ul {
+    width:100%;
 
-    }
+}
 }
 
 @media (max-width: 400px){

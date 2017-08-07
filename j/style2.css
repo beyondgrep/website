@@ -1,0 +1,132 @@
+/* fonts */
+body, p, dd, dt { font-family:"PT Serif", Georgia, serif;}
+h1, h2, h3, h4, h5, h6, .nav, .footer {font-family:"PT Sans", Tahoma, sans-serif;}
+pre {font-family:courier;}
+
+a {
+    color:#e63a00;
+    text-decoration:none;
+    border-bottom:1px solid #dcdcdc;
+}
+
+body {
+   margin:0;
+   padding:0;
+   background: #f3f2f2 url('https://beyondgrep.com/bg_tile.jpg');
+}
+
+.nav {
+   display:grid;
+   grid-gap: 10px;
+   grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+   color:#000;
+   margin:0 auto;
+
+}
+.nav-item {
+   text-align:center;padding:10px 0;
+}
+
+.nav-item pre {margin:0;font-weight:bold;font-size:22px;}
+
+.top-nav {background-color:#f7f7f7;border-bottom:1px solid #dcdcdc;position: -webkit-sticky;
+    position: sticky;vertical-align:middle;
+    top:0px;}
+
+.nav-item a:hover {border-bottom:1px solid #e63a00;}
+.nav-item a {color:#e63a00;border-bottom:none;font-size:18px}
+
+
+@media (min-width:1024px) {
+   .page-wrapper {max-width: 960px;}
+}
+
+.page-wrapper {margin:0 auto; }
+
+
+
+.header {background-color:#e63a00;display:block;overflow:hidden;padding:1.5rem;}
+
+
+.nav-ack {font-size:14px;color:#e63a00;}
+.billhead {
+    font-size:3em;
+    color:#ffffff;
+    font-weight:bold;
+    float:left;
+    width:35%;
+}
+
+.inside .billhead {font-size:1em;}
+
+.billhead pre, .nav-ack pre {
+    margin:0;
+}
+
+.footer {
+   width:100%;
+   background-color:#333;
+   height:300px;
+   padding:10px;
+}
+
+.digital-ocean-logo, .digital-ocean-logo:focus, .digital-ocean-logo:hover {
+    color: #ffffff;
+}
+
+.footer ul {-webkit-column-count: 3;
+    -ms-column-count: 3;
+    -o-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 10px;
+    -ms-column-gap: 10px;
+    -o-column-gap: 10px;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;}
+.footer li {list-style:none;}
+
+.footer a {color:#dcdcdc;text-align:left;}
+
+.billtext {width:65%;float:left;}
+.billtext h1 {margin-top:0;font-size:45px;}
+.billtext p {font-size:22px;line-height:30px;}
+
+.inside .billtext {width:85%;}
+.inside .billhead {width:15%;}
+.inside .billtext h1 {font-size:22px;}
+.inside .billtext p {font-size:14px;line-height:20px;}
+.header.inside {padding:.75rem;}
+.billtext h1, .billtext p {color:#ffffff;}
+
+.security {background-color:#FFB43B;color:#CF3500;padding:10px 10px;margin:10px 0;}
+.security p {margin:0;}
+.spotlight {width:100%;text-align:center;margin:10px 0;}
+
+
+.features {
+   display:grid;
+   grid-gap: 10px;
+   grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+   color:#000;
+   margin:10px auto;
+}
+
+.features a {border-bottom:none;}
+
+.features h3 {margin-top:0;}
+
+.feature-box {
+   display:block;
+   overflow:hidden;
+   background-color:#ffffff;
+}
+
+.feature-content {text-align:center;padding:20px;}
+.feature-cta {border:2px solid #e63a00;border-radius:2px;color:#e63a00;background-color:#ffffff;font-family:PT Sans;text-transform:uppercase;padding:5px;font-weight:800;}
+.feature-cta:hover {background-color:#e63a00;color:#ffffff!important;}
+.feature-cta a:hover {color:#ffffff;border-bottom:none;}
+
