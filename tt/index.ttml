@@ -1,92 +1,36 @@
 [% WRAPPER wrapper/page.ttml title='Beyond grep: ack 2.18, a source code search tool for programmers' %]
-<div class="billbox">
-    <div class="billhead">
-<pre>
-_   /|
-\'o.O'
-=(___)=
-   U    ack!
-</pre>
-    </div>
-    <div class="billtext">
-        <h1 class="pkg_mgr_desc">ack 2.18 is a tool like grep, optimized for programmers</h1>
 
-        <p>
-        Designed for programmers with large heterogeneous
-        trees of source code, ack is written purely in
-        portable Perl 5 and takes advantage of the power of
-        Perl's regular expressions.
-        </p>
-    </div>
-</div>
+<div class="page-wrapper">
 
-<div class="content">
-    <div class="feature-bullets">
-        <h2>Top 5 reasons to use ack</h2>
-        <dl>
-            <dt class="fast">Blazing fast</dt>
-            <dd>It's fast because it only searches the stuff it makes sense to search.</dd>
-
-            <dt class="search">Better search</dt>
-            <dd>Searches entire trees by default while ignoring Subversion, Git and other VCS directories
-            and other files that aren't your source code.</dd>
-
-            <dt class="keystrokes">Designed for code search</dt>
-            <dd>Where grep is a general text search tool, ack is especially for the programmer searching source code.
-            Common tasks take fewer keystrokes.</dd>
-
-            <dt class="pc">Highly portable</dt>
-            <dd>ack is pure Perl, so it easily runs on a Windows installation Perl
-            (like <a href="http://strawberryperl.com/">Strawberry Perl</a>) without modifications.</dd>
-
-            <dt class="open">Free and open</dt>
-            <dd>Ack costs nothing.  It's 100% free and open source under
-            <a href="http://www.opensource.org/licenses/Artistic-2.0">Artistic License v2.0</a>.
-            </dd>
-        </dl>
+    <div class="spotlight">
+        <img src="img/ack-screenshot.png" style="max-width:75%;"/>
     </div>
 
-    <div class="feature-security">
-        <h2>Security alert</h2>
-        <p>
-        ack versions 2.00 to 2.11_02 are susceptible to a code execution
-        exploit.  <strong>Please upgrade to 2.12 or higher ASAP.</strong>
-        See the
-        [% WRAPPER link.tt page='security' %]security alert[% END %]
-        for more information.
-        </p>
+    <div class="features">
+
+        <div class="feature-box">
+            <div class="feature-content">
+                <h3>Ack 3.0 is in development</h3>
+                <p>Want to participate? </p>
+                <div class="feature-cta">Contribute</div>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <a href="http://www.twitter.com/beyondgrep">
+                <div class="feature-content">
+                    <h3>Follow us on Twitter</h3>
+                    <p>
+                        We're all about knowing when to
+                        move beyond the stock Unix tools.
+                        Follow @beyondgrep on Twitter for
+                        tips, hints and software news.
+                    </p>
+
+                    <div class="feature-cta">Follow @beyondgrep</div>
+                </div>
+            </a>
+        </div>
     </div>
-
-    <div class="feature-install">
-        <h2>How to install</h2>
-        <p>
-        ack is simple to install, via CPAN, package or simple download.
-        [% WRAPPER link.tt page='install' %]Read how[% END %].
-        </p>
-    </div>
-
-    <div class="feature-testimonials">
-        <h2>People love ack</h2>
-
-        <p>
-        "Every once in a while something comes along that improves an idea so much,
-        you can't ignore it. Such a thing is Ack, the grep replacement."
-        </p>
-
-        <p>
-        Read [% WRAPPER link.tt page='why-ack' anchor='testimonials' %]what else people are saying[% END %].
-        </p>
-    </div>
-
-    <div class="feature-twitter">
-        <h2>Follow us on Twitter</h2>
-
-        <p>
-        We're all about knowing when to move beyond the stock Unix tools.
-        <a href="http://twitter.com/beyondgrep">Follow us on Twitter at @beyondgrep</a>
-        for tips, hints and software news.
-        </p>
-    </div>
-
 </div>
 [% END %]

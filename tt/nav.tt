@@ -1,3 +1,25 @@
+<div class="header">
+    <div class="page-wrapper">
+
+        <div class="billhead">
+            <pre>
+_   /|
+\'o.O'
+=(___)=
+   U  ack!
+            </pre>
+        </div>
+
+        <div class="billtext">
+            <h1>ack 2.18 is a tool like grep, optimized for programmers</h1>
+
+            <p>
+                Designed for programmers with large heterogeneous trees of source code, ack is
+                written in portable Perl 5 and takes advantage of the power of Perl's regular expressions.
+            </p>
+        </div>
+    </div>
+</div>
 <div class="top-nav">
     <div class="page-wrapper">
         <div class="nav">
