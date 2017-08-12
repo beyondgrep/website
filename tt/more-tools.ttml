@@ -206,7 +206,7 @@
     by Daniel Lucraft.
     </p>
     <p>
-    [% WRAPPER selflink.tt %]http://rak.rubyforge.org/[% END %]
+    [% WRAPPER selflink.tt %]https://github.com/danlucraft/rak[% END %]
     </p>
 
 
