@@ -1,0 +1,33 @@
+{
+  "Show context": {
+    "ack": "-C",
+    "ag": "-C",
+    "rg": "-C"
+  },
+  "Smart match": {
+    "ack": "-S",
+    "ag": "-S"
+  },
+  "Ignore case": {
+    "ack": "-i, --ignore-case"
+  },
+  "Smart case": {
+    "ack": [
+      "-S, --nosmart-case",
+      "2.999"
+    ]
+  },
+  "Case-sensitive": {
+    "ack": "-I"
+  },
+  "Invert match": {
+    "ack": "-v",
+    "ag": "-v",
+    "git": "-v",
+    "grep": "-v"
+  },
+  "Literal match (escape all metacharacters)": {
+    "ack": "-Q, --literal",
+    "ag": "-Q, --literal"
+  }
+}
