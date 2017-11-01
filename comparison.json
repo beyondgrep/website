@@ -1,33 +1,88 @@
 {
-  "Show context": {
-    "ack": "-C",
-    "ag": "-C",
-    "rg": "-C"
-  },
-  "Smart match": {
-    "ack": "-S",
-    "ag": "-S"
-  },
-  "Ignore case": {
-    "ack": "-i, --ignore-case"
-  },
-  "Smart case": {
-    "ack": [
-      "-S, --nosmart-case",
-      "2.999"
-    ]
-  },
-  "Case-sensitive": {
-    "ack": "-I"
-  },
-  "Invert match": {
-    "ack": "-v",
-    "ag": "-v",
-    "git": "-v",
-    "grep": "-v"
-  },
-  "Literal match (escape all metacharacters)": {
-    "ack": "-Q, --literal",
-    "ag": "-Q, --literal"
-  }
+    "Searching": {
+        "Show context": {
+            "ack": "-C",
+            "ag": "-C",
+            "rg": "-C"
+        },
+        "Smart match": {
+            "ack": "-S",
+            "ag": "-S"
+        },
+        "Ignore case": {
+            "ack": "-i, --ignore-case"
+        },
+        "Smart case": {
+            "ack": [
+                "-S, --nosmart-case",
+                "2.999"
+            ]
+        },
+        "Case-sensitive": {
+            "ack": "-I"
+        },
+        "Invert match": {
+            "ack": "-v",
+            "ag": "-v",
+            "git": "-v",
+            "grep": "-v"
+        },
+        "Literal match (escape all metacharacters)": {
+            "ack": "-Q, --literal",
+            "ag": "-Q, --literal"
+        },
+        "Specify pattern explicitly": {
+            "ack": "--match"
+        }
+    },
+    "Search output": {
+        "Print specific lines": {
+            "ack": "--lines=START-END[,...]"
+        },
+        "Print only filenames of matches": {
+            "ack": "-L, --files-with-matches"
+        },
+        "Print only filenames of files without matches": {
+            "ack": "-L, --files-with-matches"
+        },
+        "Output the evaluation of expr for each line": {
+            "ack": "--output"
+        },
+        "Show only the part of a line that matched": {
+            "ack": "-o"
+        },
+        "Print all lines, whether matching or not": {
+            "ack": "--passthru"
+        },
+        "Stop searching in each file after NUM matches": {
+            "ack": "-m, --max-count=NUM"
+        },
+        "Stop searching after one match of any kind": {
+            "ack": "-1"
+        },
+        "Print the filename for each match": {
+            "ack": "-H, --with-filename"
+        },
+        "Suppress the prefixing filename on output": {
+            "ack": "-h, --no-filename"
+        },
+        "Show number of lines matching per file": {
+            "ack": "-c, --count"
+        },
+        "Show the column number of the first match": {
+            "ack": "--[no]column"
+        },
+        "Print lines of context after matches": {
+            "ack": "-B, --before-context=NUM"
+        },
+        "Print lines of context before and after matches": {
+            "ack": "-C, --context=NUM"
+        },
+        "Print null byte as separator between filenames": {
+            "ack": "--print0"
+        },
+        "Suppress error messages about nonexistent or unreadable files": {
+            "ack": "-s"
+        }
+    }
 }
