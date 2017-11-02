@@ -1,0 +1,69 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use 5.010;
+
+
+while ( <DATA> ) {
+    chomp;
+
+    my ($left,$right) = /^  (.{30})(.*)/;
+
+    # Trim parens
+    $right =~ s/\(.+//;
+
+    # Trim whitespace
+    s/ +$// for ($left,$right);
+
+    print <<"HERE";
+        "$right": {
+            "ack": "$left"
+        }
+HERE
+}
+
+__DATA__
+  --pager=COMMAND               Pipes all ack output through COMMAND.  For example, --pager="less -R".  Ignored if output is redirected.
+  --nopager                     Do not send output through a pager.  Cancels any setting in ~/.ackrc, ACK_PAGER or ACK_PAGER_COLOR.
+  --[no]heading                 Print a filename heading above each file's results.  (default: on when used interactively)
+  --[no]break                   Print a break between results from different files.  (default: on when used interactively)
+  --pager=COMMAND               Pipes all ack output through COMMAND.  For example, --pager="less -R".  Ignored if output is redirected.
+  --nopager                     Do not send output through a pager.  Cancels any setting in ~/.ackrc, ACK_PAGER or ACK_PAGER_COLOR.
+  --[no]heading                 Print a filename heading above each file's results.  (default: on when used interactively)
+  --[no]break                   Print a break between results from different files.  (default: on when used interactively)
+  --group                       Same as --heading --break
+  --nogroup                     Same as --noheading --nobreak
+  --[no]proximate               Separate match output with blank lines unless they are on adjacent lines.
+  --[no]color                   Highlight the matching text (default: on unless output is redirected, or on Windows)
+  --[no]colour                  Same as --[no]color
+  --color-filename=COLOR        Set COLOR
+  --color-match=COLOR           Set COLOR
+  --color-colno=COLOR           Set COLOR
+  --color-lineno=COLOR          Set the color for filenames, matches, line and column numbers.
+  --flush                       Flush output immediately, even when ack is used non-interactively (when output goes to a pipe or file).
+  -f                            Only print the files selected, without searching.  The PATTERN must not be specified.
+  -g                            Same as -f, but only select files matching PATTERN.
+  --sort-files                  Sort the found files lexically.
+  --show-types                  Show which types each file has.
+  --files-from=FILE             Read the list of files to search from FILE.
+  -x                            Read the list of files to search from STDIN.
+  --[no]ignore-dir=name         Add/remove directory from list of ignored dirs
+  --[no]ignore-directory=name   Synonym for ignore-dir
+  --ignore-file=FILTER:ARGS     Add filter for ignoring files.
+  -r, -R, --recurse             Recurse into subdirectories (default: on)
+  -n, --no-recurse              No descending into subdirectories
+  --[no]follow                  Follow symlinks.  Default is off.
+  -k, --known-types             Include only files of types that ack recognizes.
+  --type=X                      Include only X files, where X is a recognized filetype.
+  --type=noX                    Exclude X files.  See "ack --help-types" for supported filetypes.
+  --type-set=TYPE:FILTER:ARGS   Files with the given ARGS applied to the given FILTER are recognized as being of type TYPE.  This replaces an existing definition for TYPE.
+  --type-add=TYPE:FILTER:ARGS   Files with the given ARGS applied to the given FILTER are recognized as being type TYPE.
+  --type-del=TYPE               Removes all filters associated with TYPE.
+  --[no]env                     Ignore environment variables and global ackrc files.  --env is legal but redundant.
+  --ackrc=filename              Specify an ackrc file to use
+  --ignore-ack-defaults         Ignore default definitions included with ack.
+  --create-ackrc                Outputs a default ackrc for your customization to standard output.
+  --dump                        Dump information on which options are loaded
+  --[no]filter                  Force ack to treat standard input as a pipe (--filter) or tty (--nofilter)
+  --help-types                  Display all known types from which RC files
