@@ -9,10 +9,6 @@ use File::Slurp;
 
 my $json_text = File::Slurp::read_file( 'comparison.json' );
 
-{use Data::Dumper; local $Data::Dumper::Sortkeys=1; local $Data::Dumper::Trailingcomma=1; warn Dumper( $json_text )}
-
 my $perl_scalar = JSON::PP->new->utf8->decode($json_text);
 
-
 {use Data::Dumper; local $Data::Dumper::Sortkeys=1; local $Data::Dumper::Trailingcomma=1; warn Dumper( $perl_scalar )}
-

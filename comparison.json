@@ -1,193 +1,382 @@
-{
-    "Searching": {
-        "Ignore case": {
-            "ack,ag,git,grep,rgk": "-i, --ignore-case"
-        },
-        "Smart case": {
-            "ack, ag, rg": "-S, --smart-case"
-        },
-        "Case-sensitive search": {
-            "ack": "-I"
-        },
-        "Invert match": {
-            "ack,ag,git,grep,rg": "-v, --invert-match"
-        },
-        "Literal match (escape all metacharacters)": {
-            "ack,ag": "-Q, --literal"
-        },
-        "Specify pattern explicitly": {
-            "ack": "--match"
-        }
+[
+    {
+        "section": "Searching",
+        "abilities": [
+            {
+                "how": {
+                    "ack,ag,git,grep,rgk": "-i, --ignore-case"
+                },
+                "what": "Ignore case"
+            },
+            {
+                "what": "Smart case",
+                "how": {
+                    "ack, ag, rg": "-S, --smart-case"
+                }
+            },
+            {
+                "what": "Case-sensitive search",
+                "how": {
+                    "ack": "-I"
+                }
+            },
+            {
+                "what": "Invert match",
+                "how": {
+                    "ack,ag,git,grep,rg": "-v, --invert-match"
+                }
+            },
+            {
+                "how": {
+                    "ack,ag": "-Q, --literal"
+                },
+                "what": "Literal match (escape all metacharacters)"
+            },
+            {
+                "what": "Specify pattern explicitly",
+                "how": {
+                    "ack": "--match"
+                }
+            },
+            {
+                "what": "Print specific lines",
+                "how": {
+                    "ack": "--lines"
+                }
+            }
+        ]
     },
-    "Search output": {
-        "Print specific lines": {
-            "ack": "--lines"
-        },
-        "Print only filenames of matches": {
-            "ack": "-L, --files-with-matches"
-        },
-        "Print only filenames of files without matches": {
-            "ack": "-L, --files-with-matches"
-        },
-        "Output the evaluation of expr for each line": {
-            "ack": "--output"
-        },
-        "Show only the part of a line that matched": {
-            "ack": "-o"
-        },
-        "Print all lines, whether matching or not": {
-            "ack": "--passthru"
-        },
-        "Stop searching in each file after NUM matches": {
-            "ack": "-m, --max-count"
-        },
-        "Stop searching after one match of any kind": {
-            "ack": "-1"
-        },
-        "Print the filename for each match": {
-            "ack": "-H, --with-filename"
-        },
-        "Suppress the prefixing filename on output": {
-            "ack": "-h, --no-filename"
-        },
-        "Show number of lines matching per file": {
-            "ack": "-c, --count"
-        },
-        "Show the column number of the first match": {
-            "ack": "--[no]column"
-        },
-        "Print lines of context after matches": {
-            "ack,git,grep,rg": "-A, --after-context",
-            "ag": "-A, --after"
-        },
-        "Print lines of context before matches": {
-            "ack,git,grep,rg": "-B, --before-context",
-            "ag": "-B, --before"
-        },
-        "Print lines of context before and after matches": {
-            "ack,ag,git,grep,rg": "-C, --context"
-        },
-        "Print null byte as separator between filenames": {
-            "ack": "--print0"
-        },
-        "Suppress error messages about nonexistent or unreadable files": {
-            "ack,grep": "-s"
-        }
+    {
+        "section": "Search output",
+        "abilities": [
+            {
+                "what": "Print only filenames that contain matches",
+                "how": {
+                    "ack": "-l, --files-with-matches"
+                }
+            },
+            {
+                "what": "Print only filenames that do not contain matches",
+                "how": {
+                    "ack": "-L, --files-without-matches"
+                }
+            },
+            {
+                "what": "Show only the part of a line that matched",
+                "how": {
+                    "ack": "-o"
+                }
+            },
+            {
+                "what": "Output the evaluation of expr for each line",
+                "how": {
+                    "ack": "--output"
+                }
+            },
+            {
+                "what": "Print the filename for each match",
+                "how": {
+                    "ack": "-H, --with-filename"
+                }
+            },
+            {
+                "what": "Suppress the prefixing filename on output",
+                "how": {
+                    "ack": "-h, --no-filename"
+                }
+            },
+            {
+                "what": "Show the column number of the first match",
+                "how": {
+                    "ack": "--[no]column"
+                }
+            },
+            {
+                "what": "Print lines of context after matches",
+                "how": {
+                    "ack,git,grep,rg": "-A, --after-context",
+                    "ag": "-A, --after"
+                }
+            },
+            {
+                "what": "Print lines of context before matches",
+                "how": {
+                    "ag": "-B, --before",
+                    "ack,git,grep,rg": "-B, --before-context"
+                }
+            },
+            {
+                "what": "Print lines of context before and after matches",
+                "how": {
+                    "ack,ag,git,grep,rg": "-C, --context"
+                }
+            },
+            {
+                "what": "Show number of lines matching per file",
+                "how": {
+                    "ack": "-c, --count"
+                }
+            },
+            {
+                "what": "Print all lines, whether matching or not",
+                "how": {
+                    "ack": "--passthru"
+                }
+            },
+            {
+                "what": "Print null byte as separator between filenames",
+                "how": {
+                    "ack": "--print0"
+                }
+            },
+            {
+                "what": "Stop searching in each file after NUM matches",
+                "how": {
+                    "ack": "-m, --max-count"
+                }
+            },
+            {
+                "what": "Stop searching after one match of any kind",
+                "how": {
+                    "ack": "-1"
+                }
+            },
+            {
+                "what": "Suppress error messages about nonexistent or unreadable files",
+                "how": {
+                    "ack,grep": "-s"
+                }
+            }
+        ]
     },
-    "File presentation": {
-        "Pipe output through a pager or other command": {
-            "ack": "--pager=COMMAND"
-        },
-        "Do not send output through a pager": {
-            "ack": "--nopager"
-        },
-        "Print a filename heading above each file's results": {
-            "ack": "--[no]heading"
-        },
-        "Print a break between results from different files": {
-            "ack": "--[no]break"
-        },
-        "Group together all matches in a file": {
-            "ack": "--[no]group"
-        },
-        "Separate match output with blank lines unless they are on adjacent lines": {
-            "ack": "--[no]proximate"
-        },
-        "Highlight the matching text": {
-            "ack": "--[no]color"
-        },
-        "Set COLOR": {
-            "ack": "--color-colno=COLOR"
-        },
-        "Set the color for filenames, matches, line and column numbers": {
-            "ack": "--color-lineno=COLOR"
-        },
-        "Flush output immediately, even when ack is used non-interactively": {
-            "ack": "--flush"
-        }
+    {
+        "section": "File presentation",
+        "abilities": [
+            {
+                "what": "Set the color for filenames, matches, line and column numbers",
+                "how": {
+                    "ack": "--color-lineno=COLOR"
+                }
+            },
+            {
+                "what": "Highlight the matching text",
+                "how": {
+                    "ack": "--[no]color"
+                }
+            },
+            {
+                "what": "Pipe output through a pager or other command",
+                "how": {
+                    "ack": "--[no]pager=COMMAND"
+                }
+            },
+            {
+                "what": "Separate match output with blank lines unless they are on adjacent lines",
+                "how": {
+                    "ack": "--[no]proximate"
+                }
+            },
+            {
+                "what": "Set COLOR",
+                "how": {
+                    "ack": "--color-colno=COLOR"
+                }
+            },
+            {
+                "what": "Group together all matches in a file",
+                "how": {
+                    "ack": "--[no]group"
+                }
+            },
+            {
+                "what": "Print a filename heading above each file's results",
+                "how": {
+                    "ack": "--[no]heading"
+                }
+            },
+            {
+                "what": "Flush output immediately, even when ack is used non-interactively",
+                "how": {
+                    "ack": "--flush"
+                }
+            },
+            {
+                "what": "Print a break between results from different files",
+                "how": {
+                    "ack": "--[no]break"
+                }
+            }
+        ]
     },
-    "File finding": {
-        "Only print the files selected, without searching": {
-            "ack": "-f"
-        },
-        "List searchable files that match a pattern": {
-            "ack": "-g"
-        },
-        "Sort the found files lexically": {
-            "ack": "--sort-files"
-        },
-        "Show which types each file has": {
-            "ack": "--show-types"
-        },
-        "Read the list of files to search from FILE": {
-            "ack": "--files-from=FILE"
-        },
-        "Read the list of files to search from STDIN": {
-            "ack": "-x"
-        }
+    {
+        "section": "File finding",
+        "abilities": [
+            {
+                "what": "Only print the files selected, without searching",
+                "how": {
+                    "ack": "-f"
+                }
+            },
+            {
+                "what": "Show which types each file has",
+                "how": {
+                    "ack": "--show-types"
+                }
+            },
+            {
+                "what": "List searchable files that match a pattern",
+                "how": {
+                    "ack": "-g"
+                }
+            },
+            {
+                "what": "Read the list of files to search from FILE",
+                "how": {
+                    "ack": "--files-from=FILE"
+                }
+            },
+            {
+                "what": "Sort the found files lexically",
+                "how": {
+                    "ack": "--sort-files"
+                }
+            },
+            {
+                "what": "Read the list of files to search from STDIN",
+                "how": {
+                    "ack": "-x"
+                }
+            }
+        ]
     },
-    "File inclusion/exclusion": {
-        "Add/remove directory from list of ignored dirs": {
-            "ack": "--[no]ignore-dir=name"
-        },
-        "Synonym for ignore-dir": {
-            "ack": "--[no]ignore-directory=name"
-        },
-        "Add filter for ignoring files": {
-            "ack": "--ignore-file=FILTER:ARGS"
-        },
-        "Recurse into subdirectories": {
-            "ack": "-r, -R, --recurse"
-        },
-        "No descending into subdirectories": {
-            "ack": "-n, --no-recurse"
-        },
-        "Follow symlinks": {
-            "ack": "--[no]follow"
-        },
-        "Include only files of types that ack recognizes": {
-            "ack": "-k, --known-types"
-        },
-        "Include only files of a given type": {
-            "ack": "--type=X"
-        },
-        "Exclude files of a given type": {
-            "ack": "--type=noX"
-        }
+    {
+        "section": "File inclusion/exclusion",
+        "abilities": [
+            {
+                "what": "Synonym for ignore-dir",
+                "how": {
+                    "ack": "--[no]ignore-directory=name"
+                }
+            },
+            {
+                "what": "Recurse into subdirectories",
+                "how": {
+                    "ack": "-r, -R, --recurse"
+                }
+            },
+            {
+                "what": "Add/remove directory from list of ignored dirs",
+                "how": {
+                    "ack": "--[no]ignore-dir=name"
+                }
+            },
+            {
+                "what": "Exclude files of a given type",
+                "how": {
+                    "ack": "--type=noX"
+                }
+            },
+            {
+                "what": "Add filter for ignoring files",
+                "how": {
+                    "ack": "--ignore-file=FILTER:ARGS"
+                }
+            },
+            {
+                "what": "No descending into subdirectories",
+                "how": {
+                    "ack": "-n, --no-recurse"
+                }
+            },
+            {
+                "what": "Include only files of types that ack recognizes",
+                "how": {
+                    "ack": "-k, --known-types"
+                }
+            },
+            {
+                "what": "Follow symlinks",
+                "how": {
+                    "ack": "--[no]follow"
+                }
+            },
+            {
+                "what": "Include only files of a given type",
+                "how": {
+                    "ack": "--type=X"
+                }
+            }
+        ]
     },
-    "File type specification": {
-        "Create a filetype, replacing the previous specs": {
-            "ack": "--type-set=TYPE:FILTER:ARGS"
-        },
-        "Add specifications to an existing filetype": {
-            "ack": "--type-add=TYPE:FILTER:ARGS"
-        },
-        "Remove a file type": {
-            "ack": "--type-del=TYPE"
-        },
-        "Display all known types": {
-            "ack": "--help-types",
-            "ag": "--list-file-types"
-        }
+    {
+        "section": "File type specification",
+        "abilities": [
+            {
+                "what": "Create a filetype, replacing the previous specs",
+                "how": {
+                    "ack": "--type-set=TYPE:FILTER:ARGS"
+                }
+            },
+            {
+                "what": "Add specifications to an existing filetype",
+                "how": {
+                    "ack": "--type-add=TYPE:FILTER:ARGS"
+                }
+            },
+            {
+                "what": "Remove a file type",
+                "how": {
+                    "ack": "--type-del=TYPE"
+                }
+            },
+            {
+                "what": "Display all known types",
+                "how": {
+                    "ag": "--list-file-types",
+                    "ack": "--help-types"
+                }
+            }
+        ]
     },
-    "Miscellaneous": {
-        "Ignore environment variables and global configuration files": {
-            "ack": "--env"
-        },
-        "Specify a configuration file to use": {
-            "ack": "--ackrc=filename"
-        },
-        "Ignore default definitions included with ack": {
-            "ack": "--ignore-ack-defaults"
-        },
-        "Outputs a default ackrc for your customization to standard output": {
-            "ack": "--create-ackrc"
-        },
-        "Dump information on which options are loaded": {
-            "ack": "--dump"
-        },
-        "Treat standard input as a pipe": {
-            "ack": "--[no]filter"
-        }
+    {
+        "section": "Miscellaneous",
+        "abilities": [
+            {
+                "what": "Outputs a default ackrc for your customization to standard output",
+                "how": {
+                    "ack": "--create-ackrc"
+                }
+            },
+            {
+                "what": "Dump information on which options are loaded",
+                "how": {
+                    "ack": "--dump"
+                }
+            },
+            {
+                "what": "Specify a configuration file to use",
+                "how": {
+                    "ack": "--ackrc=filename"
+                }
+            },
+            {
+                "what": "Ignore environment variables and global configuration files",
+                "how": {
+                    "ack": "--env"
+                }
+            },
+            {
+                "what": "Ignore default definitions included with ack",
+                "how": {
+                    "ack": "--ignore-ack-defaults"
+                }
+            },
+            {
+                "what": "Treat standard input as a pipe",
+                "how": {
+                    "ack": "--[no]filter"
+                }
+            }
+        ]
     }
-}
+]
