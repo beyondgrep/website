@@ -1,0 +1,36 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <table border=1>
+            [% FOR section IN sections %]
+                <tr>
+                    <th colspan="6">
+                        [% section.section | html_entity %]
+                    </th>
+                </tr>
+                <tr>
+                    <th width="50%"></th>
+                    <th width="10%">ack</th>
+                    <th width="10%">ag</th>
+                    <th width="10%">git</th>
+                    <th width="10%">grep</th>
+                    <th width="10%">rg</th>
+                </tr>
+
+                [% FOR ability IN section.abilities %]
+                    <tr>
+                        <td>[% ability.what |html_entity %]</td>
+                        <td>-x</td>
+                        <td>-x</td>
+                        <td>-x</td>
+                        <td>-x</td>
+                        <td>-x</td>
+                        [% FOR how IN ability.how %]
+                        [% END %]
+                    </tr>
+                [% END %]
+            [% END %]
+        </table>
+    </body>
+</html>
