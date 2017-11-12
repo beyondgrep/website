@@ -6,6 +6,7 @@ use 5.010;
 
 use JSON::PP;
 use File::Slurp;
+use List::MoreUtils qw( uniq );
 use Template;
 
 my $json_text = File::Slurp::read_file( 'comparison.json' );
@@ -15,7 +16,30 @@ my $sections = JSON::PP->new->utf8->decode($json_text);
 for my $section ( @{$sections} ) {
     my $heading = $section->{heading};
     my $abilities = $section->{abilities};
+
+    for my $ability ( @{$abilities} ) {
+        my %flags_by_tool;
+        while ( my ($key,$value) = each %{$ability->{how}} ) {
+            for my $tool ( split( /,/, $key ) ) {
+                $flags_by_tool{$tool} = $value;
+            }
+        }
+
+        my @distinct_flags = uniq values %flags_by_tool;
+
+        # If there's only one how, then the template knows it applies to all.
+        my @new_hows;
+        if ( @distinct_flags == 1 && keys %flags_by_tool == 5 ) {
+            @new_hows = @distinct_flags;
+        }
+        else {
+            @new_hows = map { $flags_by_tool{$_} // '' } qw( ack ag git grep rg );
+        }
+        $ability->{how} = \@new_hows;
+    }
 }
+
+#{use Data::Dumper; local $Data::Dumper::Sortkeys=1; local $Data::Dumper::Trailingcomma=1; warn Dumper( $sections )}
 
 
 my $vars = {

@@ -10,23 +10,24 @@
                     </th>
                 </tr>
                 <tr>
-                    <th width="50%"></th>
-                    <th width="10%">ack</th>
-                    <th width="10%">ag</th>
-                    <th width="10%">git</th>
-                    <th width="10%">grep</th>
-                    <th width="10%">rg</th>
+                    <th width="40%"></th>
+                    <th width="12%">ack</th>
+                    <th width="12%">ag</th>
+                    <th width="12%">git</th>
+                    <th width="12%">grep</th>
+                    <th width="12%">rg</th>
                 </tr>
 
                 [% FOR ability IN section.abilities %]
                     <tr>
-                        <td>[% ability.what |html_entity %]</td>
-                        <td>-x</td>
-                        <td>-x</td>
-                        <td>-x</td>
-                        <td>-x</td>
-                        <td>-x</td>
-                        [% FOR how IN ability.how %]
+                        <td>[% ability.what | html_entity %]</td>
+                        [% hows = ability.how %]
+                        [% IF hows.size == 5 %]
+                            [% FOR how IN hows %]
+                                <td>[% how | html_entity %]</td>
+                            [% END %]
+                        [% ELSE %]
+                            <td colspan="5">[% hows.0 | html_entity %] ------------------------------------&gt;&gt;&gt;</td>
                         [% END %]
                     </tr>
                 [% END %]

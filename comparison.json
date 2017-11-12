@@ -4,39 +4,39 @@
         "abilities": [
             {
                 "how": {
-                    "ack,ag,git,grep,rg": "-i, --ignore-case"
+                    "ack,ag,git,grep,rg": "-i --ignore-case"
                 },
                 "what": "Ignore case"
             },
             {
                 "what": "Smart case",
                 "how": {
-                    "ack, ag, rg": "-S, --smart-case"
+                    "ack, ag, rg": "-S --smart-case"
                 }
             },
             {
                 "what": "Case-sensitive search",
                 "how": {
                     "ack": "-I",
-                    "ag": "-s, --case-sensitive"
+                    "ag": "-s --case-sensitive"
                 }
             },
             {
                 "what": "Match whole words",
                 "how": {
-                    "ack,ag,grep": "-w, --word-regexp"
+                    "ack,ag,grep": "-w --word-regexp"
                 }
             },
             {
                 "what": "Invert match",
                 "how": {
-                    "ack,ag,git,grep,rg": "-v, --invert-match"
+                    "ack,ag,git,grep,rg": "-v --invert-match"
                 }
             },
             {
                 "how": {
-                    "ack": "-Q, --literal",
-                    "ag": "-Q, --literal, -F, --fixed-strings"
+                    "ack": "-Q --literal",
+                    "ag": "-Q --literal -F --fixed-strings"
                 },
                 "what": "Literal match (escape all metacharacters)"
             },
@@ -60,20 +60,20 @@
             {
                 "what": "Print only filenames that contain matches",
                 "how": {
-                    "ack,ag": "-l, --files-with-matches"
+                    "ack,ag": "-l --files-with-matches"
                 }
             },
             {
                 "what": "Print only filenames that do not contain matches",
                 "how": {
-                    "ack,ag": "-L, --files-without-matches"
+                    "ack,ag": "-L --files-without-matches"
                 }
             },
             {
                 "what": "Show only the part of a line that matched",
                 "how": {
                     "ack": "-o",
-                    "ag": "-o, --only-matching"
+                    "ag": "-o --only-matching"
                 }
             },
             {
@@ -91,21 +91,21 @@
             {
                 "what": "Print the filename for each match",
                 "how": {
-                    "ack": "-H, --with-filename",
+                    "ack": "-H --with-filename",
                     "ag": "--[no]filename"
                 }
             },
             {
                 "what": "Suppress the prefixing filename on output",
                 "how": {
-                    "ack": "-h, --no-filename"
+                    "ack": "-h --no-filename"
                 }
             },
             {
                 "what": "Print each file's name before its matches",
                 "how": {
                     "ack": "--[no]heading",
-                    "ag": "-H, --[no]heading"
+                    "ag": "-H --[no]heading"
                 }
             },
             {
@@ -117,27 +117,27 @@
             {
                 "what": "Print lines of context after matches",
                 "how": {
-                    "ack,git,grep,rg": "-A, --after-context",
-                    "ag": "-A, --after"
+                    "ack,git,grep,rg": "-A --after-context",
+                    "ag": "-A --after"
                 }
             },
             {
                 "what": "Print lines of context before matches",
                 "how": {
-                    "ag": "-B, --before",
-                    "ack,git,grep,rg": "-B, --before-context"
+                    "ag": "-B --before",
+                    "ack,git,grep,rg": "-B --before-context"
                 }
             },
             {
                 "what": "Print lines of context before and after matches",
                 "how": {
-                    "ack,ag,git,grep,rg": "-C, --context"
+                    "ack,ag,git,grep,rg": "-C --context"
                 }
             },
             {
                 "what": "Show number of lines matching per file",
                 "how": {
-                    "ack,ag": "-c, --count"
+                    "ack,ag": "-c --count"
                 }
             },
             {
@@ -151,13 +151,13 @@
                 "what": "Print null byte as separator between filenames",
                 "how": {
                     "ack": "--print0",
-                    "ag": "-0, --null, --print0"
+                    "ag": "-0 --null --print0"
                 }
             },
             {
                 "what": "Stop searching in each file after NUM matches",
                 "how": {
-                    "ack,ag": "-m, --max-count"
+                    "ack,ag": "-m --max-count"
                 }
             },
             {
@@ -176,7 +176,7 @@
             {
                 "what": "Print stats (files scanned, time taken, etc.)",
                 "how": {
-                    "ag": "--stats, --stats-only"
+                    "ag": "--stats --stats-only"
                 }
             }
         ]
@@ -225,7 +225,7 @@
             {
                 "what": "Pipe output through a pager or other command",
                 "how": {
-                    "ack": "--[no]pager=COMMAND"
+                    "ack": "--[no]pager"
                 }
             },
             {
@@ -237,7 +237,7 @@
             {
                 "what": "Set COLOR",
                 "how": {
-                    "ack": "--color-colno=COLOR"
+                    "ack": "--color-colno"
                 }
             },
             {
@@ -302,7 +302,7 @@
             {
                 "what": "Read the list of files to search from FILE",
                 "how": {
-                    "ack": "--files-from=FILE"
+                    "ack": "--files-from"
                 }
             },
             {
@@ -320,7 +320,7 @@
             {
                 "what": "Limit search to filenames matching a pattern",
                 "how": {
-                    "ag": "-G, --file-search-regex"
+                    "ag": "-G --file-search-regex"
                 }
             },
             {
@@ -337,13 +337,13 @@
             {
                 "what": "Recurse into subdirectories",
                 "how": {
-                    "ack": "-r, -R, --recurse"
+                    "ack": "-r -R --recurse"
                 }
             },
             {
                 "what": "No descending into subdirectories",
                 "how": {
-                    "ack": "-n, --no-recurse"
+                    "ack": "-n --no-recurse"
                 }
             },
             {
@@ -374,14 +374,14 @@
             {
                 "what": "Include only files of types that ack recognizes",
                 "how": {
-                    "ack": "-k, --known-types"
+                    "ack": "-k --known-types"
                 }
             },
             {
                 "what": "Follow symlinks",
                 "how": {
                     "ack": "--[no]follow",
-                    "ag": "-f, --follow"
+                    "ag": "-f --follow"
                 }
             },
             {
@@ -399,7 +399,7 @@
             {
                 "what": "Search all types of files",
                 "how": {
-                    "ag": "-a, --all-types"
+                    "ag": "-a --all-types"
                 }
             },
             {
@@ -417,19 +417,19 @@
             {
                 "what": "Search all text files",
                 "how": {
-                    "ag": "-t, --all-text"
+                    "ag": "-t --all-text"
                 }
             },
             {
                 "what": "Search all files",
                 "how": {
-                    "ag": "-u, --unrestricted"
+                    "ag": "-u --unrestricted"
                 }
             },
             {
                 "what": "Skip rules found in VCS ignore files (.gitignore, .hgignore, etc)",
                 "how": {
-                    "ag": "-U, --skip-vcs-ignores"
+                    "ag": "-U --skip-vcs-ignores"
                 }
             }
         ]
@@ -440,19 +440,19 @@
             {
                 "what": "Create a filetype, replacing the previous specs",
                 "how": {
-                    "ack": "--type-set=TYPE:FILTER:ARGS"
+                    "ack": "--type-set"
                 }
             },
             {
                 "what": "Add specifications to an existing filetype",
                 "how": {
-                    "ack": "--type-add=TYPE:FILTER:ARGS"
+                    "ack": "--type-add"
                 }
             },
             {
                 "what": "Remove a file type",
                 "how": {
-                    "ack": "--type-del=TYPE"
+                    "ack": "--type-del"
                 }
             },
             {
@@ -482,7 +482,7 @@
             {
                 "what": "Specify a configuration file to use",
                 "how": {
-                    "ack": "--ackrc=filename"
+                    "ack": "--ackrc"
                 }
             },
             {
@@ -506,7 +506,7 @@
             {
                 "what": "Search contents of compressed files (e.g. gzip)",
                 "how": {
-                    "ag": "-z, --search-zip"
+                    "ag": "-z --search-zip"
                 }
             }
         ]
