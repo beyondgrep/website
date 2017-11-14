@@ -72,7 +72,7 @@
                             
                                 <td>-w --word-regexp</td>
                             
-                                <td></td>
+                                <td>-w --word-regexp</td>
                             
                                 <td>-w --word-regexp</td>
                             
@@ -90,15 +90,15 @@
                     </tr>
                 
                     <tr>
-                        <td>Literal match (escape all metacharacters)</td>
+                        <td>Specify pattern explicitly</td>
                         
                         
                             
-                                <td>-Q --literal</td>
-                            
-                                <td>-Q --literal -F --fixed-strings</td>
+                                <td>--match</td>
                             
                                 <td></td>
+                            
+                                <td>-e</td>
                             
                                 <td></td>
                             
@@ -108,13 +108,49 @@
                     </tr>
                 
                     <tr>
-                        <td>Specify pattern explicitly</td>
+                        <td>Read patterns from a file</td>
                         
                         
-                            
-                                <td>--match</td>
                             
                                 <td></td>
+                            
+                                <td></td>
+                            
+                                <td>-f</td>
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                        
+                    </tr>
+                
+                    <tr>
+                        <td>Specify multiple patterns with boolean expressions</td>
+                        
+                        
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                                <td>--and --or --not --all-match</td>
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                        
+                    </tr>
+                
+                    <tr>
+                        <td>Match patterns across newlines</td>
+                        
+                        
+                            
+                                <td></td>
+                            
+                                <td>--[no]multiline</td>
                             
                                 <td></td>
                             
@@ -135,6 +171,94 @@
                                 <td></td>
                             
                                 <td></td>
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                        
+                    </tr>
+                
+            
+                <tr>
+                    <th colspan="6">
+                        Regular expressions
+                    </th>
+                </tr>
+                <tr>
+                    <th width="40%"></th>
+                    <th width="12%">ack</th>
+                    <th width="12%">ag</th>
+                    <th width="12%">git</th>
+                    <th width="12%">grep</th>
+                    <th width="12%">rg</th>
+                </tr>
+
+                
+                    <tr>
+                        <td>Use fixed strings, not regular expressions, for a literal match</td>
+                        
+                        
+                            
+                                <td>-Q --literal</td>
+                            
+                                <td>-Q --literal -F --fixed-strings</td>
+                            
+                                <td>-F --fixed-strings</td>
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                        
+                    </tr>
+                
+                    <tr>
+                        <td>Use basic regular expressions</td>
+                        
+                        
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                                <td>-G --basic-regexp</td>
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                        
+                    </tr>
+                
+                    <tr>
+                        <td>Use extended regular expressions</td>
+                        
+                        
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                                <td>-E --extended-regexp</td>
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                        
+                    </tr>
+                
+                    <tr>
+                        <td>Use Perl (or Perl-compatible) regular expressions</td>
+                        
+                        
+                            
+                                <td>(standard behavior)</td>
+                            
+                                <td></td>
+                            
+                                <td>-P --perl-regexp</td>
                             
                                 <td></td>
                             
@@ -168,7 +292,7 @@
                             
                                 <td>-l --files-with-matches</td>
                             
-                                <td></td>
+                                <td>-l --files-with-matches</td>
                             
                                 <td></td>
                             
@@ -186,7 +310,7 @@
                             
                                 <td>-L --files-without-matches</td>
                             
-                                <td></td>
+                                <td>-L --files-without-matches</td>
                             
                                 <td></td>
                             
@@ -258,7 +382,7 @@
                             
                                 <td>--[no]filename</td>
                             
-                                <td></td>
+                                <td>-H</td>
                             
                                 <td></td>
                             
@@ -276,7 +400,7 @@
                             
                                 <td></td>
                             
-                                <td></td>
+                                <td>-h</td>
                             
                                 <td></td>
                             
@@ -286,7 +410,43 @@
                     </tr>
                 
                     <tr>
-                        <td>Print each file&#39;s name before its matches</td>
+                        <td>Print paths relative to the project top directory</td>
+                        
+                        
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                                <td>--full-name</td>
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                        
+                    </tr>
+                
+                    <tr>
+                        <td>Prefix the line number to matching lines</td>
+                        
+                        
+                            
+                                <td></td>
+                            
+                                <td>--[no]numbers</td>
+                            
+                                <td>-n --line-number</td>
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                        
+                    </tr>
+                
+                    <tr>
+                        <td>Print a heading of each file&#39;s name before its matches</td>
                         
                         
                             
@@ -374,7 +534,7 @@
                             
                                 <td>-c --count</td>
                             
-                                <td></td>
+                                <td>-c --count</td>
                             
                                 <td></td>
                             
@@ -410,7 +570,7 @@
                             
                                 <td>-0 --null --print0</td>
                             
-                                <td></td>
+                                <td>-z --null</td>
                             
                                 <td></td>
                             
@@ -474,6 +634,24 @@
                     </tr>
                 
                     <tr>
+                        <td>Do not output matched lines</td>
+                        
+                        
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                                <td>-q --quiet</td>
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                        
+                    </tr>
+                
+                    <tr>
                         <td>Print stats (files scanned, time taken, etc.)</td>
                         
                         
@@ -512,11 +690,11 @@
                         
                         
                             
-                                <td>--[no]color</td>
+                                <td>--[no-]color</td>
                             
-                                <td>--[no]color</td>
+                                <td>--[no-]color</td>
                             
-                                <td></td>
+                                <td>--[no-]color</td>
                             
                                 <td></td>
                             
@@ -624,7 +802,7 @@
                             
                                 <td></td>
                             
-                                <td></td>
+                                <td>-O --open-files-in-pager</td>
                             
                                 <td></td>
                             
@@ -670,24 +848,6 @@
                     </tr>
                 
                     <tr>
-                        <td>Print line numbers</td>
-                        
-                        
-                            
-                                <td></td>
-                            
-                                <td>--[no]numbers</td>
-                            
-                                <td></td>
-                            
-                                <td></td>
-                            
-                                <td></td>
-                            
-                        
-                    </tr>
-                
-                    <tr>
                         <td>Group together all matches in a file</td>
                         
                         
@@ -715,6 +875,42 @@
                                 <td></td>
                             
                                 <td></td>
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                        
+                    </tr>
+                
+                    <tr>
+                        <td>Show the function name of the match</td>
+                        
+                        
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                                <td>-p --show-function</td>
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                        
+                    </tr>
+                
+                    <tr>
+                        <td>Show the function in which a match was found</td>
+                        
+                        
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                                <td>-W --function-context</td>
                             
                                 <td></td>
                             
@@ -1160,7 +1356,7 @@
                             
                                 <td>--depth</td>
                             
-                                <td></td>
+                                <td>--max-depth</td>
                             
                                 <td></td>
                             
@@ -1179,6 +1375,42 @@
                                 <td>--binary</td>
                             
                                 <td></td>
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                        
+                    </tr>
+                
+                    <tr>
+                        <td>Don&#39;t search in binary files</td>
+                        
+                        
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                                <td>-I</td>
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                        
+                    </tr>
+                
+                    <tr>
+                        <td>Treat binary files as if they were text</td>
+                        
+                        
+                            
+                                <td></td>
+                            
+                                <td></td>
+                            
+                                <td>-a --text</td>
                             
                                 <td></td>
                             

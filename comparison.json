@@ -24,7 +24,7 @@
             {
                 "what": "Match whole words",
                 "how": {
-                    "ack,ag,grep": "-w --word-regexp"
+                    "ack,ag,git,grep": "-w --word-regexp"
                 }
             },
             {
@@ -34,16 +34,28 @@
                 }
             },
             {
-                "how": {
-                    "ack": "-Q --literal",
-                    "ag": "-Q --literal -F --fixed-strings"
-                },
-                "what": "Literal match (escape all metacharacters)"
-            },
-            {
                 "what": "Specify pattern explicitly",
                 "how": {
-                    "ack": "--match"
+                    "ack": "--match",
+                    "git": "-e"
+                }
+            },
+            {
+                "what": "Read patterns from a file",
+                "how": {
+                    "git": "-f"
+                }
+            },
+            {
+                "what": "Specify multiple patterns with boolean expressions",
+                "how": {
+                    "git": "--and --or --not --all-match"
+                }
+            },
+            {
+                "what": "Match patterns across newlines",
+                "how": {
+                    "ag": "--[no]multiline"
                 }
             },
             {
@@ -55,18 +67,50 @@
         ]
     },
     {
+        "section": "Regular expressions",
+        "abilities": [
+            {
+                "what": "Use fixed strings, not regular expressions, for a literal match",
+                "how": {
+                    "ack": "-Q --literal",
+                    "ag": "-Q --literal -F --fixed-strings",
+                    "git": "-F --fixed-strings"
+                }
+            },
+            {
+                "what": "Use basic regular expressions",
+                "how": {
+                    "git": "-G --basic-regexp"
+                }
+            },
+            {
+                "what": "Use extended regular expressions",
+                "how": {
+                    "git": "-E --extended-regexp"
+                }
+            },
+            {
+                "what": "Use Perl (or Perl-compatible) regular expressions",
+                "how": {
+                    "ack": "(standard behavior)",
+                    "git": "-P --perl-regexp"
+                }
+            }
+        ]
+    },
+    {
         "section": "Search output",
         "abilities": [
             {
                 "what": "Print only filenames that contain matches",
                 "how": {
-                    "ack,ag": "-l --files-with-matches"
+                    "ack,ag,git": "-l --files-with-matches"
                 }
             },
             {
                 "what": "Print only filenames that do not contain matches",
                 "how": {
-                    "ack,ag": "-L --files-without-matches"
+                    "ack,ag,git": "-L --files-without-matches"
                 }
             },
             {
@@ -92,17 +136,32 @@
                 "what": "Print the filename for each match",
                 "how": {
                     "ack": "-H --with-filename",
-                    "ag": "--[no]filename"
+                    "ag": "--[no]filename",
+                    "git": "-H"
                 }
             },
             {
                 "what": "Suppress the prefixing filename on output",
                 "how": {
-                    "ack": "-h --no-filename"
+                    "ack": "-h --no-filename",
+                    "git": "-h"
                 }
             },
             {
-                "what": "Print each file's name before its matches",
+                "what": "Print paths relative to the project top directory",
+                "how": {
+                    "git": "--full-name"
+                }
+            },
+            {
+                "what": "Prefix the line number to matching lines",
+                "how": {
+                    "ag": "--[no]numbers",
+                    "git": "-n --line-number"
+                }
+            },
+            {
+                "what": "Print a heading of each file's name before its matches",
                 "how": {
                     "ack": "--[no]heading",
                     "ag": "-H --[no]heading"
@@ -137,7 +196,7 @@
             {
                 "what": "Show number of lines matching per file",
                 "how": {
-                    "ack,ag": "-c --count"
+                    "ack,ag,git": "-c --count"
                 }
             },
             {
@@ -151,7 +210,8 @@
                 "what": "Print null byte as separator between filenames",
                 "how": {
                     "ack": "--print0",
-                    "ag": "-0 --null --print0"
+                    "ag": "-0 --null --print0",
+                    "git": "-z --null"
                 }
             },
             {
@@ -174,6 +234,12 @@
                 }
             },
             {
+                "what": "Do not output matched lines",
+                "how": {
+                    "git": "-q --quiet"
+                }
+            },
+            {
                 "what": "Print stats (files scanned, time taken, etc.)",
                 "how": {
                     "ag": "--stats --stats-only"
@@ -187,7 +253,7 @@
             {
                 "what": "Enable color output",
                 "how": {
-                    "ack,ag": "--[no]color"
+                    "ack,ag,git": "--[no-]color"
                 }
             },
             {
@@ -225,7 +291,8 @@
             {
                 "what": "Pipe output through a pager or other command",
                 "how": {
-                    "ack": "--[no]pager"
+                    "ack": "--[no]pager",
+                    "git": "-O --open-files-in-pager"
                 }
             },
             {
@@ -241,12 +308,6 @@
                 }
             },
             {
-                "what": "Print line numbers",
-                "how": {
-                    "ag": "--[no]numbers"
-                }
-            },
-            {
                 "what": "Group together all matches in a file",
                 "how": {
                     "ack,ag": "--[no]group"
@@ -256,6 +317,18 @@
                 "what": "Print a filename heading above each file's results",
                 "how": {
                     "ack": "--[no]heading"
+                }
+            },
+            {
+                "what": "Show the function name of the match",
+                "how": {
+                    "git": "-p --show-function"
+                }
+            },
+            {
+                "what": "Show the function in which a match was found",
+                "how": {
+                    "git": "-W --function-context"
                 }
             },
             {
@@ -405,13 +478,26 @@
             {
                 "what": "Limit directory search depth",
                 "how": {
-                    "ag": "--depth"
+                    "ag": "--depth",
+                    "git": "--max-depth"
                 }
             },
             {
                 "what": "Search binary files",
                 "how": {
                     "ag": "--binary"
+                }
+            },
+            {
+                "what": "Don't search in binary files",
+                "how": {
+                    "git": "-I"
+                }
+            },
+            {
+                "what": "Treat binary files as if they were text",
+                "how": {
+                    "git": "-a --text"
                 }
             },
             {
