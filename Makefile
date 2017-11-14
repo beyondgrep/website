@@ -1,5 +1,5 @@
 .PHONY: \
-	compare \
+	chart \
 	crank \
 	clean \
 	local \
@@ -33,5 +33,5 @@ install: crank
 	rsync -azu -e ssh --delete --verbose \
 		$(BUILD)/ andy@alex.petdance.com:/srv/beyondgrep/
 
-compare:
+chart:
 	./compare > chart.html

@@ -176,15 +176,13 @@
             {
                 "what": "Print lines of context after matches",
                 "how": {
-                    "ack,git,grep,rg": "-A --after-context",
-                    "ag": "-A --after"
+                    "ack,ag,git,grep,rg": "-A --after"
                 }
             },
             {
                 "what": "Print lines of context before matches",
                 "how": {
-                    "ag": "-B --before",
-                    "ack,git,grep,rg": "-B --before-context"
+                    "ack,ag,git,grep,rg": "-B --before"
                 }
             },
             {
@@ -427,9 +425,15 @@
                 }
             },
             {
+                "what": "Search only files of a given type",
+                "how": {
+                    "ack": "--type=X --X (where X is a filetype)"
+                }
+            },
+            {
                 "what": "Exclude files of a given type",
                 "how": {
-                    "ack": "--type=noX"
+                    "ack": "--type=noX --noX (where X is a filetype)"
                 }
             },
             {
@@ -441,7 +445,7 @@
             {
                 "what": "Add filter for ignoring files",
                 "how": {
-                    "ack": "--ignore-file=FILTER:ARGS"
+                    "ack": "--ignore-file"
                 }
             },
             {
