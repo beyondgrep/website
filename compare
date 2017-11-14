@@ -35,6 +35,9 @@ for my $section ( @{$sections} ) {
         else {
             @new_hows = map { $flags_by_tool{$_} // '' } qw( ack ag git grep rg );
         }
+
+        s/-/\N{NON-BREAKING HYPHEN}/g for @new_hows;
+
         $ability->{how} = \@new_hows;
     }
 }

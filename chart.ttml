@@ -11,12 +11,12 @@
                     </th>
                 </tr>
                 <tr>
-                    <th width="40%"></th>
-                    <th width="12%">ack</th>
-                    <th width="12%">ag</th>
-                    <th width="12%">git</th>
-                    <th width="12%">grep</th>
-                    <th width="12%">rg</th>
+                    <th></th>
+                    <th width="14%">ack</th>
+                    <th width="14%">ag</th>
+                    <th width="14%">git</th>
+                    <th width="14%">grep</th>
+                    <th width="14%">rg</th>
                 </tr>
 
                 [% FOR ability IN section.abilities %]

@@ -24,7 +24,7 @@
             {
                 "what": "Match whole words",
                 "how": {
-                    "ack,ag,git,grep": "-w --word-regexp"
+                    "ack,ag,git,grep,rg": "-w --word-regexp"
                 }
             },
             {

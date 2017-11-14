@@ -26,6 +26,12 @@ th {
     top: 43px;
 }
 
+td {
+    border-bottom: 1px solid #f7f7f7;
+    padding: 5px;
+    vertical-align: top;
+}
+
 th:only-child {
     text-align: left;
     font-size: 18;
@@ -36,13 +42,14 @@ th:only-child {
     top: 0;
 }
 
-td {
-    border-bottom: 1px solid #f7f7f7;
-    padding: 5px;
+td:first-child {
+    vertical-align: middle;
 }
 
 td .option {
     background-color: #ffdfac;
+    font-family: "courier";
+    font-size: 11px;
     margin: 1px;
     display: block;
     padding: 5px;
