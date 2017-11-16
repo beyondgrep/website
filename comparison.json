@@ -83,7 +83,7 @@
                     "ack": "-Q --literal",
                     "ag": "-Q --literal -F --fixed-strings",
                     "git,rg": "-F --fixed-strings",
-                    "grep": "-F --fixed-strings, --fixed-regexp"
+                    "grep": "-F --fixed-strings --fixed-regexp"
                 }
             },
             {
@@ -373,7 +373,7 @@
             {
                 "what": "Limit width of match lines",
                 "how": {
-                    "ag": "-W, --width"
+                    "ag": "-W --width"
                 }
             }
         ]
