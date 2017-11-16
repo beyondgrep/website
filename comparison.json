@@ -34,16 +34,24 @@
                 }
             },
             {
+                "what": "Match entire line only",
+                "how": {
+                    "grep": "-x --line-regexp"
+                }
+            },
+            {
                 "what": "Specify pattern explicitly",
                 "how": {
                     "ack": "--match",
-                    "git": "-e"
+                    "git": "-e",
+                    "grep": "-e --regexp"
                 }
             },
             {
                 "what": "Read patterns from a file",
                 "how": {
-                    "git": "-f"
+                    "git": "-f",
+                    "grep": "-f --file"
                 }
             },
             {
@@ -55,7 +63,7 @@
             {
                 "what": "Match patterns across newlines",
                 "how": {
-                    "ag": "--[no]multiline"
+                    "ag": "--[no-]multiline"
                 }
             },
             {
@@ -74,26 +82,28 @@
                 "how": {
                     "ack": "-Q --literal",
                     "ag": "-Q --literal -F --fixed-strings",
-                    "git": "-F --fixed-strings"
+                    "git": "-F --fixed-strings",
+                    "grep": "-F --fixed-strings, --fixed-regexp"
                 }
             },
             {
                 "what": "Use basic regular expressions",
                 "how": {
-                    "git": "-G --basic-regexp"
+                    "git,grep": "-G --basic-regexp"
                 }
             },
             {
                 "what": "Use extended regular expressions",
                 "how": {
-                    "git": "-E --extended-regexp"
+                    "git,grep": "-E --extended-regexp"
                 }
             },
             {
                 "what": "Use Perl (or Perl-compatible) regular expressions",
                 "how": {
-                    "ack": "(standard behavior)",
-                    "git": "-P --perl-regexp"
+                    "ack": "(always)",
+                    "git": "-P --perl-regexp",
+                    "grep": "-P --perl-regexp (experimental)"
                 }
             }
         ]
@@ -110,14 +120,14 @@
             {
                 "what": "Print only filenames that do not contain matches",
                 "how": {
-                    "ack,ag,git": "-L --files-without-matches"
+                    "ack,ag,git,grep": "-L --files-without-match"
                 }
             },
             {
                 "what": "Show only the part of a line that matched",
                 "how": {
                     "ack": "-o",
-                    "ag": "-o --only-matching"
+                    "ag,grep": "-o --only-matching"
                 }
             },
             {
@@ -135,15 +145,15 @@
             {
                 "what": "Print the filename for each match",
                 "how": {
-                    "ack": "-H --with-filename",
-                    "ag": "--[no]filename",
+                    "ack,grep": "-H --with-filename",
+                    "ag": "--[no-]filename",
                     "git": "-H"
                 }
             },
             {
                 "what": "Suppress the prefixing filename on output",
                 "how": {
-                    "ack": "-h --no-filename",
+                    "ack,grep": "-h --no-filename",
                     "git": "-h"
                 }
             },
@@ -156,21 +166,27 @@
             {
                 "what": "Prefix the line number to matching lines",
                 "how": {
-                    "ag": "--[no]numbers",
-                    "git": "-n --line-number"
+                    "ag": "--[no-]numbers",
+                    "git,grep": "-n --line-number"
                 }
             },
             {
                 "what": "Print a heading of each file's name before its matches",
                 "how": {
-                    "ack": "--[no]heading",
-                    "ag": "-H --[no]heading"
+                    "ack": "--[no-]heading",
+                    "ag": "-H --[no-]heading"
+                }
+            },
+            {
+                "what": "Specify filename to show for matches on STDIN",
+                "how": {
+                    "grep": "--label"
                 }
             },
             {
                 "what": "Show the column number of the first match",
                 "how": {
-                    "ack": "--[no]column"
+                    "ack": "--[no-]column"
                 }
             },
             {
@@ -194,7 +210,7 @@
             {
                 "what": "Show number of lines matching per file",
                 "how": {
-                    "ack,ag,git": "-c --count"
+                    "ack,ag,git,grep": "-c --count"
                 }
             },
             {
@@ -209,13 +225,14 @@
                 "how": {
                     "ack": "--print0",
                     "ag": "-0 --null --print0",
-                    "git": "-z --null"
+                    "git": "-z --null",
+                    "grep": "-Z --null"
                 }
             },
             {
                 "what": "Stop searching in each file after NUM matches",
                 "how": {
-                    "ack,ag": "-m --max-count"
+                    "ack,ag,grep": "-m --max-count"
                 }
             },
             {
@@ -225,16 +242,24 @@
                 }
             },
             {
+                "what": "Print the byte offset within the file before each line",
+                "how": {
+                    "grep": "-b --byte-offset -u --unix-byte-offsets"
+                }
+            },
+            {
                 "what": "Suppress error messages about nonexistent or unreadable files",
                 "how": {
                     "ack,grep": "-s",
-                    "ag": "--silent"
+                    "ag": "--silent",
+                    "grep": "-s --no-messages"
                 }
             },
             {
                 "what": "Do not output matched lines",
                 "how": {
-                    "git": "-q --quiet"
+                    "git": "-q --quiet",
+                    "grep": "-q --quiet --silent"
                 }
             },
             {
@@ -283,20 +308,20 @@
             {
                 "what": "Highlight the matching text",
                 "how": {
-                    "ack": "--[no]color"
+                    "ack": "--[no-]color"
                 }
             },
             {
                 "what": "Pipe output through a pager or other command",
                 "how": {
-                    "ack": "--[no]pager",
+                    "ack": "--[no-]pager",
                     "git": "-O --open-files-in-pager"
                 }
             },
             {
                 "what": "Separate match output with blank lines unless they are on adjacent lines",
                 "how": {
-                    "ack": "--[no]proximate"
+                    "ack": "--[no-]proximate"
                 }
             },
             {
@@ -308,13 +333,19 @@
             {
                 "what": "Group together all matches in a file",
                 "how": {
-                    "ack,ag": "--[no]group"
+                    "ack,ag": "--[no-]group"
+                }
+            },
+            {
+                "what": "Specify group separator",
+                "how": {
+                    "grep": "--[no-]group-separator"
                 }
             },
             {
                 "what": "Print a filename heading above each file's results",
                 "how": {
-                    "ack": "--[no]heading"
+                    "ack": "--[no-]heading"
                 }
             },
             {
@@ -338,7 +369,7 @@
             {
                 "what": "Print a break between results from different files",
                 "how": {
-                    "ack,ag": "--[no]break"
+                    "ack,ag": "--[no-]break"
                 }
             },
             {
@@ -408,7 +439,14 @@
             {
                 "what": "Recurse into subdirectories",
                 "how": {
-                    "ack": "-r -R --recurse"
+                    "ack": "-r -R --[no-]recurse",
+                    "grep": "-r --recursive"
+                }
+            },
+            {
+                "what": "Recurse into subdirectories, following symlinks",
+                "how": {
+                    "grep": "-R --dereference-recursive"
                 }
             },
             {
@@ -420,7 +458,7 @@
             {
                 "what": "Add/remove directory from list of ignored dirs",
                 "how": {
-                    "ack": "--[no]ignore-dir",
+                    "ack": "--[no-]ignore-dir",
                     "ag": "--ignore-dir"
                 }
             },
@@ -437,9 +475,16 @@
                 }
             },
             {
+                "what": "Specify files to search",
+                "how": {
+                    "grep": "--include"
+                }
+            },
+            {
                 "what": "Ignore files/directories matching",
                 "how": {
-                    "ag": "--ignore"
+                    "ag": "--ignore",
+                    "grep": "--exclude --exclude-from --exclude-dir"
                 }
             },
             {
@@ -457,14 +502,15 @@
             {
                 "what": "Follow symlinks",
                 "how": {
-                    "ack": "--[no]follow",
+                    "ack": "--[no-]follow",
                     "ag": "-f --follow"
                 }
             },
             {
                 "what": "Don't follow links to other devices",
                 "how": {
-                    "ag": "--one-device"
+                    "ag": "--one-device",
+                    "grep": "--devices=skip"
                 }
             },
             {
@@ -490,6 +536,12 @@
                 "what": "Search binary files",
                 "how": {
                     "ag": "--binary"
+                }
+            },
+            {
+                "what": "Treat files as binary",
+                "how": {
+                    "grep": "-U --binary"
                 }
             },
             {
