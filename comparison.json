@@ -323,12 +323,6 @@
                 }
             },
             {
-                "what": "Set COLOR",
-                "how": {
-                    "ack": "--color-colno"
-                }
-            },
-            {
                 "what": "Group together all matches in a file",
                 "how": {
                     "ack,ag": "--[no-]group"
@@ -338,12 +332,6 @@
                 "what": "Specify group separator",
                 "how": {
                     "grep": "--[no-]group-separator"
-                }
-            },
-            {
-                "what": "Print a filename heading above each file's results",
-                "how": {
-                    "ack": "--[no-]heading"
                 }
             },
             {
