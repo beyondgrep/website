@@ -11,7 +11,7 @@
             {
                 "what": "Smart case",
                 "how": {
-                    "ack, ag, rg": "-S --smart-case"
+                    "ack,ag,rg": "-S --smart-case"
                 }
             },
             {

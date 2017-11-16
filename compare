@@ -20,7 +20,7 @@ for my $section ( @{$sections} ) {
     for my $ability ( @{$abilities} ) {
         my %flags_by_tool;
         while ( my ($key,$value) = each %{$ability->{how}} ) {
-            for my $tool ( split( /,/, $key ) ) {
+            for my $tool ( split( /\s*,\s*/, $key ) ) {
                 $flags_by_tool{$tool} = $value;
             }
         }
