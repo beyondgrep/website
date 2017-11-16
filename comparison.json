@@ -185,7 +185,8 @@
                 "what": "Print a heading of each file's name before its matches",
                 "how": {
                     "ack,rg": "--[no-]heading",
-                    "ag": "-H --[no-]heading"
+                    "ag": "-H --[no-]heading",
+                    "git": "--heading"
                 }
             },
             {
@@ -223,13 +224,6 @@
                 "what": "Show number of lines matching per file",
                 "how": {
                     "ack,ag,git,grep,rg": "-c --count"
-                }
-            },
-            {
-                "what": "Print all lines, whether matching or not",
-                "how": {
-                    "ack": "--passthru",
-                    "ag": "--passthrough"
                 }
             },
             {
@@ -427,6 +421,7 @@
                 "what": "Search only files of a given type",
                 "how": {
                     "ack": "--type=X --X (where X is a filetype)",
+                    "ag": "--X (where X is a filetype)",
                     "rg": "-t --type"
                 }
             },
@@ -617,6 +612,13 @@
         "section": "Miscellaneous",
         "abilities": [
             {
+                "what": "Print all lines, whether matching or not",
+                "how": {
+                    "ack": "--passthru",
+                    "ag": "--passthrough"
+                }
+            },
+            {
                 "what": "Outputs a default ackrc for your customization to standard output",
                 "how": {
                     "ack": "--create-ackrc"
@@ -649,7 +651,7 @@
             {
                 "what": "Treat standard input as a pipe",
                 "how": {
-                    "ack": "--[no]filter"
+                    "ack": "--[no-]filter"
                 }
             },
             {

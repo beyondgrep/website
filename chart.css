@@ -24,6 +24,7 @@ th {
     line-height: 20px;
     position: sticky;
     top: 43px;
+    font-size: 19;
 }
 
 td {
@@ -42,10 +43,12 @@ th:only-child {
     top: 0;
 }
 
+/* Description column */
 td:first-child {
-    vertical-align: middle;
+    vertical-align: top;
 }
 
+/* Option columns */
 td .option {
     background-color: #ffdfac;
     font-family: "courier";
