@@ -18,7 +18,7 @@
                 "what": "Case-sensitive search",
                 "how": {
                     "ack": "-I",
-                    "ag": "-s --case-sensitive"
+                    "ag,rg": "-s --case-sensitive"
                 }
             },
             {
@@ -36,7 +36,7 @@
             {
                 "what": "Match entire line only",
                 "how": {
-                    "grep": "-x --line-regexp"
+                    "grep,rg": "-x --line-regexp"
                 }
             },
             {
@@ -44,14 +44,14 @@
                 "how": {
                     "ack": "--match",
                     "git": "-e",
-                    "grep": "-e --regexp"
+                    "grep,rg": "-e --regexp"
                 }
             },
             {
                 "what": "Read patterns from a file",
                 "how": {
                     "git": "-f",
-                    "grep": "-f --file"
+                    "grep,rg": "-f --file"
                 }
             },
             {
@@ -82,7 +82,7 @@
                 "how": {
                     "ack": "-Q --literal",
                     "ag": "-Q --literal -F --fixed-strings",
-                    "git": "-F --fixed-strings",
+                    "git,rg": "-F --fixed-strings",
                     "grep": "-F --fixed-strings, --fixed-regexp"
                 }
             },
@@ -114,20 +114,21 @@
             {
                 "what": "Print only filenames that contain matches",
                 "how": {
-                    "ack,ag,git": "-l --files-with-matches"
+                    "ack,ag,git,grep,rg": "-l --files-with-matches"
                 }
             },
             {
                 "what": "Print only filenames that do not contain matches",
                 "how": {
-                    "ack,ag,git,grep": "-L --files-without-match"
+                    "ack,ag,git,grep": "-L --files-without-match",
+                    "rg": "--files-without-match"
                 }
             },
             {
                 "what": "Show only the part of a line that matched",
                 "how": {
                     "ack": "-o",
-                    "ag,grep": "-o --only-matching"
+                    "ag,grep,rg": "-o --only-matching"
                 }
             },
             {
@@ -137,15 +138,16 @@
                 }
             },
             {
-                "what": "Output the evaluation of expr for each line",
+                "what": "Specify output for each line match",
                 "how": {
-                    "ack": "--output"
+                    "ack": "--output",
+                    "rg": "-r --replace"
                 }
             },
             {
                 "what": "Print the filename for each match",
                 "how": {
-                    "ack,grep": "-H --with-filename",
+                    "ack,grep,rg": "-H --with-filename",
                     "ag": "--[no-]filename",
                     "git": "-H"
                 }
@@ -154,7 +156,9 @@
                 "what": "Suppress the prefixing filename on output",
                 "how": {
                     "ack,grep": "-h --no-filename",
-                    "git": "-h"
+                    "ag": "--no-filename",
+                    "git": "-h",
+                    "rg": "--no-filename"
                 }
             },
             {
@@ -167,13 +171,20 @@
                 "what": "Prefix the line number to matching lines",
                 "how": {
                     "ag": "--[no-]numbers",
-                    "git,grep": "-n --line-number"
+                    "git,grep,rg": "-n --line-number"
+                }
+            },
+            {
+                "what": "Suppress line numbers",
+                "how": {
+                    "ag": "--no-numbers",
+                    "rg": "-N --no-line-number"
                 }
             },
             {
                 "what": "Print a heading of each file's name before its matches",
                 "how": {
-                    "ack": "--[no-]heading",
+                    "ack,rg": "--[no-]heading",
                     "ag": "-H --[no-]heading"
                 }
             },
@@ -186,7 +197,8 @@
             {
                 "what": "Show the column number of the first match",
                 "how": {
-                    "ack": "--[no-]column"
+                    "ack": "--[no-]column",
+                    "rg": "--column"
                 }
             },
             {
@@ -210,7 +222,7 @@
             {
                 "what": "Show number of lines matching per file",
                 "how": {
-                    "ack,ag,git,grep": "-c --count"
+                    "ack,ag,git,grep,rg": "-c --count"
                 }
             },
             {
@@ -226,13 +238,14 @@
                     "ack": "--print0",
                     "ag": "-0 --null --print0",
                     "git": "-z --null",
-                    "grep": "-Z --null"
+                    "grep": "-Z --null",
+                    "rg": "-0 --null"
                 }
             },
             {
                 "what": "Stop searching in each file after NUM matches",
                 "how": {
-                    "ack,ag,grep": "-m --max-count"
+                    "ack,ag,grep,rg": "-m --max-count"
                 }
             },
             {
@@ -252,13 +265,20 @@
                 "how": {
                     "ack,grep": "-s",
                     "ag": "--silent",
-                    "grep": "-s --no-messages"
+                    "grep": "-s --no-messages",
+                    "rg": "--no-messages"
+                }
+            },
+            {
+                "what": "Limit length of output lines",
+                "how": {
+                    "rg": "-M --max-columns"
                 }
             },
             {
                 "what": "Do not output matched lines",
                 "how": {
-                    "git": "-q --quiet",
+                    "git,rg": "-q --quiet",
                     "grep": "-q --quiet --silent"
                 }
             },
@@ -276,39 +296,17 @@
             {
                 "what": "Enable color output",
                 "how": {
-                    "ack,ag,git": "--[no-]color"
+                    "ack,ag,grep,git,gg": "--color"
                 }
             },
             {
-                "what": "Set the color for matches",
+                "what": "Set colors for various output items",
                 "how": {
-                    "ack,ag": "--color-match"
-                }
-            },
-            {
-                "what": "Set the color for filenames",
-                "how": {
-                    "ack": "--color-filename",
-                    "ag": "--color-path"
-                }
-            },
-            {
-                "what": "Set the color for line numbers",
-                "how": {
-                    "ack": "--color-lineno",
-                    "ag": "--color-line-number"
-                }
-            },
-            {
-                "what": "Set the color for column numbers",
-                "how": {
-                    "ack": "--color-colno"
-                }
-            },
-            {
-                "what": "Highlight the matching text",
-                "how": {
-                    "ack": "--[no-]color"
+                    "ack": "--color-match --color-filename --color-lineno --color-colno",
+                    "ag": "--color-match --color-path --color-line-number",
+                    "git": "Specified in the .gitconfig file",
+                    "grep": "Specified in GREP_COLORS environment variable",
+                    "rg": "--colors"
                 }
             },
             {
@@ -386,7 +384,8 @@
             {
                 "what": "Only print the files selected, without searching",
                 "how": {
-                    "ack": "-f"
+                    "ack": "-f",
+                    "rg": "--files"
                 }
             },
             {
@@ -410,7 +409,7 @@
             {
                 "what": "Sort the found files lexically",
                 "how": {
-                    "ack": "--sort-files"
+                    "ack,rg": "--sort-files"
                 }
             },
             {
@@ -428,7 +427,7 @@
             {
                 "what": "Search hidden files",
                 "how": {
-                    "ag": "--hidden"
+                    "ag,rg": "--hidden"
                 }
             }
         ]
@@ -436,6 +435,20 @@
     {
         "section": "File inclusion/exclusion",
         "abilities": [
+            {
+                "what": "Search only files of a given type",
+                "how": {
+                    "ack": "--type=X --X (where X is a filetype)",
+                    "rg": "-t --type"
+                }
+            },
+            {
+                "what": "Exclude files of a given type",
+                "how": {
+                    "ack": "--type=noX --noX (where X is a filetype)",
+                    "rg": "-T --type-not"
+                }
+            },
             {
                 "what": "Recurse into subdirectories",
                 "how": {
@@ -463,28 +476,30 @@
                 }
             },
             {
-                "what": "Search only files of a given type",
+                "what": "Don't respect ignore files (.gitignore, .ignore, etc)",
                 "how": {
-                    "ack": "--type=X --X (where X is a filetype)"
+                    "rg": "--no-ignore --no-ignore-parent --no-ignore-vcs"
                 }
             },
             {
-                "what": "Exclude files of a given type",
+                "what": "Ignore files larger than a given size",
                 "how": {
-                    "ack": "--type=noX --noX (where X is a filetype)"
+                    "rg": "--max-filesize"
                 }
             },
             {
                 "what": "Specify files to search",
                 "how": {
-                    "grep": "--include"
+                    "grep": "--include",
+                    "rg": "-g --glob --iglob"
                 }
             },
             {
                 "what": "Ignore files/directories matching",
                 "how": {
                     "ag": "--ignore",
-                    "grep": "--exclude --exclude-from --exclude-dir"
+                    "grep": "--exclude --exclude-from --exclude-dir",
+                    "rg": "--ignore-file"
                 }
             },
             {
@@ -503,7 +518,8 @@
                 "what": "Follow symlinks",
                 "how": {
                     "ack": "--[no-]follow",
-                    "ag": "-f --follow"
+                    "ag": "-f --follow",
+                    "rg": "-L --follow"
                 }
             },
             {
@@ -529,7 +545,8 @@
                 "what": "Limit directory search depth",
                 "how": {
                     "ag": "--depth",
-                    "git": "--max-depth"
+                    "git": "--max-depth",
+                    "rg": "--maxdepth"
                 }
             },
             {
@@ -553,7 +570,7 @@
             {
                 "what": "Treat binary files as if they were text",
                 "how": {
-                    "git": "-a --text"
+                    "git,rg": "-a --text"
                 }
             },
             {
@@ -565,7 +582,7 @@
             {
                 "what": "Search all files",
                 "how": {
-                    "ag": "-u --unrestricted"
+                    "ag,rg": "-u --unrestricted"
                 }
             },
             {
@@ -588,20 +605,22 @@
             {
                 "what": "Add specifications to an existing filetype",
                 "how": {
-                    "ack": "--type-add"
+                    "ack,rg": "--type-add"
                 }
             },
             {
                 "what": "Remove a file type",
                 "how": {
-                    "ack": "--type-del"
+                    "ack": "--type-del",
+                    "rg": "--type-clear"
                 }
             },
             {
                 "what": "Display all known types",
                 "how": {
                     "ack": "--help-types",
-                    "ag": "--list-file-types"
+                    "ag": "--list-file-types",
+                    "rg": "--type-list"
                 }
             }
         ]
@@ -649,6 +668,12 @@
                 "what": "Search contents of compressed files (e.g. gzip)",
                 "how": {
                     "ag": "-z --search-zip"
+                }
+            },
+            {
+                "what": "Specify input file encoding",
+                "how": {
+                    "rg": "-E --encoding"
                 }
             }
         ]
