@@ -9,6 +9,9 @@ use File::Slurp;
 use List::MoreUtils qw( uniq );
 use Template;
 
+my @TOOLS = qw( ack ag git grep rg );
+my %TOOLS = map { $_ => 1 } @TOOLS;
+
 my $json_text = File::Slurp::read_file( 'comparison.json' );
 
 my $sections = JSON::PP->new->utf8->decode($json_text);
@@ -21,6 +24,7 @@ for my $section ( @{$sections} ) {
         my %flags_by_tool;
         while ( my ($key,$value) = each %{$ability->{how}} ) {
             for my $tool ( split( /\s*,\s*/, $key ) ) {
+                $TOOLS{$tool} or die "Invalid tool $tool";
                 $flags_by_tool{$tool} = $value;
             }
         }
@@ -33,7 +37,7 @@ for my $section ( @{$sections} ) {
             @new_hows = @distinct_flags;
         }
         else {
-            @new_hows = map { $flags_by_tool{$_} // '' } qw( ack ag git grep rg );
+            @new_hows = map { $flags_by_tool{$_} // '' } @TOOLS;
         }
 
         s/-/\N{NON-BREAKING HYPHEN}/g for @new_hows;

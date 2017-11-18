@@ -3,13 +3,13 @@
         "section": "Searching",
         "abilities": [
             {
+                "what": "Ignore case",
                 "how": {
                     "ack,ag,git,grep,rg": "-i --ignore-case"
-                },
-                "what": "Ignore case"
+                }
             },
             {
-                "what": "Smart case",
+                "what": "Smart case searching (case-insensitive unless the pattern contains a capital letter)",
                 "how": {
                     "ack,ag,rg": "-S --smart-case"
                 }
@@ -290,7 +290,7 @@
             {
                 "what": "Enable color output",
                 "how": {
-                    "ack,ag,grep,git,gg": "--color"
+                    "ack,ag,grep,git,rg": "--color"
                 }
             },
             {
