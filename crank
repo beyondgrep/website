@@ -11,9 +11,9 @@ use Template ();
 use Template::Constants qw( :debug :chomp );
 use URI::file;
 
-exit main();
+my $LATEST = '2.22';
 
-sub main {
+MAIN: {
     my $sourcepath = 's';
     my $buildpath  = 'build';
     my $local;
@@ -68,7 +68,7 @@ sub main {
 <div class='content'>
 END_PREAMBLE
 
-    open my $pipe, '-|', 'pod2html', 'static/ack-2.20-single-file' or die "Unable to open pipe to pod2html: $!";
+    open my $pipe, '-|', 'pod2html', "static/ack-$LATEST-single-file" or die "Unable to open pipe to pod2html: $!";
     while ( <$pipe> ) {
         # I know, I know, I know... HTML + regexes = bad.
         if ( !$in_body && /<body/ ) {
@@ -91,11 +91,11 @@ END_PREAMBLE
 [% END %]
 END_POSTAMBLE
 
-    $tt->process( \$output, { index => 'index.html' }, 'documentation/ack-2.20-man.html', { binmode => ':encoding(UTF-8)' })
+    $tt->process( \$output, { index => 'index.html' }, "documentation/ack-$LATEST-man.html", { binmode => ':encoding(UTF-8)' })
         or die "Failed to something something: " . $tt->error;
-
-    return 0;
 }
+
+exit 0;
 
 sub get_page_names {
     my $sourcepath = shift;

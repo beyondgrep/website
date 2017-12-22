@@ -1,5 +1,22 @@
 History file for ack.  https://beyondgrep.com/
 
+2.22    Fri Dec 22 16:42:43 CST 2017
+====================================
+No changes since 2.21_01.
+
+
+2.21_01 Mon Dec 18 23:40:45 CST 2017
+====================================
+[FIXES]
+Avoid a fatal error that sometimes happened if a file was unreadable.
+(GH#520)
+
+[ENHANCEMENTS]
+Added support for the Kotlin language.
+
+Sped up file type detection for certain files.
+
+
 2.20    Sun Dec 10 21:54:55 CST 2017
 ====================================
 No changes since 2.19_01.
