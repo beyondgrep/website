@@ -1,0 +1,80 @@
+[% WRAPPER wrapper/page.ttml title="What's new in ack 3?" %]
+<div class="content">
+    <h1>ack 3 is now in beta</h1>
+
+    <p>
+        ack 2.999_01 has been released to beta.  It is feature complete,
+        but we still will be working on speed improvements.
+    </p>
+
+    <h1>What's new in ack 3?</h1>
+
+    <h2>New <tt>--proximate</tt> option</h2>
+
+    <p>
+        A new option <tt>--proximate=N</tt> groups together lines of
+        output that are within N lines of each other in the file.  This is
+        useful when looking for matches that are related to each other.
+    </p>
+
+    <p>
+        For example, these results:
+    </p>
+
+<pre>
+    15: First match
+    18: Second match
+    19: Third match
+    37: Fourth match
+</pre>
+
+    <p>
+        would look like this with <tt>--proximate=1</tt>.
+    </p>
+
+<pre>
+    15: First match
+
+    18: Second match
+    19: Third match
+
+    37: Fourth match
+</pre>
+
+    <h2>Improved and incompatible <tt>-w</tt> option</h2>
+
+    <p>
+        The <tt>-w</tt> option did not always work as expected if your
+        pattern began or ended with puncutation.  ack would make guesses
+        as to what your intent was, but it was not well-defined.  Now,
+        ack disallows regexes that begin or end with non-word characters.
+    </p>
+
+    <p>
+        This means that if you use <tt>ack -w foo:</tt>, the new ack
+        will not allow it, whereas ack 2.x would.
+    </p>
+
+    <h2>Added <tt>-I</tt> to force case-sensitivity</h2>
+
+    <p>
+        If you use <tt>--smart-case</tt> in your .ackrc, you can use
+        <tt>-I</tt> to force case-sensitivity instead of having to use
+        <tt>--no-smart-case</tt> (which still works).
+    </p>
+
+    <h2>Added <tt>-S</tt> as a synonym for <tt>--smart-case</tt></h2>
+
+    <p>
+        For those without <tt>--smart-case</tt> always on, the <tt>-S</tt>
+        will be easier for when you do want to use it.
+    </p>
+
+    <h2>Internals have been improved</h2>
+    <p>
+        ack had infrastructure for allowing plugins, but that
+        infrastructure was never used, and has now been removed.  This has
+        minor speedups now, and will allow greater speedups in the future.
+    </p>
+</div>
+[% END %]
