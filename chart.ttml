@@ -1,44 +1,40 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="chart.css" />
-    </head>
-    <body>
-        <table>
-            [% FOR section IN sections %]
-                <tr>
-                    <th colspan="6">
-                        [% section.section | html_entity %]
-                    </th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th width="14%">ack</th>
-                    <th width="14%">ag</th>
-                    <th width="14%">git-grep</th>
-                    <th width="14%">grep</th>
-                    <th width="14%">rg</th>
-                </tr>
+[% WRAPPER wrapper/page.ttml title="Feature comparison of ack, ag, git-grep, grep and ripgrep" %]
+<div class="content">
+<table>
+    [% FOR section IN sections %]
+        <tr>
+            <th colspan="6">
+                [% section.section | html_entity %]
+            </th>
+        </tr>
+        <tr>
+            <th></th>
+            <th width="14%">ack</th>
+            <th width="14%">ag</th>
+            <th width="14%">git-grep</th>
+            <th width="14%">grep</th>
+            <th width="14%">rg</th>
+        </tr>
 
-                [% FOR ability IN section.abilities %]
-                    <tr>
-                        <td>[% ability.what | html_entity %]</td>
-                        [% hows = ability.how %]
-                        [% IF hows.size == 5 %]
-                            [% FOR how IN hows %]
-                                <td>
-                                    [% IF how != '' %]
-                                        <span class="option">[% how | html_entity %]</span>
-                                    [% END %]
-                                </td>
+        [% FOR ability IN section.abilities %]
+            <tr>
+                <td>[% ability.what | html_entity %]</td>
+                [% hows = ability.how %]
+                [% IF hows.size == 5 %]
+                    [% FOR how IN hows %]
+                        <td>
+                            [% IF how != '' %]
+                                <span class="option">[% how | html_entity %]</span>
                             [% END %]
-                        [% ELSE %]
-                            <td colspan="5">
-                                <span class="option">[% hows.0 | html_entity %]</span>
-                            </td>
-                        [% END %]
-                    </tr>
+                        </td>
+                    [% END %]
+                [% ELSE %]
+                    <td colspan="5">
+                        <span class="option">[% hows.0 | html_entity %]</span>
+                    </td>
                 [% END %]
-            [% END %]
-        </table>
-    </body>
-</html>
+            </tr>
+        [% END %]
+    [% END %]
+</table>
+[% END %]

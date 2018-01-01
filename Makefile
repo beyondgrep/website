@@ -22,6 +22,7 @@ local: clean
 crank: clean
 	mkdir -p $(BUILD)/ || true > /dev/null 2>&1
 	cp -R static/* $(BUILD)/
+	perl compare > tt/feature-comparison.ttml
 	perl crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)
 	find $(BUILD) -name "*~" -exec rm -f {} \; # Remove any backup leftovers
 
@@ -32,6 +33,3 @@ test:
 install: crank
 	rsync -azu -e ssh --delete --verbose \
 		$(BUILD)/ andy@alex.petdance.com:/srv/beyondgrep/
-
-chart:
-	./compare > chart.html

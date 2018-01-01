@@ -53,5 +53,9 @@ my $vars = {
     sections => $sections,
 };
 
-my $tt = Template->new;
+my %tt_settings = (
+    INCLUDE_PATH => [ qw( . tt tt/wrapper ) ],
+);
+
+my $tt = Template->new( \%tt_settings );
 $tt->process( 'chart.ttml', $vars ) or die $tt->error;
