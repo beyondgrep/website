@@ -75,15 +75,13 @@
 
         
 <div class="content">
+<h1>Feature comparison of ack, ag, git-grep, grep and ripgrep</h1>
 <table>
     
         <tr>
-            <th colspan="6">
+            <th>
                 Searching
             </th>
-        </tr>
-        <tr>
-            <th></th>
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
@@ -384,12 +382,9 @@
         
     
         <tr>
-            <th colspan="6">
+            <th>
                 Regular expressions
             </th>
-        </tr>
-        <tr>
-            <th></th>
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
@@ -536,12 +531,9 @@
         
     
         <tr>
-            <th colspan="6">
+            <th>
                 Search output
             </th>
-        </tr>
-        <tr>
-            <th></th>
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
@@ -1274,12 +1266,9 @@
         
     
         <tr>
-            <th colspan="6">
+            <th>
                 File presentation
             </th>
-        </tr>
-        <tr>
-            <th></th>
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
@@ -1614,12 +1603,9 @@
         
     
         <tr>
-            <th colspan="6">
+            <th>
                 File finding
             </th>
-        </tr>
-        <tr>
-            <th></th>
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
@@ -1878,12 +1864,9 @@
         
     
         <tr>
-            <th colspan="6">
+            <th>
                 File inclusion/exclusion
             </th>
-        </tr>
-        <tr>
-            <th></th>
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
@@ -2644,12 +2627,9 @@
         
     
         <tr>
-            <th colspan="6">
+            <th>
                 File type specification
             </th>
-        </tr>
-        <tr>
-            <th></th>
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
@@ -2788,12 +2768,9 @@
         
     
         <tr>
-            <th colspan="6">
+            <th>
                 Miscellaneous
             </th>
-        </tr>
-        <tr>
-            <th></th>
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>

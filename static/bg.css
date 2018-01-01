@@ -244,3 +244,61 @@ dt.keystrokes:before {
 dt.open:before {
     content:url('./open.png');
 }
+
+/* Feature comparison chart */
+table {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-collapse: inherit;
+    border-spacing: 0;
+    border-color: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    -webkit-border-horizontal-spacing: 0;
+    -webkit-border-vertical-spacing: 0;
+    font-size:14px;
+}
+
+th {
+    background-color: #666;
+    color: #fff;
+    line-height: 20px;
+    position: sticky;
+    top: 43px;
+    font-size: 19;
+}
+
+td {
+    border-bottom: 1px solid #f7f7f7;
+    padding: 5px;
+    vertical-align: top;
+}
+
+th:only-child {
+    text-align: left;
+    font-size: 18;
+    font-weight: 400;
+    background-color: #333;
+    color: #ffffff;
+    padding: 12px;
+    top: 0;
+}
+
+/* Description column */
+td:first-child {
+    vertical-align: top;
+}
+
+/* Option columns */
+td .option {
+    background-color: #ffdfac;
+    font-family: "courier";
+    font-size: 11px;
+    margin: 1px;
+    display: block;
+    padding: 5px;
+    text-align: center;
+}
