@@ -4,7 +4,14 @@
 
     <p>
         ack 2.999_01 has been released to beta.  It is feature complete,
-        but we still will be working on speed improvements.
+        but we still will be working on speed improvements.  Compare
+        ack's features to other grep-like programs in our handy
+        <a href="/feature-comparison">feature comparison chart</a>.
+    </p>
+
+    <p>
+        The beta is currently available via the Perl CPAN, or you can
+        <a href="/ack-2.999_01-single-file">download a single Perl program</a>.
     </p>
 
     <h1>What's new in ack 3?</h1>
