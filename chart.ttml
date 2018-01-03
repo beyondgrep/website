@@ -1,6 +1,6 @@
 [% WRAPPER wrapper/page.ttml title="Feature comparison of ack, ag, git-grep, grep and ripgrep" %]
 <div class="content">
-<h1>Feature comparison of ack, ag, git-grep, grep and ripgrep</h1>
+<h1>Feature comparison of ack, ag, git-grep, GNU grep and ripgrep</h1>
 <table>
     [% FOR section IN sections %]
         <tr>
@@ -10,7 +10,7 @@
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
-            <th width="14%">grep</th>
+            <th width="14%">GNU grep</th>
             <th width="14%">rg</th>
         </tr>
 

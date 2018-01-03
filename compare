@@ -9,7 +9,7 @@ use File::Slurp;
 use List::MoreUtils qw( uniq );
 use Template;
 
-my @TOOLS = qw( ack ag git grep rg );
+my @TOOLS = qw( ack ag git gnu rg );
 my %TOOLS = map { $_ => 1 } @TOOLS;
 
 my $json_text = File::Slurp::read_file( 'comparison.json' );

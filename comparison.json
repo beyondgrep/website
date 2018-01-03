@@ -5,7 +5,7 @@
             {
                 "what": "Ignore case",
                 "how": {
-                    "ack,ag,git,grep,rg": "-i --ignore-case"
+                    "ack,ag,git,gnu,rg": "-i --ignore-case"
                 }
             },
             {
@@ -24,19 +24,19 @@
             {
                 "what": "Match whole words",
                 "how": {
-                    "ack,ag,git,grep,rg": "-w --word-regexp"
+                    "ack,ag,git,gnu,rg": "-w --word-regexp"
                 }
             },
             {
                 "what": "Invert match",
                 "how": {
-                    "ack,ag,git,grep,rg": "-v --invert-match"
+                    "ack,ag,git,gnu,rg": "-v --invert-match"
                 }
             },
             {
                 "what": "Match entire line only",
                 "how": {
-                    "grep,rg": "-x --line-regexp"
+                    "gnu,rg": "-x --line-regexp"
                 }
             },
             {
@@ -44,14 +44,14 @@
                 "how": {
                     "ack": "--match",
                     "git": "-e",
-                    "grep,rg": "-e --regexp"
+                    "gnu,rg": "-e --regexp"
                 }
             },
             {
                 "what": "Read patterns from a file",
                 "how": {
                     "git": "-f",
-                    "grep,rg": "-f --file"
+                    "gnu,rg": "-f --file"
                 }
             },
             {
@@ -83,19 +83,19 @@
                     "ack": "-Q --literal",
                     "ag": "-Q --literal -F --fixed-strings",
                     "git,rg": "-F --fixed-strings",
-                    "grep": "-F --fixed-strings --fixed-regexp"
+                    "gnu": "-F --fixed-strings --fixed-regexp"
                 }
             },
             {
                 "what": "Use basic regular expressions",
                 "how": {
-                    "git,grep": "-G --basic-regexp"
+                    "git,gnu": "-G --basic-regexp"
                 }
             },
             {
                 "what": "Use extended regular expressions",
                 "how": {
-                    "git,grep": "-E --extended-regexp"
+                    "git,gnu": "-E --extended-regexp"
                 }
             },
             {
@@ -103,7 +103,7 @@
                 "how": {
                     "ack": "(always)",
                     "git": "-P --perl-regexp",
-                    "grep": "-P --perl-regexp (experimental)"
+                    "gnu": "-P --perl-regexp (experimental)"
                 }
             }
         ]
@@ -114,13 +114,13 @@
             {
                 "what": "Print only filenames that contain matches",
                 "how": {
-                    "ack,ag,git,grep,rg": "-l --files-with-matches"
+                    "ack,ag,git,gnu,rg": "-l --files-with-matches"
                 }
             },
             {
                 "what": "Print only filenames that do not contain matches",
                 "how": {
-                    "ack,ag,git,grep": "-L --files-without-match",
+                    "ack,ag,git,gnu": "-L --files-without-match",
                     "rg": "--files-without-match"
                 }
             },
@@ -128,7 +128,7 @@
                 "what": "Show only the part of a line that matched",
                 "how": {
                     "ack": "-o",
-                    "ag,grep,rg": "-o --only-matching"
+                    "ag,gnu,rg": "-o --only-matching"
                 }
             },
             {
@@ -147,7 +147,7 @@
             {
                 "what": "Print the filename for each match",
                 "how": {
-                    "ack,grep,rg": "-H --with-filename",
+                    "ack,gnu,rg": "-H --with-filename",
                     "ag": "--[no-]filename",
                     "git": "-H"
                 }
@@ -155,7 +155,7 @@
             {
                 "what": "Suppress the prefixing filename on output",
                 "how": {
-                    "ack,grep": "-h --no-filename",
+                    "ack,gnu": "-h --no-filename",
                     "ag": "--no-filename",
                     "git": "-h",
                     "rg": "--no-filename"
@@ -171,7 +171,7 @@
                 "what": "Prefix the line number to matching lines",
                 "how": {
                     "ag": "--[no-]numbers",
-                    "git,grep,rg": "-n --line-number"
+                    "git,gnu,rg": "-n --line-number"
                 }
             },
             {
@@ -192,7 +192,7 @@
             {
                 "what": "Specify filename to show for matches on STDIN",
                 "how": {
-                    "grep": "--label"
+                    "gnu": "--label"
                 }
             },
             {
@@ -205,25 +205,25 @@
             {
                 "what": "Print lines of context after matches",
                 "how": {
-                    "ack,ag,git,grep,rg": "-A --after"
+                    "ack,ag,git,gnu,rg": "-A --after"
                 }
             },
             {
                 "what": "Print lines of context before matches",
                 "how": {
-                    "ack,ag,git,grep,rg": "-B --before"
+                    "ack,ag,git,gnu,rg": "-B --before"
                 }
             },
             {
                 "what": "Print lines of context before and after matches",
                 "how": {
-                    "ack,ag,git,grep,rg": "-C --context"
+                    "ack,ag,git,gnu,rg": "-C --context"
                 }
             },
             {
                 "what": "Show number of lines matching per file",
                 "how": {
-                    "ack,ag,git,grep,rg": "-c --count"
+                    "ack,ag,git,gnu,rg": "-c --count"
                 }
             },
             {
@@ -232,14 +232,14 @@
                     "ack": "--print0",
                     "ag": "-0 --null --print0",
                     "git": "-z --null",
-                    "grep": "-Z --null",
+                    "gnu": "-Z --null",
                     "rg": "-0 --null"
                 }
             },
             {
                 "what": "Stop searching in each file after NUM matches",
                 "how": {
-                    "ack,ag,grep,rg": "-m --max-count"
+                    "ack,ag,gnu,rg": "-m --max-count"
                 }
             },
             {
@@ -251,15 +251,15 @@
             {
                 "what": "Print the byte offset within the file before each line",
                 "how": {
-                    "grep": "-b --byte-offset -u --unix-byte-offsets"
+                    "gnu": "-b --byte-offset -u --unix-byte-offsets"
                 }
             },
             {
                 "what": "Suppress error messages about nonexistent or unreadable files",
                 "how": {
-                    "ack,grep": "-s",
+                    "ack,gnu": "-s",
                     "ag": "--silent",
-                    "grep": "-s --no-messages",
+                    "gnu": "-s --no-messages",
                     "rg": "--no-messages"
                 }
             },
@@ -273,7 +273,7 @@
                 "what": "Do not output matched lines",
                 "how": {
                     "git,rg": "-q --quiet",
-                    "grep": "-q --quiet --silent"
+                    "gnu": "-q --quiet --silent"
                 }
             },
             {
@@ -290,7 +290,7 @@
             {
                 "what": "Enable color output",
                 "how": {
-                    "ack,ag,grep,git,rg": "--color"
+                    "ack,ag,gnu,git,rg": "--color"
                 }
             },
             {
@@ -299,7 +299,7 @@
                     "ack": "--color-match --color-filename --color-lineno --color-colno",
                     "ag": "--color-match --color-path --color-line-number",
                     "git": "Specified in the .gitconfig file",
-                    "grep": "Specified in GREP_COLORS environment variable",
+                    "gnu": "Specified in gnu_COLORS environment variable",
                     "rg": "--colors"
                 }
             },
@@ -325,7 +325,7 @@
             {
                 "what": "Specify group separator",
                 "how": {
-                    "grep": "--[no-]group-separator"
+                    "gnu": "--[no-]group-separator"
                 }
             },
             {
@@ -436,13 +436,13 @@
                 "what": "Recurse into subdirectories",
                 "how": {
                     "ack": "-r -R --[no-]recurse",
-                    "grep": "-r --recursive"
+                    "gnu": "-r --recursive"
                 }
             },
             {
                 "what": "Recurse into subdirectories, following symlinks",
                 "how": {
-                    "grep": "-R --dereference-recursive"
+                    "gnu": "-R --dereference-recursive"
                 }
             },
             {
@@ -473,7 +473,7 @@
             {
                 "what": "Specify files to search",
                 "how": {
-                    "grep": "--include",
+                    "gnu": "--include",
                     "rg": "-g --glob --iglob"
                 }
             },
@@ -481,7 +481,7 @@
                 "what": "Ignore files/directories matching",
                 "how": {
                     "ag": "--ignore",
-                    "grep": "--exclude --exclude-from --exclude-dir",
+                    "gnu": "--exclude --exclude-from --exclude-dir",
                     "rg": "--ignore-file"
                 }
             },
@@ -509,7 +509,7 @@
                 "what": "Don't follow links to other devices",
                 "how": {
                     "ag": "--one-device",
-                    "grep": "--devices=skip"
+                    "gnu": "--devices=skip"
                 }
             },
             {
@@ -541,7 +541,7 @@
             {
                 "what": "Treat files as binary",
                 "how": {
-                    "grep": "-U --binary"
+                    "gnu": "-U --binary"
                 }
             },
             {

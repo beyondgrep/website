@@ -75,7 +75,7 @@
 
         
 <div class="content">
-<h1>Feature comparison of ack, ag, git-grep, grep and ripgrep</h1>
+<h1>Feature comparison of ack, ag, git-grep, GNU grep and ripgrep</h1>
 <table>
     
         <tr>
@@ -85,7 +85,7 @@
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
-            <th width="14%">grep</th>
+            <th width="14%">GNU grep</th>
             <th width="14%">rg</th>
         </tr>
 
@@ -388,7 +388,7 @@
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
-            <th width="14%">grep</th>
+            <th width="14%">GNU grep</th>
             <th width="14%">rg</th>
         </tr>
 
@@ -537,7 +537,7 @@
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
-            <th width="14%">grep</th>
+            <th width="14%">GNU grep</th>
             <th width="14%">rg</th>
         </tr>
 
@@ -1157,7 +1157,7 @@
                     
                         <td>
                             
-                                <span class="option">&#x2011;s</span>
+                                <span class="option">&#x2011;s &#x2011;&#x2011;no&#x2011;messages</span>
                             
                         </td>
                     
@@ -1272,7 +1272,7 @@
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
-            <th width="14%">grep</th>
+            <th width="14%">GNU grep</th>
             <th width="14%">rg</th>
         </tr>
 
@@ -1312,7 +1312,7 @@
                     
                         <td>
                             
-                                <span class="option">Specified in GREP_COLORS environment variable</span>
+                                <span class="option">Specified in gnu_COLORS environment variable</span>
                             
                         </td>
                     
@@ -1609,7 +1609,7 @@
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
-            <th width="14%">grep</th>
+            <th width="14%">GNU grep</th>
             <th width="14%">rg</th>
         </tr>
 
@@ -1870,7 +1870,7 @@
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
-            <th width="14%">grep</th>
+            <th width="14%">GNU grep</th>
             <th width="14%">rg</th>
         </tr>
 
@@ -2633,7 +2633,7 @@
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
-            <th width="14%">grep</th>
+            <th width="14%">GNU grep</th>
             <th width="14%">rg</th>
         </tr>
 
@@ -2774,7 +2774,7 @@
             <th width="14%">ack</th>
             <th width="14%">ag</th>
             <th width="14%">git-grep</th>
-            <th width="14%">grep</th>
+            <th width="14%">GNU grep</th>
             <th width="14%">rg</th>
         </tr>
 
