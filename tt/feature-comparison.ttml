@@ -3072,10 +3072,17 @@
             Ack is free software; you can redistribute it and/or modify it under the terms of the
             <a href="http://www.opensource.org/licenses/Artistic-2.0">Artistic License v2.0</a>.
             </p>
+
             <p>
             Website design by <a href="http://www.madebyargon.com/">Ashraful Sheikh</a>
             and <a href="http://www.jeanaclark.org/">Jeana Clark</a>.
             </p>
+
+            <p>
+            Thanks to DigitalOcean for their support.<br />
+            <img src="/digital-ocean-badge.png" height="25" width="120">
+            </p>
+
         </div>
     </body>
 </html>
