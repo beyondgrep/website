@@ -1,6 +1,16 @@
 [% WRAPPER wrapper/page.ttml title="Feature comparison of ack, ag, git-grep, grep and ripgrep" %]
 <div class="content">
 <h1>Feature comparison of ack, ag, git-grep, GNU grep and ripgrep</h1>
+
+<p>
+    Note: <a href="/ack3">ack 3 is currently in beta</a>.
+</p>
+
+<p>
+    If you have updates to the chart, please
+    <a href="https://github.com/beyondgrep/website/issues/">submit as a GitHub issue</a>.
+</p>
+
 <table>
     [% FOR section IN sections %]
         <tr>
