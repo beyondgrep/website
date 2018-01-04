@@ -5,7 +5,8 @@
             {
                 "what": "Ignore case",
                 "how": {
-                    "ack,ag,git,gnu,rg": "-i --ignore-case"
+                    "ack,ag,freebsd,git,gnu,netbsd,osx,rg": "-i --ignore-case",
+                    "bsd,posix": "-i"
                 }
             },
             {
@@ -24,19 +25,22 @@
             {
                 "what": "Match whole words",
                 "how": {
-                    "ack,ag,git,gnu,rg": "-w --word-regexp"
+                    "ack,ag,freebsd,git,gnu,netbsd,osx,rg": "-w --word-regexp",
+                    "bsd": "-w"
                 }
             },
             {
                 "what": "Invert match",
                 "how": {
-                    "ack,ag,git,gnu,rg": "-v --invert-match"
+                    "ack,ag,freebsd,git,gnu,netbsd,osx,rg": "-v --invert-match",
+                    "bsd,posix": "-v"
                 }
             },
             {
                 "what": "Match entire line only",
                 "how": {
-                    "gnu,rg": "-x --line-regexp"
+                    "freebsd,gnu,netbsd,osx,rg": "-x --line-regexp",
+                    "bsd,posix": "-x"
                 }
             },
             {
@@ -44,14 +48,16 @@
                 "how": {
                     "ack": "--match",
                     "git": "-e",
-                    "gnu,rg": "-e --regexp"
+                    "freebsd,gnu,osx,rg": "-e --regexp",
+                    "bsd,posix": "-e"
                 }
             },
             {
                 "what": "Read patterns from a file",
                 "how": {
                     "git": "-f",
-                    "gnu,rg": "-f --file"
+                    "freebsd,gnu,osx,rg": "-f --file",
+                    "bsd,posix": "-f"
                 }
             },
             {
@@ -82,20 +88,22 @@
                 "how": {
                     "ack": "-Q --literal",
                     "ag": "-Q --literal -F --fixed-strings",
-                    "git,rg": "-F --fixed-strings",
-                    "gnu": "-F --fixed-strings --fixed-regexp"
+                    "freebsd,git,osx,rg": "-F --fixed-strings",
+                    "gnu": "-F --fixed-strings --fixed-regexp",
+                    "posix": "-F"
                 }
             },
             {
                 "what": "Use basic regular expressions",
                 "how": {
-                    "git,gnu": "-G --basic-regexp"
+                    "freebsd,git,gnu,osx": "-G --basic-regexp"
                 }
             },
             {
                 "what": "Use extended regular expressions",
                 "how": {
-                    "git,gnu": "-E --extended-regexp"
+                    "freebsd,git,gnu,osx": "-E --extended-regexp",
+                    "posix": "-E"
                 }
             },
             {
@@ -114,13 +122,14 @@
             {
                 "what": "Print only filenames that contain matches",
                 "how": {
-                    "ack,ag,git,gnu,rg": "-l --files-with-matches"
+                    "ack,ag,freebsd,git,gnu,rg": "-l --files-with-matches",
+                    "bsd,posix": "-l"
                 }
             },
             {
                 "what": "Print only filenames that do not contain matches",
                 "how": {
-                    "ack,ag,git,gnu": "-L --files-without-match",
+                    "ack,ag,freebsd,git,gnu": "-L --files-without-match",
                     "rg": "--files-without-match"
                 }
             },
@@ -128,7 +137,7 @@
                 "what": "Show only the part of a line that matched",
                 "how": {
                     "ack": "-o",
-                    "ag,gnu,rg": "-o --only-matching"
+                    "ag,freebsd,gnu,osx,rg": "-o --only-matching"
                 }
             },
             {
@@ -147,15 +156,15 @@
             {
                 "what": "Print the filename for each match",
                 "how": {
-                    "ack,gnu,rg": "-H --with-filename",
+                    "ack,freebsd,gnu,rg": "-H --with-filename",
                     "ag": "--[no-]filename",
-                    "git": "-H"
+                    "git,osx": "-H"
                 }
             },
             {
                 "what": "Suppress the prefixing filename on output",
                 "how": {
-                    "ack,gnu": "-h --no-filename",
+                    "ack,freebsd,gnu,osx": "-h --no-filename",
                     "ag": "--no-filename",
                     "git": "-h",
                     "rg": "--no-filename"
@@ -171,7 +180,8 @@
                 "what": "Prefix the line number to matching lines",
                 "how": {
                     "ag": "--[no-]numbers",
-                    "git,gnu,rg": "-n --line-number"
+                    "freebsd,git,gnu,rg": "-n --line-number",
+                    "bsd,posix": "-n"
                 }
             },
             {
@@ -192,7 +202,7 @@
             {
                 "what": "Specify filename to show for matches on STDIN",
                 "how": {
-                    "gnu": "--label"
+                    "freebsd,gnu": "--label"
                 }
             },
             {
@@ -205,25 +215,29 @@
             {
                 "what": "Print lines of context after matches",
                 "how": {
-                    "ack,ag,git,gnu,rg": "-A --after"
+                    "ack,ag,git,gnu,rg": "-A --after",
+                    "freebsd,netbsd,osx": "-A --after-context"
                 }
             },
             {
                 "what": "Print lines of context before matches",
                 "how": {
-                    "ack,ag,git,gnu,rg": "-B --before"
+                    "ack,ag,git,gnu,rg": "-B --before",
+                    "netbsd,freebsd": "-B --before-context"
                 }
             },
             {
                 "what": "Print lines of context before and after matches",
                 "how": {
-                    "ack,ag,git,gnu,rg": "-C --context"
+                    "ack,ag,freebsd,git,gnu,rg": "-C --context",
+                    "osx": "--context"
                 }
             },
             {
                 "what": "Show number of lines matching per file",
                 "how": {
-                    "ack,ag,git,gnu,rg": "-c --count"
+                    "ack,ag,freebsd,git,gnu,osx,rg": "-c --count",
+                    "bsd,posix": "-c"
                 }
             },
             {
@@ -231,7 +245,8 @@
                 "how": {
                     "ack": "--print0",
                     "ag": "-0 --null --print0",
-                    "git": "-z --null",
+                    "freebsd": "--null",
+                    "git,netbsd": "-z --null",
                     "gnu": "-Z --null",
                     "rg": "-0 --null"
                 }
@@ -239,7 +254,7 @@
             {
                 "what": "Stop searching in each file after NUM matches",
                 "how": {
-                    "ack,ag,gnu,rg": "-m --max-count"
+                    "ack,ag,freebsd,gnu,osx,rg": "-m --max-count"
                 }
             },
             {
@@ -251,7 +266,14 @@
             {
                 "what": "Print the byte offset within the file before each line",
                 "how": {
-                    "gnu": "-b --byte-offset -u --unix-byte-offsets"
+                    "freebsd,gnu,netbsd": "-b --byte-offset -u --unix-byte-offsets",
+                    "osx": "-b --byte-offset"
+                }
+            },
+            {
+                "what": "Print the block number the file before each line",
+                "how": {
+                    "bsd": "-b"
                 }
             },
             {
@@ -259,7 +281,8 @@
                 "how": {
                     "ack,gnu": "-s",
                     "ag": "--silent",
-                    "gnu": "-s --no-messages",
+                    "freebsd,gnu,osx": "-s --no-messages",
+                    "bsd,posix": "-s",
                     "rg": "--no-messages"
                 }
             },
@@ -273,7 +296,8 @@
                 "what": "Do not output matched lines",
                 "how": {
                     "git,rg": "-q --quiet",
-                    "gnu": "-q --quiet --silent"
+                    "freebsd,gnu,osx": "-q --quiet --silent",
+                    "posix": "-q"
                 }
             },
             {
@@ -290,7 +314,8 @@
             {
                 "what": "Enable color output",
                 "how": {
-                    "ack,ag,gnu,git,rg": "--color"
+                    "ack,ag,git,gnu,rg": "--color",
+                    "freebsd,osx": "--color --colour"
                 }
             },
             {
@@ -356,6 +381,12 @@
                 "what": "Limit width of match lines",
                 "how": {
                     "ag": "-W --width"
+                }
+            },
+            {
+                "what": "Flush output on every line",
+                "how": {
+                    "freebsd,osx": "--line-buffered"
                 }
             }
         ]
@@ -436,7 +467,14 @@
                 "what": "Recurse into subdirectories",
                 "how": {
                     "ack": "-r -R --[no-]recurse",
-                    "gnu": "-r --recursive"
+                    "gnu": "-r --recursive",
+                    "freebsd,osx": "-r -R --recursive -d recurse --directories=recurse"
+                }
+            },
+            {
+                "what": "read directory as a file",
+                "how": {
+                    "freebsd,osx": "-d read --directories=read"
                 }
             },
             {
@@ -448,7 +486,8 @@
             {
                 "what": "No descending into subdirectories",
                 "how": {
-                    "ack": "-n --no-recurse"
+                    "ack": "-n --no-recurse",
+                    "freebsd,osx": "-d skip --directories=skip"
                 }
             },
             {
@@ -474,6 +513,8 @@
                 "what": "Specify files to search",
                 "how": {
                     "gnu": "--include",
+                    "osx": "--include --include-dir",
+                    "freebsd": "--include DIR_PATTERN",
                     "rg": "-g --glob --iglob"
                 }
             },
@@ -482,6 +523,8 @@
                 "how": {
                     "ag": "--ignore",
                     "gnu": "--exclude --exclude-from --exclude-dir",
+                    "freebsd": "--exclude DIR_PATTERN",
+                    "osx": "--exclude --exclude-dir",
                     "rg": "--ignore-file"
                 }
             },
@@ -502,14 +545,22 @@
                 "how": {
                     "ack": "--[no-]follow",
                     "ag": "-f --follow",
-                    "rg": "-L --follow"
+                    "rg": "-L --follow",
+                    "osx": "-O -S"
                 }
             },
             {
                 "what": "Don't follow links to other devices",
                 "how": {
                     "ag": "--one-device",
-                    "gnu": "--devices=skip"
+                    "gnu": "--devices=skip",
+                    "osx": "-p"
+                }
+            },
+            {
+                "what": "Specify the demanded action for devices, FIFOs and sockets",
+                "how": {
+                    "freebsd,osx": "-D --devices"
                 }
             },
             {
@@ -535,25 +586,29 @@
             {
                 "what": "Search binary files",
                 "how": {
-                    "ag": "--binary"
+                    "ag": "--binary",
+                    "freebsd,netbsd,osx": "-a --text"
                 }
             },
             {
                 "what": "Treat files as binary",
                 "how": {
-                    "gnu": "-U --binary"
+                    "gnu": "-U --binary",
+                    "freebsd,osx": "-a --text --binary-files=binary -U --binary"
                 }
             },
             {
                 "what": "Don't search in binary files",
                 "how": {
-                    "git": "-I"
+                    "git": "-I",
+                    "freebsd,osx": "-I --binary-files=without-match"
                 }
             },
             {
                 "what": "Treat binary files as if they were text",
                 "how": {
-                    "git,rg": "-a --text"
+                    "git,rg": "-a --text",
+                    "freebsd": "-a --text --binary-files=text"
                 }
             },
             {
@@ -572,6 +627,12 @@
                 "what": "Skip rules found in VCS ignore files (.gitignore, .hgignore, etc)",
                 "how": {
                     "ag": "-U --skip-vcs-ignores"
+                }
+            },
+            {
+                "what": "Decompress the input data before searching",
+                "how": {
+                    "freebsd,osx": "-Z --decompress -J --bz2decompress"
                 }
             }
         ]
@@ -664,6 +725,12 @@
                 "what": "Specify input file encoding",
                 "how": {
                     "rg": "-E --encoding"
+                }
+            },
+            {
+                "what": "use the mmap(2) system call to read  input",
+                "how": {
+                    "freebsd,osx": "--mmap"
                 }
             }
         ]

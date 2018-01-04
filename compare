@@ -9,8 +9,15 @@ use File::Slurp;
 use List::MoreUtils qw( uniq );
 use Template;
 
-my @TOOLS = qw( ack ag git gnu rg );
+# Active columns defined in template
+my @TOOLS = qw( ack ag git gnu rg  );
 my %TOOLS = map { $_ => 1 } @TOOLS;
+
+# Additional tool values collected, valid, but to be ignored ... 
+# TODO: ... until refactor to render Grep-variant-suffixes in grep column
+my @GrepVariants = qw( bsd freebsd netbsd osx posix ); 
+@TOOLS{@GrepVariants} = ((0 ) x scalar @GrepVariants);
+# {use Data::Dumper; local $Data::Dumper::Sortkeys=1; local $Data::Dumper::Trailingcomma=1; warn Dumper( %TOOLS  )}
 
 my $json_text = File::Slurp::read_file( 'comparison.json' );
 
@@ -24,7 +31,8 @@ for my $section ( @{$sections} ) {
         my %flags_by_tool;
         while ( my ($key,$value) = each %{$ability->{how}} ) {
             for my $tool ( split( /\s*,\s*/, $key ) ) {
-                $TOOLS{$tool} or die "Invalid tool $tool";
+                defined($TOOLS{$tool}) or die "Invalid tool '$tool' in key '$key'";
+                next unless $TOOLS{$tool}; ## TODO Need to accumulate Grep variants with footnotes here
                 $flags_by_tool{$tool} = $value;
             }
         }
@@ -46,7 +54,7 @@ for my $section ( @{$sections} ) {
     }
 }
 
-#{use Data::Dumper; local $Data::Dumper::Sortkeys=1; local $Data::Dumper::Trailingcomma=1; warn Dumper( $sections )}
+# {use Data::Dumper; local $Data::Dumper::Sortkeys=1; local $Data::Dumper::Trailingcomma=1; warn Dumper( $sections )}
 
 
 my $vars = {
