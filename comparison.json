@@ -223,13 +223,13 @@
                 "what": "Print lines of context before matches",
                 "how": {
                     "ack,ag,git,gnu,rg": "-B --before",
-                    ",netbsd,netbsdfreebsd": "-B --before-context"
+                    "netbsd,freebsd": "-B --before-context"
                 }
             },
             {
                 "what": "Print lines of context before and after matches",
                 "how": {
-                    "ack,ag,freebsd,git,gnu,rg": "-C --context"
+                    "ack,ag,freebsd,git,gnu,rg": "-C --context",
                     "osx": "--context"
                 }
             },
@@ -275,7 +275,8 @@
                 "how": {
                     "bsd": "-b"
                 }
-            }{
+            },
+            {
                 "what": "Suppress error messages about nonexistent or unreadable files",
                 "how": {
                     "ack,gnu": "-s",
@@ -380,13 +381,13 @@
                 "what": "Limit width of match lines",
                 "how": {
                     "ag": "-W --width"
-                },
+                }
+            },
             {
                 "what": "Flush output on every line",
                 "how": {
                     "freebsd,osx": "--line-buffered"
                 }
-            }
             }
         ]
     },
@@ -475,7 +476,8 @@
                 "how": {
                     "freebsd,osx": "-d read --directories=read"
                 }
-            }{
+            },
+            {
                 "what": "Recurse into subdirectories, following symlinks",
                 "how": {
                     "gnu": "-R --dereference-recursive"
