@@ -19,7 +19,8 @@
                 "what": "Re-enable case-sensitive search over case-insensitve or smart-case search",
                 "how": {
                     "ack": "-I",
-                    "ag,rg": "-s --case-sensitive"
+                    "ag,rg": "-s --case-sensitive",
+                    "git": "--no-ignore-case"
                 }
             },
             {
@@ -188,15 +189,15 @@
                 "what": "Suppress line numbers",
                 "how": {
                     "ag": "--no-numbers",
-                    "rg": "-N --no-line-number"
+                    "rg": "-N --no-line-number",
+                    "git": "--no-line-number"
                 }
             },
             {
                 "what": "Print a heading of each file's name before its matches",
                 "how": {
-                    "ack,rg": "--[no-]heading",
-                    "ag": "-H --[no-]heading",
-                    "git": "--heading"
+                    "ack,git,rg": "--[no-]heading",
+                    "ag": "-H --[no-]heading"
                 }
             },
             {
