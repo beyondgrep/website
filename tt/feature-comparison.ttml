@@ -86,6 +86,12 @@
     <a href="https://github.com/beyondgrep/website/issues/">submit as a GitHub issue</a>.
 </p>
 
+<p>
+    If you find this chart useful, consider making one for the projects you run, even if it includes "competing" projects.
+    <a href="http://blog.petdance.com/2018/01/02/the-best-open-source-project-for-someone-might-not-be-yours-and-thats-ok/">The best
+    project for someone might not be your project, and that's OK</a>.
+</p>
+
 <table>
     
         <tr>
@@ -3080,8 +3086,7 @@
 
             <p>
                 Thanks to <a href="https://digitalocean.com/">DigitalOcean</a> for their support.<br />
-                <a href="https://digitalocean.com/"><img src="/digital-ocean-badge.png" height="25" width="120"></a>
-                </a>
+                <a href="https://digitalocean.com/"><img src="/digital-ocean-badge.png" height="25" width="120" alt="Digital Ocean" /></a>
             </p>
         </div>
     </body>
