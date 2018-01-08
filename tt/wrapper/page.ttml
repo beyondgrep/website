@@ -35,8 +35,7 @@
 
             <p>
                 Thanks to <a href="https://digitalocean.com/">DigitalOcean</a> for their support.<br />
-                <a href="https://digitalocean.com/"><img src="/digital-ocean-badge.png" height="25" width="120"></a>
-                </a>
+                <a href="https://digitalocean.com/"><img src="/digital-ocean-badge.png" height="25" width="120" alt="Digital Ocean" /></a>
             </p>
         </div>
     </body>
