@@ -1,5 +1,5 @@
 /* fonts */
-p, dd, dt { font-family:"PT Serif", Georgia, serif;}
+p, dd, dt, table { font-family:"PT Serif", Georgia, serif;}
 h1, h2, h3, h4, h5, h6, .nav, .footer {font-family:"PT Sans", Tahoma, sans-serif;}
 .footer {font-size:12px; text-align:center;}
 pre {font-family:courier;}
