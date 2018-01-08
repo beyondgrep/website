@@ -16,7 +16,7 @@
                 }
             },
             {
-                "what": "Case-sensitive search",
+                "what": "Re-enable case-sensitive search over case-insensitve or smart-case search",
                 "how": {
                     "ack": "-I",
                     "ag,rg": "-s --case-sensitive"
