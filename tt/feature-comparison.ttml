@@ -341,20 +341,6 @@
                             </td>
                 </tr>
                 <tr>
-                    <td>Print matches on very long lines</td>
-                            <td>
-                            </td>
-                            <td>
-                                    <span class="option">&#x2011;&#x2011;print&#x2011;long&#x2011;lines</span>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                </tr>
-                <tr>
                     <td>Specify output for each line match</td>
                             <td>
                                     <span class="option">&#x2011;&#x2011;output</span>
@@ -606,6 +592,7 @@
                             <td>
                             </td>
                             <td>
+                                    <span class="option">&#x2011;W</span>
                             </td>
                             <td>
                             </td>

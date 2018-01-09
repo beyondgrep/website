@@ -141,12 +141,6 @@
                 }
             },
             {
-                "what": "Print matches on very long lines",
-                "how": {
-                    "ag": "--print-long-lines"
-                }
-            },
-            {
                 "what": "Specify output for each line match",
                 "how": {
                     "ack": "--output",
@@ -289,6 +283,7 @@
             {
                 "what": "Limit length of output lines",
                 "how": {
+                    "ag": "-W",
                     "rg": "-M --max-columns"
                 }
             },
