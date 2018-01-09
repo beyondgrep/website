@@ -467,14 +467,9 @@
                 "what": "Recurse into subdirectories",
                 "how": {
                     "ack": "-r -R --[no-]recurse",
+                    "ag": "-r --recurse",
                     "gnu": "-r --recursive",
                     "freebsd,osx": "-r -R --recursive -d recurse --directories=recurse"
-                }
-            },
-            {
-                "what": "read directory as a file",
-                "how": {
-                    "freebsd,osx": "-d read --directories=read"
                 }
             },
             {
@@ -487,7 +482,14 @@
                 "what": "No descending into subdirectories",
                 "how": {
                     "ack": "-n --no-recurse",
+                    "ag": "-n --norecurse",
                     "freebsd,osx": "-d skip --directories=skip"
+                }
+            },
+            {
+                "what": "Read directory as a file",
+                "how": {
+                    "freebsd,osx": "-d read --directories=read"
                 }
             },
             {

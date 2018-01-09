@@ -1249,7 +1249,7 @@
 
                             <td>
 
-                                    <span class="option">&#x2011;s</span>
+                                    <span class="option">&#x2011;s &#x2011;&#x2011;no&#x2011;messages</span>
 
                             </td>
 
@@ -2099,6 +2099,8 @@
 
                             <td>
 
+                                    <span class="option">&#x2011;r &#x2011;&#x2011;recurse</span>
+
                             </td>
 
                             <td>
@@ -2117,9 +2119,6 @@
 
 
                 </tr>
-
-
-
 
 
 
@@ -2168,6 +2167,8 @@
 
                             <td>
 
+                                    <span class="option">&#x2011;n &#x2011;&#x2011;norecurse</span>
+
                             </td>
 
                             <td>
@@ -2184,6 +2185,9 @@
 
 
                 </tr>
+
+
+
 
 
 
