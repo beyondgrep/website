@@ -13,11 +13,10 @@ use Template;
 my @TOOLS = qw( ack ag git gnu rg  );
 my %TOOLS = map { $_ => 1 } @TOOLS;
 
-# Additional tool values collected, valid, but to be ignored ... 
+# Additional tool values collected, valid, but to be ignored ...
 # TODO: ... until refactor to render Grep-variant-suffixes in grep column
-my @GrepVariants = qw( bsd freebsd netbsd osx posix ); 
-@TOOLS{@GrepVariants} = ((0 ) x scalar @GrepVariants);
-# {use Data::Dumper; local $Data::Dumper::Sortkeys=1; local $Data::Dumper::Trailingcomma=1; warn Dumper( %TOOLS  )}
+my @grep_variants = qw( bsd freebsd netbsd osx posix );
+@TOOLS{@grep_variants} = ((0) x scalar @grep_variants);
 
 my $json_text = File::Slurp::read_file( 'comparison.json' );
 
@@ -32,9 +31,15 @@ for my $section ( @{$sections} ) {
         while ( my ($key,$value) = each %{$ability->{how}} ) {
             for my $tool ( split( /\s*,\s*/, $key ) ) {
                 defined($TOOLS{$tool}) or die "Invalid tool '$tool' in key '$key'";
-                next unless $TOOLS{$tool}; ## TODO Need to accumulate Grep variants with footnotes here
-                $flags_by_tool{$tool} = $value;
+                if ( $TOOLS{$tool} ) {
+                    $flags_by_tool{$tool} = $value;
+                }
             }
+        }
+
+        if ( !%flags_by_tool ) {
+            $ability->{how} = undef;
+            next;
         }
 
         my @distinct_flags = uniq values %flags_by_tool;
@@ -53,8 +58,6 @@ for my $section ( @{$sections} ) {
         $ability->{how} = \@new_hows;
     }
 }
-
-# {use Data::Dumper; local $Data::Dumper::Sortkeys=1; local $Data::Dumper::Trailingcomma=1; warn Dumper( $sections )}
 
 
 my $vars = {
