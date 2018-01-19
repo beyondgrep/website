@@ -3,7 +3,7 @@
     <h1>ack 3 is now in beta</h1>
 
     <p>
-        ack 2.999_03 has been released to beta.  It is feature complete,
+        <strong>ack 2.999_03</strong> has been released to beta.  It is feature complete,
         but we still will be working on speed improvements.  Compare
         ack's features to other grep-like programs in our handy
         <a href="/feature-comparison">feature comparison chart</a>.
