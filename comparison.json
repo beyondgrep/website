@@ -284,7 +284,7 @@
             {
                 "what": "Limit length of output lines",
                 "how": {
-                    "ag": "-W",
+                    "ag": "-W --width",
                     "rg": "-M --max-columns"
                 }
             },
@@ -362,26 +362,15 @@
                 }
             },
             {
-                "what": "Flush output immediately, even when ack is used non-interactively",
-                "how": {
-                    "ack": "--flush"
-                }
-            },
-            {
                 "what": "Print a break between results from different files",
                 "how": {
                     "ack,ag": "--[no-]break"
                 }
             },
             {
-                "what": "Limit width of match lines",
-                "how": {
-                    "ag": "-W --width"
-                }
-            },
-            {
                 "what": "Flush output on every line",
                 "how": {
+                    "ack": "--flush",
                     "freebsd,osx": "--line-buffered"
                 }
             }
@@ -562,12 +551,6 @@
                 }
             },
             {
-                "what": "Include only files of a given type",
-                "how": {
-                    "ack": "--type=X"
-                }
-            },
-            {
                 "what": "Search all types of files",
                 "how": {
                     "ag": "-a --all-types"
@@ -658,6 +641,12 @@
                 }
             },
             {
+                "what": "Ignore default type definitions",
+                "how": {
+                    "ack": "--ignore-ack-defaults"
+                }
+            },
+            {
                 "what": "Display all known types",
                 "how": {
                     "ack": "--help-types",
@@ -699,12 +688,6 @@
                 "what": "Ignore environment variables and global configuration files",
                 "how": {
                     "ack": "--env"
-                }
-            },
-            {
-                "what": "Ignore default definitions included with ack",
-                "how": {
-                    "ack": "--ignore-ack-defaults"
                 }
             },
             {
