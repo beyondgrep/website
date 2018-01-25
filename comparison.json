@@ -74,7 +74,7 @@
                 }
             },
             {
-                "what": "Print specific lines",
+                "what": "Print specific lines by number",
                 "how": {
                     "ack": "--lines"
                 }
