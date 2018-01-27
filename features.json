@@ -48,7 +48,7 @@
                     "freebsd,osx": "basic, extended",
                     "git": "basic, extended, Perl-compatible",
                     "gnu": "basic, extended, Perl-compatible (experimental)",
-                    "ack": "native Perl regular expressions",
+                    "ack": "native Perl",
                     "ag": "Perl-compatible",
                     "rg": "Perl-compatible"
                 }
@@ -58,6 +58,19 @@
     {
         "section": "Feature",
         "abilities": [
+            {
+                "what": "Search where",
+                "how": {
+                    "ack,ag,gnu,rg": "anywhere",
+                    "git": "git repository only"
+                }
+            },
+            {
+                "what": "Search git history",
+                "how": {
+                    "git": "yes"
+                }
+            },
             {
                 "what": "Include/exclude files by filetype",
                 "how": {
@@ -85,19 +98,14 @@
             {
                 "what": "Configuration file",
                 "how": {
-                    "ack": "System, user and project level in .gitconfig"
+                    "ack": "System-, user- and project-level",
+                    "git": "System-, user- and project-level"
                 }
             },
             {
                 "what": "Ignore files based on .gitignore or .ignore files",
                 "how": {
                     "ag,git,rg": "yes"
-                }
-            },
-            {
-                "what": "Limit searches to a git repository",
-                "how": {
-                    "git": "yes"
                 }
             },
             {
@@ -139,7 +147,7 @@
             {
                 "what": "Show proximity of matches to other matches",
                 "how": {
-                    "ack": "yes"
+                    "ack": "yes, in ack 3"
                 }
             },
             {
@@ -274,7 +282,7 @@
             {
                 "what": "Use Perl (or Perl-compatible) regular expressions",
                 "how": {
-                    "ack": "(always)",
+                    "ack": "always",
                     "git": "-P --perl-regexp",
                     "gnu": "-P --perl-regexp (experimental)"
                 }
