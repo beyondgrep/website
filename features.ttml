@@ -1,7 +1,15 @@
 [% WRAPPER wrapper/page.ttml title="Feature comparison of ack, ag, git-grep, grep and ripgrep" %]
+
 [% MACRO print_cell( str ) BLOCK %]
-    <span class="option">[% str | html_entity %]</span>
+    [% IF str.match( '^https' ) %]
+        <span class="cell"><a href="[% str %]">[% str %]</a></span>
+    [% ELSE %]
+        [% str = str | html_entity %]
+        [% option = str.match( '^-' ) ? 'option' : '' %]
+        <span class="cell [% option %]">[% str %]</span>
+    [% END %]
 [% END %]
+
 <div class="content">
 <h1>Feature comparison of ack, ag, git-grep, GNU grep and ripgrep</h1>
 

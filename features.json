@@ -78,7 +78,14 @@
             {
                 "what": "Configuration file",
                 "how": {
-                    "ack": "Yes: system, user and project level"
+                    "ack": "System, user and project level",
+                    "ack": "System, user and project level in .gitconfig"
+                }
+            },
+            {
+                "what": "Ignores files based on .gitignore or .ignore files",
+                "how": {
+                    "ag,rg": "yes"
                 }
             },
             {
@@ -112,7 +119,7 @@
             {
                 "what": "Multiple patterns with boolean expressions",
                 "how": {
-                    "git": "yes:--and --or --not --all-match"
+                    "git": "yes"
                 }
             },
             {
@@ -138,16 +145,6 @@
                 "what": "Search in gzip files",
                 "how": {
                     "ag": "yes"
-                }
-            },
-            {
-                "what": "",
-                "how": {
-                    "ack": "",
-                    "ag": "",
-                    "git": "",
-                    "gnu": "",
-                    "rg": ""
                 }
             }
         ]

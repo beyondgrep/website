@@ -293,12 +293,16 @@ td:first-child {
 }
 
 /* Option columns */
-td .option {
+td .cell {
     background-color: #ffdfac;
-    font-family: "courier";
-    font-size: 11px;
+    font-size: 14px;
     margin: 1px;
     display: block;
     padding: 5px;
     text-align: center;
+}
+
+td .option {
+    font-family: "courier";
+    font-size: 11px;
 }
