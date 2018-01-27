@@ -22,7 +22,8 @@ local: clean
 crank: clean
 	mkdir -p $(BUILD)/ || true > /dev/null 2>&1
 	cp -R static/* $(BUILD)/
-	perl compare | perl -ne'print if /\S/' > tt/feature-comparison.ttml
+	mkdir -p $(BUILD)/feature-comparison > /dev/null 2>&1
+	perl features | perl -ne'print if /\S/' > $(BUILD)/feature-comparison/index.html
 	perl crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)
 	find $(BUILD) -name "*~" -exec rm -f {} \; # Remove any backup leftovers
 

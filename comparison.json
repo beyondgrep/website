@@ -1,5 +1,158 @@
 [
     {
+        "section": "Overview",
+        "abilities": [
+            {
+                "what": "Name",
+                "how": {
+                    "ack": "ack",
+                    "ag": "The Silver Searcher",
+                    "git": "git-grep",
+                    "gnu": "GNU grep",
+                    "rg": "ripgrep"
+                }
+            },
+            {
+                "what": "Project page",
+                "how": {
+                    "ack": "https://beyondgrep.com",
+                    "ag": "https://geoff.greer.fm/ag/",
+                    "git": "https://git-scm.com/docs/git-grep (part of the git project)",
+                    "gnu": "https://www.gnu.org/software/grep/",
+                    "rg": "https://github.com/BurntSushi/ripgrep"
+                }
+            },
+            {
+                "what": "Language",
+                "how": {
+                    "ack": "Perl",
+                    "ag": "C",
+                    "git": "C",
+                    "gnu": "C",
+                    "rg": "Rust"
+                }
+            },
+            {
+                "what": "License",
+                "how": {
+                    "ack": "Artistic License 2.0",
+                    "ag": "Apache License 2.0",
+                    "git": "GPL 2",
+                    "gnu": "GPL 3",
+                    "rg": "MIT/Unlicense"
+                }
+            },
+            {
+                "what": "Regular expressions",
+                "how": {
+                    "freebsd,osx": "basic, extended",
+                    "git": "basic, extended, Perl-compatible",
+                    "gnu": "basic, extended, Perl-compatible (experimental)",
+                    "ack": "native Perl regular expressions"
+                }
+            },
+            {
+                "what": "Search by filetype",
+                "how": {
+                    "ack,ag,rg": "yes"
+                }
+            },
+            {
+                "what": "Specify filetype by file extension",
+                "how": {
+                    "ack,ag,rg": "yes"
+                }
+            },
+            {
+                "what": "Specify filetype by pattern match on filename",
+                "how": {
+                    "ack": "yes"
+                }
+            },
+            {
+                "what": "Specify filetype by pattern match on first line of file",
+                "how": {
+                    "ack": "yes"
+                }
+            },
+            {
+                "what": "Configuration file",
+                "how": {
+                    "ack": "Yes: system, user and project level"
+                }
+            },
+            {
+                "what": "Parallelism",
+                "how": {
+                    "ack": "",
+                    "ag": "",
+                    "git": "",
+                    "gnu": "",
+                    "rg": "Using threads"
+                }
+            },
+            {
+                "what": "Deterministic output",
+                "how": {
+                    "ack,rg": "yes, using --sort"
+                }
+            },
+            {
+                "what": "Match patterns across newlines",
+                "how": {
+                    "ag": "yes"
+                }
+            },
+            {
+                "what": "Smart case searching",
+                "how": {
+                    "ack,ag,rg": "yes"
+                }
+            },
+            {
+                "what": "Multiple patterns with boolean expressions",
+                "how": {
+                    "git": "yes:--and --or --not --all-match"
+                }
+            },
+            {
+                "what": "Print lines by number",
+                "how": {
+                    "ack": "yes"
+                }
+            },
+            {
+                "what": "Build output for each line based on match groups",
+                "how": {
+                    "ack": "yes",
+                    "rg": "yes"
+                }
+            },
+            {
+                "what": "Limit length of output lines",
+                "how": {
+                    "ag,rg": "yes"
+                }
+            },
+            {
+                "what": "Search in gzip files",
+                "how": {
+                    "ag": "yes"
+                }
+            },
+            {
+                "what": "",
+                "how": {
+                    "ack": "",
+                    "ag": "",
+                    "git": "",
+                    "gnu": "",
+                    "rg": ""
+                }
+            }
+        ]
+    },
+    {
         "section": "Searching",
         "abilities": [
             {

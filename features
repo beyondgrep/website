@@ -69,4 +69,4 @@ my %tt_settings = (
 );
 
 my $tt = Template->new( \%tt_settings );
-$tt->process( 'chart.ttml', $vars ) or die $tt->error;
+$tt->process( 'features.ttml', $vars ) or die $tt->error;
