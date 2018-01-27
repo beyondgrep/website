@@ -18,7 +18,7 @@ my %TOOLS = map { $_ => 1 } @TOOLS;
 my @grep_variants = qw( bsd freebsd netbsd osx posix );
 @TOOLS{@grep_variants} = ((0) x scalar @grep_variants);
 
-my $json_text = File::Slurp::read_file( 'comparison.json' );
+my $json_text = File::Slurp::read_file( 'features.json' );
 
 my $sections = JSON::PP->new->utf8->decode($json_text);
 

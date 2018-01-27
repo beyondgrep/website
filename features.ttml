@@ -1,4 +1,7 @@
 [% WRAPPER wrapper/page.ttml title="Feature comparison of ack, ag, git-grep, grep and ripgrep" %]
+[% MACRO print_cell( str ) BLOCK %]
+    <span class="option">[% str | html_entity %]</span>
+[% END %]
 <div class="content">
 <h1>Feature comparison of ack, ag, git-grep, GNU grep and ripgrep</h1>
 
@@ -39,13 +42,13 @@
                         [% FOR how IN hows %]
                             <td>
                                 [% IF how != '' %]
-                                    <span class="option">[% how | html_entity %]</span>
+                                    [% print_cell( how ) %]
                                 [% END %]
                             </td>
                         [% END %]
                     [% ELSE %]
                         <td colspan="5">
-                            <span class="option">[% hows.0 | html_entity %]</span>
+                            [% print_cell( hows.0 ) %]
                         </td>
                     [% END %]
                 </tr>

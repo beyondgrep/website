@@ -17,7 +17,7 @@
                 "how": {
                     "ack": "https://beyondgrep.com",
                     "ag": "https://geoff.greer.fm/ag/",
-                    "git": "https://git-scm.com/docs/git-grep (part of the git project)",
+                    "git": "https://git-scm.com/docs/git-grep",
                     "gnu": "https://www.gnu.org/software/grep/",
                     "rg": "https://github.com/BurntSushi/ripgrep"
                 }
