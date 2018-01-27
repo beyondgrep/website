@@ -5,6 +5,7 @@
         <span class="cell"><a href="[% str %]">[% str %]</a></span>
     [% ELSE %]
         [% str = str | html_entity %]
+        [% str = str.replace( '^yes', '&#x2714;' ) %]
         [% option = str.match( '^-' ) ? 'option' : '' %]
         <span class="cell [% option %]">[% str %]</span>
     [% END %]
