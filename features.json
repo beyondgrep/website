@@ -1,6 +1,6 @@
 [
     {
-        "section": "Overview",
+        "section": "",
         "abilities": [
             {
                 "what": "Name",
@@ -48,11 +48,18 @@
                     "freebsd,osx": "basic, extended",
                     "git": "basic, extended, Perl-compatible",
                     "gnu": "basic, extended, Perl-compatible (experimental)",
-                    "ack": "native Perl regular expressions"
+                    "ack": "native Perl regular expressions",
+                    "ag": "Perl-compatible",
+                    "rg": "Perl-compatible"
                 }
-            },
+            }
+        ]
+    },
+    {
+        "section": "Feature",
+        "abilities": [
             {
-                "what": "Search by filetype",
+                "what": "Include/exclude files by filetype",
                 "how": {
                     "ack,ag,rg": "yes"
                 }
@@ -78,23 +85,24 @@
             {
                 "what": "Configuration file",
                 "how": {
-                    "ack": "System, user and project level",
                     "ack": "System, user and project level in .gitconfig"
                 }
             },
             {
-                "what": "Ignores files based on .gitignore or .ignore files",
+                "what": "Ignore files based on .gitignore or .ignore files",
                 "how": {
-                    "ag,rg": "yes"
+                    "ag,git,rg": "yes"
+                }
+            },
+            {
+                "what": "Limit searches to a git repository",
+                "how": {
+                    "git": "yes"
                 }
             },
             {
                 "what": "Parallelism",
                 "how": {
-                    "ack": "",
-                    "ag": "",
-                    "git": "",
-                    "gnu": "",
                     "rg": "Using threads"
                 }
             },
@@ -124,6 +132,12 @@
             },
             {
                 "what": "Print lines by number",
+                "how": {
+                    "ack": "yes"
+                }
+            },
+            {
+                "what": "Show proximity of matches to other matches",
                 "how": {
                     "ack": "yes"
                 }
