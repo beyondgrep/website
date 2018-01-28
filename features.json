@@ -164,6 +164,12 @@
                 }
             },
             {
+                "what": "Underline matches to show matches w/o color",
+                "how": {
+                    "ack": "yes"
+                }
+            },
+            {
                 "what": "Search in gzip files",
                 "how": {
                     "ag": "yes"
@@ -484,6 +490,12 @@
                 "how": {
                     "ack,ag,git,gnu,rg": "--color",
                     "freebsd,osx": "--color --colour"
+                }
+            },
+            {
+                "what": "Underline matches",
+                "how": {
+                    "ack": "--underline"
                 }
             },
             {
