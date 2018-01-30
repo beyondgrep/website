@@ -504,7 +504,7 @@
                     "ack": "--color-match --color-filename --color-lineno --color-colno",
                     "ag": "--color-match --color-path --color-line-number",
                     "git": "Specified in the .gitconfig file",
-                    "gnu": "Specified in gnu_COLORS environment variable",
+                    "gnu": "Specified in GREP_COLORS environment variable",
                     "rg": "--colors"
                 }
             },
