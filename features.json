@@ -117,7 +117,7 @@
             {
                 "what": "Deterministic output",
                 "how": {
-                    "ack,rg": "yes, using --sort"
+                    "ack,rg": "yes, using --sort-files"
                 }
             },
             {
