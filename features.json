@@ -50,7 +50,7 @@
                     "gnu": "basic, extended, Perl-compatible (experimental)",
                     "ack": "native Perl",
                     "ag": "Perl-compatible",
-                    "rg": "Perl-compatible"
+                    "rg": "Finite automata-based. https://docs.rs/regex/0.2.5/regex/#syntax"
                 }
             }
         ]
