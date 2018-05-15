@@ -46,11 +46,11 @@
                 "what": "Regular expressions",
                 "how": {
                     "freebsd,osx": "basic, extended",
-                    "git": "basic, extended, Perl-compatible",
-                    "gnu": "basic, extended, Perl-compatible (experimental)",
-                    "ack": "native Perl",
+                    "git": "Choice of three modes: Basic, extended, or Perl-compatible",
+                    "gnu": "Choice of three modes: Basic, extended, or Perl-compatible (experimental)",
+                    "ack": "Native Perl",
                     "ag": "Perl-compatible",
-                    "rg": "Perl-compatible"
+                    "rg": "Non-backtracking, mostly Perl-compatible. See https://docs.rs/regex"
                 }
             }
         ]
