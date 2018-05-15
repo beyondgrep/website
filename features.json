@@ -62,7 +62,7 @@
                 "what": "Search where",
                 "how": {
                     "ack,ag,gnu,rg": "anywhere",
-                    "git": "git repository only"
+                    "git": "git repository by default, or anywhere with --no-index"
                 }
             },
             {
