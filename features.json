@@ -382,7 +382,7 @@
                 "what": "Show the column number of the first match",
                 "how": {
                     "ack": "--[no-]column",
-                    "rg": "--column"
+                    "ag,rg": "--column"
                 }
             },
             {
