@@ -1,4 +1,4 @@
-[% WRAPPER wrapper/page.ttml title='Beyond grep: ack 2.22, a source code search tool for programmers' %]
+[% WRAPPER wrapper/page.ttml title='Beyond grep: ack 2.24, a source code search tool for programmers' %]
 <div class="billbox">
     <div class="billhead">
 <pre>
@@ -9,7 +9,7 @@ _   /|
 </pre>
     </div>
     <div class="billtext">
-        <h1 class="pkg_mgr_desc">ack 2.22 is a tool like grep, optimized for programmers</h1>
+        <h1 class="pkg_mgr_desc">ack 2.24 is a tool like grep, optimized for programmers</h1>
 
         <h1 class="pkg_mgr_desc"><a href="/ack3">ack 3 is now in beta!</a></h1>
 
