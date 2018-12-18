@@ -9,3 +9,11 @@
   ga('send', 'pageview');
 
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Organization",
+  "url": "https://beyondgrep.com/",
+  "logo": "https://avatars0.githubusercontent.com/u/30610360"
+}
+</script>
