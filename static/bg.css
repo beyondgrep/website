@@ -306,3 +306,11 @@ td .option {
     font-family: "courier";
     font-size: 11px;
 }
+
+.github-logo:before {
+    content:url('./github.svg');
+    display:inline-block;
+    width:1em;
+    height:1em;
+    padding-right:3px;
+}

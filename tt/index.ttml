@@ -43,7 +43,8 @@ _   /|
 
             <dt class="open">Free and open</dt>
             <dd>Ack costs nothing.  It's 100% free and open source under
-            <a href="http://www.opensource.org/licenses/Artistic-2.0">Artistic License v2.0</a>.
+            <a href="http://www.opensource.org/licenses/Artistic-2.0">Artistic License v2.0</a>.<br>
+            Want to contribute? <a href="https://github.com/beyondgrep/ack2">Fork-us on <span class="github-logo">GitHub</span>!</a>
             </dd>
         </dl>
     </div>

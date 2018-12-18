@@ -11,7 +11,10 @@
 
     <p>
         The beta is currently available via the <a href="https://metacpan.org/release/PETDANCE/ack-2.999_03">Perl
-        CPAN</a>, or you can <a href="/ack-2.999_03-single-file">download a single Perl program</a>.
+        CPAN</a>.
+        You can <a href="/ack-2.999_03-single-file">download a single Perl program</a>
+        and <a href="https://github.com/beyondgrep/ack3">contribute</a>
+        or <a href="https://github.com/beyondgrep/ack3/issues">report issues</a> on <span class="github-logo">GitHub</span></a>.
     </p>
 
     <h1>What's new in ack 3?</h1>
