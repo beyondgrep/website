@@ -3,15 +3,20 @@
     <h1>ack 3 is now in beta</h1>
 
     <p>
-        <strong>ack 2.999_03</strong> has been released to beta.  It is feature complete,
+        <strong>ack 2.999_05</strong> has been released to beta.  It is feature complete,
         but we still will be working on speed improvements.  Compare
         ack's features to other grep-like programs in our handy
         <a href="/feature-comparison">feature comparison chart</a>.
     </p>
 
     <p>
-        The beta is currently available via the <a href="https://metacpan.org/release/PETDANCE/ack-2.999_03">Perl
-        CPAN</a>, or you can <a href="/ack-2.999_03-single-file">download a single Perl program</a>.
+        You can get the beta through one of two methods:
+        <ul>
+            <li>Install from the <a href="https://metacpan.org/release/PETDANCE/ack-2.999_05">Perl CPAN</a>.</li>
+            <li><a href="/ack-2.999_05-single-file">Download a single Perl program</a> from this site.</li>
+        </ul>
+        We welcome you to <a href="https://github.com/beyondgrep/ack3">contribute</a>
+        or <a href="https://github.com/beyondgrep/ack3/issues">report issues</a> on <span class="github-logo">GitHub</span></a>.
     </p>
 
     <h1>What's new in ack 3?</h1>
