@@ -111,7 +111,7 @@
             {
                 "what": "Parallelism",
                 "how": {
-                    "rg": "Using threads"
+                    "ag,git,rg": "yes, threads"
                 }
             },
             {
@@ -555,7 +555,7 @@
                 "what": "Flush output on every line",
                 "how": {
                     "ack": "--flush",
-                    "freebsd,osx": "--line-buffered"
+                    "freebsd,gnu,osx": "--line-buffered"
                 }
             }
         ]
@@ -791,7 +791,8 @@
             {
                 "what": "Skip rules found in VCS ignore files (.gitignore, .hgignore, etc)",
                 "how": {
-                    "ag": "-U --skip-vcs-ignores"
+                    "ag": "-U --skip-vcs-ignores",
+                    "git": "--exclude-standard"
                 }
             },
             {
@@ -883,7 +884,7 @@
             {
                 "what": "Search contents of compressed files (e.g. gzip)",
                 "how": {
-                    "ag": "-z --search-zip"
+                    "ag,rg": "-z --search-zip"
                 }
             },
             {
