@@ -6,23 +6,24 @@ only those files and directories are checked.  ack may also search
 STDIN, but only if no file or directory arguments are specified,
 or if one of them is "-".
 
-Default switches may be specified in ACK_OPTIONS environment variable or
-an .ackrc file. If you want no dependency on the environment, turn it
-off with --noenv.
+Default switches may be specified in an .ackrc file. If you want no dependency
+on the environment, turn it off with --noenv.
 
 Example: ack -i select
 
 Searching:
   -i, --ignore-case             Ignore case distinctions in PATTERN
-  --[no]smart-case              Ignore case distinctions in PATTERN,
+  -S, --[no]smart-case          Ignore case distinctions in PATTERN,
                                 only if PATTERN contains no upper case.
-                                Ignored if -i is specified
+                                Ignored if -i or -I are specified.
+  -I, --no-ignore-case          Turns on case-sensitivity in PATTERN.
+                                Negates -i and --smart-case.
   -v, --invert-match            Invert match: select non-matching lines
   -w, --word-regexp             Force PATTERN to match only whole words
   -Q, --literal                 Quote all metacharacters; PATTERN is literal
+  --match PATTERN               Specify PATTERN explicitly. Typically omitted.
 
 Search output:
-  --lines=NUM                   Only print line(s) NUM of each file
   -l, --files-with-matches      Only print filenames containing matches
   -L, --files-without-matches   Only print filenames with no matches
   --output=expr                 Output the evaluation of expr for each line
@@ -30,7 +31,6 @@ Search output:
   -o                            Show only the part of a line matching PATTERN
                                 Same as --output='$&'
   --passthru                    Print all lines, whether matching or not
-  --match PATTERN               Specify PATTERN explicitly.
   -m, --max-count=NUM           Stop searching in each file after NUM matches
   -1                            Stop searching after one match of any kind
   -H, --with-filename           Print the filename for each match (default:
@@ -65,13 +65,19 @@ File presentation:
                                 files.  (default: on when used interactively)
   --group                       Same as --heading --break
   --nogroup                     Same as --noheading --nobreak
-  --[no]color                   Highlight the matching text (default: on unless
+  -p, --proximate=LINES         Separate match output with blank lines unless
+                                they are within LINES lines from each other.
+  -P, --proximate=0             Negates --proximate.
+  --[no]underline               Print a line of carets under the matched text.
+  --[no]color, --[no]colour     Highlight the matching text (default: on unless
                                 output is redirected, or on Windows)
-  --[no]colour                  Same as --[no]color
   --color-filename=COLOR
   --color-match=COLOR
-  --color-lineno=COLOR          Set the color for filenames, matches, and line
-                                numbers.
+  --color-colno=COLOR
+  --color-lineno=COLOR          Set the color for filenames, matches, line and
+                                column numbers.
+  --help-colors                 Show a list of possible color combinations.
+  --help-rgb-colors             Show a list of advanced RGB colors.
   --flush                       Flush output immediately, even when ack is used
                                 non-interactively (when output goes to a pipe or
                                 file).
@@ -90,48 +96,60 @@ File finding:
 File inclusion/exclusion:
   --[no]ignore-dir=name         Add/remove directory from list of ignored dirs
   --[no]ignore-directory=name   Synonym for ignore-dir
-  --ignore-file=filter          Add filter for ignoring files
+  --ignore-file=FILTER:ARGS     Add filter for ignoring files.
   -r, -R, --recurse             Recurse into subdirectories (default: on)
   -n, --no-recurse              No descending into subdirectories
   --[no]follow                  Follow symlinks.  Default is off.
-  -k, --known-types             Include only files of types that ack recognizes.
 
+File type inclusion/exclusion:
   --type=X                      Include only X files, where X is a recognized
-                                filetype.
-  --type=noX                    Exclude X files.
-                                See "ack --help-types" for supported filetypes.
+                                filetype, e.g. --php, --ruby
+  --type=noX                    Exclude X files, e.g. --nophp, --no-ruby.
+  -k, --known-types             Include only files of types that ack recognizes.
+  --help-types                  Display all known types, and how they're defined.
 
 File type specification:
-  --type-set TYPE:FILTER:FILTERARGS
-                                Files with the given FILTERARGS applied to the
-                                given FILTER are recognized as being of type
-                                TYPE. This replaces an existing definition for
-                                type TYPE.
-  --type-add TYPE:FILTER:FILTERARGS
-                                Files with the given FILTERARGS applied to the
-                                given FILTER are recognized as being type TYPE.
-  --type-del TYPE               Removes all filters associated with TYPE.
-
+  --type-set=TYPE:FILTER:ARGS   Files with the given ARGS applied to the given
+                                FILTER are recognized as being of type TYPE.
+                                This replaces an existing definition for TYPE.
+  --type-add=TYPE:FILTER:ARGS   Files with the given ARGS applied to the given
+                                FILTER are recognized as being type TYPE.
+  --type-del=TYPE               Removes all filters associated with TYPE.
 
 Miscellaneous:
+  --version                     Display version & copyright
   --[no]env                     Ignore environment variables and global ackrc
                                 files.  --env is legal but redundant.
   --ackrc=filename              Specify an ackrc file to use
   --ignore-ack-defaults         Ignore default definitions included with ack.
   --create-ackrc                Outputs a default ackrc for your customization
                                 to standard output.
-  --help, -?                    This help
-  --help-types                  Display all known types
   --dump                        Dump information on which options are loaded
-                                from which RC files
+                                and where they're defined.
   --[no]filter                  Force ack to treat standard input as a pipe
                                 (--filter) or tty (--nofilter)
-  --man                         Man page
-  --version                     Display version & copyright
+  --help                        This help
+  --man                         Print the manual.
+  --help-types                  Display all known types, and how they're defined.
+  --help-colors                 Show a list of possible color combinations.
+  --help-rgb-colors             Show a list of advanced RGB colors.
   --thpppt                      Bill the Cat
   --bar                         The warning admiral
   --cathy                       Chocolate! Chocolate! Chocolate!
 
+Filter specifications:
+    If FILTER is "ext", ARGS is a list of extensions checked against the
+        file's extension.
+    If FILTER is "is", ARGS must match the file's name exactly.
+    If FILTER is "match", ARGS is matched as a case-insensitive regex
+        against the filename.
+    If FILTER is "firstlinematch", ARGS is matched as a regex the first
+        line of the file's contents.
+
 Exit status is 0 if match, 1 if no match.
 
-This is version 2.12 of ack.
+ack's home page is at https://beyondgrep.com/
+
+The full ack manual is available by running "ack --man".
+
+This is version v3.0.0 of ack.  Run "ack --version" for full version info.

@@ -11,7 +11,7 @@ use Template ();
 use Template::Constants qw( :debug :chomp );
 use URI::file;
 
-my $LATEST = '2.28';
+my $LATEST = 'v3.0.0';
 
 MAIN: {
     my $sourcepath = 's';
@@ -68,7 +68,7 @@ MAIN: {
 <div class='content'>
 END_PREAMBLE
 
-    open my $pipe, '-|', 'pod2html', "static/ack-$LATEST-single-file" or die "Unable to open pipe to pod2html: $!";
+    open my $pipe, '-|', 'pod2html', "static/ack-$LATEST" or die "Unable to open pipe to pod2html: $!";
     while ( <$pipe> ) {
         # I know, I know, I know... HTML + regexes = bad.
         if ( !$in_body && /<body/ ) {

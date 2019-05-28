@@ -1,4 +1,4 @@
-[% WRAPPER wrapper/page.ttml title='Beyond grep: ack 2.28, a source code search tool for programmers' %]
+[% WRAPPER wrapper/page.ttml title='Beyond grep: ack v3.0.0, a source code search tool for programmers' %]
 <div class="billbox">
     <div class="billhead">
 <pre>
@@ -9,9 +9,9 @@ _   /|
 </pre>
     </div>
     <div class="billtext">
-        <h1 class="pkg_mgr_desc">ack 2.28 is a tool like grep, optimized for programmers</h1>
+        <h1 class="pkg_mgr_desc">ack is a tool like grep, optimized for programmers</h1>
 
-        <h1 class="pkg_mgr_desc"><a href="/ack3">ack 3 is now in beta!</a></h1>
+        <h1 class="pkg_mgr_desc">ack 3.0.0 has been released! (2019-05-27)</h1>
 
         <p>
         Designed for programmers with large heterogeneous
@@ -24,39 +24,81 @@ _   /|
 
 <div class="content">
     <div class="feature-bullets">
-        <h2>Top 5 reasons to use ack</h2>
-        <dl>
-            <dt class="fast">Blazing fast</dt>
-            <dd>It's fast because it only searches the stuff it makes sense to search.</dd>
+        <h1>What's new in ack 3?</h1>
 
-            <dt class="search">Better search</dt>
-            <dd>Searches entire trees by default while ignoring Subversion, Git and other VCS directories
-            and other files that aren't your source code.</dd>
+        <h2>New <tt>--proximate</tt> option groups matches near each other</h2>
 
-            <dt class="keystrokes">Designed for code search</dt>
-            <dd>Where grep is a general text search tool, ack is especially for the programmer searching source code.
-            Common tasks take fewer keystrokes.</dd>
-
-            <dt class="pc">Highly portable</dt>
-            <dd>ack is pure Perl, so it easily runs on a Windows installation Perl
-            (like <a href="http://strawberryperl.com/">Strawberry Perl</a>) without modifications.</dd>
-
-            <dt class="open">Free and open</dt>
-            <dd>Ack costs nothing.  It's 100% free and open source under
-            <a href="http://www.opensource.org/licenses/Artistic-2.0">Artistic License v2.0</a>.<br>
-            Want to contribute? <a href="https://github.com/beyondgrep/ack2">Fork-us on <span class="github-logo">GitHub</span>!</a>
-            </dd>
-        </dl>
-    </div>
-
-    <div class="feature-security">
-        <h2>Security alert</h2>
         <p>
-        ack versions 2.00 to 2.11_02 are susceptible to a code execution
-        exploit.  <strong>Please upgrade to 2.12 or higher ASAP.</strong>
-        See the
-        [% WRAPPER link.tt page='security' %]security alert[% END %]
-        for more information.
+            A new option <tt>--proximate=N</tt> groups together lines of
+            output that are within N lines of each other in the file.  This is
+            useful when looking for matches that are related to each other.
+        </p>
+
+        <p>
+            For example, these results:
+        </p>
+
+<pre>
+    15: First match
+    18: Second match
+    19: Third match
+    37: Fourth match
+</pre>
+
+        <p>
+            look like this with <tt>--proximate=1</tt>.
+        </p>
+
+<pre>
+    15: First match
+
+    18: Second match
+    19: Third match
+
+    37: Fourth match
+</pre>
+
+        <h2>Improved and incompatible <tt>-w</tt> option</h2>
+
+        <p>
+            The <tt>-w</tt> option, which tells ack to only find whole-word
+            matches, did not always work if your pattern began or ended with
+            puncutation.  ack would make guesses as to what your intent was,
+            but it was not well-defined.  Now, ack disallows regexes that
+            begin or end with non-word characters.
+        </p>
+
+        <p>
+            This means that if you use <tt>ack -w foo:</tt>, the new ack
+            will not allow it, whereas ack 2.x would.
+        </p>
+
+        <h2>Added <tt>-S</tt> as a synonym for <tt>--smart-case</tt></h2>
+        <p>
+            For those without <tt>--smart-case</tt> always on, the <tt>-S</tt>
+            will be easier for when you do want to use it.
+        </p>
+        <p>
+            Smart-case matching makes ack do a case-insensitive search unless
+            the pattern being matched has a capital letter in it.
+        </p>
+
+        <h2>Added <tt>-I</tt> to force case-sensitivity</h2>
+        <p>
+            If you use <tt>--smart-case</tt> in your .ackrc, you can use
+            <tt>-I</tt> to force case-sensitivity instead of having to use
+            <tt>--no-smart-case</tt> (which still works).
+        </p>
+
+        <h2>Significant speed improvements</h2>
+        <p>
+            Run times for ack 3 compared to ack 2.22 are 30-40% faster
+            because of removal of unused infrastructure for plugins.
+        </p>
+
+        <h2>New built-in filetypes</h2>
+        <p>
+            ack now supports SVG, Markdown and POD by default.
         </p>
     </div>
 

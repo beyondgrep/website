@@ -4,13 +4,7 @@
     <h1>How to install ack</h1>
 
     <p>
-    The current stable version of ack is version 2.28, released March 18, 2019.
-    </p>
-
-    <p>
-    ack 3 is in beta.  The latest beta is
-    <a href="/ack-2.999_08-single-file">2.999_08</a>,
-    released May 19, 2019.
+    The current stable version of ack is v3.0.0, released May 27, 2019..
     </p>
 
     <p>
@@ -18,14 +12,14 @@
     </p>
 
     <p>
-    Ack is highly portable, and will run on any machine running Perl 5.8.8 or higher.
+    Ack is highly portable, and will run on any machine running Perl 5.10.1 or higher.
     </p>
 
     <h2>Install ack via Perl CPAN module</h2>
 
     <p>
     If you use Perl regularly, you can install ack's module,
-    <a href="http://search.cpan.org/dist/ack">App::Ack</a>.
+    <a href="https://metacpan.org/release/ack">App::Ack</a>.
     </p>
 
     <p>
@@ -39,7 +33,7 @@
 
     <p>
     The
-    <a href="ack-2.28-single-file">single-file version of ack</a>
+    <a href="ack-v3.0.0">single-file version of ack</a>
     is a single Perl program, around 5,400 lines of plain text.  It
     combines the ack program and all its Perl modules into a single
     text file you can download and install anywhere you can put a
@@ -51,16 +45,13 @@
     <blockquote><code>
     # NOTE: <strong>This URL is https</strong>, not http as it was pre-2017.
     <br>
-    curl [% WRAPPER selflink.tt %]https://beyondgrep.com/ack-2.28-single-file[% END %] &gt; ~/bin/ack &amp;&amp; chmod 0755 ~/bin/ack
+    curl [% WRAPPER selflink.tt %]https://beyondgrep.com/ack-v3.0.0[% END %] &gt; ~/bin/ack &amp;&amp; chmod 0755 ~/bin/ack
     </code></blockquote>
 
     <p>
     <strong>Is your <tt>curl</tt> install not working?</strong>
     Please check that your are using the https scheme, not http.
-    This site switched to HTTPS in early 2017.  Also, make sure you
-    are not fetching an out-of-date version.  ack versions 2.00 -
-    2.10 have been removed from this site because they have a
-    <a href="/security/">security vulnerability</a>.
+    This site switched to HTTPS in early 2017.
     </p>
 
     <h2>Install a package for your specific OS</h2>
@@ -176,24 +167,28 @@
 
     <hr />
 
-    <h1>ack 1.x</h1>
+    <h1>ack 1.x and ack 2.x</h1>
 
-    Ack has been around for years, but on April 17th, 2013 ack 2.0
-    was released.  If you're still running ack 1.x, we urge you to
-    upgrade to 2.0.
+    On May 27, 2019, ack v3.0.0 was released.  We urge all ack users to upgrade.
 
     <p>
-    Although ack 1.x is no longer being maintained, and there will
-    be no new releases, you can still download the ack 1.96 single-file
-    distribution.
+    Although ack 1.x and 2.x are no longer being maintained, and there will
+    be no new releases, you can still download the latest of each.
     </p>
+
+    <blockquote><code>
+    curl http://beyondgrep.com/ack-2.28-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
+    </code></blockquote>
     <blockquote><code>
     curl http://beyondgrep.com/ack-1.96-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
     </code></blockquote>
 
     <p>
-    We still have the <a href="/documentation/ack-1.96-man.html">ack 1.96 manual</a>.
+    We still have the
+    <a href="/documentation/ack-2.28-man.html">ack 2.28 manual</a> and
+    <a href="/documentation/ack-1.96-man.html">ack 1.96 manual</a>.
     </p>
+
 </div>
 
 [% END %]
