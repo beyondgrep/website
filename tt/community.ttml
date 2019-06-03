@@ -1,6 +1,20 @@
 [% WRAPPER wrapper/page.ttml title='ack: Community' %]
 
 <div class="content">
+    <h1>Source code</h1>
+
+    <p>
+    The ack3 GitHub project is at
+    [% WRAPPER selflink.tt %]https://github.com/beyondgrep/ack3[% END %].
+    </p>
+
+    <h1>Issue tracker</h1>
+
+    <p>
+    Bugs, feature requests and other issues can be submitted to
+    [% WRAPPER selflink.tt %]https://github.com/beyondgrep/ack3/issues[% END %].
+    </p>
+
     <h1>ack community</h1>
 
     <h2>
