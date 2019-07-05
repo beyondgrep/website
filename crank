@@ -1,9 +1,9 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 use strict;
 use warnings;
 
-eval 'use Carp::Always'; # Not everyone has it
+use Carp::Always;
 
 use Getopt::Long;
 use List::MoreUtils qw( apply );
@@ -11,7 +11,7 @@ use Template ();
 use Template::Constants qw( :debug :chomp );
 use URI::file;
 
-my $LATEST = 'v3.0.1';
+my $LATEST = 'v3.0.2';
 
 MAIN: {
     my $sourcepath = 's';

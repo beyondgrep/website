@@ -1,0 +1,1301 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ack - grep-like text finder</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:andy@clifford.(none)" />
+</head>
+
+<body style="background-color: white">
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#file_selection">FILE SELECTION</a></li>
+	<li><a href="#directory_selection">DIRECTORY SELECTION</a></li>
+	<li><a href="#options">OPTIONS</a></li>
+	<li><a href="#the__ackrc_file">THE .ackrc FILE</a></li>
+	<li><a href="#defining_your_own_types">Defining your own types</a></li>
+	<li><a href="#ack_colors">ACK COLORS</a></li>
+	<li><a href="#environment_variables">ENVIRONMENT VARIABLES</a></li>
+	<li><a href="#ack___other_tools">ACK &amp; OTHER TOOLS</a></li>
+	<ul>
+
+		<li><a href="#simple_vim_integration">Simple vim integration</a></li>
+		<li><a href="#editor_integration">Editor integration</a></li>
+		<li><a href="#shell_and_return_code">Shell and Return Code</a></li>
+	</ul>
+
+	<li><a href="#debugging_ack_problems">DEBUGGING ACK PROBLEMS</a></li>
+	<ul>
+
+		<li><a href="#try_it_with___noenv">Try it with <strong>-noenv</strong></a></li>
+		<li><a href="#use__f_to_see_what_files_have_been_selected_for_searching">Use <strong>-f</strong> to see what files have been selected for searching</a></li>
+		<li><a href="#use___dump">Use <strong>-dump</strong></a></li>
+	</ul>
+
+	<li><a href="#ackrc_location_semantics">ACKRC LOCATION SEMANTICS</a></li>
+	<li><a href="#bugs___enhancements">BUGS &amp; ENHANCEMENTS</a></li>
+	<li><a href="#support">SUPPORT</a></li>
+	<li><a href="#community">COMMUNITY</a></li>
+	<li><a href="#faq">FAQ</a></li>
+	<ul>
+
+		<li><a href="#can_i_stop_using_grep_now">Can I stop using grep now?</a></li>
+		<li><a href="#why_isn_t_ack_finding_a_match_in__some_file_">Why isn't ack finding a match in (some file)?</a></li>
+		<li><a href="#wouldn_t_it_be_great_if_ack_did_search___replace">Wouldn't it be great if <em class="file">ack</em> did search &amp; replace?</a></li>
+		<li><a href="#can_i_make_ack_recognize__xyz_files">Can I make ack recognize <em class="file">.xyz</em> files?</a></li>
+		<li><a href="#will_you_make_ack_recognize__xyz_files_by_default">Will you make ack recognize <em class="file">.xyz</em> files by default?</a></li>
+		<li><a href="#why_is_it_called_ack_if_it_s_called_ack_grep">Why is it called ack if it's called ack-grep?</a></li>
+		<li><a href="#what_does_ack_mean">What does <em class="file">ack</em> mean?</a></li>
+		<li><a href="#can_i_do_multi_line_regexes">Can I do multi-line regexes?</a></li>
+		<li><a href="#why_is_ack_telling_me_i_have_an_invalid_option_when_searching_for__foo">Why is ack telling me I have an invalid option when searching for <code>+foo</code>?</a></li>
+		<li><a href="#why_does_ack____40000____fail_isn_t_that_a_valid_regex">Why does <code>&quot;ack '.{40000,}'&quot;</code> fail?  Isn't that a valid regex?</a></li>
+		<li><a href="#ack_does_x_and_shouldn_t__should_it">Ack does &quot;X&quot; and shouldn't, should it?</a></li>
+	</ul>
+
+	<li><a href="#acknowledgements">ACKNOWLEDGEMENTS</a></li>
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#copyright___license">COPYRIGHT &amp; LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<hr />
+<h1><a name="name">NAME</a></h1>
+<p>ack - grep-like text finder</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<pre>
+    ack [options] PATTERN [FILE...]
+    ack -f [options] [DIRECTORY...]</pre>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>ack is designed as an alternative to <em class="file">grep</em> for programmers.</p>
+<p>ack searches the named input FILEs or DIRECTORYs for lines containing a
+match to the given PATTERN.  By default, ack prints the matching lines.
+If no FILE or DIRECTORY is given, the current directory will be searched.</p>
+<p>PATTERN is a Perl regular expression.  Perl regular expressions
+are commonly found in other programming languages, but for the particulars
+of their behavior, please consult
+<a href="http://perldoc.perl.org/perlreref.html|perlreref">http://perldoc.perl.org/perlreref.html|perlreref</a>.  If you don't know
+how to use regular expression but are interested in learning, you may
+consult <a href="http://perldoc.perl.org/perlretut.html|perlretut">http://perldoc.perl.org/perlretut.html|perlretut</a>.  If you do not
+need or want ack to use regular expressions, please see the
+<code>-Q</code>/<code>--literal</code> option.</p>
+<p>Ack can also list files that would be searched, without actually
+searching them, to let you take advantage of ack's file-type filtering
+capabilities.</p>
+<p>
+</p>
+<hr />
+<h1><a name="file_selection">FILE SELECTION</a></h1>
+<p>If files are not specified for searching, either on the command
+line or piped in with the <a href="#x"><code>-x</code></a> option, <em>ack</em> delves into
+subdirectories selecting files for searching.</p>
+<p><em>ack</em> is intelligent about the files it searches.  It knows about
+certain file types, based on both the extension on the file and,
+in some cases, the contents of the file.  These selections can be
+made with the <strong>--type</strong> option.</p>
+<p>With no file selection, <em>ack</em> searches through regular files that
+are not explicitly excluded by <strong>--ignore-dir</strong> and <strong>--ignore-file</strong>
+options, either present in <em class="file">ackrc</em> files or on the command line.</p>
+<p>The default options for <em>ack</em> ignore certain files and directories.  These
+include:</p>
+<ul>
+<li><strong><a name="backup_files_files_matching_or_ending_with" class="item">Backup files: Files matching <em class="file">#*#</em> or ending with <em class="file">~</em>.</a></strong>
+
+</li>
+<li><strong><a name="coredumps_files_matching_core_d" class="item">Coredumps: Files matching <em class="file">core.\d+</em></a></strong>
+
+</li>
+<li><strong><a name="version_control_directories_like_svn_and_git" class="item">Version control directories like <em class="file">.svn</em> and <em class="file">.git</em>.</a></strong>
+
+</li>
+</ul>
+<p>Run <em>ack</em> with the <a href="#dump"><code>--dump</code></a> option to see what settings are set.</p>
+<p>However, <em>ack</em> always searches the files given on the command line,
+no matter what type.  If you tell <em>ack</em> to search in a coredump,
+it will search in a coredump.</p>
+<p>
+</p>
+<hr />
+<h1><a name="directory_selection">DIRECTORY SELECTION</a></h1>
+<p><em>ack</em> descends through the directory tree of the starting directories
+specified.  If no directories are specified, the current working directory is
+used.  However, it will ignore the shadow directories used by
+many version control systems, and the build directories used by the
+Perl MakeMaker system.  You may add or remove a directory from this
+list with the <strong>--[no]ignore-dir</strong> option. The option may be repeated
+to add/remove multiple directories from the ignore list.</p>
+<p>For a complete list of directories that do not get searched, run
+<code>ack --dump</code>.</p>
+<p>
+</p>
+<hr />
+<h1><a name="options">OPTIONS</a></h1>
+<dl>
+<dt><strong><a name="ackrc" class="item"><strong>--ackrc</strong></a></strong></dt>
+
+<dd>
+<p>Specifies an ackrc file to load after all others; see <a href="#ackrc_location_semantics">ACKRC LOCATION SEMANTICS</a>.</p>
+</dd>
+<dt><strong><a name="a_num_after_context_num" class="item"><strong>-A <em>NUM</em></strong>, <strong>--after-context=<em>NUM</em></strong></a></strong></dt>
+
+<dd>
+<p>Print <em>NUM</em> lines of trailing context after matching lines.</p>
+</dd>
+<dt><strong><a name="b_num_before_context_num" class="item"><strong>-B <em>NUM</em></strong>, <strong>--before-context=<em>NUM</em></strong></a></strong></dt>
+
+<dd>
+<p>Print <em>NUM</em> lines of leading context before matching lines.</p>
+</dd>
+<dt><strong><a name="no_break" class="item"><strong>--[no]break</strong></a></strong></dt>
+
+<dd>
+<p>Print a break between results from different files. On by default
+when used interactively.</p>
+</dd>
+<dt><strong><a name="c_num_context_num" class="item"><strong>-C [<em>NUM</em>]</strong>, <strong>--context[=<em>NUM</em>]</strong></a></strong></dt>
+
+<dd>
+<p>Print <em>NUM</em> lines (default 2) of context around matching lines.
+You can specify zero lines of context to override another context
+specified in an ackrc.</p>
+</dd>
+<dt><strong><a name="c_count" class="item"><strong>-c</strong>, <strong>--count</strong></a></strong></dt>
+
+<dd>
+<p>Suppress normal output; instead print a count of matching lines for
+each input file.  If <strong>-l</strong> is in effect, it will only show the
+number of lines for each file that has lines matching.  Without
+<strong>-l</strong>, some line counts may be zeroes.</p>
+<p>If combined with <strong>-h</strong> (<strong>--no-filename</strong>) ack outputs only one total
+count.</p>
+</dd>
+<dt><strong><a name="no_color_no_colour" class="item"><strong>--[no]color</strong>, <strong>--[no]colour</strong></a></strong></dt>
+
+<dd>
+<p><strong>--color</strong> highlights the matching text.  <strong>--nocolor</strong> suppresses
+the color.  This is on by default unless the output is redirected.</p>
+<p>On Windows, this option is off by default unless the
+<a href="/Win32/Console/ANSI.html">the Win32::Console::ANSI manpage</a> module is installed or the <a href="#ack_pager_color"><code>ACK_PAGER_COLOR</code></a>
+environment variable is used.</p>
+</dd>
+<dt><strong><a name="color_filename_color" class="item"><strong>--color-filename=<em>color</em></strong></a></strong></dt>
+
+<dd>
+<p>Sets the color to be used for filenames.</p>
+</dd>
+<dt><strong><a name="color_match_color" class="item"><strong>--color-match=<em>color</em></strong></a></strong></dt>
+
+<dd>
+<p>Sets the color to be used for matches.</p>
+</dd>
+<dt><strong><a name="color_colno_color" class="item"><strong>--color-colno=<em>color</em></strong></a></strong></dt>
+
+<dd>
+<p>Sets the color to be used for column numbers.</p>
+</dd>
+<dt><strong><a name="color_lineno_color" class="item"><strong>--color-lineno=<em>color</em></strong></a></strong></dt>
+
+<dd>
+<p>Sets the color to be used for line numbers.</p>
+</dd>
+<dt><strong><a name="no_column" class="item"><strong>--[no]column</strong></a></strong></dt>
+
+<dd>
+<p>Show the column number of the first match.  This is helpful for
+editors that can place your cursor at a given position.</p>
+</dd>
+<dt><strong><a name="create_ackrc" class="item"><strong>--create-ackrc</strong></a></strong></dt>
+
+<dd>
+<p>Dumps the default ack options to standard output.  This is useful for
+when you want to customize the defaults.</p>
+</dd>
+<dt><strong><a name="dump" class="item"><strong>--dump</strong></a></strong></dt>
+
+<dd>
+<p>Writes the list of options loaded and where they came from to standard
+output.  Handy for debugging.</p>
+</dd>
+<dt><strong><a name="no_env" class="item"><strong>--[no]env</strong></a></strong></dt>
+
+<dd>
+<p><strong>--noenv</strong> disables all environment processing. No <em class="file">.ackrc</em> is
+read and all environment variables are ignored. By default, <em class="file">ack</em>
+considers <em class="file">.ackrc</em> and settings in the environment.</p>
+</dd>
+<dt><strong><a name="flush" class="item"><strong>--flush</strong></a></strong></dt>
+
+<dd>
+<p><strong>--flush</strong> flushes output immediately.  This is off by default
+unless ack is running interactively (when output goes to a pipe or
+file).</p>
+</dd>
+<dt><strong><a name="f" class="item"><strong>-f</strong></a></strong></dt>
+
+<dd>
+<p>Only print the files that would be searched, without actually doing
+any searching.  PATTERN must not be specified, or it will be taken
+as a path to search.</p>
+</dd>
+<dt><strong><a name="files_from_file" class="item"><strong>--files-from=<em>FILE</em></strong></a></strong></dt>
+
+<dd>
+<p>The list of files to be searched is specified in <em>FILE</em>.  The list of
+files are separated by newlines.  If <em>FILE</em> is <code>-</code>, the list is loaded
+from standard input.</p>
+<p>Note that the list of files is <strong>not</strong> filtered in any way.  If you
+add <code>--type=html</code> in addition to <code>--files-from</code>, the <code>--type</code> will
+be ignored.</p>
+</dd>
+<dt><strong><a name="no_filter" class="item"><strong>--[no]filter</strong></a></strong></dt>
+
+<dd>
+<p>Forces ack to act as if it were receiving input via a pipe.</p>
+</dd>
+<dt><strong><a name="no_follow" class="item"><strong>--[no]follow</strong></a></strong></dt>
+
+<dd>
+<p>Follow or don't follow symlinks, other than whatever starting files
+or directories were specified on the command line.</p>
+<p>This is off by default.</p>
+</dd>
+<dt><strong><a name="g_pattern" class="item"><strong>-g <em>PATTERN</em></strong></a></strong></dt>
+
+<dd>
+<p>Print searchable files where the relative path + filename matches
+<em>PATTERN</em>.</p>
+<p>Note that</p>
+<pre>
+    ack -g foo</pre>
+<p>is exactly the same as</p>
+<pre>
+    ack -f | ack foo</pre>
+<p>This means that just as ack will not search, for example, <em class="file">.jpg</em>
+files, <code>-g</code> will not list <em class="file">.jpg</em> files either.  ack is not intended
+to be a general-purpose file finder.</p>
+<p>Note also that if you have <code>-i</code> in your .ackrc that the filenames
+to be matched will be case-insensitive as well.</p>
+<p>This option can be combined with <strong>--color</strong> to make it easier to
+spot the match.</p>
+</dd>
+<dt><strong><a name="no_group" class="item"><strong>--[no]group</strong></a></strong></dt>
+
+<dd>
+<p><strong>--group</strong> groups matches by file name.  This is the default
+when used interactively.</p>
+<p><strong>--nogroup</strong> prints one result per line, like grep.  This is the
+default when output is redirected.</p>
+</dd>
+<dt><strong><a name="h_with_filename" class="item"><strong>-H</strong>, <strong>--with-filename</strong></a></strong></dt>
+
+<dd>
+<p>Print the filename for each match. This is the default unless searching
+a single explicitly specified file.</p>
+</dd>
+<dt><strong><a name="h_no_filename" class="item"><strong>-h</strong>, <strong>--no-filename</strong></a></strong></dt>
+
+<dd>
+<p>Suppress the prefixing of filenames on output when multiple files are
+searched.</p>
+</dd>
+<dt><strong><a name="no_heading" class="item"><strong>--[no]heading</strong></a></strong></dt>
+
+<dd>
+<p>Print a filename heading above each file's results.  This is the default
+when used interactively.</p>
+</dd>
+<dt><strong><a name="help" class="item"><strong>--help</strong></a></strong></dt>
+
+<dd>
+<p>Print a short help statement.</p>
+</dd>
+<dt><strong><a name="help_types" class="item"><strong>--help-types</strong></a></strong></dt>
+
+<dd>
+<p>Print all known types.</p>
+</dd>
+<dt><strong><a name="help_colors" class="item"><strong>--help-colors</strong></a></strong></dt>
+
+<dd>
+<p>Print a chart of various color combinations.</p>
+</dd>
+<dt><strong><a name="help_rgb_colors" class="item"><strong>--help-rgb-colors</strong></a></strong></dt>
+
+<dd>
+<p>Like <strong>--help-colors</strong> but with more precise RGB colors.</p>
+</dd>
+<dt><strong><a name="i_ignore_case" class="item"><strong>-i</strong>, <strong>--ignore-case</strong></a></strong></dt>
+
+<dd>
+<p>Ignore case distinctions in PATTERN.  Overrides <strong>--smart-case</strong> and <strong>-I</strong>.</p>
+</dd>
+<dt><strong><a name="i_no_ignore_case" class="item"><strong>-I</strong>, <strong>--no-ignore-case</strong></a></strong></dt>
+
+<dd>
+<p>Turns on case distinctions in PATTERN.  Overrides <strong>--smart-case</strong> and <strong>-i</strong>.</p>
+</dd>
+<dt><strong><a name="ignore_ack_defaults" class="item"><strong>--ignore-ack-defaults</strong></a></strong></dt>
+
+<dd>
+<p>Tells ack to completely ignore the default definitions provided with ack.
+This is useful in combination with <strong>--create-ackrc</strong> if you <em>really</em> want
+to customize ack.</p>
+</dd>
+<dt><strong><a name="no_ignore_dir_dirname_no_ignore_directory_dirname" class="item"><strong>--[no]ignore-dir=<em>DIRNAME</em></strong>, <strong>--[no]ignore-directory=<em>DIRNAME</em></strong></a></strong></dt>
+
+<dd>
+<p>Ignore directory (as CVS, .svn, etc are ignored). May be used
+multiple times to ignore multiple directories. For example, mason
+users may wish to include <strong>--ignore-dir=data</strong>. The <strong>--noignore-dir</strong>
+option allows users to search directories which would normally be
+ignored (perhaps to research the contents of <em class="file">.svn/props</em> directories).</p>
+<p>The <em>DIRNAME</em> must always be a simple directory name. Nested
+directories like <em class="file">foo/bar</em> are NOT supported. You would need to
+specify <strong>--ignore-dir=foo</strong> and then no files from any foo directory
+are taken into account by ack unless given explicitly on the command
+line.</p>
+</dd>
+<dt><strong><a name="ignore_file_filter_args" class="item"><strong>--ignore-file=<em>FILTER:ARGS</em></strong></a></strong></dt>
+
+<dd>
+<p>Ignore files matching <em>FILTER:ARGS</em>.  The filters are specified
+identically to file type filters as seen in <a href="#defining_your_own_types">Defining your own types</a>.</p>
+</dd>
+<dt><strong><a name="k_known_types" class="item"><strong>-k</strong>, <strong>--known-types</strong></a></strong></dt>
+
+<dd>
+<p>Limit selected files to those with types that ack knows about.</p>
+</dd>
+<dt><strong><a name="l_files_with_matches" class="item"><strong>-l</strong>, <strong>--files-with-matches</strong></a></strong></dt>
+
+<dd>
+<p>Only print the filenames of matching files, instead of the matching text.</p>
+</dd>
+<dt><strong><a name="l_files_without_matches" class="item"><strong>-L</strong>, <strong>--files-without-matches</strong></a></strong></dt>
+
+<dd>
+<p>Only print the filenames of files that do <em>NOT</em> match.</p>
+</dd>
+<dt><strong><a name="match_pattern" class="item"><strong>--match <em>PATTERN</em></strong></a></strong></dt>
+
+<dd>
+<p>Specify the <em>PATTERN</em> explicitly. This is helpful if you don't want to put the
+regex as your first argument, e.g. when executing multiple searches over the
+same set of files.</p>
+<pre>
+    # search for foo and bar in given files
+    ack file1 t/file* --match foo
+    ack file1 t/file* --match bar</pre>
+</dd>
+<dt><strong><a name="m_num_max_count_num" class="item"><strong>-m=<em>NUM</em></strong>, <strong>--max-count=<em>NUM</em></strong></a></strong></dt>
+
+<dd>
+<p>Print only <em>NUM</em> matches out of each file.  If you want to stop ack
+after printing the first match of any kind, use the <strong>-1</strong> options.</p>
+</dd>
+<dt><strong><a name="man" class="item"><strong>--man</strong></a></strong></dt>
+
+<dd>
+<p>Print this manual page.</p>
+</dd>
+<dt><strong><a name="n_no_recurse" class="item"><strong>-n</strong>, <strong>--no-recurse</strong></a></strong></dt>
+
+<dd>
+<p>No descending into subdirectories.</p>
+</dd>
+<dt><strong><a name="o" class="item"><strong>-o</strong></a></strong></dt>
+
+<dd>
+<p>Show only the part of each line matching PATTERN (turns off text
+highlighting).  This is exactly the same as <code>--output=$&amp;</code>.</p>
+</dd>
+<dt><strong><a name="output_expr" class="item"><strong>--output=<em>expr</em></strong></a></strong></dt>
+
+<dd>
+<p>Output the evaluation of <em>expr</em> for each line (turns off text
+highlighting). If PATTERN matches more than once then a line is
+output for each non-overlapping match.</p>
+<p><em>expr</em> may contain the strings &quot;\n&quot;, &quot;\r&quot; and &quot;\t&quot;, which will be
+expanded to their corresponding characters line feed, carriage return
+and tab, respectively.</p>
+<p><em>expr</em> may also contain the following Perl special variables:</p>
+<dl>
+<dt><strong><a name="_1" class="item"><code>$1</code> through <code>$9</code></a></strong></dt>
+
+<dd>
+<p>The subpattern from the corresponding set of capturing parentheses.
+If your pattern is <code>(.+) and (.+)</code>, and the string is &quot;this and
+that', then <a href="#_1"><code>$1</code></a> is &quot;this&quot; and <code>$2</code> is &quot;that&quot;.</p>
+</dd>
+<dt><strong><a name="__" class="item"><code>$_</code></a></strong></dt>
+
+<dd>
+<p>The contents of the line in the file.</p>
+</dd>
+<dt><strong><a name="__" class="item"><code>$.</code></a></strong></dt>
+
+<dd>
+<p>The number of the line in the file.</p>
+</dd>
+<dt><strong><a name="___" class="item"><code>$&amp;</code>, <code>$`</code> and <code>$'</code></a></strong></dt>
+
+<dd>
+<p><code>$&amp;</code> is the the string matched by the pattern, <code>$`</code> is what
+precedes the match, and <code>$'</code> is what follows it.  If the pattern
+is <code>gra(ph|nd)</code> and the string is &quot;lexicographic&quot;, then <code>$&amp;</code> is
+&quot;graph&quot;, <code>$`</code> is &quot;lexico&quot; and <code>$'</code> is &quot;ic&quot;.</p>
+<p>Use of these variables in your output will slow down the pattern
+matching.</p>
+</dd>
+<dt><strong><a name="__" class="item"><code>$+</code></a></strong></dt>
+
+<dd>
+<p>The match made by the last parentheses that matched in the pattern.
+For example, if your pattern is <code>Version: (.+)|Revision: (.+)</code>,
+then <a href="#__"><code>$+</code></a> will contain whichever set of parentheses matched.</p>
+</dd>
+<dt><strong><a name="_f" class="item"><code>$f</code></a></strong></dt>
+
+<dd>
+<p><a href="#_f"><code>$f</code></a> is available, in <code>--output</code> only, to insert the filename.
+This is a stand-in for the discovered <code>$filename</code> usage in old <code>ack2 --output</code>,
+which is disallowed with <code>ack3</code> improved security.</p>
+<p>The intended usage is to provide the grep or compile-error syntax needed for editor/IDE go-to-line integration,
+e.g. <code>--output=$f:$.:$_</code> or <code>--output=$f\t$.\t$&amp;</code></p>
+</dd>
+</dl>
+</dd>
+<dt><strong><a name="pager_program_nopager" class="item"><strong>--pager=<em>program</em></strong>, <strong>--nopager</strong></a></strong></dt>
+
+<dd>
+<p><strong>--pager</strong> directs ack's output through <em>program</em>.  This can also be specified
+via the <a href="#ack_pager"><code>ACK_PAGER</code></a> and <a href="#ack_pager_color"><code>ACK_PAGER_COLOR</code></a> environment variables.</p>
+<p>Using --pager does not suppress grouping and coloring like piping
+output on the command-line does.</p>
+<p><strong>--nopager</strong> cancels any setting in <em class="file">~/.ackrc</em>, <a href="#ack_pager"><code>ACK_PAGER</code></a> or <a href="#ack_pager_color"><code>ACK_PAGER_COLOR</code></a>.
+No output will be sent through a pager.</p>
+</dd>
+<dt><strong><a name="passthru" class="item"><strong>--passthru</strong></a></strong></dt>
+
+<dd>
+<p>Prints all lines, whether or not they match the expression.  Highlighting
+will still work, though, so it can be used to highlight matches while
+still seeing the entire file, as in:</p>
+<pre>
+    # Watch a log file, and highlight a certain IP address.
+    $ tail -f ~/access.log | ack --passthru 123.45.67.89</pre>
+</dd>
+<dt><strong><a name="print0" class="item"><strong>--print0</strong></a></strong></dt>
+
+<dd>
+<p>Only works in conjunction with <strong>-f</strong>, <strong>-g</strong>, <strong>-l</strong> or <strong>-c</strong>, options
+that only list filenames.  The filenames are output separated with a
+null byte instead of the usual newline. This is helpful when dealing
+with filenames that contain whitespace, e.g.</p>
+<pre>
+    # Remove all files of type HTML.
+    ack -f --html --print0 | xargs -0 rm -f</pre>
+</dd>
+<dt><strong><a name="p_n_proximate_n" class="item"><strong>-p[N]</strong>, <strong>--proximate[=N]</strong></a></strong></dt>
+
+<dd>
+<p>Groups together match lines that are within N lines of each other.
+This is useful for visually picking out matches that appear close
+to other matches.</p>
+<p>For example, if you got these results without the <code>--proximate</code> option,</p>
+<pre>
+    15: First match
+    18: Second match
+    19: Third match
+    37: Fourth match</pre>
+<p>they would look like this with <code>--proximate=1</code></p>
+<pre>
+    15: First match</pre>
+<pre>
+    18: Second match
+    19: Third match</pre>
+<pre>
+    37: Fourth match</pre>
+<p>and this with <code>--proximate=3</code>.</p>
+<pre>
+    15: First match
+    18: Second match
+    19: Third match</pre>
+<pre>
+    37: Fourth match</pre>
+<p>If N is omitted, N is set to 1.</p>
+</dd>
+<dt><strong><a name="p" class="item"><strong>-P</strong></a></strong></dt>
+
+<dd>
+<p>Negates the effect of the <strong>--proximate</strong> option.  Shortcut for <strong>--proximate=0</strong>.</p>
+</dd>
+<dt><strong><a name="q_literal" class="item"><strong>-Q</strong>, <strong>--literal</strong></a></strong></dt>
+
+<dd>
+<p>Quote all metacharacters in PATTERN, it is treated as a literal.</p>
+</dd>
+<dt><strong><a name="r_r_recurse" class="item"><strong>-r</strong>, <strong>-R</strong>, <strong>--recurse</strong></a></strong></dt>
+
+<dd>
+<p>Recurse into sub-directories. This is the default and just here for
+compatibility with grep. You can also use it for turning <strong>--no-recurse</strong> off.</p>
+</dd>
+<dt><strong><a name="s" class="item"><strong>-s</strong></a></strong></dt>
+
+<dd>
+<p>Suppress error messages about nonexistent or unreadable files.  This is taken
+from fgrep.</p>
+</dd>
+<dt><strong><a name="s_no_smart_case_no_smart_case" class="item"><strong>-S</strong>, <strong>--[no]smart-case</strong>, <strong>--no-smart-case</strong></a></strong></dt>
+
+<dd>
+<p>Ignore case in the search strings if PATTERN contains no uppercase
+characters. This is similar to <code>smartcase</code> in the vim text editor.
+The options overrides <strong>-i</strong> and <strong>-I</strong>.</p>
+<p><strong>-S</strong> is a synonym for <strong>--smart-case</strong>.</p>
+<p><strong>-i</strong> always overrides this option.</p>
+</dd>
+<dt><strong><a name="sort_files" class="item"><strong>--sort-files</strong></a></strong></dt>
+
+<dd>
+<p>Sorts the found files lexicographically.  Use this if you want your file
+listings to be deterministic between runs of <em>ack</em>.</p>
+</dd>
+<dt><strong><a name="show_types" class="item"><strong>--show-types</strong></a></strong></dt>
+
+<dd>
+<p>Outputs the filetypes that ack associates with each file.</p>
+<p>Works with <strong>-f</strong> and <strong>-g</strong> options.</p>
+</dd>
+<dt><strong><a name="type_no_type" class="item"><strong>--type=[no]TYPE</strong></a></strong></dt>
+
+<dd>
+<p>Specify the types of files to include or exclude from a search.
+TYPE is a filetype, like <em>perl</em> or <em>xml</em>.  <strong>--type=perl</strong> can
+also be specified as <strong>--perl</strong>, and <strong>--type=noperl</strong> can be done
+as <strong>--noperl</strong>.</p>
+<p>If a file is of both type &quot;foo&quot; and &quot;bar&quot;, specifying --foo and
+--nobar will exclude the file, because an exclusion takes precedence
+over an inclusion.</p>
+<p>Type specifications can be repeated and are ORed together.</p>
+<p>See <em>ack --help=types</em> for a list of valid types.</p>
+</dd>
+<dt><strong><a name="type_add_type_filter_args" class="item"><strong>--type-add <em>TYPE</em>:<em>FILTER</em>:<em>ARGS</em></strong></a></strong></dt>
+
+<dd>
+<p>Files with the given ARGS applied to the given FILTER
+are recognized as being of (the existing) type TYPE.
+See also <a href="#defining_your_own_types">Defining your own types</a>.</p>
+</dd>
+<dt><strong><a name="type_set_type_filter_args" class="item"><strong>--type-set <em>TYPE</em>:<em>FILTER</em>:<em>ARGS</em></strong></a></strong></dt>
+
+<dd>
+<p>Files with the given ARGS applied to the given FILTER are recognized as
+being of type TYPE. This replaces an existing definition for type TYPE.  See
+also <a href="#defining_your_own_types">Defining your own types</a>.</p>
+</dd>
+<dt><strong><a name="type_del_type" class="item"><strong>--type-del <em>TYPE</em></strong></a></strong></dt>
+
+<dd>
+<p>The filters associated with TYPE are removed from Ack, and are no longer considered
+for searches.</p>
+</dd>
+<dt><strong><a name="no_underline" class="item"><strong>--[no]underline</strong></a></strong></dt>
+
+<dd>
+<p>Turns on underlining of matches, where &quot;underlining&quot; is printing a line of
+carets under the match.</p>
+<pre>
+    $ ack -u foo
+    peanuts.txt
+    17: Come kick the football you fool
+                      ^^^          ^^^
+    623: Price per square foot
+                          ^^^</pre>
+<p>This is useful if you're dumping the results of an ack run into a text
+file or printer that doesn't support ANSI color codes.</p>
+<p>The setting of underline does not affect highlighting of matches.</p>
+</dd>
+<dt><strong><a name="v_invert_match" class="item"><strong>-v</strong>, <strong>--invert-match</strong></a></strong></dt>
+
+<dd>
+<p>Invert match: select non-matching lines.</p>
+</dd>
+<dt><strong><a name="version" class="item"><strong>--version</strong></a></strong></dt>
+
+<dd>
+<p>Display version and copyright information.</p>
+</dd>
+<dt><strong><a name="w_word_regexp" class="item"><strong>-w</strong>, <strong>--word-regexp</strong></a></strong></dt>
+
+<dd>
+<p>Force PATTERN to match only whole words.</p>
+</dd>
+<dt><strong><a name="x" class="item"><strong>-x</strong></a></strong></dt>
+
+<dd>
+<p>An abbreviation for <strong>--files-from=-</strong>. The list of files to search are read
+from standard input, with one line per file.</p>
+<p>Note that the list of files is <strong>not</strong> filtered in any way.  If you add
+<code>--type=html</code> in addition to <a href="#x"><code>-x</code></a>, the <code>--type</code> will be ignored.</p>
+</dd>
+<dt><strong><a name="1" class="item"><strong>-1</strong></a></strong></dt>
+
+<dd>
+<p>Stops after reporting first match of any kind.  This is different
+from <strong>--max-count=1</strong> or <strong>-m1</strong>, where only one match per file is
+shown.  Also, <strong>-1</strong> works with <strong>-f</strong> and <strong>-g</strong>, where <strong>-m</strong> does
+not.</p>
+</dd>
+<dt><strong><a name="thpppt" class="item"><strong>--thpppt</strong></a></strong></dt>
+
+<dd>
+<p>Display the all-important Bill The Cat logo.  Note that the exact
+spelling of <strong>--thpppppt</strong> is not important.  It's checked against
+a regular expression.</p>
+</dd>
+<dt><strong><a name="bar" class="item"><strong>--bar</strong></a></strong></dt>
+
+<dd>
+<p>Check with the admiral for traps.</p>
+</dd>
+<dt><strong><a name="cathy" class="item"><strong>--cathy</strong></a></strong></dt>
+
+<dd>
+<p>Chocolate, Chocolate, Chocolate!</p>
+</dd>
+</dl>
+<p>
+</p>
+<hr />
+<h1><a name="the__ackrc_file">THE .ackrc FILE</a></h1>
+<p>The <em class="file">.ackrc</em> file contains command-line options that are prepended
+to the command line before processing.  Multiple options may live
+on multiple lines.  Lines beginning with a # are ignored.  A <em class="file">.ackrc</em>
+might look like this:</p>
+<pre>
+    # Always sort the files
+    --sort-files</pre>
+<pre>
+    # Always color, even if piping to another program
+    --color</pre>
+<pre>
+    # Use &quot;less -r&quot; as my pager
+    --pager=less -r</pre>
+<p>Note that arguments with spaces in them do not need to be quoted,
+as they are not interpreted by the shell. Basically, each <em>line</em>
+in the <em class="file">.ackrc</em> file is interpreted as one element of <code>@ARGV</code>.</p>
+<p><em class="file">ack</em> looks in several locations for <em class="file">.ackrc</em> files; the searching
+process is detailed in <a href="#ackrc_location_semantics">ACKRC LOCATION SEMANTICS</a>.  These
+files are not considered if <strong>--noenv</strong> is specified on the command line.</p>
+<p>
+</p>
+<hr />
+<h1><a name="defining_your_own_types">Defining your own types</a></h1>
+<p>ack allows you to define your own types in addition to the predefined
+types. This is done with command line options that are best put into
+an <em class="file">.ackrc</em> file - then you do not have to define your types over and
+over again. In the following examples the options will always be shown
+on one command line so that they can be easily copy &amp; pasted.</p>
+<p>File types can be specified both with the the <em>--type=xxx</em> option,
+or the file type as an option itself.  For example, if you create
+a filetype of &quot;cobol&quot;, you can specify <em>--type=cobol</em> or simply
+<em>--cobol</em>.  File types must be at least two characters long.  This
+is why the C language is <em>--cc</em> and the R language is <em>--rr</em>.</p>
+<p><em>ack --perl foo</em> searches for foo in all perl files. <em>ack --help=types</em>
+tells you, that perl files are files ending
+in .pl, .pm, .pod or .t. So what if you would like to include .xs
+files as well when searching for --perl files? <em>ack --type-add perl:ext:xs --perl foo</em>
+does this for you. <strong>--type-add</strong> appends
+additional extensions to an existing type.</p>
+<p>If you want to define a new type, or completely redefine an existing
+type, then use <strong>--type-set</strong>. <em>ack --type-set eiffel:ext:e,eiffel</em> defines
+the type <em>eiffel</em> to include files with
+the extensions .e or .eiffel. So to search for all eiffel files
+containing the word Bertrand use <em>ack --type-set eiffel:ext:e,eiffel --eiffel Bertrand</em>.
+As usual, you can also write <strong>--type=eiffel</strong>
+instead of <strong>--eiffel</strong>. Negation also works, so <strong>--noeiffel</strong> excludes
+all eiffel files from a search. Redefining also works: <em>ack --type-set cc:ext:c,h</em>
+and <em>.xs</em> files no longer belong to the type <em>cc</em>.</p>
+<p>When defining your own types in the <em class="file">.ackrc</em> file you have to use
+the following:</p>
+<pre>
+  --type-set=eiffel:ext:e,eiffel</pre>
+<p>or writing on separate lines</p>
+<pre>
+  --type-set
+  eiffel:ext:e,eiffel</pre>
+<p>The following does <strong>NOT</strong> work in the <em class="file">.ackrc</em> file:</p>
+<pre>
+  --type-set eiffel:ext:e,eiffel</pre>
+<p>In order to see all currently defined types, use <em>--help-types</em>, e.g.
+<em>ack --type-set backup:ext:bak --type-add perl:ext:perl --help-types</em></p>
+<p>In addition to filtering based on extension, ack offers additional
+filter types.  The generic syntax is
+<em>--type-set TYPE:FILTER:ARGS</em>; <em>ARGS</em> depends on the value
+of <em>FILTER</em>.</p>
+<dl>
+<dt><strong><a name="is_filename" class="item">is:<em>FILENAME</em></a></strong></dt>
+
+<dd>
+<p><em>is</em> filters match the target filename exactly.  It takes exactly one
+argument, which is the name of the file to match.</p>
+<p>Example:</p>
+<pre>
+    --type-set make:is:Makefile</pre>
+</dd>
+<dt><strong><a name="ext_extension_extension2" class="item">ext:<em>EXTENSION</em>[,<em>EXTENSION2</em>[,...]]</a></strong></dt>
+
+<dd>
+<p><em>ext</em> filters match the extension of the target file against a list
+of extensions.  No leading dot is needed for the extensions.</p>
+<p>Example:</p>
+<pre>
+    --type-set perl:ext:pl,pm,t</pre>
+</dd>
+<dt><strong><a name="match_pattern2" class="item">match:<em>PATTERN</em></a></strong></dt>
+
+<dd>
+<p><em>match</em> filters match the target filename against a regular expression.
+The regular expression is made case-insensitive for the search.</p>
+<p>Example:</p>
+<pre>
+    --type-set make:match:/(gnu)?makefile/</pre>
+</dd>
+<dt><strong><a name="firstlinematch_pattern" class="item">firstlinematch:<em>PATTERN</em></a></strong></dt>
+
+<dd>
+<p><em>firstlinematch</em> matches the first line of the target file against a
+regular expression.  Like <em>match</em>, the regular expression is made
+case insensitive.</p>
+<p>Example:</p>
+<pre>
+    --type-add perl:firstlinematch:/perl/</pre>
+</dd>
+</dl>
+<p>
+</p>
+<hr />
+<h1><a name="ack_colors">ACK COLORS</a></h1>
+<p>ack allows customization of the colors it uses when presenting matches
+onscreen.  It uses the colors available in Perl's <a href="/Term/ANSIColor.html">the Term::ANSIColor manpage</a>
+module, which provides the following listed values. Note that case does not
+matter when using these values.</p>
+<p>There are four different colors ack uses:</p>
+<pre>
+    Aspect      Option              Env. variable       Default
+    --------    -----------------   ------------------  ---------------
+    filename    --color-filename    ACK_COLOR_FILENAME  black on_yellow
+    match       --color-match       ACK_COLOR_MATCH     bold green
+    line no.    --color-lineno      ACK COLOR_LINENO    bold yellow
+    column no.  --color-colno       ACK COLOR_COLNO     bold yellow</pre>
+<p>The column number column is only used if the column number is shown because
+of the --column option.</p>
+<p>Colors may be specified by command-line option, such as
+<code>ack --color-filename='red on_white'</code>, or by setting an environment
+variable, such as <code>ACK_COLOR_FILENAME='red on_white'</code>.  Options for colors
+can be set in your ACKRC file (See &quot;THE .ackrc FILE&quot;).</p>
+<p>ack can understand the following colors for the foreground:</p>
+<pre>
+    black red green yellow blue magenta cyan white</pre>
+<p>The optional background color is specified by prepending &quot;on_&quot; to one of
+the foreground colors:</p>
+<pre>
+    on_black on_red on_green on_yellow on_blue on_magenta on_cyan on_white</pre>
+<p>Each of the foreground colors can be modified with the following
+attributes, which may or may not be supported by your terminal:</p>
+<pre>
+    bold faint italic underline blink reverse concealed</pre>
+<p>Any combinations of modifiers can be added to the foreground color. If your
+terminal supports it, and you enjoy visual punishment, you can specify:</p>
+<pre>
+    ack --color-filename=&quot;blink italic underline bold red on_yellow&quot;</pre>
+<p>For charts of the colors and what they look like, run <code>ack --help-colors</code>
+and <code>ack --help-rgb-colors</code>.</p>
+<p>If the eight standard colors, in their bold, faint and unmodified states,
+aren't enough for you to choose from, you can also specify colors by their
+RGB values.  They are specified as &quot;rgbXYZ&quot; where X, Y, and Z are values
+between 0 and 5 giving the intensity of red, green and blue, respectively.
+Therefore, &quot;rgb500&quot; is pure red, &quot;rgb505&quot; is purple, and so on.</p>
+<p>Background colors can be specified with the &quot;on_&quot; prefix prepended on an
+RGB color, so that &quot;on_rgb505&quot; would be a purple background.</p>
+<p>The modifier attributes of blink, italic, underscore and so on may or may
+not work on the RGB colors.</p>
+<p>For a chart of the 216 possible RGB colors, run <code>ack --help-rgb-colors</code>.</p>
+<p>
+</p>
+<hr />
+<h1><a name="environment_variables">ENVIRONMENT VARIABLES</a></h1>
+<p>For commonly-used ack options, environment variables can make life
+much easier.  These variables are ignored if <strong>--noenv</strong> is specified
+on the command line.</p>
+<dl>
+<dt><strong><a name="ackrc" class="item">ACKRC</a></strong></dt>
+
+<dd>
+<p>Specifies the location of the user's <em class="file">.ackrc</em> file.  If this file doesn't
+exist, <em class="file">ack</em> looks in the default location.</p>
+</dd>
+<dt><strong><a name="ack_color_colno" class="item">ACK_COLOR_COLNO</a></strong></dt>
+
+<dd>
+<p>Color specification for the column number in ack's output.  By default, the
+column number is not shown.  You have to enable it with the <strong>--column</strong>
+option.  See the section &quot;ack Colors&quot; above.</p>
+</dd>
+<dt><strong><a name="ack_color_filename" class="item">ACK_COLOR_FILENAME</a></strong></dt>
+
+<dd>
+<p>Color specification for the filename in ack's output.  See the section &quot;ack
+Colors&quot; above.</p>
+</dd>
+<dt><strong><a name="ack_color_lineno" class="item">ACK_COLOR_LINENO</a></strong></dt>
+
+<dd>
+<p>Color specification for the line number in ack's output.  See the section
+&quot;ack Colors&quot; above.</p>
+</dd>
+<dt><strong><a name="ack_color_match" class="item">ACK_COLOR_MATCH</a></strong></dt>
+
+<dd>
+<p>Color specification for the matched text in ack's output.  See the section
+&quot;ack Colors&quot; above.</p>
+</dd>
+<dt><strong><a name="ack_pager" class="item">ACK_PAGER</a></strong></dt>
+
+<dd>
+<p>Specifies a pager program, such as <code>more</code>, <code>less</code> or <code>most</code>, to which
+ack will send its output.</p>
+<p>Using <a href="#ack_pager"><code>ACK_PAGER</code></a> does not suppress grouping and coloring like
+piping output on the command-line does, except that on Windows
+ack will assume that <a href="#ack_pager"><code>ACK_PAGER</code></a> does not support color.</p>
+<p><a href="#ack_pager_color"><code>ACK_PAGER_COLOR</code></a> overrides <a href="#ack_pager"><code>ACK_PAGER</code></a> if both are specified.</p>
+</dd>
+<dt><strong><a name="ack_pager_color" class="item">ACK_PAGER_COLOR</a></strong></dt>
+
+<dd>
+<p>Specifies a pager program that understands ANSI color sequences.
+Using <a href="#ack_pager_color"><code>ACK_PAGER_COLOR</code></a> does not suppress grouping and coloring
+like piping output on the command-line does.</p>
+<p>If you are not on Windows, you never need to use <a href="#ack_pager_color"><code>ACK_PAGER_COLOR</code></a>.</p>
+</dd>
+</dl>
+<p>
+</p>
+<hr />
+<h1><a name="ack___other_tools">ACK &amp; OTHER TOOLS</a></h1>
+<p>
+</p>
+<h2><a name="simple_vim_integration">Simple vim integration</a></h2>
+<p><em class="file">ack</em> integrates easily with the Vim text editor. Set this in your
+<em class="file">.vimrc</em> to use <em class="file">ack</em> instead of <em class="file">grep</em>:</p>
+<pre>
+    set grepprg=ack\ -k</pre>
+<p>That example uses <code>-k</code> to search through only files of the types ack
+knows about, but you may use other default flags. Now you can search
+with <em class="file">ack</em> and easily step through the results in Vim:</p>
+<pre>
+  :grep Dumper perllib</pre>
+<p>
+</p>
+<h2><a name="editor_integration">Editor integration</a></h2>
+<p>Many users have integrated ack into their preferred text editors.
+For details and links, see <a href="https://beyondgrep.com/more-tools/">https://beyondgrep.com/more-tools/</a>.</p>
+<p>
+</p>
+<h2><a name="shell_and_return_code">Shell and Return Code</a></h2>
+<p>For greater compatibility with <em>grep</em>, <em>ack</em> in normal use returns
+shell return or exit code of 0 only if something is found and 1 if
+no match is found.</p>
+<p>(Shell exit code 1 is <code>$?=256</code> in perl with <code>system</code> or backticks.)</p>
+<p>The <em>grep</em> code 2 for errors is not used.</p>
+<p>If <a href="#f"><code>-f</code></a> or <code>-g</code> are specified, then 0 is returned if at least one
+file is found.  If no files are found, then 1 is returned.</p>
+<p>
+</p>
+<hr />
+<h1><a name="debugging_ack_problems">DEBUGGING ACK PROBLEMS</a></h1>
+<p>If ack gives you output you're not expecting, start with a few simple steps.</p>
+<p>
+</p>
+<h2><a name="try_it_with___noenv">Try it with <strong>--noenv</strong></a></h2>
+<p>Your environment variables and <em class="file">.ackrc</em> may be doing things you're
+not expecting, or forgotten you specified.  Use <strong>--noenv</strong> to ignore
+your environment and <em class="file">.ackrc</em>.</p>
+<p>
+</p>
+<h2><a name="use__f_to_see_what_files_have_been_selected_for_searching">Use <strong>-f</strong> to see what files have been selected for searching</a></h2>
+<p>Ack's <strong>-f</strong> was originally added as a debugging tool.  If ack is
+not finding matches you think it should find, run <em class="file">ack -f</em> to see
+what files have been selected.  You can also add the <a href="#show_types"><code>--show-types</code></a>
+options to show the type of each file selected.</p>
+<p>
+</p>
+<h2><a name="use___dump">Use <strong>--dump</strong></a></h2>
+<p>This lists the ackrc files that are loaded and the options loaded
+from them.  You may be loading an <em class="file">.ackrc</em> file that you didn't know
+you were loading.</p>
+<p>
+</p>
+<hr />
+<h1><a name="ackrc_location_semantics">ACKRC LOCATION SEMANTICS</a></h1>
+<p>Ack can load its configuration from many sources.  The following list
+specifies the sources Ack looks for configuration files; each one
+that is found is loaded in the order specified here, and
+each one overrides options set in any of the sources preceding
+it.  (For example, if I set --sort-files in my user ackrc, and
+--nosort-files on the command line, the command line takes
+precedence)</p>
+<ul>
+<li>
+<p>Defaults are loaded from App::Ack::ConfigDefaults.  This can be omitted
+using <a href="#ignore_ack_defaults"><code>--ignore-ack-defaults</code></a>.</p>
+</li>
+<li><strong><a name="global_ackrc" class="item">Global ackrc</a></strong>
+
+<p>Options are then loaded from the global ackrc.  This is located at
+<code>/etc/ackrc</code> on Unix-like systems.</p>
+<p>Under Windows XP and earlier, the global ackrc is at
+<code>C:\Documents and Settings\All Users\Application Data\ackrc</code></p>
+<p>Under Windows Vista/7, the global ackrc is at
+<code>C:\ProgramData\ackrc</code></p>
+<p>The <code>--noenv</code> option prevents all ackrc files from being loaded.</p>
+</li>
+<li><strong><a name="user_ackrc" class="item">User ackrc</a></strong>
+
+<p>Options are then loaded from the user's ackrc.  This is located at
+<code>$HOME/.ackrc</code> on Unix-like systems.</p>
+<p>Under Windows XP and earlier, the user's ackrc is at
+<code>C:\Documents and Settings\$USER\Application Data\ackrc</code>.</p>
+<p>Under Windows Vista/7, the user's ackrc is at
+<code>C:\Users\$USER\AppData\Roaming\ackrc</code>.</p>
+<p>If you want to load a different user-level ackrc, it may be specified
+with the <code>$ACKRC</code> environment variable.</p>
+<p>The <code>--noenv</code> option prevents all ackrc files from being loaded.</p>
+</li>
+<li><strong><a name="project_ackrc" class="item">Project ackrc</a></strong>
+
+<p>Options are then loaded from the project ackrc.  The project ackrc is
+the first ackrc file with the name <a href="#ackrc"><code>.ackrc</code></a> or <code>_ackrc</code>, first searching
+in the current directory, then the parent directory, then the grandparent
+directory, etc.  This can be omitted using <code>--noenv</code>.</p>
+</li>
+<li><strong><a name="ackrc2" class="item">--ackrc</a></strong>
+
+<p>The <a href="#ackrc"><code>--ackrc</code></a> option may be included on the command line to specify an
+ackrc file that can override all others.  It is consulted even if <code>--noenv</code>
+is present.</p>
+</li>
+<li><strong><a name="command_line" class="item">Command line</a></strong>
+
+<p>Options are then loaded from the command line.</p>
+</li>
+</ul>
+<p>
+</p>
+<hr />
+<h1><a name="bugs___enhancements">BUGS &amp; ENHANCEMENTS</a></h1>
+<p>ack is based at GitHub at <a href="https://github.com/beyondgrep/ack3">https://github.com/beyondgrep/ack3</a></p>
+<p>Please report any bugs or feature requests to the issues list at
+Github: <a href="https://github.com/beyondgrep/ack3/issues">https://github.com/beyondgrep/ack3/issues</a>.</p>
+<p>Please include the operating system that you're using; the output of
+the command <code>ack --version</code>; and any customizations in your <em class="file">.ackrc</em>
+you may have.</p>
+<p>To suggest enhancements, please submit an issue at
+<a href="https://github.com/beyondgrep/ack3/issues">https://github.com/beyondgrep/ack3/issues</a>.  Also read the
+<em class="file">DEVELOPERS.md</em> file in the ack code repository.</p>
+<p>Also, feel free to discuss your issues on the ack mailing
+list at <a href="https://groups.google.com/group/ack-users">https://groups.google.com/group/ack-users</a>.</p>
+<p>
+</p>
+<hr />
+<h1><a name="support">SUPPORT</a></h1>
+<p>Support for and information about <em class="file">ack</em> can be found at:</p>
+<ul>
+<li><strong><a name="the_ack_homepage" class="item">The ack homepage</a></strong>
+
+<p><a href="https://beyondgrep.com/">https://beyondgrep.com/</a></p>
+</li>
+<li><strong><a name="source_repository" class="item">Source repository</a></strong>
+
+<p><a href="https://github.com/beyondgrep/ack3">https://github.com/beyondgrep/ack3</a></p>
+</li>
+<li><strong><a name="the_ack_issues_list_at_github" class="item">The ack issues list at Github</a></strong>
+
+<p><a href="https://github.com/beyondgrep/ack3/issues">https://github.com/beyondgrep/ack3/issues</a></p>
+</li>
+<li><strong><a name="the_ack_announcements_mailing_list" class="item">The ack announcements mailing list</a></strong>
+
+<p><a href="http://groups.google.com/group/ack-announcement">http://groups.google.com/group/ack-announcement</a></p>
+</li>
+<li><strong><a name="the_ack_users_mailing_list" class="item">The ack users' mailing list</a></strong>
+
+<p><a href="http://groups.google.com/group/ack-users">http://groups.google.com/group/ack-users</a></p>
+</li>
+<li><strong><a name="the_ack_development_mailing_list" class="item">The ack development mailing list</a></strong>
+
+<p><a href="http://groups.google.com/group/ack-users">http://groups.google.com/group/ack-users</a></p>
+</li>
+</ul>
+<p>
+</p>
+<hr />
+<h1><a name="community">COMMUNITY</a></h1>
+<p>There are ack mailing lists and a Slack channel for ack.  See
+<a href="https://beyondgrep.com/community/">https://beyondgrep.com/community/</a> for details.</p>
+<p>
+</p>
+<hr />
+<h1><a name="faq">FAQ</a></h1>
+<p>This is the Frequently Asked Questions list for ack.</p>
+<p>
+</p>
+<h2><a name="can_i_stop_using_grep_now">Can I stop using grep now?</a></h2>
+<p>Many people find <em>ack</em> to be better than <em>grep</em> as an everyday tool
+99% of the time, but don't throw <em>grep</em> away, because there are times
+you'll still need it.  For example, you might be looking through huge
+log files and not using regular expressions.  In that case, <em>grep</em>
+will probably perform better.</p>
+<p>
+</p>
+<h2><a name="why_isn_t_ack_finding_a_match_in__some_file_">Why isn't ack finding a match in (some file)?</a></h2>
+<p>First, take a look and see if ack is even looking at the file.  ack is
+intelligent in what files it will search and which ones it won't, but
+sometimes that can be surprising.</p>
+<p>Use the <a href="#f"><code>-f</code></a> switch, with no regex, to see a list of files that ack
+will search for you.  If your file doesn't show up in the list of files
+that <code>ack -f</code> shows, then ack never looks in it.</p>
+<p>
+</p>
+<h2><a name="wouldn_t_it_be_great_if_ack_did_search___replace">Wouldn't it be great if <em class="file">ack</em> did search &amp; replace?</a></h2>
+<p>No, ack will always be read-only.  Perl has a perfectly good way
+to do search &amp; replace in files, using the <code>-i</code>, <code>-p</code> and <code>-n</code>
+switches.</p>
+<p>You can certainly use ack to select your files to update.  For
+example, to change all &quot;foo&quot; to &quot;bar&quot; in all PHP files, you can do
+this from the Unix shell:</p>
+<pre>
+    $ perl -i -p -e's/foo/bar/g' $(ack -f --php)</pre>
+<p>
+</p>
+<h2><a name="can_i_make_ack_recognize__xyz_files">Can I make ack recognize <em class="file">.xyz</em> files?</a></h2>
+<p>Yes!  Please see <a href="#defining_your_own_types">Defining your own types</a> in the ack manual.</p>
+<p>
+</p>
+<h2><a name="will_you_make_ack_recognize__xyz_files_by_default">Will you make ack recognize <em class="file">.xyz</em> files by default?</a></h2>
+<p>We might, depending on how widely-used the file format is.</p>
+<p>Submit an issue at in the GitHub issue queue at
+<a href="https://github.com/beyondgrep/ack3/issues">https://github.com/beyondgrep/ack3/issues</a>.  Explain what the file format
+is, where we can find out more about it, and what you have been using
+in your <em class="file">.ackrc</em> to support it.</p>
+<p>Please do not bother creating a pull request.  The code for filetypes
+is trivial compared to the rest of the process we go through.</p>
+<p>
+</p>
+<h2><a name="why_is_it_called_ack_if_it_s_called_ack_grep">Why is it called ack if it's called ack-grep?</a></h2>
+<p>The name of the program is &quot;ack&quot;.  Some packagers have called it
+&quot;ack-grep&quot; when creating packages because there's already a package
+out there called &quot;ack&quot; that has nothing to do with this ack.</p>
+<p>I suggest you make a symlink named <em class="file">ack</em> that points to <em class="file">ack-grep</em>
+because one of the crucial benefits of ack is having a name that's
+so short and simple to type.</p>
+<p>To do that, run this with <em class="file">sudo</em> or as root:</p>
+<pre>
+   ln -s /usr/bin/ack-grep /usr/bin/ack</pre>
+<p>Alternatively, you could use a shell alias:</p>
+<pre>
+    # bash/zsh
+    alias ack=ack-grep</pre>
+<pre>
+    # csh
+    alias ack ack-grep</pre>
+<p>
+</p>
+<h2><a name="what_does_ack_mean">What does <em class="file">ack</em> mean?</a></h2>
+<p>Nothing.  I wanted a name that was easy to type and that you could
+pronounce as a single syllable.</p>
+<p>
+</p>
+<h2><a name="can_i_do_multi_line_regexes">Can I do multi-line regexes?</a></h2>
+<p>No, ack does not support regexes that match multiple lines.  Doing
+so would require reading in the entire file at a time.</p>
+<p>If you want to see lines near your match, use the <code>--A</code>, <code>--B</code>
+and <code>--C</code> switches for displaying context.</p>
+<p>
+</p>
+<h2><a name="why_is_ack_telling_me_i_have_an_invalid_option_when_searching_for__foo">Why is ack telling me I have an invalid option when searching for <code>+foo</code>?</a></h2>
+<p>ack treats command line options beginning with <code>+</code> or <code>-</code> as options; if you
+would like to search for these, you may prefix your search term with <code>--</code> or
+use the <code>--match</code> option.  (However, don't forget that <code>+</code> is a regular
+expression metacharacter!)</p>
+<p>
+</p>
+<h2><a name="why_does_ack____40000____fail_isn_t_that_a_valid_regex">Why does <code>&quot;ack '.{40000,}'&quot;</code> fail?  Isn't that a valid regex?</a></h2>
+<p>The Perl language limits the repetition quantifier to 32K.  You
+can search for <code>.{32767}</code> but not <code>.{32768}</code>.</p>
+<p>
+</p>
+<h2><a name="ack_does_x_and_shouldn_t__should_it">Ack does &quot;X&quot; and shouldn't, should it?</a></h2>
+<p>We try to remain as close to grep's behavior as possible, so when in
+doubt, see what grep does!  If there's a mismatch in functionality there,
+please submit an issue to GitHub, and/or bring it up on the ack-users
+mailing list.</p>
+<p>
+</p>
+<hr />
+<h1><a name="acknowledgements">ACKNOWLEDGEMENTS</a></h1>
+<p>How appropriate to have <em>ack</em>nowledgements!</p>
+<p>Thanks to everyone who has contributed to ack in any way, including
+M. Scott Ford,
+Anders Eriksson,
+H.Merijn Brand,
+Duke Leto,
+Gerhard Poul,
+Ethan Mallove,
+Marek Kubica,
+Ray Donnelly,
+Nikolaj Schumacher,
+Ed Avis,
+Nick Morrott,
+Austin Chamberlin,
+Varadinsky,
+S&eacute;bastien Feug&egrave;re,
+Jakub Wilk,
+Pete Houston,
+Stephen Thirlwall,
+Jonah Bishop,
+Chris Rebert,
+Denis Howe,
+Ra&uacute;l Gund&iacute;n,
+James McCoy,
+Daniel Perrett,
+Steven Lee,
+Jonathan Perret,
+Fraser Tweedale,
+Ra&aacute;l Gund&aacute;n,
+Steffen Jaeckel,
+Stephan Hohe,
+Michael Beijen,
+Alexandr Ciornii,
+Christian Walde,
+Charles Lee,
+Joe McMahon,
+John Warwick,
+David Steinbrunner,
+Kara Martens,
+Volodymyr Medvid,
+Ron Savage,
+Konrad Borowski,
+Dale Sedivic,
+Michael McClimon,
+Andrew Black,
+Ralph Bodenner,
+Shaun Patterson,
+Ryan Olson,
+Shlomi Fish,
+Karen Etheridge,
+Olivier Mengue,
+Matthew Wild,
+Scott Kyle,
+Nick Hooey,
+Bo Borgerson,
+Mark Szymanski,
+Marq Schneider,
+Packy Anderson,
+JR Boyens,
+Dan Sully,
+Ryan Niebur,
+Kent Fredric,
+Mike Morearty,
+Ingmar Vanhassel,
+Eric Van Dewoestine,
+Sitaram Chamarty,
+Adam James,
+Richard Carlsson,
+Pedro Melo,
+AJ Schuster,
+Phil Jackson,
+Michael Schwern,
+Jan Dubois,
+Christopher J. Madsen,
+Matthew Wickline,
+David Dyck,
+Jason Porritt,
+Jjgod Jiang,
+Thomas Klausner,
+Uri Guttman,
+Peter Lewis,
+Kevin Riggle,
+Ori Avtalion,
+Torsten Blix,
+Nigel Metheringham,
+G&aacute;bor Szab&oacute;,
+Tod Hagan,
+Michael Hendricks,
+&AElig;var Arnfj&ouml;r&eth; Bjarmason,
+Piers Cawley,
+Stephen Steneker,
+Elias Lutfallah,
+Mark Leighton Fisher,
+Matt Diephouse,
+Christian Jaeger,
+Bill Sully,
+Bill Ricker,
+David Golden,
+Nilson Santos F. Jr,
+Elliot Shank,
+Merijn Broeren,
+Uwe Voelker,
+Rick Scott,
+Ask Bj&oslash;rn Hansen,
+Jerry Gay,
+Will Coleda,
+Mike O'Regan,
+Slaven Rezi&0x107;,
+Mark Stosberg,
+David Alan Pisoni,
+Adriano Ferreira,
+James Keenan,
+Leland Johnson,
+Ricardo Signes,
+Pete Krawczyk and
+Rob Hoelz.</p>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>Andy Lester, <code>&lt;andy at petdance.com&gt;</code></p>
+<p>
+</p>
+<hr />
+<h1><a name="copyright___license">COPYRIGHT &amp; LICENSE</a></h1>
+<p>Copyright 2005-2019 Andy Lester.</p>
+<p>This program is free software; you can redistribute it and/or modify
+it under the terms of the Artistic License v2.0.</p>
+<p>See <a href="http://www.perlfoundation.org/artistic_license_2_0">http://www.perlfoundation.org/artistic_license_2_0</a> or the LICENSE.md
+file that comes with the ack distribution.</p>
+
+</body>
+
+</html>
