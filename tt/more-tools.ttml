@@ -30,7 +30,7 @@
     <p>
     <p>
     ack.vim is available at the official vim website at
-    [% WRAPPER selflink.tt %]http://www.vim.org/scripts/script.php?script_id=2572[% END %]
+    [% WRAPPER selflink.tt %]https://www.vim.org/scripts/script.php?script_id=2572[% END %]
     </p>
 
     <h2>ack2vim</h2>
