@@ -4,45 +4,51 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
     http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
-    <loc>http://beyondgrep.com/</loc>
-    <lastmod>2013-04-20T04:28:13+00:00</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://beyondgrep.com/</loc>
+    <lastmod>2019-08-16T19:35:04+00:00</lastmod>
+    <priority>1.00</priority>
 </url>
 <url>
-    <loc>http://beyondgrep.com/why-ack/</loc>
-    <lastmod>2013-04-20T04:28:13+00:00</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://beyondgrep.com/why-ack/</loc>
+    <lastmod>2019-08-16T19:35:04+00:00</lastmod>
+    <priority>0.80</priority>
 </url>
 <url>
-    <loc>http://beyondgrep.com/install/</loc>
-    <lastmod>2013-04-20T04:28:13+00:00</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://beyondgrep.com/install/</loc>
+    <lastmod>2019-08-16T19:35:04+00:00</lastmod>
+    <priority>0.80</priority>
 </url>
 <url>
-    <loc>http://beyondgrep.com/documentation/</loc>
-    <lastmod>2013-04-20T04:28:13+00:00</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://beyondgrep.com/documentation/</loc>
+    <lastmod>2019-08-16T19:35:04+00:00</lastmod>
+    <priority>0.80</priority>
 </url>
 <url>
-    <loc>http://beyondgrep.com/community/</loc>
-    <lastmod>2013-04-20T04:28:12+00:00</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://beyondgrep.com/community/</loc>
+    <lastmod>2019-08-16T19:35:04+00:00</lastmod>
+    <priority>0.80</priority>
 </url>
 <url>
-    <loc>http://beyondgrep.com/more-tools/</loc>
-    <lastmod>2013-04-20T04:28:13+00:00</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://beyondgrep.com/more-tools/</loc>
+    <lastmod>2019-08-16T19:35:04+00:00</lastmod>
+    <priority>0.80</priority>
 </url>
 <url>
-    <loc>http://beyondgrep.com/documentation/ack-2.04-man.html</loc>
-    <lastmod>2013-04-20T04:28:12+00:00</lastmod>
-    <changefreq>never</changefreq>
+    <loc>https://beyondgrep.com/changes.txt</loc>
+    <lastmod>2019-08-16T19:35:04+00:00</lastmod>
+    <priority>0.64</priority>
 </url>
 <url>
-    <loc>http://beyondgrep.com/documentation/ack-1.96-man.html</loc>
-    <lastmod>2013-12-11T04:28:12+00:00</lastmod>
-    <changefreq>never</changefreq>
+    <loc>https://beyondgrep.com/documentation/ack-1.96-man.html</loc>
+    <lastmod>2019-08-16T19:35:04+00:00</lastmod>
+    <priority>0.64</priority>
+</url>
+<url>
+    <loc>https://beyondgrep.com/documentation/ack-v3.0.2-man.html</loc>
+    <lastmod>2019-08-16T19:35:04+00:00</lastmod>
+    <priority>0.64</priority>
 </url>
 </urlset>
