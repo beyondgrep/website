@@ -7,7 +7,7 @@
     <h2>AckMate</h2>
 
     <p>
-    Users of <a href="http://macromates.com/">TextMate</a>, the
+    Users of <a href="https://macromates.com/">TextMate</a>, the
     programmer's editor for the Mac, can use the AckMate plugin by
     Trevor Squires:
     </p>
@@ -44,7 +44,7 @@
     <h2>Emacs integration</h2>
     <p>
     There are at least four different Emacs modes for supporting ack here at the Emacs Wiki: 
-    [% WRAPPER selflink.tt %]http://www.emacswiki.org/emacs/Ack[% END %]
+    [% WRAPPER selflink.tt %]https://www.emacswiki.org/emacs/Ack[% END %]
     </p>
 
     <p>
@@ -97,7 +97,7 @@
     filtering and semantic searches through wildcard and combinators.
     </p>
     <p>
-    [% WRAPPER selflink.tt %]http://awgn.github.io/cgrep/[% END %]
+    [% WRAPPER selflink.tt %]https://awgn.github.io/cgrep/[% END %]
     </p>
 
 
@@ -137,7 +137,7 @@
     by Robert Kern.
     </p>
     <p>
-    [% WRAPPER selflink.tt %]http://pypi.python.org/pypi/grin[% END %]
+    [% WRAPPER selflink.tt %]https://pypi.python.org/pypi/grin[% END %]
     </p>
 
 
@@ -152,8 +152,7 @@
 
     <h2>nak</h2>
     <p>
-    An implementation of ack, written in
-    <a href="http://nodejs.org/">Node.js</a>. It has inspiration from
+    An implementation of ack, written in Node.js. It has inspiration from
     Ag, and is optimized for speed, not features. It's completely
     asynchronous. Written by Garen J. Torikian.
     </p>
@@ -167,7 +166,7 @@
     paragrep is a text search tool that operates at the paragraph level.
     </p>
     <p>
-    [% WRAPPER selflink.tt %]http://software.clapper.org/paragrep/[% END %]
+    [% WRAPPER selflink.tt %]https://software.clapper.org/paragrep/[% END %]
     </p>
 
 
@@ -176,7 +175,7 @@
     pcregrep looks like it's just a regular grep, but with a PCRE regex engine.
     </p>
     <p>
-    [% WRAPPER selflink.tt %]http://www.rexegg.com/pcregrep-pcretest.html[% END %]
+    [% WRAPPER selflink.tt %]https://www.rexegg.com/pcregrep-pcretest.html[% END %]
     </p>
 
 
@@ -253,7 +252,7 @@
     vack is visual ack for the Mac.
     </p>
     <p>
-    [% WRAPPER selflink.tt %]http://blog.kowalczyk.info/software/vack/[% END %]
+    [% WRAPPER selflink.tt %]https://blog.kowalczyk.info/software/vack/[% END %]
     </p>
 
 
@@ -302,7 +301,7 @@
     <h2>Code Search</h2>
     <p>
     Russ Cox, the guy that wrote Google's CodeSearch engine, wrote
-    <a href="http://swtch.com/~rsc/regexp/regexp4.html">an article about how it worked</a>
+    <a href="https://swtch.com/~rsc/regexp/regexp4.html">an article about how it worked</a>
     and released an implementation in Go.
     </p>
 
@@ -318,7 +317,7 @@
     </p>
 
     <p>
-    [% WRAPPER selflink.tt %]http://hub.opensolaris.org/bin/view/Project+opengrok/[% END %]
+    [% WRAPPER selflink.tt %]https://oracle.github.io/opengrok/[% END %]
     </p>
 
     <h2>GNU GLOBAL</h2>
@@ -331,7 +330,7 @@
     </p>
 
     <p>
-    [% WRAPPER selflink.tt %]http://www.gnu.org/software/global/[% END %]
+    [% WRAPPER selflink.tt %]https://www.gnu.org/software/global/[% END %]
     </p>
 
     <h2>beagrep</h2>
@@ -343,7 +342,7 @@
     </p>
 
     <p>
-    [% WRAPPER selflink.tt %]http://baohaojun.github.io/beagrep.html[% END %]
+    [% WRAPPER selflink.tt %]https://baohaojun.github.io/beagrep.html[% END %]
     </p>
 
     <h2>Hound</h2>
