@@ -73,10 +73,10 @@
         <dt><a href="http://www.finkproject.org">Fink</a></dt>
         <dd>Package "ack"</dd>
 
-        <dt><a href="http://brew.sh/">Homebrew</a></dt>
+        <dt><a href="https://brew.sh/">Homebrew</a></dt>
         <dd>Formula "ack"</dd>
 
-        <dt><a href="http://macports.org/">Macports</a></dt>
+        <dt><a href="https://macports.org/">Macports</a></dt>
         <dd>Port "perl/p5-app-ack"</dd>
     </dl>
 
@@ -84,16 +84,16 @@
     <h3>Windows</h3>
     <dl>
         <dt>Chocolatey</dt>
-        <dd>[% WRAPPER selflink.tt %]http://chocolatey.org/packages/ack[% END %]</dd>
+        <dd>[% WRAPPER selflink.tt %]https://chocolatey.org/packages/ack[% END %]</dd>
 
-        <dt><a href="http://scoop.sh">Scoop</a></dt>
+        <dt><a href="https://scoop.sh">Scoop</a></dt>
         <dd>App "ack"</dt>
     </dl>
 
     <h3>*BSD</h3>
     <dl>
         <dt>FreeBSD port</dt>
-        <dd>Port <a href="http://www.freshports.org/textproc/ack/">"textproc/ack"</a></dd>
+        <dd>Port <a href="https://www.freshports.org/textproc/ack/">"textproc/ack"</a></dd>
 
         <dt>OpenBSD port</dt>
         <dd>Package "p5-ack"</dd>
@@ -177,10 +177,10 @@
     </p>
 
     <blockquote><code>
-    curl http://beyondgrep.com/ack-2.28-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
+    curl https://beyondgrep.com/ack-2.28-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
     </code></blockquote>
     <blockquote><code>
-    curl http://beyondgrep.com/ack-1.96-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
+    curl https://beyondgrep.com/ack-1.96-single-file &gt; ~/bin/ack &amp;&amp; chmod 0755 !#:3
     </code></blockquote>
 
     <p>
