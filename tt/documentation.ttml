@@ -2,8 +2,8 @@
 <div class="content">
     <h1>Documentation</h1>
 
-    <strong>Please read</strong> the <a href="/documentation/ack-v3.0.2-man.html">ack manual</a>,
-    which also includes the <a href="/documentation/ack-v3.0.2-man.html#faq">ack FAQ</a>.
+    <strong>Please read</strong> the <a href="/documentation/ack-v3.0.3-man.html">ack manual</a>,
+    which also includes the <a href="/documentation/ack-v3.0.3-man.html#faq">ack FAQ</a>.
 
     <h1>ack's command-line switches (<tt>ack --help</tt>)</h1>
 <pre>
