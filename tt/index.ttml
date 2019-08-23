@@ -1,4 +1,4 @@
-[% WRAPPER wrapper/page.ttml title='Beyond grep: ack v3.0.2, a source code search tool for programmers' %]
+[% WRAPPER wrapper/page.ttml title='Beyond grep: ack v3.1.0, a source code search tool for programmers' %]
 <div class="billbox">
     <div class="billhead">
 <pre>
@@ -11,7 +11,7 @@ _   /|
     <div class="billtext">
         <h1 class="pkg_mgr_desc">ack is a tool like grep, optimized for programmers</h1>
 
-        <h1 class="pkg_mgr_desc">ack 3.0.3 has been released (2019-08-20)</h1>
+        <h1 class="pkg_mgr_desc">ack 3.1.0 has been released (2019-08-22)</h1>
 
         <p>
         Designed for programmers with large heterogeneous

@@ -21,6 +21,8 @@ Searching:
   -v, --invert-match            Invert match: select non-matching lines
   -w, --word-regexp             Force PATTERN to match only whole words
   -Q, --literal                 Quote all metacharacters; PATTERN is literal
+  --range-start PATTERN         Specify PATTERN as the start of a match range.
+  --range-end PATTERN           Specify PATTERN as the end of a match range.
   --match PATTERN               Specify PATTERN explicitly. Typically omitted.
 
 Search output:
@@ -152,4 +154,4 @@ ack's home page is at https://beyondgrep.com/
 
 The full ack manual is available by running "ack --man".
 
-This is version v3.0.3 of ack.  Run "ack --version" for full version info.
+This is version v3.1.0 of ack.  Run "ack --version" for full version info.
