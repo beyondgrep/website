@@ -1,9 +1,10 @@
+[% PROCESS vars.tt %]
 [% WRAPPER wrapper/page.ttml title='ack documentation' %]
 <div class="content">
     <h1>Documentation</h1>
 
-    <strong>Please read</strong> the <a href="/documentation/ack-v3.1.0-man.html">ack manual</a>,
-    which also includes the <a href="/documentation/ack-v3.1.0-man.html#faq">ack FAQ</a>.
+    <strong>Please read</strong> the <a href="[% manual_url %]">ack manual</a>,
+    which also includes the <a href="[% manual_url %]#faq">ack FAQ</a>.
 
     <h1>ack's command-line switches (<tt>ack --help</tt>)</h1>
 <pre>
