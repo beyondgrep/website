@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html lang="en-US">
     <head>
         <title>[% title | html %]</title>
         <meta name="Author" content="Andy Lester" />
