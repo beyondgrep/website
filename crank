@@ -11,7 +11,7 @@ use Template ();
 use Template::Constants qw( :debug :chomp );
 use URI::file;
 
-my $LATEST = 'v3.1.0';
+my $LATEST = 'v3.1.1';
 
 MAIN: {
     my $sourcepath = 's';

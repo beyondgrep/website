@@ -1,6 +1,24 @@
 History file for ack 3.  https://beyondgrep.com/
 
-v3.1.0
+
+v3.1.1      Sat Aug 31 22:56:10 CDT 2019
+========================================
+[SPEEDUP]
+Improved the speed up the -l, -L and -c options by pre-scanning the file
+in bulk before doing line-by-line scan. (GH #221)
+
+[FIXES]
+On Windows, patterns with $ to mark the end of the line would not match.
+(GH #229)
+
+[DOCUMENTATION]
+Fixed docs that referred to --range-stop instead of --range-end. (GH #228)
+
+[INTERNALS]
+Now requires File::Next 1.18.
+
+
+v3.1.0      Thu Aug 22 22:43:15 CDT 2019
 ========================================
 [FEATURES]
 Added the --range-start and --range-end options to allow searching only
