@@ -1,13 +1,19 @@
 [% WRAPPER wrapper/page.ttml title="Feature comparison of ack, ag, git-grep, grep and ripgrep" %]
 
-[% MACRO print_cell( str ) BLOCK %]
-    [% IF str.match( '^https' ) %]
-        <span class="cell"><a href="[% str %]">[% str %]</a></span>
+[% MACRO print_cell( section_type, str ) BLOCK %]
+    [% option = str.match( '^-' ) ? 'option' : '' %]
+    [% IF section_type == 'options' %]
+        [% IF str != '' %]
+            <span class="cell [% option %]">&#x2714;</span>
+        [% END %]
     [% ELSE %]
-        [% str = str | html_entity %]
-        [% str = str.replace( '^yes', '&#x2714;' ) %]
-        [% option = str.match( '^-' ) ? 'option' : '' %]
-        <span class="cell [% option %]">[% str %]</span>
+        [% IF str.match( '^https' ) %]
+            <span class="cell"><a href="[% str %]">Link</a></span>
+        [% ELSE %]
+            [% str = str | html_entity %]
+            [% str = str.replace( '^yes', '&#x2714;' ) %]
+            <span class="cell [% option %]">[% str %]</span>
+        [% END %]
     [% END %]
 [% END %]
 
@@ -47,11 +53,11 @@
             [% IF hows %]
                 <tr>
                     <td>[% ability.what | html_entity %]</td>
-                    [% IF hows.size == 5 %]
+                    [% IF 1 || hows.size == 5 %]
                         [% FOR how IN hows %]
                             <td>
                                 [% IF how != '' %]
-                                    [% print_cell( how ) %]
+                                    [% print_cell( section.type, how ) %]
                                 [% END %]
                             </td>
                         [% END %]

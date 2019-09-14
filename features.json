@@ -181,6 +181,7 @@
     },
     {
         "section": "Searching",
+        "type": "options",
         "abilities": [
             {
                 "what": "Ignore case",
@@ -264,6 +265,7 @@
     },
     {
         "section": "Regular expressions",
+        "type": "options",
         "abilities": [
             {
                 "what": "Use fixed strings, not regular expressions, for a literal match",
@@ -301,6 +303,7 @@
     },
     {
         "section": "Search output",
+        "type": "options",
         "abilities": [
             {
                 "what": "Print only filenames that contain matches",
@@ -489,6 +492,7 @@
     },
     {
         "section": "File presentation",
+        "type": "options",
         "abilities": [
             {
                 "what": "Enable color output",
@@ -568,6 +572,7 @@
     },
     {
         "section": "File finding",
+        "type": "options",
         "abilities": [
             {
                 "what": "Only print the files selected, without searching",
@@ -625,6 +630,7 @@
     },
     {
         "section": "File inclusion/exclusion",
+        "type": "options",
         "abilities": [
             {
                 "what": "Search only files of a given type",
@@ -823,6 +829,7 @@
     },
     {
         "section": "File type specification",
+        "type": "options",
         "abilities": [
             {
                 "what": "Create a filetype, replacing the previous specs",
@@ -861,6 +868,7 @@
     },
     {
         "section": "Miscellaneous",
+        "type": "options",
         "abilities": [
             {
                 "what": "Print all lines, whether matching or not",
