@@ -50,7 +50,7 @@
                     "gnu": "Choice of three modes: Basic, extended, or Perl-compatible (experimental)",
                     "ack": "Native Perl",
                     "ag": "Perl-compatible",
-                    "rg": "Non-backtracking, mostly Perl-compatible. See https://docs.rs/regex"
+                    "rg": "Choice of three modes: Fast non-backtracking, Perl-compatible, or automatic selection"
                 }
             }
         ]
@@ -86,7 +86,7 @@
             {
                 "what": "Specify filetype by pattern match on filename",
                 "how": {
-                    "ack": "yes"
+                    "ack,ag,gnu,rg": "yes"
                 }
             },
             {
@@ -99,7 +99,8 @@
                 "what": "Configuration file",
                 "how": {
                     "ack": "System-, user- and project-level",
-                    "git": "System-, user- and project-level"
+                    "git": "System-, user- and project-level",
+                    "rg": "Specified by RIPGREP_CONFIG_PATH environment variable"
                 }
             },
             {
@@ -117,13 +118,14 @@
             {
                 "what": "Deterministic output",
                 "how": {
-                    "ack,rg": "yes, using --sort-files"
+                    "ack": "yes, using --sort-files",
+                    "rg": "yes, using --sort path"
                 }
             },
             {
                 "what": "Match patterns across newlines",
                 "how": {
-                    "ag": "yes"
+                    "ag,rg": "yes"
                 }
             },
             {
@@ -172,7 +174,7 @@
             {
                 "what": "Search in gzip files",
                 "how": {
-                    "ag": "yes"
+                    "ag,rg": "yes"
                 }
             }
         ]
@@ -194,7 +196,7 @@
                 }
             },
             {
-                "what": "Re-enable case-sensitive search over case-insensitve or smart-case search",
+                "what": "Re-enable case-sensitive search over case-insensitive or smart-case search",
                 "how": {
                     "ack": "-I",
                     "ag,rg": "-s --case-sensitive",
@@ -248,7 +250,8 @@
             {
                 "what": "Match patterns across newlines",
                 "how": {
-                    "ag": "--[no-]multiline"
+                    "ag": "--[no-]multiline",
+                    "rg": "-U --multiline"
                 }
             },
             {
@@ -290,7 +293,8 @@
                 "how": {
                     "ack": "always",
                     "git": "-P --perl-regexp",
-                    "gnu": "-P --perl-regexp (experimental)"
+                    "gnu": "-P --perl-regexp (experimental)",
+                    "rg": "-P --pcre2 (always) --auto-hybrid-regex (if necessary)"
                 }
             }
         ]
@@ -340,7 +344,7 @@
                     "ack,freebsd,gnu,osx": "-h --no-filename",
                     "ag": "--no-filename",
                     "git": "-h",
-                    "rg": "--no-filename"
+                    "rg": "-I --no-filename"
                 }
             },
             {
@@ -440,7 +444,7 @@
                 "what": "Print the byte offset within the file before each line",
                 "how": {
                     "freebsd,gnu,netbsd": "-b --byte-offset -u --unix-byte-offsets",
-                    "osx": "-b --byte-offset"
+                    "osx,rg": "-b --byte-offset"
                 }
             },
             {
@@ -477,7 +481,8 @@
             {
                 "what": "Print stats (files scanned, time taken, etc.)",
                 "how": {
-                    "ag": "--stats --stats-only"
+                    "ag": "--stats --stats-only",
+                    "rg": "--stats"
                 }
             }
         ]
@@ -524,7 +529,8 @@
             {
                 "what": "Group together all matches in a file",
                 "how": {
-                    "ack,ag": "--[no-]group"
+                    "ack,ag": "--[no-]group",
+                    "rg": "--heading"
                 }
             },
             {
@@ -555,7 +561,7 @@
                 "what": "Flush output on every line",
                 "how": {
                     "ack": "--flush",
-                    "freebsd,gnu,osx": "--line-buffered"
+                    "freebsd,gnu,osx,rg": "--line-buffered"
                 }
             }
         ]
@@ -579,7 +585,8 @@
             {
                 "what": "List searchable files that match a pattern",
                 "how": {
-                    "ack,ag": "-g"
+                    "ack,ag": "-g",
+                    "rg": "-g --glob"
                 }
             },
             {
@@ -591,7 +598,8 @@
             {
                 "what": "Sort the found files lexically",
                 "how": {
-                    "ack,rg": "--sort-files"
+                    "ack": "--sort-files",
+                    "rg": "--sort path"
                 }
             },
             {
@@ -603,7 +611,8 @@
             {
                 "what": "Limit search to filenames matching a pattern",
                 "how": {
-                    "ag": "-G --file-search-regex"
+                    "ag": "-G --file-search-regex",
+                    "rg": "-g --glob"
                 }
             },
             {
@@ -638,13 +647,15 @@
                     "ack": "-r -R --[no-]recurse",
                     "ag": "-r --recurse",
                     "gnu": "-r --recursive",
-                    "freebsd,osx": "-r -R --recursive -d recurse --directories=recurse"
+                    "freebsd,osx": "-r -R --recursive -d recurse --directories=recurse",
+                    "rg": "yes, up to --max-depth"
                 }
             },
             {
                 "what": "Recurse into subdirectories, following symlinks",
                 "how": {
-                    "gnu": "-R --dereference-recursive"
+                    "gnu": "-R --dereference-recursive",
+                    "rg": "-L --follow"
                 }
             },
             {
@@ -652,6 +663,7 @@
                 "how": {
                     "ack": "-n --no-recurse",
                     "ag": "-n --norecurse",
+                    "rg": "--max-depth 1",
                     "freebsd,osx": "-d skip --directories=skip"
                 }
             },
@@ -665,13 +677,14 @@
                 "what": "Add/remove directory from list of ignored dirs",
                 "how": {
                     "ack": "--[no-]ignore-dir",
-                    "ag": "--ignore-dir"
+                    "ag": "--ignore-dir",
+                    "rg": "-g --glob"
                 }
             },
             {
                 "what": "Don't respect ignore files (.gitignore, .ignore, etc)",
                 "how": {
-                    "rg": "--no-ignore --no-ignore-parent --no-ignore-vcs"
+                    "rg": "--no-ignore --no-ignore-dot --no-ignore-parent --no-ignore-vcs"
                 }
             },
             {
@@ -696,19 +709,21 @@
                     "gnu": "--exclude --exclude-from --exclude-dir",
                     "freebsd": "--exclude DIR_PATTERN",
                     "osx": "--exclude --exclude-dir",
-                    "rg": "--ignore-file"
+                    "rg": "-g --glob"
                 }
             },
             {
                 "what": "Add filter for ignoring files",
                 "how": {
-                    "ack": "--ignore-file"
+                    "ack": "--ignore-file FILTER:ARGS",
+                    "rg": "--ignore-file PATH/TO/.IGNORE"
                 }
             },
             {
-                "what": "Include only files of types that ack recognizes",
+                "what": "Include only files of recognized types",
                 "how": {
-                    "ack": "-k --known-types"
+                    "ack": "-k --known-types",
+                    "rg": "-t all"
                 }
             },
             {
@@ -725,6 +740,7 @@
                 "how": {
                     "ag": "--one-device",
                     "gnu": "--devices=skip",
+                    "rg": "--one-file-system",
                     "osx": "-p"
                 }
             },
@@ -751,7 +767,7 @@
             {
                 "what": "Search binary files",
                 "how": {
-                    "ag": "--binary",
+                    "ag,rg": "--binary",
                     "freebsd,netbsd,osx": "-a --text"
                 }
             },
@@ -779,7 +795,8 @@
             {
                 "what": "Search all text files",
                 "how": {
-                    "ag": "-t --all-text"
+                    "ag": "-t --all-text",
+                    "rg": "-t txt"
                 }
             },
             {
@@ -792,7 +809,8 @@
                 "what": "Skip rules found in VCS ignore files (.gitignore, .hgignore, etc)",
                 "how": {
                     "ag": "-U --skip-vcs-ignores",
-                    "git": "--exclude-standard"
+                    "git": "--exclude-standard",
+                    "rg": "--no-ignore-vcs"
                 }
             },
             {
@@ -848,7 +866,8 @@
                 "what": "Print all lines, whether matching or not",
                 "how": {
                     "ack": "--passthru",
-                    "ag": "--passthrough"
+                    "ag": "--passthrough",
+                    "rg": "--passthru"
                 }
             },
             {
@@ -860,7 +879,8 @@
             {
                 "what": "Dump information on which options are loaded",
                 "how": {
-                    "ack": "--dump"
+                    "ack": "--dump",
+                    "rg": "--debug"
                 }
             },
             {
@@ -872,7 +892,8 @@
             {
                 "what": "Ignore environment variables and global configuration files",
                 "how": {
-                    "ack": "--env"
+                    "ack": "--env",
+                    "rg": "--no-config"
                 }
             },
             {
