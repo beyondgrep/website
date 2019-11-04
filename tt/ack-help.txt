@@ -104,9 +104,9 @@ File inclusion/exclusion:
   --[no]follow                  Follow symlinks.  Default is off.
 
 File type inclusion/exclusion:
-  --type=X                      Include only X files, where X is a recognized
-                                filetype, e.g. --php, --ruby
-  --type=noX                    Exclude X files, e.g. --nophp, --no-ruby.
+  -t X, --type=X                Include only X files, where X is a filetype,
+                                e.g. python, html, markdown, etc
+  -T X, --type=noX              Exclude X files, where X is a filetype.
   -k, --known-types             Include only files of types that ack recognizes.
   --help-types                  Display all known types, and how they're defined.
 
@@ -154,4 +154,4 @@ ack's home page is at https://beyondgrep.com/
 
 The full ack manual is available by running "ack --man".
 
-This is version v3.1.2 of ack.  Run "ack --version" for full version info.
+This is version v3.2.0 of ack.  Run "ack --version" for full version info.
