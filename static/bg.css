@@ -112,8 +112,8 @@ body {
     font-size:3em;
     color:#828282;
     font-weight:bold;
-    padding-left:30px;
-    float:left;
+    padding-right:30px;
+    float:right;
 }
 
 .billhead pre {
