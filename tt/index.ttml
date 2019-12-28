@@ -6,17 +6,17 @@
 _   /|
 \'o.O'
 =(___)=
-   U    ack!
+   U
 </pre>
     </div>
     <div class="billtext">
-        <h1 class="pkg_mgr_desc">ack is a tool like grep, optimized for developers</h1>
+        <h1 class="pkg_mgr_desc">ack is a grep-like source code search tool.</h1>
 
-        <h1 class="pkg_mgr_desc">ack [% current_version %] has been released ([% current_date %])</h1>
+        <h2 class="pkg_mgr_desc">The latest version of ack is [% current_version %], released [% current_date %].</h2>
 
         <p>
         Designed for programmers with large heterogeneous
-        trees of source code, ack is written purely in
+        trees of source code, ack is written in
         portable Perl 5 and takes advantage of the power of
         Perl's regular expressions.
         </p>
@@ -26,6 +26,20 @@ _   /|
 <div class="content">
     <div class="feature-bullets">
         <h1>What's new in ack 3?</h1>
+
+        <h2>Easier to understand error messages</h2>
+        <p>
+            The error message ack displays when the regex passed is invalid
+            has been improved. The message is more readable and includes a
+            pointer to the offending part of the regex. For example:
+        </p>
+
+<pre>
+$ ack 'status: (open|closed|in progress'
+ack: Invalid regex 'status: (open|closed|in progress'
+Regex: status: (open|closed|in progress
+               ^---HERE Unmatched ( in regex
+</pre>
 
         <h2>New <tt>--proximate</tt> option groups matches near each other</h2>
 
@@ -59,7 +73,7 @@ _   /|
     37: Fourth match
 </pre>
 
-        <h2>Improved and incompatible <tt>-w</tt> option</h2>
+        <h2>Improved <tt>-w</tt> option</h2>
 
         <p>
             The <tt>-w</tt> option, which tells ack to only find whole-word
