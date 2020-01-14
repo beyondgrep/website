@@ -1,6 +1,14 @@
 History file for ack 3.  https://beyondgrep.com/
 
 
+v3.3.1      Mon Jan 13 10:27:16 CST 2020
+========================================
+[FIXES]
+Some regexes would be shown as invalid when used with the -Q option.  Since
+the -Q tells ack to treat the regex as a literal, this shouldn't be
+possible.  (GH#294)
+
+
 v3.3.0      Sat Dec 28 16:00:21 CST 2019
 ========================================
 [FEATURES]
@@ -16,7 +24,7 @@ offending part of the regex.  For example:
 Added many new file and directory exclusions to speed up file selection.
 * Python's *.pyc, *.pyd and *.pyo compiled files
 * Python's __pycache__ and .pytest_cache directories
-* Linux *.so shared object *.so files
+* Linux *.so shared object files
 * Windows dynamic-link library *.dll files
 * gettext compiled *.mo translation files
 * macOS's __MACOSX directories and .DS_Store files
