@@ -44,14 +44,7 @@ for my $section ( @{$sections} ) {
 
         my @distinct_flags = uniq values %flags_by_tool;
 
-        # If there's only one how, then the template knows it applies to all.
-        my @new_hows;
-        if ( @distinct_flags == 1 && keys %flags_by_tool == 5 ) {
-            @new_hows = @distinct_flags;
-        }
-        else {
-            @new_hows = map { $flags_by_tool{$_} // '' } @TOOLS;
-        }
+        my @new_hows = map { $flags_by_tool{$_} // '' } @TOOLS;
         $ability->{how} = \@new_hows;
     }
 }
