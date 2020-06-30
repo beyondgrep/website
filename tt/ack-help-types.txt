@@ -1,83 +1,85 @@
 Usage: ack [OPTION]... PATTERN [FILES OR DIRECTORIES]
 
-The following is the list of filetypes supported by ack.  You can
-specify a file type with the --type=TYPE format, or the --TYPE
-format.  For example, both --type=perl and --perl work.
+The following is the list of filetypes supported by ack.  You can specify a
+filetype to include with -t TYPE or --type=TYPE.  You can exclude a
+filetype with -T TYPE or --type=noTYPE.
 
-Note that some extensions may appear in multiple types.  For example,
-.pod files are both Perl and Parrot.
+Note that some files may appear in multiple types.  For example, a file
+called Rakefile is both Ruby (--type=ruby) and Rakefile (--type=rakefile).
 
-    --[no]actionscript .as .mxml
-    --[no]ada          .ada .adb .ads
-    --[no]asm          .asm .s
-    --[no]asp          .asp
-    --[no]aspx         .master .ascx .asmx .aspx .svc
-    --[no]batch        .bat .cmd
-    --[no]cc           .c .h .xs
-    --[no]cfmx         .cfc .cfm .cfml
-    --[no]clojure      .clj .cljs .edn .cljc
-    --[no]cmake        CMakeLists.txt; .cmake
-    --[no]coffeescript .coffee
-    --[no]cpp          .cpp .cc .cxx .m .hpp .hh .h .hxx
-    --[no]csharp       .cs
-    --[no]css          .css
-    --[no]dart         .dart
-    --[no]delphi       .pas .int .dfm .nfm .dof .dpk .dproj .groupproj .bdsgroup .bdsproj
-    --[no]elisp        .el
-    --[no]elixir       .ex .exs
-    --[no]erlang       .erl .hrl
-    --[no]fortran      .f .f77 .f90 .f95 .f03 .for .ftn .fpp
-    --[no]go           .go
-    --[no]groovy       .groovy .gtmpl .gpp .grunit .gradle
-    --[no]gsp          .gsp
-    --[no]haskell      .hs .lhs
-    --[no]hh           .h
-    --[no]hpp          .hpp .hh .h .hxx
-    --[no]html         .htm .html .xhtml
-    --[no]jade         .jade
-    --[no]java         .java .properties
-    --[no]js           .js
-    --[no]json         .json
-    --[no]jsp          .jsp .jspx .jspf .jhtm .jhtml
-    --[no]kotlin       .kt .kts
-    --[no]less         .less
-    --[no]lisp         .lisp .lsp
-    --[no]lua          .lua; First line matches /^#!.*\blua(jit)?/
-    --[no]make         .mk; .mak; makefile; Makefile; Makefile.Debug; Makefile.Release; GNUmakefile
-    --[no]markdown     .md .markdown
-    --[no]matlab       .m
-    --[no]objc         .m .h
-    --[no]objcpp       .mm .h
-    --[no]ocaml        .ml .mli .mll .mly
-    --[no]parrot       .pir .pasm .pmc .ops .pod .pg .tg
-    --[no]perl         .pl .pm .pod .t .psgi; First line matches /^#!.*\bperl/
-    --[no]perltest     .t
-    --[no]php          .php .phpt .php3 .php4 .php5 .phtml; First line matches /^#!.*\bphp/
-    --[no]plone        .pt .cpt .metadata .cpy .py
-    --[no]pod          .pod
-    --[no]python       .py; First line matches /^#!.*\bpython/
-    --[no]rake         Rakefile
-    --[no]rr           .R
-    --[no]rst          .rst
-    --[no]ruby         .rb .rhtml .rjs .rxml .erb .rake .spec; Rakefile; First line matches /^#!.*\bruby/
-    --[no]rust         .rs
-    --[no]sass         .sass .scss
-    --[no]scala        .scala
-    --[no]scheme       .scm .ss
-    --[no]shell        .sh .bash .csh .tcsh .ksh .zsh .fish; First line matches /^#!.*\b(?:ba|t?c|k|z|fi)?sh\b/
-    --[no]smalltalk    .st
-    --[no]smarty       .tpl
-    --[no]sql          .sql .ctl
-    --[no]stylus       .styl
-    --[no]svg          .svg
-    --[no]swift        .swift; First line matches /^#!.*\bswift/
-    --[no]tcl          .tcl .itcl .itk
-    --[no]tex          .tex .cls .sty
-    --[no]ts           .ts .tsx
-    --[no]ttml         .tt .tt2 .ttml
-    --[no]vb           .bas .cls .frm .ctl .vb .resx
-    --[no]verilog      .v .vh .sv
-    --[no]vhdl         .vhd .vhdl
-    --[no]vim          .vim
-    --[no]xml          .xml .dtd .xsd .xsl .xslt .ent .wsdl; First line matches /<[?]xml/
-    --[no]yaml         .yaml .yml
+    actionscript .as .mxml
+    ada          .ada .adb .ads
+    asm          .asm .s
+    asp          .asp
+    aspx         .master .ascx .asmx .aspx .svc
+    batch        .bat .cmd
+    cc           .c .h .xs
+    cfmx         .cfc .cfm .cfml
+    clojure      .clj .cljs .edn .cljc
+    cmake        CMakeLists.txt; .cmake
+    coffeescript .coffee
+    cpp          .cpp .cc .cxx .m .hpp .hh .h .hxx
+    csharp       .cs
+    css          .css
+    dart         .dart
+    delphi       .pas .int .dfm .nfm .dof .dpk .dproj .groupproj .bdsgroup .bdsproj
+    elisp        .el
+    elixir       .ex .exs
+    erlang       .erl .hrl
+    fortran      .f .f77 .f90 .f95 .f03 .for .ftn .fpp
+    go           .go
+    groovy       .groovy .gtmpl .gpp .grunit .gradle
+    gsp          .gsp
+    haskell      .hs .lhs
+    hh           .h
+    hpp          .hpp .hh .h .hxx
+    html         .htm .html .xhtml
+    jade         .jade
+    java         .java .properties
+    jenkins      Jenkinsfile
+    js           .js
+    json         .json
+    jsp          .jsp .jspx .jspf .jhtm .jhtml
+    kotlin       .kt .kts
+    less         .less
+    lisp         .lisp .lsp
+    lua          .lua; First line matches /^#!.*\blua(jit)?/
+    make         .mk; .mak; makefile; Makefile; Makefile.Debug; Makefile.Release; GNUmakefile
+    markdown     .md .markdown
+    matlab       .m
+    objc         .m .h
+    objcpp       .mm .h
+    ocaml        .ml .mli .mll .mly
+    perl         .pl .pm .pod .t .psgi; First line matches /^#!.*\bperl/
+    perltest     .t
+    php          .php .phpt .php3 .php4 .php5 .phtml; First line matches /^#!.*\bphp/
+    plone        .pt .cpt .metadata .cpy .py
+    pod          .pod
+    pytest       Filename matches (?^i:_test[.]py$); Filename matches (?^i:^test_.*[.]py$)
+    python       .py; First line matches /^#!.*\bpython/
+    rake         Rakefile
+    rr           .R
+    rst          .rst
+    ruby         .rb .rhtml .rjs .rxml .erb .rake .spec; Rakefile; First line matches /^#!.*\bruby/
+    rust         .rs
+    sass         .sass .scss
+    scala        .scala
+    scheme       .scm .ss
+    shell        .sh .bash .csh .tcsh .ksh .zsh .fish; First line matches /^#!.*\b(?:ba|t?c|k|z|fi)?sh\b/
+    smalltalk    .st
+    smarty       .tpl
+    sql          .sql .ctl
+    stylus       .styl
+    svg          .svg
+    swift        .swift; First line matches /^#!.*\bswift/
+    tcl          .tcl .itcl .itk
+    tex          .tex .cls .sty
+    toml         .toml
+    ts           .ts .tsx
+    ttml         .tt .tt2 .ttml
+    vb           .bas .cls .frm .ctl .vb .resx
+    verilog      .v .vh .sv
+    vhdl         .vhd .vhdl
+    vim          .vim
+    xml          .xml .dtd .xsd .xsl .xslt .ent .wsdl; First line matches /<[?]xml/
+    yaml         .yaml .yml
