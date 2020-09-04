@@ -357,6 +357,21 @@
     [% WRAPPER selflink.tt %]https://github.com/etsy/Hound[% END %]
     </p>
 
+    <h2>Sourcegraph</h2>
+    <p>
+    Sourcegraph is a horizontally scalable code search engine that
+    supports regex, symbol search, and the <a href="https://comby.dev/">Comby pattern syntax</a>.
+    It also has code navigation supported by a combination of the
+    <a href="https://microsoft.github.io/language-server-protocol/specifications/lsif/0.4.0/specification/">Language Server Index Format</a>
+    and a ctags-like backend. The core application is open source, but
+    enterprise features such as SSO are available only in a proprietary
+    version of the application.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]https://sourcegraph.com[% END %]
+    </p>
+
 </div>
 
 [% END %]
