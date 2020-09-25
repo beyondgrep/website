@@ -151,12 +151,12 @@
     <p>
     "Every once in a while something comes along that improves an idea so much,
     you can't ignore it. Such a thing is Ack, the grep replacement."
-    -- <a href="http://www.unixlore.net/use-ack-as-better-grep.html">unixlore.net</a>
+    -- <a href="https://www.unixlore.net/use-ack-as-better-grep.html">unixlore.net</a>
     </p>
 
     <p>
     "Whoa, this is *so* much better than grep it's not even funny."
-    -- <a href="http://jacobian.org/">Jacob Kaplan-Moss</a>, creator of <a href="http://www.djangoproject.com/">Django</a>.
+    -- <a href="https://jacobian.org/">Jacob Kaplan-Moss</a>, creator of <a href="http://www.djangoproject.com/">Django</a>.
     </p>
 
     <p>
@@ -174,18 +174,18 @@
     much like grep, except it assumes all the little things that you always
     wanted grep to remember, but that it never did. It actually left the
     light on for you, and put the toilet seat down."
-    -- <a href="http://assistedsilicon.blogspot.com/2008/09/ack-grep-but-better.html">Samuel Huckins</a>
+    -- <a href="https://assistedsilicon.blogspot.com/2008/09/ack-grep-but-better.html">Samuel Huckins</a>
     </p>
 
     <p>
     "ack is the best tool I have added to my toolbox in the past year, hands down."
-    -- <a href="http://billmill.org/">Bill Mill</a> on <a href="http://www.reddit.com/info/6odl4/comments/">reddit</a>
+    -- <a href="https://billmill.org/">Bill Mill</a> on <a href="http://www.reddit.com/info/6odl4/comments/">reddit</a>
     </p>
 
     <p>
     "I use it all the time and I can't imagine how I managed with only
     grep."
-    -- <a href="http://marnanel.org/">Thomas Thurman</a>
+    -- <a href="https://marnanel.org/">Thomas Thurman</a>
     </p>
 
     <p>
@@ -196,7 +196,7 @@
 
     <p>
     "You had me at <tt>--thpppt</tt>."
-    -- John Gruber, <a href="http://daringfireball.net/linked/2007/november#tue-27-ack">Daring Fireball</a>
+    -- John Gruber, <a href="https://daringfireball.net/linked/2007/november#tue-27-ack">Daring Fireball</a>
     </p>
 
     <p>
@@ -207,7 +207,7 @@
 
     <p>
     "I added ack standalone to our internal devtools project at work. People
-    are all over it." -- <a href="http://www.multiply.org/">Jason Gessner</a>
+    are all over it." -- <a href="https://www.multiply.org/">Jason Gessner</a>
     </p>
 
     <p>
