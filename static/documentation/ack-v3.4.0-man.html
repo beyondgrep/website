@@ -1,0 +1,159 @@
+Usage: ack [OPTION]... PATTERN [FILES OR DIRECTORIES]
+
+Search for PATTERN in each source file in the tree from the current
+directory on down.  If any files or directories are specified, then
+only those files and directories are checked.  ack may also search
+STDIN, but only if no file or directory arguments are specified,
+or if one of them is "-".
+
+Default switches may be specified in an .ackrc file. If you want no dependency
+on the environment, turn it off with --noenv.
+
+File select actions:
+  -f                            Only print the files selected, without
+                                searching.  The PATTERN must not be specified.
+  -g                            Same as -f, but only select files matching
+                                PATTERN.
+
+File listing actions:
+  -l, --files-with-matches      Print filenames with at least one match
+  -L, --files-without-matches   Print filenames with no matches
+  -c, --count                   Print filenames and count of matching lines
+
+Searching:
+  -i, --ignore-case             Ignore case distinctions in PATTERN
+  -S, --[no]smart-case          Ignore case distinctions in PATTERN,
+                                only if PATTERN contains no upper case.
+                                Ignored if -i or -I are specified.
+  -I, --no-ignore-case          Turns on case-sensitivity in PATTERN.
+                                Negates -i and --smart-case.
+  -v, --invert-match            Invert match: select non-matching lines
+  -w, --word-regexp             Force PATTERN to match only whole words
+  -Q, --literal                 Quote all metacharacters; PATTERN is literal
+  --range-start PATTERN         Specify PATTERN as the start of a match range.
+  --range-end PATTERN           Specify PATTERN as the end of a match range.
+  --match PATTERN               Specify PATTERN explicitly. Typically omitted.
+
+Search output:
+  --output=expr                 Output the evaluation of expr for each line
+                                (turns off text highlighting)
+  -o                            Show only the part of a line matching PATTERN
+                                Same as --output='$&'
+  --passthru                    Print all lines, whether matching or not
+  -m, --max-count=NUM           Stop searching in each file after NUM matches
+  -1                            Stop searching after one match of any kind
+  -H, --with-filename           Print the filename for each match (default:
+                                on unless explicitly searching a single file)
+  -h, --no-filename             Suppress the prefixing filename on output
+  --[no]column                  Show the column number of the first match
+
+  -A NUM, --after-context=NUM   Print NUM lines of trailing context after
+                                matching lines.
+  -B NUM, --before-context=NUM  Print NUM lines of leading context before
+                                matching lines.
+  -C [NUM], --context[=NUM]     Print NUM lines (default 2) of output context.
+
+  --print0                      Print null byte as separator between filenames,
+                                only works with -f, -g, -l, -L or -c.
+
+  -s                            Suppress error messages about nonexistent or
+                                unreadable files.
+
+
+File presentation:
+  --pager=COMMAND               Pipes all ack output through COMMAND.  For
+                                example, --pager="less -R".  Ignored if output
+                                is redirected.
+  --nopager                     Do not send output through a pager.  Cancels
+                                any setting in ~/.ackrc, ACK_PAGER or
+                                ACK_PAGER_COLOR.
+  --[no]heading                 Print a filename heading above each file's
+                                results.  (default: on when used interactively)
+  --[no]break                   Print a break between results from different
+                                files.  (default: on when used interactively)
+  --group                       Same as --heading --break
+  --nogroup                     Same as --noheading --nobreak
+  -p, --proximate=LINES         Separate match output with blank lines unless
+                                they are within LINES lines from each other.
+  -P, --proximate=0             Negates --proximate.
+  --[no]underline               Print a line of carets under the matched text.
+  --[no]color, --[no]colour     Highlight the matching text (default: on unless
+                                output is redirected, or on Windows)
+  --color-filename=COLOR
+  --color-match=COLOR
+  --color-colno=COLOR
+  --color-lineno=COLOR          Set the color for filenames, matches, line and
+                                column numbers.
+  --help-colors                 Show a list of possible color combinations.
+  --help-rgb-colors             Show a list of advanced RGB colors.
+  --flush                       Flush output immediately, even when ack is used
+                                non-interactively (when output goes to a pipe or
+                                file).
+
+
+File finding:
+  --sort-files                  Sort the found files lexically.
+  --show-types                  Show which types each file has.
+  --files-from=FILE             Read the list of files to search from FILE.
+  -x                            Read the list of files to search from STDIN.
+
+File inclusion/exclusion:
+  --[no]ignore-dir=name         Add/remove directory from list of ignored dirs
+  --[no]ignore-directory=name   Synonym for ignore-dir
+  --ignore-file=FILTER:ARGS     Add filter for ignoring files.
+  -r, -R, --recurse             Recurse into subdirectories (default: on)
+  -n, --no-recurse              No descending into subdirectories
+  --[no]follow                  Follow symlinks.  Default is off.
+
+File type inclusion/exclusion:
+  -t X, --type=X                Include only X files, where X is a filetype,
+                                e.g. python, html, markdown, etc
+  -T X, --type=noX              Exclude X files, where X is a filetype.
+  -k, --known-types             Include only files of types that ack recognizes.
+  --help-types                  Display all known types, and how they're defined.
+
+File type specification:
+  --type-set=TYPE:FILTER:ARGS   Files with the given ARGS applied to the given
+                                FILTER are recognized as being of type TYPE.
+                                This replaces an existing definition for TYPE.
+  --type-add=TYPE:FILTER:ARGS   Files with the given ARGS applied to the given
+                                FILTER are recognized as being type TYPE.
+  --type-del=TYPE               Removes all filters associated with TYPE.
+
+Miscellaneous:
+  --version                     Display version & copyright
+  --[no]env                     Ignore environment variables and global ackrc
+                                files.  --env is legal but redundant.
+  --ackrc=filename              Specify an ackrc file to use
+  --ignore-ack-defaults         Ignore default definitions included with ack.
+  --create-ackrc                Outputs a default ackrc for your customization
+                                to standard output.
+  --dump                        Dump information on which options are loaded
+                                and where they're defined.
+  --[no]filter                  Force ack to treat standard input as a pipe
+                                (--filter) or tty (--nofilter)
+  --help                        This help
+  --man                         Print the manual.
+  --help-types                  Display all known types, and how they're defined.
+  --help-colors                 Show a list of possible color combinations.
+  --help-rgb-colors             Show a list of advanced RGB colors.
+  --thpppt                      Bill the Cat
+  --bar                         The warning admiral
+  --cathy                       Chocolate! Chocolate! Chocolate!
+
+Filter specifications:
+    If FILTER is "ext", ARGS is a list of extensions checked against the
+        file's extension.
+    If FILTER is "is", ARGS must match the file's name exactly.
+    If FILTER is "match", ARGS is matched as a case-insensitive regex
+        against the filename.
+    If FILTER is "firstlinematch", ARGS is matched as a regex the first
+        line of the file's contents.
+
+Exit status is 0 if match, 1 if no match.
+
+ack's home page is at https://beyondgrep.com/
+
+The full ack manual is available by running "ack --man".
+
+This is version v3.4.0 of ack.  Run "ack --version" for full version info.
