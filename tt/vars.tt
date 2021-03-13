@@ -1,5 +1,5 @@
 [%
-current_version = 'v3.3.1';
-current_date    = '2020-01-13';
+current_version = 'v3.5.0';
+current_date    = '2021-03-12';
 manual_url      = '/documentation/ack-' _ current_version _ '-man.html';
 %]
