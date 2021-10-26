@@ -60,7 +60,7 @@
 
     <p>
     ack has been repackaged for most Linux distributions and OS X.
-    On Debian-derived distributions, it is called "ack-grep" because
+    On older Debian-derived distributions, it is called "ack-grep" because
     "ack" was already a package for Kanji translation.
     </p>
 
@@ -110,6 +110,8 @@
         <dd>Package "ack" in EPEL repository</dd>
 
         <dt>Debian<dt>
+        <dd>Package "ack"</dd>
+        <dd>Whereas, on Debian <= 9.x</dd>
         <dd>Package "ack-grep"</dd>
         <dd>(To rename the "ack-grep" program to its proper name "ack", see the section below on renaming ack-grep)</dd>
 
@@ -126,11 +128,13 @@
         <dd>Package "sys-apps/ack"</dd>
 
         <dt>Ubuntu</dt>
+        <dd>Package "ack"</dd>
+        <dd>Whereas, on Ubuntu <= 19.10</dd>
         <dd>Package "ack-grep"</dd>
     </dl>
 
 
-    <h3>Renaming ack-grep on Debian-derived distros</h3>
+    <h3>Renaming ack-grep on older Debian-derived distros</h3>
     <p>
     This section probably won't be necessary as latest releases of
     "ack-grep" package provide both "ack" and "ack-grep" commands.
@@ -139,7 +143,7 @@
     </p>
 
     <p>
-    On Debian-derived distros, ack is packaged as "ack-grep" because
+    On older Debian-derived distros, ack is packaged as "ack-grep" because
     "ack" already existed.  If you simply install via:
     </p>
 
