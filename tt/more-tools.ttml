@@ -40,6 +40,17 @@
     <p>
     [% WRAPPER selflink.tt %]https://github.com/jalanb/ack2vim[% END %]
     </p>
+    
+    <h2>ctrlsf.vim</h2>
+    <p>
+    ctrlsf.vim is an ack.vim alternative that mimics Ctrl-Shift-F on 
+    Sublime Text 2. It takes advantage of Vim 8's power to support 
+    asynchronous searching, and it lets you edit files in-place with 
+    Edit Mode.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/dyng/ctrlsf.vim[% END %]
+    </p>
 
     <h2>Emacs integration</h2>
     <p>
