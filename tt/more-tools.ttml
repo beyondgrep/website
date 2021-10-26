@@ -141,41 +141,12 @@
     </p>
 
 
-    <h2>kaki</h2>
-    <p>
-    kaki is inspired by ack, and built on top of nodejs.
-    </p>
-    <p>
-    [% WRAPPER selflink.tt %]https://github.com/FelipeBB/kaki[% END %]
-    </p>
-
-
-    <h2>nak</h2>
-    <p>
-    An implementation of ack, written in Node.js. It has inspiration from
-    Ag, and is optimized for speed, not features. It's completely
-    asynchronous. Written by Garen J. Torikian.
-    </p>
-    <p>
-    [% WRAPPER selflink.tt %]https://github.com/gjtorikian/nak[% END %]
-    </p>
-
-
     <h2>paragrep</h2>
     <p>
     paragrep is a text search tool that operates at the paragraph level.
     </p>
     <p>
     [% WRAPPER selflink.tt %]https://software.clapper.org/paragrep/[% END %]
-    </p>
-
-
-    <h2>pcregrep</h2>
-    <p>
-    pcregrep looks like it's just a regular grep, but with a PCRE regex engine.
-    </p>
-    <p>
-    [% WRAPPER selflink.tt %]https://www.rexegg.com/pcregrep-pcretest.html[% END %]
     </p>
 
 
@@ -244,15 +215,6 @@
     </p>
     <p>
     [% WRAPPER selflink.tt %]https://gvansickle.github.io/ucg/[% END %]
-    </p>
-
-
-    <h2>vack</h2>
-    <p>
-    vack is visual ack for the Mac.
-    </p>
-    <p>
-    [% WRAPPER selflink.tt %]https://blog.kowalczyk.info/software/vack/[% END %]
     </p>
 
 
