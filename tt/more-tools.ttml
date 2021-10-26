@@ -80,7 +80,7 @@
     <p>
     Geoff Greer says "ag is like ack, but better. It's fast. It's
     damn fast. The only thing faster is stuff that builds indices
-    beforehand, like <a href="http://ctags.sourceforge.net/">Exuberant Ctags</a>."
+    beforehand, like <a href="https://ctags.io/">Ctags</a>."
     Geoff has also created a fork of AckMate that uses Ag instead
     of ack.
     </p>
@@ -234,8 +234,8 @@
     </p>
 
     <p>
-    The most common ctags implementation is Exuberant ctags:
-    [% WRAPPER selflink.tt %]http://ctags.sourceforge.net/[% END %]
+    The most common ctags implementation is Universal Ctags:
+    [% WRAPPER selflink.tt %]https://ctags.io/[% END %]
     </p>
 
     <h2>cscope</h2>

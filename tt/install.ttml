@@ -72,7 +72,7 @@
 
     <h3>macOS</h3>
     <dl>
-        <dt><a href="http://www.finkproject.org">Fink</a></dt>
+        <dt><a href="https://www.finkproject.org">Fink</a></dt>
         <dd>Package "ack"</dd>
 
         <dt><a href="https://brew.sh/">Homebrew</a></dt>
