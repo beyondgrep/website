@@ -40,6 +40,17 @@
     <p>
     [% WRAPPER selflink.tt %]https://github.com/jalanb/ack2vim[% END %]
     </p>
+    
+    <h2>ctrlsf.vim</h2>
+    <p>
+    ctrlsf.vim is an ack.vim alternative that mimics Ctrl-Shift-F on 
+    Sublime Text 2. It takes advantage of Vim 8's power to support 
+    asynchronous searching, and it lets you edit files in-place with 
+    Edit Mode.
+    </p>
+    <p>
+    [% WRAPPER selflink.tt %]https://github.com/dyng/ctrlsf.vim[% END %]
+    </p>
 
     <h2>Emacs integration</h2>
     <p>
@@ -80,7 +91,7 @@
     <p>
     Geoff Greer says "ag is like ack, but better. It's fast. It's
     damn fast. The only thing faster is stuff that builds indices
-    beforehand, like <a href="http://ctags.sourceforge.net/">Exuberant Ctags</a>."
+    beforehand, like <a href="https://ctags.io/">Ctags</a>."
     Geoff has also created a fork of AckMate that uses Ag instead
     of ack.
     </p>
@@ -141,41 +152,12 @@
     </p>
 
 
-    <h2>kaki</h2>
-    <p>
-    kaki is inspired by ack, and built on top of nodejs.
-    </p>
-    <p>
-    [% WRAPPER selflink.tt %]https://github.com/FelipeBB/kaki[% END %]
-    </p>
-
-
-    <h2>nak</h2>
-    <p>
-    An implementation of ack, written in Node.js. It has inspiration from
-    Ag, and is optimized for speed, not features. It's completely
-    asynchronous. Written by Garen J. Torikian.
-    </p>
-    <p>
-    [% WRAPPER selflink.tt %]https://github.com/gjtorikian/nak[% END %]
-    </p>
-
-
     <h2>paragrep</h2>
     <p>
     paragrep is a text search tool that operates at the paragraph level.
     </p>
     <p>
     [% WRAPPER selflink.tt %]https://software.clapper.org/paragrep/[% END %]
-    </p>
-
-
-    <h2>pcregrep</h2>
-    <p>
-    pcregrep looks like it's just a regular grep, but with a PCRE regex engine.
-    </p>
-    <p>
-    [% WRAPPER selflink.tt %]https://www.rexegg.com/pcregrep-pcretest.html[% END %]
     </p>
 
 
@@ -247,15 +229,6 @@
     </p>
 
 
-    <h2>vack</h2>
-    <p>
-    vack is visual ack for the Mac.
-    </p>
-    <p>
-    [% WRAPPER selflink.tt %]https://blog.kowalczyk.info/software/vack/[% END %]
-    </p>
-
-
     <h1>Indexing tools</h1>
     <p>
     Sometimes when you're looking at a large codebase, it makes
@@ -272,8 +245,8 @@
     </p>
 
     <p>
-    The most common ctags implementation is Exuberant ctags:
-    [% WRAPPER selflink.tt %]http://ctags.sourceforge.net/[% END %]
+    The most common ctags implementation is Universal Ctags:
+    [% WRAPPER selflink.tt %]https://ctags.io/[% END %]
     </p>
 
     <h2>cscope</h2>
@@ -355,6 +328,21 @@
 
     <p>
     [% WRAPPER selflink.tt %]https://github.com/etsy/Hound[% END %]
+    </p>
+
+    <h2>Sourcegraph</h2>
+    <p>
+    Sourcegraph is a horizontally scalable code search engine that
+    supports regex, symbol search, and the <a href="https://comby.dev/">Comby pattern syntax</a>.
+    It also has code navigation supported by a combination of the
+    <a href="https://microsoft.github.io/language-server-protocol/specifications/lsif/0.4.0/specification/">Language Server Index Format</a>
+    and a ctags-like backend. The core application is open source, but
+    enterprise features such as SSO are available only in a proprietary
+    version of the application.
+    </p>
+
+    <p>
+    [% WRAPPER selflink.tt %]https://sourcegraph.com[% END %]
     </p>
 
 </div>

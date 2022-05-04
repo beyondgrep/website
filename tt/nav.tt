@@ -4,7 +4,8 @@
         <li>[% WRAPPER link.tt page='why-ack' %]Why ack?[% END %]</li>
         <li>[% WRAPPER link.tt page='install' %]Install[% END %]</li>
         <li>[% WRAPPER link.tt page='documentation' %]Documentation[% END %]</li>
-        <li>[% WRAPPER link.tt page='community' %]Community/Slack[% END %]</li>
+        <li>[% WRAPPER link.tt page='community' %]Community[% END %]</li>
         <li>[% WRAPPER link.tt page='more-tools' %]More Tools[% END %]</li>
+        <li>[% WRAPPER link.tt page='feature-comparison' %]Feature Chart[% END %]</li>
     </ul>
 </div>

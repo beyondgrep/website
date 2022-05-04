@@ -294,6 +294,7 @@
                 "what": "Use Perl (or Perl-compatible) regular expressions",
                 "how": {
                     "ack": "always",
+                    "ag": "always",
                     "git": "-P --perl-regexp",
                     "gnu": "-P --perl-regexp (experimental)",
                     "rg": "-P --pcre2 (always) --auto-hybrid-regex (if necessary)"

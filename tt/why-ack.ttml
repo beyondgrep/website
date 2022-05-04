@@ -143,7 +143,7 @@
     <p>
     A lightning talk by <a href="https://twitter.com/theaboutbox">Cameron Pope</a> on why you should use ack.
     </p>
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/sKmyl5D8Da8" frameborder="0" allowfullscreen></iframe>
+    <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/sKmyl5D8Da8" frameborder="0" allowfullscreen></iframe>
 
     <a name="testimonials"></a>
     <h1>Testimonials</h1>
@@ -156,7 +156,7 @@
 
     <p>
     "Whoa, this is *so* much better than grep it's not even funny."
-    -- <a href="http://jacobian.org/">Jacob Kaplan-Moss</a>, creator of <a href="http://www.djangoproject.com/">Django</a>.
+    -- <a href="https://jacobian.org/">Jacob Kaplan-Moss</a>, creator of <a href="https://www.djangoproject.com/">Django</a>.
     </p>
 
     <p>
@@ -174,18 +174,18 @@
     much like grep, except it assumes all the little things that you always
     wanted grep to remember, but that it never did. It actually left the
     light on for you, and put the toilet seat down."
-    -- <a href="http://assistedsilicon.blogspot.com/2008/09/ack-grep-but-better.html">Samuel Huckins</a>
+    -- <a href="https://web.archive.org/web/20081016025823/https://assistedsilicon.blogspot.com/2008/09/ack-grep-but-better.html">Samuel Huckins</a>
     </p>
 
     <p>
     "ack is the best tool I have added to my toolbox in the past year, hands down."
-    -- <a href="http://billmill.org/">Bill Mill</a> on <a href="http://www.reddit.com/info/6odl4/comments/">reddit</a>
+    -- <a href="https://billmill.org/">Bill Mill</a> on <a href="https://www.reddit.com/r/programming/comments/6odl4/on_ack_the_grep_replacement/">reddit</a>
     </p>
 
     <p>
     "I use it all the time and I can't imagine how I managed with only
     grep."
-    -- <a href="http://marnanel.org/">Thomas Thurman</a>
+    -- <a href="https://marnanel.org/">Thomas Thurman</a>
     </p>
 
     <p>
@@ -196,24 +196,24 @@
 
     <p>
     "You had me at <tt>--thpppt</tt>."
-    -- John Gruber, <a href="http://daringfireball.net/linked/2007/november#tue-27-ack">Daring Fireball</a>
+    -- John Gruber, <a href="https://daringfireball.net/linked/2007/november#tue-27-ack">Daring Fireball</a>
     </p>
 
     <p>
     "Grepping of SVN repositories was driving me crazy until I found ack. It
     fixes all of my grep annoyances and adds features I didn't even know I
-    wanted." -- <a href="http://www.prescod.net/">Paul Prescod</a>
+    wanted." -- Paul Prescod
     </p>
 
     <p>
     "I added ack standalone to our internal devtools project at work. People
-    are all over it." -- <a href="http://www.multiply.org/">Jason Gessner</a>
+    are all over it." -- <a href="https://www.multiply.org/">Jason Gessner</a>
     </p>
 
     <p>
     "I just wanted to send you my praise for this wonderful little
     application.  It's in my toolbox now and after one day of use has proven
-    itself invaluable." -- <a href="http://www.just-another.net/">Benjamin W. Smith</a>
+    itself invaluable." -- Benjamin W. Smith
     </p>
 
     <p>
@@ -224,12 +224,12 @@
 
     <p>
     "ack's powerful search facilities are an invaluable tool for searching
-    large repositories like <a href="http://parrot.org/">Parrot</a>. The
+    large repositories like Parrot. The
     ability to control the search domain by filetype--and to do so
     independent of platform--has made one-liners out of many complex
     queries previously done with custom scripts. Parrot developers
     are hooked on ack."
-    -- <a href="http://www.rakudoconsulting.com/">Jerry Gay</a>
+    -- Jerry Gay
     </p>
 
     <p>
