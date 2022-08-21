@@ -20,6 +20,7 @@ called Rakefile is both Ruby (--type=ruby) and Rakefile (--type=rakefile).
     cmake        CMakeLists.txt; .cmake
     coffeescript .coffee
     cpp          .cpp .cc .cxx .m .hpp .hh .h .hxx
+    crystal      .cr .ecr
     csharp       .cs
     css          .css
     dart         .dart
@@ -58,7 +59,7 @@ called Rakefile is both Ruby (--type=ruby) and Rakefile (--type=rakefile).
     plone        .pt .cpt .metadata .cpy .py
     pod          .pod
     purescript   .purs
-    pytest       Filename matches (?i-xsm:_test[.]py$); Filename matches (?i-xsm:^test_.*[.]py$)
+    pytest       Filename matches (?^i:_test[.]py$); Filename matches (?^i:^test_.*[.]py$)
     python       .py; First line matches /^#!.*\bpython/
     rake         Rakefile
     rr           .R
@@ -66,7 +67,7 @@ called Rakefile is both Ruby (--type=ruby) and Rakefile (--type=rakefile).
     ruby         .rb .rhtml .rjs .rxml .erb .rake .spec; Rakefile; First line matches /^#!.*\bruby/
     rust         .rs
     sass         .sass .scss
-    scala        .scala
+    scala        .scala .sbt
     scheme       .scm .ss
     shell        .sh .bash .csh .tcsh .ksh .zsh .fish; First line matches /^#!.*\b(?:ba|t?c|k|z|fi)?sh\b/
     smalltalk    .st
