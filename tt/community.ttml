@@ -18,10 +18,21 @@
     <h1>ack community</h1>
 
     <h2>
-    <img src="/slack-logo.png" height="32" width="32" style="margin-right: 5px" />
+    Code of Conduct
+    </h2>
+
+    <p>
+    Please follow the
+    <a href="https://github.com/beyondgrep/ack3/blob/dev/CODE_OF_CONDUCT.md">Code of Conduct</a>
+    in all your interactions with our project.
+    </p>
+
+    <h2>
     Slack
     </h2>
+
     <p>
+    <img src="/slack-logo.png" height="32" width="32" style="margin-right: 5px" align="left"/>
     beyondgrep.com has a dedicated Slack at
     [% WRAPPER selflink.tt %]https://beyondgrep.slack.com/[% END %].
     There you'll find an #ack channel.
@@ -29,8 +40,7 @@
 
     <p>
     The channel is currently invitation-only, so email andy@petdance.com
-    to get an invitation sent to you.  Soon we'll have it set up to the
-    general public.
+    to get an invitation sent to you.
     </p>
 
     <h2>Mailing lists</h2>
