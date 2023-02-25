@@ -33,6 +33,8 @@ Searching:
   --range-start PATTERN         Specify PATTERN as the start of a match range.
   --range-end PATTERN           Specify PATTERN as the end of a match range.
   --match PATTERN               Specify PATTERN explicitly. Typically omitted.
+  --not PATTERN                 Specifies PATTERN that must not be found on
+                                the line for a match to occur. Repeatable.
 
 Search output:
   --output=expr                 Output the evaluation of expr for each line
@@ -156,4 +158,4 @@ ack's home page is at https://beyondgrep.com/
 
 The full ack manual is available by running "ack --man".
 
-This is version v3.6.0 of ack.  Run "ack --version" for full version info.
+This is version v3.7.0 of ack.  Run "ack --version" for full version info.

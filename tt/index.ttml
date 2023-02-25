@@ -25,7 +25,17 @@ _   /|
 
 <div class="content">
     <div class="feature-bullets">
-        <h1>What's new in ack 3?</h1>
+        <h1>What's new in ack?</h1>
+
+        <h2>New --not option</h2>
+        <p>
+            The new repeatable --not option lets you get more precise matches. If you want to search for "dogs" but not
+            if "cats" or "fish" are on the line, use
+        <p>
+
+<pre>
+ack dogs --not cats --not fish
+</pre>
 
         <h2>Easier to understand error messages</h2>
         <p>
@@ -111,10 +121,6 @@ Regex: status: (open|closed|in progress
             because of removal of unused infrastructure for plugins.
         </p>
 
-        <h2>New built-in filetypes</h2>
-        <p>
-            ack now supports SVG, Markdown and POD by default.
-        </p>
     </div>
 
     <div class="feature-install">

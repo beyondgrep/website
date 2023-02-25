@@ -58,11 +58,12 @@ called Rakefile is both Ruby (--type=ruby) and Rakefile (--type=rakefile).
     php          .php .phpt .php3 .php4 .php5 .phtml; First line matches /^#!.*\bphp/
     plone        .pt .cpt .metadata .cpy .py
     pod          .pod
+    powershell   .ps1 .psm1
     purescript   .purs
     pytest       Filename matches (?^i:_test[.]py$); Filename matches (?^i:^test_.*[.]py$)
     python       .py; First line matches /^#!.*\bpython/
     rake         Rakefile
-    rr           .R
+    rr           .R .Rmd
     rst          .rst
     ruby         .rb .rhtml .rjs .rxml .erb .rake .spec; Rakefile; First line matches /^#!.*\bruby/
     rust         .rs
@@ -73,6 +74,7 @@ called Rakefile is both Ruby (--type=ruby) and Rakefile (--type=rakefile).
     smalltalk    .st
     smarty       .tpl
     sql          .sql .ctl
+    starlark     .star
     stylus       .styl
     svg          .svg
     swift        .swift; First line matches /^#!.*\bswift/
