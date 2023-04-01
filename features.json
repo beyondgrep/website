@@ -624,7 +624,8 @@
             {
                 "what": "Search hidden files",
                 "how": {
-                    "ag,rg": "--hidden"
+                    "ag,rg": "--hidden",
+                    "git,gnu": "yes"
                 }
             }
         ]
