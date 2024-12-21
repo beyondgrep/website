@@ -27,11 +27,28 @@ _   /|
     <div class="feature-bullets">
         <h1>What's new in ack?</h1>
 
-        <h2>New --not option</h2>
+        <h2>New boolean options --and, --or and --not</h2>
         <p>
-            The new repeatable --not option lets you get more precise matches. If you want to search for "dogs" but not
-            if "cats" or "fish" are on the line, use
+            The new repeatable <tt>--and</tt>, <tt>--or</tt> and
+            <tt>--not</tt> options lets you get more precise matches.  If
+            you want any of "dogs" or "cats" or "fish", use
         <p>
+
+<pre>
+ack dogs --or cats --or fish
+</pre>
+
+        <p>
+            If you want all three on the line:
+        </p>
+
+<pre>
+ack dogs --and cats --and fish
+</pre>
+
+        <p>
+            And of course if you want "dogs", but not if "cats" or "fish" are on the line:
+        </p>
 
 <pre>
 ack dogs --not cats --not fish

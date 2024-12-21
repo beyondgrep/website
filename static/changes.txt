@@ -1,6 +1,23 @@
 History file for ack 3.  https://beyondgrep.com/
 
 
+v3.8.0      Fri Dec 20 22:07:26 CST 2024
+========================================
+[FEATURES]
+Add --and and --or options to allow combinations of search terms. This is
+in addition to the --not that was added in v3.7.0. (GH #385)
+
+Add support for Pytest filetype.
+
+Add support for Terraform. Thanks, Thiago Perrotta. (GH #377)
+
+[FIXES]
+The ack-standalone that gets built, and is what's available for download at
+https://beyondgrep.com, now puts each of the modules it pulls in into its
+own lexical scope.  This should fix any future conflicts of pragmata that
+might come up in the future. Thanks, mauke. (GH #376)
+
+
 v3.7.0      Sat Feb 25 14:00:57 CST 2023
 ========================================
 [FEATURES]
