@@ -14,6 +14,8 @@ _   /|
 
         <h2 class="pkg_mgr_desc">The latest version of ack is [% current_version %], released [% current_date %].</h2>
 
+        <h2 class="pkg_mgr_desc"><a href="changes.txt">Changelog</a> for [% current_version %]</h2>
+
         <p>
         Designed for programmers with large heterogeneous
         trees of source code, ack is written in

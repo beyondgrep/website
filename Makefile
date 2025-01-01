@@ -33,4 +33,4 @@ test:
 # This is only useful for Andy
 rsync: crank
 	rsync -azu -e ssh --delete --verbose \
-		$(BUILD)/ andy@alex.petdance.com:/srv/beyondgrep/
+		$(BUILD)/ andy@diper.petdance.com:/srv/beyondgrep/
