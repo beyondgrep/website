@@ -39,7 +39,6 @@ called Rakefile is both Ruby (--type=ruby) and Rakefile (--type=rakefile).
     html         .htm .html .xhtml
     jade         .jade
     java         .java .properties
-    jenkins      Jenkinsfile
     js           .js
     json         .json
     jsp          .jsp .jspx .jspf .jhtm .jhtml
@@ -60,7 +59,7 @@ called Rakefile is both Ruby (--type=ruby) and Rakefile (--type=rakefile).
     pod          .pod
     powershell   .ps1 .psm1
     purescript   .purs
-    pytest       Filename matches (?^i:_test[.]py$); Filename matches (?^i:^test_.*[.]py$)
+    pytest       Filename matches (?i-xsm:_test\.py$); Filename matches (?i-xsm:^test_.*\.py$)
     python       .py; First line matches /^#!.*\bpython/
     rake         Rakefile
     rr           .R .Rmd
@@ -74,11 +73,11 @@ called Rakefile is both Ruby (--type=ruby) and Rakefile (--type=rakefile).
     smalltalk    .st
     smarty       .tpl
     sql          .sql .ctl
-    starlark     .star
     stylus       .styl
     svg          .svg
     swift        .swift; First line matches /^#!.*\bswift/
     tcl          .tcl .itcl .itk
+    terraform    .tf .tfvars
     tex          .tex .cls .sty
     toml         .toml
     ts           .ts .tsx

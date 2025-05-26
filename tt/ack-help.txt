@@ -33,7 +33,11 @@ Searching:
   --range-start PATTERN         Specify PATTERN as the start of a match range.
   --range-end PATTERN           Specify PATTERN as the end of a match range.
   --match PATTERN               Specify PATTERN explicitly. Typically omitted.
-  --not PATTERN                 Specifies PATTERN that must not be found on
+  --and PATTERN                 Specifies PATTERN that MUST also be found on
+                                the line for a match to occur. Repeatable.
+  --or PATTERN                  Specifies PATTERN that MAY also be found on
+                                the line for a match to occur. Repeatable.
+  --not PATTERN                 Specifies PATTERN that must NOT be found on
                                 the line for a match to occur. Repeatable.
 
 Search output:
@@ -158,4 +162,4 @@ ack's home page is at https://beyondgrep.com/
 
 The full ack manual is available by running "ack --man".
 
-This is version v3.7.0 of ack.  Run "ack --version" for full version info.
+This is version v3.9.0 of ack.  Run "ack --version" for full version info.

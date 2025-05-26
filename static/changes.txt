@@ -1,5 +1,27 @@
 History file for ack 3.  https://beyondgrep.com/
 
+NEXT
+v3.9.0      Mon May 26 15:02:57 CDT 2025
+========================================
+The --not option can be used with either --and or --or.
+
+The -g option can now use any of the boolean options, --and, --or or --not.
+
+[FIXES]
+When using --output='$f', the filename would be colorized in the output
+line, but should not have been.  This has been fixed. Thanks, Dabrien
+'Dabe' Murphy. (GH #350)
+
+
+v3.8.2      Sun Apr  6 10:45:04 CDT 2025
+========================================
+ack now needs YAML::PP to run its tests. Many of ack's tests are stored in
+YAML files for flexibility.
+
+[FIXES]
+ack would always set a return code of 1 if -c was used.  Now it properly
+returns 1 if no files match, and 0 if any files match.
+
 
 v3.8.1      Tue Dec 31 21:22:59 CST 2024
 ========================================
