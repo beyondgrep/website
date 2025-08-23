@@ -2,9 +2,14 @@
 [% WRAPPER wrapper/page.ttml title='ack documentation' %]
 <div class="content">
     <h1>Documentation</h1>
-
+    <p>
     <strong>Please read</strong> the <a href="[% manual_url %]">ack manual</a>,
     which also includes the <a href="[% manual_url %]#faq">ack FAQ</a>.
+    </p>
+
+    <p>
+    See also the <a href="changes.txt">Changelog</a> for [% current_version %].
+    </p>
 
     <h1>ack's command-line switches (<tt>ack --help</tt>)</h1>
 <pre>

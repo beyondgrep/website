@@ -14,6 +14,8 @@ _   /|
 
         <h2 class="pkg_mgr_desc">The latest version of ack is [% current_version %], released [% current_date %].</h2>
 
+        <h2 class="pkg_mgr_desc"><a href="changes.txt">Changelog</a> for [% current_version %]</h2>
+
         <p>
         Designed for programmers with large heterogeneous
         trees of source code, ack is written in
@@ -27,11 +29,28 @@ _   /|
     <div class="feature-bullets">
         <h1>What's new in ack?</h1>
 
-        <h2>New --not option</h2>
+        <h2>New boolean options --and, --or and --not</h2>
         <p>
-            The new repeatable --not option lets you get more precise matches. If you want to search for "dogs" but not
-            if "cats" or "fish" are on the line, use
+            The new repeatable <tt>--and</tt>, <tt>--or</tt> and
+            <tt>--not</tt> options lets you get more precise matches.  If
+            you want any of "dogs" or "cats" or "fish", use
         <p>
+
+<pre>
+ack dogs --or cats --or fish
+</pre>
+
+        <p>
+            If you want all three on the line:
+        </p>
+
+<pre>
+ack dogs --and cats --and fish
+</pre>
+
+        <p>
+            And of course if you want "dogs", but not if "cats" or "fish" are on the line:
+        </p>
 
 <pre>
 ack dogs --not cats --not fish

@@ -1,5 +1,51 @@
 History file for ack 3.  https://beyondgrep.com/
 
+NEXT
+v3.9.0      Mon May 26 15:02:57 CDT 2025
+========================================
+The --not option can be used with either --and or --or.
+
+The -g option can now use any of the boolean options, --and, --or or --not.
+
+[FIXES]
+When using --output='$f', the filename would be colorized in the output
+line, but should not have been.  This has been fixed. Thanks, Dabrien
+'Dabe' Murphy. (GH #350)
+
+
+v3.8.2      Sun Apr  6 10:45:04 CDT 2025
+========================================
+ack now needs YAML::PP to run its tests. Many of ack's tests are stored in
+YAML files for flexibility.
+
+[FIXES]
+ack would always set a return code of 1 if -c was used.  Now it properly
+returns 1 if no files match, and 0 if any files match.
+
+
+v3.8.1      Tue Dec 31 21:22:59 CST 2024
+========================================
+[ENHANCEMENTS]
+The rules for Pytest were modified so that zsh's ad hoc scraping of
+filetypes for tab completion wouldn't blow up. (GH #386)
+
+
+v3.8.0      Fri Dec 20 22:07:26 CST 2024
+========================================
+[FEATURES]
+Add --and and --or options to allow combinations of search terms. This is
+in addition to the --not that was added in v3.7.0. (GH #385)
+
+Add support for Pytest filetype.
+
+Add support for Terraform. Thanks, Thiago Perrotta. (GH #377)
+
+[FIXES]
+The ack-standalone that gets built, and is what's available for download at
+https://beyondgrep.com, now puts each of the modules it pulls in into its
+own lexical scope.  This should fix any future conflicts of pragmata that
+might come up in the future. Thanks, mauke. (GH #376)
+
 
 v3.7.0      Sat Feb 25 14:00:57 CST 2023
 ========================================
