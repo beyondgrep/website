@@ -177,7 +177,7 @@ a:hover {
     background: #fbfbfb url('./bg_tile_white.jpg');
 }
 
-.feature-security, .feature-install, .feature-testimonials, .feature-twitter {
+.feature-security, .feature-install, .feature-testimonials {
     background: #fbfbfb url('./bg_tile_white.jpg');
     -moz-border-radius:10px;
     -webkit-border-radius: 10px;
