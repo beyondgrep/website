@@ -162,4 +162,4 @@ ack's home page is at https://beyondgrep.com/
 
 The full ack manual is available by running "ack --man".
 
-This is version v3.9.0 of ack.  Run "ack --version" for full version info.
+This is version v3.10.0 of ack.  Run "ack --version" for full version info.
