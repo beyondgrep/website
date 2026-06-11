@@ -1,0 +1,79 @@
+[% WRAPPER wrapper/page.ttml title='ack: Security Alert' %]
+
+<div class="content">
+    <h1>Security holes in ack versions to 3.9.0</h1>
+
+    <h2>Please upgrade to ack 3.10.0 or newer ASAP.</h2>
+
+    <p>
+        ack is a grep-like tool that is specifically created to make searching source code easier.  One of the features
+        added in ack 2.00 was the ability to have command line options in per-project <code>.ackrc</code> files; this
+        was retained in ack 3. This has led to serious security holes; previously, problems were found with ack 2, and
+        several new features in ack 3 were limited when <code>./.ackrc</code> use seemed dangerous, but thanks to
+        security researchers with Afine, we were alerted to several more that need limiting.
+    </p>
+
+    <p>
+        An attacker could create a <code>.ackrc</code> file with malicious options that would get used by ack.  The
+        malicious .ackrc could be put into code that a user would download and search with ack, and an unsuspecting user
+        would then execute these options without realizing it.  This malicious .ackrc could be, for example, in a source
+        code tarball, or a checkout of a project from a code hosting site like GitHub or SourceForge. Malicious projects
+        can do worse with malice in other files working together.
+    </p>
+
+    <p>
+        A malicious <code>.ackrc</code> was found to be able to exhaust memory by providing a ridiculous number as
+        default value for <code>-B --before-context</code>, or having duplicated recursive links causing exponential
+        recursion. Malicious links could also hypothetically breach containement and have ack report sensitive data from
+        outside the project. Which later becomes serious if ack were in a CI/CD script, and the sensitive data might be
+        in a publicly read-only report. A malicious cloned project could also contain files with non-printing characters
+        that cause ack or grep output to 'lie' to you.
+    </p>
+
+    <p>
+        We would not recommend ack for automated use in Makefile or CI/CD scripts; ack is designed for interactive
+        convenience of programmers looking at code themselves; <strong>grep</strong> is still the better grep in CI/CD
+        and build scripts.
+    </p>
+
+    <p>
+        <strong>ack 3.10.0 has solved these problems</strong> by limiting <code>-A/-B/-C</code> context to a large but
+        not dangerous number; by blocking <code>--follow</code> from use in a per-project .ackrc file; and by filtering
+        non-printing ASCII characters in Filenames. The <code>--follow</code> option, as with the several options banned
+        from project .ackrc in ack 2 is still allowed in a global ackrc file, your own personal .ackrc file, the
+        ACK_OPTIONS environment variable, and on the command line, at your own discretion, but we would recommend it be
+        used interactively.
+    </p>
+
+    <p>
+        (Similarly, in ack 2, <code>--pager</code>, <code>--regex</code> (now called <code>--match</code>)and
+        <code>--output</code> were barred from project ackrc, to avoid <strong>arbitrary code execution</strong>.)
+    </p>
+
+    <p>
+        <a href="https://security.metacpan.org/">CPANSec</a>, the Perl/CPAN CNA, has issued the following CVEs for this issues.
+    </p>
+
+    <ul>
+        <li>CVE-2026-49145: project .ackrc --follow / --files-from file exfiltration or crash </li>
+        <li>CVE-2026-49146: project .ackrc -A -B -C memory exhaustion</li>
+        <li>CVE-2026-49147: filename ANSI non-printing and escape sequences </li>
+    </ul>
+
+    <p>
+        ack versions before 2.14 are not affected by these project ackrc security holes, but before 2.11 had a different
+        one; 2.11 and 2.12 are unsupported now; all ack 3 versions before 3.10.0 are affected. All prior versions of
+        ack, and of grep, and most any other file utility, are affected by the non-printing characters in filenames
+        defacing output; we're happy to fix it even though grep does what we did previously, because ack aims to be an
+        <strong>interactive</strong> tool for <strong>coders</strong>, so having a stronger default is appropriate.
+    </p>
+
+    <p>
+        Please see
+        [% WRAPPER link.tt page='install' %]the ack installation page[% END %]
+        for information on how to install ack for your system.
+    </p>
+
+</div>
+
+[% END %]

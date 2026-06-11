@@ -142,6 +142,17 @@ Regex: status: (open|closed|in progress
 
     </div>
 
+   <div class="feature-security">
+       <h2>Security alert</h2>
+       <p>
+        ack versions up to 3.9.0 are susceptible to a several expolits in malicious <code>$project/.ackrc</code> files.
+        <strong>Please upgrade to 3.10.0 or higher ASAP.</strong>
+        See the
+        [% WRAPPER link.tt page='security' %]security alert[% END %]
+        for more information.
+       </p>
+    </div>
+
     <div class="feature-install">
         <h2>How to install</h2>
         <p>
