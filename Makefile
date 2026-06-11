@@ -25,6 +25,7 @@ crank: clean
 	mkdir -p $(BUILD)/feature-comparison > /dev/null 2>&1
 	perl features | perl -ne'print if /\S/' > $(BUILD)/feature-comparison/index.html
 	perl crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)
+	find . -name "*.tmp" -delete
 	find $(BUILD) -name "*~" -exec rm -f {} \; # Remove any backup leftovers
 
 test:
