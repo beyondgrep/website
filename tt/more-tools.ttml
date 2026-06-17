@@ -35,7 +35,7 @@
 
     <h2>ack2vim</h2>
     <p>
-    ack2vim eases the interface beween ack and vim, so that ack's findings can be found with vim as well.
+    ack2vim eases the interface between ack and vim, so that ack's findings can be found with vim as well.
     </p>
     <p>
     [% WRAPPER selflink.tt %]https://github.com/jalanb/ack2vim[% END %]
