@@ -324,7 +324,7 @@
                 "what": "Show only the part of a line that matched",
                 "how": {
                     "ack": "-o",
-                    "ag,freebsd,gnu,osx,rg": "-o --only-matching"
+                    "ag,freebsd,git,gnu,osx,rg": "-o --only-matching"
                 }
             },
             {
