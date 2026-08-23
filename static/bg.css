@@ -80,6 +80,16 @@ body {
     text-decoration:none;
 }
 
+.nav li:first-child a {
+    background-color:#FFB43B;
+    color:#CF3500;
+    font-weight:bold;
+}
+
+.nav li:first-child a:hover {
+    background-color:#FFAB24;
+}
+
 /*footer */
 .footer {
     margin:auto;
@@ -177,7 +187,7 @@ a:hover {
     background: #fbfbfb url('./bg_tile_white.jpg');
 }
 
-.feature-security, .feature-install, .feature-testimonials, .feature-twitter {
+.feature-security, .feature-install, .feature-testimonials {
     background: #fbfbfb url('./bg_tile_white.jpg');
     -moz-border-radius:10px;
     -webkit-border-radius: 10px;

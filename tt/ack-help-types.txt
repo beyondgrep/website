@@ -59,7 +59,7 @@ called Rakefile is both Ruby (--type=ruby) and Rakefile (--type=rakefile).
     pod          .pod
     powershell   .ps1 .psm1
     purescript   .purs
-    pytest       Filename matches (?i-xsm:_test\.py$); Filename matches (?i-xsm:^test_.*\.py$)
+    pytest       Filename matches (?^i:_test\.py$); Filename matches (?^i:^test_.*\.py$)
     python       .py; First line matches /^#!.*\bpython/
     rake         Rakefile
     rr           .R .Rmd
