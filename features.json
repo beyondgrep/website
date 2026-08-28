@@ -624,7 +624,8 @@
             {
                 "what": "Search hidden files",
                 "how": {
-                    "ag,rg": "--hidden"
+                    "ag,rg": "--hidden",
+                    "git,gnu": "yes"
                 }
             }
         ]
@@ -654,6 +655,7 @@
                     "ack": "-r -R --[no-]recurse",
                     "ag": "-r --recurse",
                     "gnu": "-r --recursive",
+                    "git": "yes",
                     "freebsd,osx": "-r -R --recursive -d recurse --directories=recurse",
                     "rg": "yes, up to --max-depth"
                 }
